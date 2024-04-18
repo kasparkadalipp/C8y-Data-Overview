@@ -1,0 +1,16 @@
+# Visual Studio Code
+.vscode/
+
+# IntelliJ
+.idea/
+
+# Python compiled files and directories
+__pycache__/
+
+# files in any subdirectory
+**/*.json
+**/.env*
+**/.log
+
+# sample environment setup
+!.env.sample
