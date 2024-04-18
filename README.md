@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/ut_logo.png" alt="Logo" width="80" height="80">
+    <img src="images/ut_logo.png" alt="Logo" width="120" height="120">
   </a>
 
   <h3 align="center">Knowledge graphs for cataloging and making sense of Smart City data</h3>
