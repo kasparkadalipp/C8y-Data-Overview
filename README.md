@@ -23,8 +23,8 @@
 
 ### Built With
 
-* [![Python][Python.org]][React-url]
-* [![React][React.js]][React-url]
+* [![Python][Python.org]][Python-url]
+* [![D3][D3.js]][D3-url]
   
 
 
@@ -33,6 +33,6 @@
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [Python.org]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Python-url]: https://www.python.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
+[D3.js]: https://img.shields.io/badge/D3.js-F9A03C?logo=d3dotjs&logoColor=fff&style=for-the-badge
+[D3-url]: https://d3js.org/
 
