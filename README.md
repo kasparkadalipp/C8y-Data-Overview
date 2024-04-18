@@ -25,6 +25,7 @@
 
 * [![Python][Python.org]][Python-url]
 * [![D3][D3.js]][D3-url]
+* [![ChatGpt][ChatGPT]][ChatGPT-url]
   
 
 
@@ -35,4 +36,6 @@
 [Python-url]: https://www.python.org/
 [D3.js]: https://img.shields.io/badge/D3.js-F9A03C?logo=d3dotjs&logoColor=fff&style=for-the-badge
 [D3-url]: https://d3js.org/
+[ChatGPT]: https://img.shields.io/badge/chatGPT-74aa9c?logo=openai&logoColor=white&style=for-the-badge
+[ChatGPT-url]: https://platform.openai.com/docs/api-reference
 
