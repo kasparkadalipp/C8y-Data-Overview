@@ -35,8 +35,7 @@ def getLastMeasurement(devices):
 
         data.append({
             **deviceObj,
-            'lastMeasurement': lastMeasurement,
-            'hasSentMeasurements': bool(lastMeasurement)
+            'lastMeasurement': lastMeasurement
         })
     return data
 
@@ -55,8 +54,7 @@ def getMeasurementCount(devices, dateFrom: date, dateTo: date):
 
         data.append({
             **deviceObj,
-            'measurementCount': measurementCount,
-            'hasMeasurements': measurementCount > 0,
+            'measurementCount': measurementCount
         })
     return data
 
