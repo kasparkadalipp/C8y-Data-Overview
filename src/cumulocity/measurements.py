@@ -1,225 +1,125 @@
 from datetime import date
 
-from tqdm import tqdm
-
 from .config import getCumulocityApi
-from src.utils import tqdmFormat
+from dateutil.parser import parse
+from dateutil.relativedelta import relativedelta
+
+c8y = getCumulocityApi()
 
 
-def getSupportedMeasurements(devices: list) -> list:
-    c8y = getCumulocityApi()
+class MonthlyMeasurements:
 
-    data = []
-    for deviceObj in tqdm(devices, desc="Requesting supported measurements", bar_format=tqdmFormat):
-        device = deviceObj["device"]
+    def __init__(self, deviceObj: dict, year: int, month: int):
+        dateFrom = date(year, month, 1)
+        dateTo = dateFrom + relativedelta(months=1)
 
-        result = requestFragmentAndSeries(c8y, device['id'])
-        data.append({
-            **deviceObj,
-            'c8y_supportedSeries': [{'fragment': fragment, 'series': series} for fragment, series in result],
-        })
-    return data
+        if dateFrom > dateTo:
+            raise ValueError("dateTo cannot be before dateFrom")
 
+        self.deviceId = deviceObj['id']
+        self.dateFrom = dateFrom  # inclusive
+        self.dateTo = dateTo  # non-inclusive
+        self.supportedFragmentAndSeries = deviceObj['c8y_supportedSeries']
 
-def getLastMeasurement(devices):
-    c8y = getCumulocityApi()
+        if deviceObj['lastMeasurement']:
+            self.lastMeasurement = parse(deviceObj['lastMeasurement']['time']).date()
+        if deviceObj['firstMeasurement']:
+            self.firstMeasurement = parse(deviceObj['firstMeasurement']['time']).date()
 
-    data = []
-    for deviceObj in tqdm(devices, desc="Requesting last measurement", bar_format=tqdmFormat):
-        device = deviceObj["device"]
+    def hasMeasurements(self):
+        if not self.supportedFragmentAndSeries:
+            return False
+        if not self.lastMeasurement or not self.firstMeasurement:
+            return False
+        if self.lastMeasurement < self.dateFrom or self.dateTo < self.firstMeasurement:
+            return False
+        return True
 
-        if deviceObj['c8y_supportedSeries']:
-            lastMeasurement = requestLastMeasurement(c8y, device['id'])
-        else:
-            lastMeasurement = {}
+    def requestLastMeasurement(self):
+        additionalParameters = {'revert': 'true'}
+        return self.requestMeasurementCount(additionalParameters)
 
-        data.append({
-            **deviceObj,
-            'lastMeasurement': lastMeasurement
-        })
-    return data
+    def requestFirstMeasurement(self):
+        additionalParameters = {'revert': 'false'}
+        response = self.requestMeasurementCount(additionalParameters)
+        return {'count': response['count'], 'firstMeasurement': response['lastMeasurement']}
 
+    def requestFragmentSeries(self):
+        """
+        return [{fragment, series, count, lastMeasurement}, ...]
+        """
+        fragmentSeries = []
+        for seriesObj in self.supportedFragmentAndSeries:
+            fragment = seriesObj['fragment']
+            series = seriesObj['series']
 
-def getMeasurementCount(devices, dateFrom: date, dateTo: date):
-    c8y = getCumulocityApi()
+            if self.hasMeasurements():
+                additionalParameters = {'valueFragmentType': fragment, 'valueFragmentSeries': series}
+                try:
+                    measurementCount, lastMeasurement = self.requestMeasurementCount(additionalParameters)
+                except:
+                    measurementCount = -1
+                    lastMeasurement = {}
+            else:
+                measurementCount = 0
+                lastMeasurement = {}
 
-    data = []
-    for deviceObj in tqdm(devices, desc="Requesting measurement count", bar_format=tqdmFormat):
-        device = deviceObj['device']
+            fragmentSeries.append({
+                "fragment": fragment,
+                "series": series,
+                "count": measurementCount,
+                'lastMeasurement': lastMeasurement
+            })
+        return fragmentSeries
 
-        if not deviceObj['c8y_supportedSeries']:
-            measurementCount = 0
-        else:
-            measurementCount = requestMeasurementCount(c8y, dateFrom, dateTo, device['id'])
-
-        data.append({
-            **deviceObj,
-            'measurementCount': measurementCount
-        })
-    return data
-
-
-def getMeasurementCountForSeries(devices, dateFrom: date, dateTo: date):
-    c8y = getCumulocityApi()
-
-    data = []
-    for deviceObj in tqdm(devices, desc="Requesting measurement types", bar_format=tqdmFormat):
-        device = deviceObj['device']
-        deviceId = device['id']
-
-        if deviceObj['measurementCount'] == 0:
-            data.append({**deviceObj, 'measurements': []})
-            continue
-
+    def requestMeasurementCount(self, additionalParameters: dict = None):
         parameters = {
-            'dateFrom': dateFrom.isoformat(),
-            'dateTo': dateTo.isoformat(),
-            'source': deviceId,
+            'dateFrom': self.dateFrom.isoformat(),
+            'dateTo': self.dateTo.isoformat(),
+            'source': self.deviceId,
             'pageSize': 1,
             'currentPage': 1,
             'withTotalPages': 'true',
+            'revert': 'false',  # returns most recent measurement
         }
+        if additionalParameters:
+            parameters.update(additionalParameters)
 
-        expectedTotal = deviceObj['measurementCount']
-        currentTotal = 0
-        measurementTypes = set()
-        measurementValueSet = set()
-        fragmentSeries = []
+        if self.hasMeasurements():
+            response = c8y.get(resource="/measurement/measurements", params=parameters)
+            measurementCount = response['statistics']['totalPages']
+            lastMeasurement = response['measurements']
+        else:
+            measurementCount = 0
+            lastMeasurement = {}
 
-        index = 0
-        # Only way to get measurement type is to request actual data
-        for measurement in c8y.measurements.select(source=deviceId, before=dateTo, after=dateFrom, page_size=2000):
-            measurementType = measurement.type
-            #  dataRequestLimit = 20_000
-            # First request types used by actual measurement
-            # If this fails, request every kind of fragment + series for type
-            # if index >= dataRequestLimit:
-            #     if measurementType in measurementTypes:
-            #         continue
-            #     else:
-            #         measurementTypes.add(measurementType)
+        if lastMeasurement:
+            lastMeasurement = lastMeasurement[0]
+            del lastMeasurement['self']
+            del lastMeasurement['source']['self']
 
-            for seriesObj in deviceObj['c8y_supportedSeries']:
-                fragment = seriesObj['fragment']
-                series = seriesObj['series']
+        return {'count': measurementCount, 'lastMeasurement': lastMeasurement}
 
-                if (measurementType, fragment, series) in measurementValueSet:
-                    continue
-                # if index < dataRequestLimit and not (fragment in measurement and series in measurement[fragment]):
-                if not (fragment in measurement and series in measurement[fragment]):
-                    continue
-
-                measurementValueSet.add((measurementType, fragment, series))
-                parameters = {**parameters, 'type': measurementType, 'valueFragmentType': fragment,
-                              'valueFragmentSeries': series}
-
-                response = c8y.get(resource="/measurement/measurements", params=parameters)
-                count = response['statistics']['totalPages']
-                fragmentSeries.append({
-                    "type": measurementType,
-                    "fragment": fragment,
-                    "series": series,
-                    "count": count
-                })
-                currentTotal += count
-            if currentTotal >= expectedTotal:
-                break
-            index += 1
-
-        for measurementType, _, _ in measurementValueSet:
-            measurementTypes.add(measurementType)
-
-        data.append({
-            **deviceObj,
-            'measurements': fragmentSeries,
-            'c8y_supportedMeasurementType': list(measurementTypes),
-        })
-    return data
+    def requestLastMeasurementValidation(self):
+        try:
+            return c8y.measurements.get_last(source=self.deviceId).to_json()
+        except IndexError:
+            return {}
 
 
-def getUnitsAndMinMaxValues(devices, dateFrom: date, dateTo: date):
-    c8y = getCumulocityApi()
+class TotalMeasurements(MonthlyMeasurements):
+    def __init__(self, deviceObj: dict, exclusiveStartingDate: date, nonInclusiveDateTo: date):
+        missingParameters = {'lastMeasurement': {}, 'firstMeasurement': {}}
+        super().__init__({**missingParameters, **deviceObj}, 1970, 1)
 
-    def _combineResponseData(response):
-        result = response['series']
-        for values in response['values'].values():
-            for index, value in enumerate(values):
-                if value is None:
-                    continue
-                for key in ['max', 'min']:
-                    if key in result[index]:
-                        result[index][key] = max(result[index][key], value[key])
-                    else:
-                        result[index][key] = value[key]
-        return result
+        # Fixed dates
+        self.dateFrom = exclusiveStartingDate
+        self.dateTo = nonInclusiveDateTo
 
-    data = []
-    for deviceObj in tqdm(devices, desc="Requesting units and min/max values", bar_format=tqdmFormat):
-        device = deviceObj['device']
+    def hasMeasurements(self):
+        if not self.supportedFragmentAndSeries:
+            return False
+        return True
 
-        if not deviceObj['c8y_supportedSeries']:
-            data.append({
-                **deviceObj,
-                'measurements': []
-            })
-            continue
-
-        response = c8y.measurements.get_series(
-            # aggregation="DAILY",
-            after=dateFrom.isoformat(),
-            before=dateTo.isoformat(),
-            source=device['id'])
-
-        result = _combineResponseData(response)
-        for item in result:
-            fragment = item['type']
-            series = item['name']
-            del item['type']
-            del item['name']
-            item['fragment'] = fragment
-            item['series'] = series
-
-        data.append({
-            **deviceObj,
-            'measurementsMinMax': result
-        })
-    return data
-
-
-def requestMeasurementCount(c8y, dateFrom: date, dateTo: date, deviceId: str | int):
-    parameters = {
-        'dateFrom': dateFrom.isoformat(),
-        'dateTo': dateTo.isoformat(),
-        'source': deviceId,
-        'pageSize': 1,
-        'currentPage': 1,
-        'withTotalPages': 'true',
-    }
-    response = c8y.get(resource="/measurement/measurements", params=parameters)
-    measurementCount = response['statistics']['totalPages']
-    return measurementCount
-
-
-def requestFragmentAndSeries(c8y, deviceId: str | int):
-    result = set()
-    supportedFragments = c8y.inventory.get_supported_measurements(deviceId)  # fragment
-    supportedSeries = c8y.inventory.get_supported_series(deviceId)  # fragment.series or just series
-
-    for fragment in supportedFragments:
-        for fullName in supportedSeries:
-            if fragment == fullName:
-                result.add((fragment, fullName))
-
-            elif fullName.startswith(fragment):
-                series = fullName[len(fragment):]
-                if series.startswith('.'):
-                    series = series[1:]
-                    result.add((fragment, series))
-    return result
-
-
-def requestLastMeasurement(c8y, deviceId):
-    try:
-        return c8y.measurements.get_last(source=deviceId).to_json()
-    except IndexError:
-        return None
+    def requestFragmentSeries(self):
+        raise Exception("don't call this from subclass")

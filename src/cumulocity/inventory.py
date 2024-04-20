@@ -3,8 +3,10 @@ from tqdm import tqdm
 from .config import getCumulocityApi
 from src.utils import tqdmFormat
 
+c8y = getCumulocityApi()
 
-def getDeviceInventory():
+
+def requestDeviceInventory():
     c8y_devices = _requestDeviceInventory()
     return _convertInventoryToJson(c8y_devices)
 
@@ -14,25 +16,42 @@ def _convertInventoryToJson(c8y_devices):
     Converts Cumulocity-python-api.ManagedObject -> json
     '''
     data = []
-
-    for deviceObj in c8y_devices:
-        device = deviceObj['device']
+    for managedObject in c8y_devices:
+        device = managedObject['device']
 
         data.append({
-            **deviceObj,
-            'device': {
-                **device.to_json(),
-                "id": device.id,
-                "creationTime": device.creation_time,
-                "lastUpdated": device.update_time,
-                "is_device": 'c8y_IsDevice' in device,
-                "is_group": 'c8y_IsDeviceGroup' in device,
-                "child_devices": [child.to_json() for child in device.child_devices],
-                "child_additions": [child.to_json() for child in device.child_additions],
-                "child_assets": [child.to_json() for child in device.child_assets]
-            }
+            "id": device.id,
+            "type": device.type,
+            "creationTime": device.creation_time,
+            "lastUpdated": device.update_time,
+
+            "is_device": 'c8y_IsDevice' in device,
+            "is_group": 'c8y_IsDeviceGroup' in device,
+            "child_devices": [child.to_json() for child in device.child_devices],
+            "child_additions": [child.to_json() for child in device.child_additions],
+            "child_assets": [child.to_json() for child in device.child_assets],
+            'c8y_inventory': device.to_json(),
+            "depth": managedObject['depth']
         })
     return data
+
+
+def requestSupportedMeasurements(c8y, deviceId: str | int):
+    result = set()
+    supportedFragments = c8y.inventory.get_supported_measurements(deviceId)  # fragment
+    supportedSeries = c8y.inventory.get_supported_series(deviceId)  # fragment.series or just series
+
+    for fragment in supportedFragments:
+        for fullName in supportedSeries:
+            if fragment == fullName:
+                result.add((fragment, fullName))
+
+            elif fullName.startswith(fragment):
+                series = fullName[len(fragment):]
+                if series.startswith('.'):
+                    series = series[1:]
+                    result.add((fragment, series))
+    return [{'fragment': fragment, 'series': series} for fragment, series in result]
 
 
 def _requestDeviceInventory():

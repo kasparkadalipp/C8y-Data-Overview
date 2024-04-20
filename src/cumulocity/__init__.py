@@ -1,6 +1,5 @@
 from .config import getCumulocityApi
 from .groups import getDeviceGroups
-from .inventory import getDeviceInventory
-from .measurements import (getSupportedMeasurements, getMeasurementCount, getLastMeasurement,
-                           getMeasurementCountForSeries, getUnitsAndMinMaxValues)
+from .inventory import requestDeviceInventory, requestSupportedMeasurements
 from .events import getEventCount
+from .measurements import MonthlyMeasurements, TotalMeasurements

@@ -1,13 +1,47 @@
 import os
 import json
+from pathlib import Path
 
 tqdmFormat = "{l_bar}{bar}| {n_fmt}/{total_fmt} [time elapsed: {elapsed}]"
 
+dataRoot = "../data/"
 
-def saveToFile(devices, fileName, dataFolderName=""):
-    if dataFolderName and not dataFolderName.endswith("/"): dataFolderName += "/"
-    folderPath = f"../data/{dataFolderName}"
-    if not os.path.exists(folderPath):
-        os.makedirs(folderPath)
-    with open(folderPath + fileName, 'w+', encoding='utf8') as file:
+
+def saveToFile(devices: list, filePath: str, overwrite: bool):
+    path = Path(f"{dataRoot}{filePath}")
+
+    if not overwrite and path.exists():
+        return 'skipped'
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    with path.open("w+", encoding='utf8') as file:
         json.dump(devices, file, indent=2, ensure_ascii=False)
+
+
+def pathExists(filePath: str):
+    path = Path(f"{dataRoot}{filePath}")
+    return path.exists()
+    #
+    # fileCreated = False
+    # if overwrite or not os.path.exists(filePath):
+    #     if not os.path.exists(folderPath):
+    #         os.makedirs(folderPath)
+    #     with open(filePath, 'w+', encoding='utf8') as file:
+    #         json.dump(devices, file, indent=2, ensure_ascii=False)
+    #     fileCreated = True
+    # return fileCreated
+
+# def saveToFile(devices, fileName, dataFolderName="", overwrite=False):
+#     if dataFolderName and not dataFolderName.endswith("/"): dataFolderName += "/"
+#     folderPath = f"../data/{dataFolderName}"
+#     filePath = f"{folderPath}{fileName}"
+#
+#     fileCreated = False
+#     if overwrite or not os.path.exists(filePath):
+#         if not os.path.exists(folderPath):
+#             os.makedirs(folderPath)
+#         with open(filePath, 'w+', encoding='utf8') as file:
+#             json.dump(devices, file, indent=2, ensure_ascii=False)
+#         fileCreated = True
+#     return fileCreated
