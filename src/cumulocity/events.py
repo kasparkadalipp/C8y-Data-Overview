@@ -66,7 +66,7 @@ class Events:
         return {'count': eventCount, 'event': latestEvent}
 
 
-class EventsMonthly:
+class MonthlyEvents:
     def __init__(self, device: dict, enforceBounds=True):
         self.cumulocity = Events(device, enforceBounds)
 
