@@ -15,6 +15,7 @@ class InitialRequests:
             self.c8y_data = c8y_data
         else:
             self.c8y_data = requestDeviceInventory()
+            print()
 
         for device in self.c8y_data:
             device['dataAfter'] = self.dateFrom.isoformat()
