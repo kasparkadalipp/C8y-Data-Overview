@@ -49,7 +49,7 @@
   "deviceType": "com_cityntel_light",
   "total": {
     "count": 15660,
-    "lastMeasurement": <measurement>
+    "measurement": <measurement>
   }
 }
 
@@ -66,7 +66,7 @@
       "fragment": "active_power",
       "series": "L1",
       "count": 2304,
-      "lastMeasurement": <measurement>
+      "measurement": <measurement>
     }
   ]
 }
@@ -85,7 +85,7 @@
       "fragment": "active_power",
       "series": "L1",
       "count": 150,
-      "lastMeasurement": <measurement>
+      "measurement": <measurement>
     }
   ]
 }
