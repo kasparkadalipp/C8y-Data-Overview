@@ -40,6 +40,10 @@ class Measurements:
         response = self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
         return {'count': response['count'], 'oldestMeasurement': response['measurement']}
 
+    def requestFragmentSeriesCount(self, dateFrom: date, dateTo: date, fragment: str, series: str):
+        additionalParameters = {'valueFragmentType': fragment, 'valueFragmentSeries': series}
+        return self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
+
     def requestMeasurementCount(self, dateFrom: date, dateTo: date, additionalParameters: dict = None) -> dict:
         parameters = {
             'dateFrom': dateFrom.isoformat(),
@@ -58,7 +62,7 @@ class Measurements:
                 response = c8y.get(resource="/measurement/measurements", params=parameters)
                 measurementCount = response['statistics']['totalPages']
                 latestMeasurement = response['measurements']
-            except KeyboardInterrupt: # TODO better error handling
+            except KeyboardInterrupt:  # TODO better error handling
                 raise KeyboardInterrupt
             except:
                 measurementCount = -1
@@ -89,6 +93,10 @@ class MonthlyMeasurements(Measurements):
 
     def requestOldestMeasurement(self, year: int, month: int) -> dict:
         return super().requestOldestMeasurement(*requestMonthBounds(year, month))
+
+    def requestFragmentSeriesCount(self, year: int, month: int, fragment: str, series: str):
+        dateFrom, dateTo = requestMonthBounds(year, month)
+        return super().requestFragmentSeriesCount(dateFrom, dateTo, fragment, series)
 
     def requestMeasurementCount(self, year, month, additionalParameters: dict = None) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
