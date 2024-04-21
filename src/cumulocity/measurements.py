@@ -58,6 +58,8 @@ class Measurements:
                 response = c8y.get(resource="/measurement/measurements", params=parameters)
                 measurementCount = response['statistics']['totalPages']
                 latestMeasurement = response['measurements']
+            except KeyboardInterrupt: # TODO better error handling
+                raise KeyboardInterrupt
             except:
                 measurementCount = -1
                 latestMeasurement = {}

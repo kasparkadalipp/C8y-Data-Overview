@@ -58,6 +58,8 @@ class Events:
                 latestEvent = response['events'][0]
             else:
                 latestEvent = {}
+        except KeyboardInterrupt:  # TODO better error handling
+            raise KeyboardInterrupt
         except:
             latestEvent = {}
             eventCount = -1
