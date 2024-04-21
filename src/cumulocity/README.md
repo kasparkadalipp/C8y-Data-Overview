@@ -16,7 +16,8 @@
   "parent": "10503",
   "c8y_inventory": [ <additional custom objects> ]
 
-  "c8y_supportedSeries": [{
+  "c8y_supportedSeries": [
+    {
       "fragment": "Light",
       "series": "output"
     }
