@@ -70,13 +70,13 @@ class MonthlyEvents:
     def __init__(self, device: dict, enforceBounds=True):
         self.cumulocity = Events(device, enforceBounds)
 
-    def requestLatestMeasurement(self, year: int, month: int) -> dict:
+    def requestLatestEvent(self, year: int, month: int) -> dict:
         return self.cumulocity.requestLatestEvent(*requestMonthBounds(year, month))
 
-    def requestOldestMeasurement(self, year: int, month: int) -> dict:
+    def requestOldestEvent(self, year: int, month: int) -> dict:
         return self.cumulocity.requestOldestEvent(*requestMonthBounds(year, month))
 
-    def requestMeasurementCount(self, year, month, additionalParameters: dict = None) -> dict:
+    def requestEventCount(self, year, month, additionalParameters: dict = None) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
         return self.cumulocity.requestEventCount(dateFrom, dateTo, additionalParameters)
 
