@@ -92,6 +92,20 @@
 
 ```
 
+### c8y_events (total)
+
+```JSON
+{
+  "id": 11904,
+  "deviceType": "com_cityntel_light",
+  "total": {
+    "count": 15660,
+    "measurement": <event>
+  }
+}
+
+```
+
 ### c8y_groups
 
 ```JSON
