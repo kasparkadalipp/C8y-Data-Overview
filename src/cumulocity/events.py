@@ -66,19 +66,19 @@ class Events:
         return {'count': eventCount, 'event': latestEvent}
 
 
-class MonthlyEvents(Events):
+class MonthlyEvents:
     def __init__(self, device: dict, enforceBounds=True):
-        super().__init__(device, enforceBounds)
+        self.cumulocity = Events(device, enforceBounds)
 
     def requestLatestMeasurement(self, year: int, month: int) -> dict:
-        return super().requestLatestEvent(*requestMonthBounds(year, month))
+        return self.cumulocity.requestLatestEvent(*requestMonthBounds(year, month))
 
     def requestOldestMeasurement(self, year: int, month: int) -> dict:
-        return super().requestOldestEvent(*requestMonthBounds(year, month))
+        return self.cumulocity.requestOldestEvent(*requestMonthBounds(year, month))
 
     def requestMeasurementCount(self, year, month, additionalParameters: dict = None) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
-        return super().requestEventCount(dateFrom, dateTo, additionalParameters)
+        return self.cumulocity.requestEventCount(dateFrom, dateTo, additionalParameters)
 
     @staticmethod
     def fileName(year: int, month: int) -> str:
