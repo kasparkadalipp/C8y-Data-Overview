@@ -1,12 +1,12 @@
 from tqdm import tqdm
 
-from .config import getCumulocityApi
-from src.utils import tqdmFormat
+from ..cumulocity import getCumulocityApi
+from ..utils import tqdmFormat
+
+c8y = getCumulocityApi()
 
 
 def getDeviceGroups():
-    c8y = getCumulocityApi()
-
     removedKeys = ['childDevices', 'childAssets', 'additionParents', 'childAdditions', 'deviceParents', 'assetParents',
                    'self']
 

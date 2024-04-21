@@ -12,7 +12,6 @@ class Measurements:
     def __init__(self, device: dict, enforceBounds=False):
         self.enforceBounds = enforceBounds
         self.deviceId = device['id']
-        self.deviceType = device['type']
         self.supportedFragmentAndSeries = device['c8y_supportedSeries']
 
         if enforceBounds:

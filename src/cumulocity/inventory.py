@@ -39,7 +39,7 @@ def _convertInventoryToJson(c8y_devices):
     return data
 
 
-def requestSupportedMeasurements(c8y, deviceId: str | int):
+def requestSupportedMeasurements(deviceId: str | int):
     result = set()
     supportedFragments = c8y.inventory.get_supported_measurements(deviceId)  # fragment
     supportedSeries = c8y.inventory.get_supported_series(deviceId)  # fragment.series or just series
@@ -58,8 +58,6 @@ def requestSupportedMeasurements(c8y, deviceId: str | int):
 
 
 def _requestDeviceInventory():
-    c8y = getCumulocityApi()
-
     depth = 0
     c8y_devices = []
     for device in tqdm(c8y.device_inventory.get_all(), desc=f'Requesting device inventory for depth {depth}',
