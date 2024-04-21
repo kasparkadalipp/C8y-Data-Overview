@@ -124,3 +124,8 @@ def test_validate_oldest_and_latest_event_order():
             dateFrom = parse(earliest['time']).date()
             dateTo = parse(latest['time']).date()
             assert dateFrom <= dateTo, f"Device {device['id']} event order mismatch: {dateFrom} > {dateTo}"
+
+
+def test_data_has_ignored_events():
+    for device in c8y_data:
+        assert 'ignoredEvent' not in device, f"These devices {device['id']}"
