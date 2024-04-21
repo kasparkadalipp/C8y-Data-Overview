@@ -1,4 +1,3 @@
-import os
 import json
 from pathlib import Path
 
@@ -22,26 +21,3 @@ def saveToFile(devices: list, filePath: str, overwrite: bool):
 def pathExists(filePath: str):
     path = Path(f"{dataRoot}{filePath}")
     return path.exists()
-    #
-    # fileCreated = False
-    # if overwrite or not os.path.exists(filePath):
-    #     if not os.path.exists(folderPath):
-    #         os.makedirs(folderPath)
-    #     with open(filePath, 'w+', encoding='utf8') as file:
-    #         json.dump(devices, file, indent=2, ensure_ascii=False)
-    #     fileCreated = True
-    # return fileCreated
-
-# def saveToFile(devices, fileName, dataFolderName="", overwrite=False):
-#     if dataFolderName and not dataFolderName.endswith("/"): dataFolderName += "/"
-#     folderPath = f"../data/{dataFolderName}"
-#     filePath = f"{folderPath}{fileName}"
-#
-#     fileCreated = False
-#     if overwrite or not os.path.exists(filePath):
-#         if not os.path.exists(folderPath):
-#             os.makedirs(folderPath)
-#         with open(filePath, 'w+', encoding='utf8') as file:
-#             json.dump(devices, file, indent=2, ensure_ascii=False)
-#         fileCreated = True
-#     return fileCreated
