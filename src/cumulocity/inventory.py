@@ -20,18 +20,21 @@ def _convertInventoryToJson(c8y_devices):
         device = managedObject['device']
 
         data.append({
-            "id": device.id,
-            "type": device.type,
-            "creationTime": device.creation_time,
-            "lastUpdated": device.update_time,
+            'id': device.id,
+            'type': device.type,
+            'name': device.name,
+            'owner': device.owner,
+            'creationTime': device.creation_time,
+            'lastUpdated': device.update_time,
 
-            "is_device": 'c8y_IsDevice' in device,
-            "is_group": 'c8y_IsDeviceGroup' in device,
-            "child_devices": [child.to_json() for child in device.child_devices],
-            "child_additions": [child.to_json() for child in device.child_additions],
-            "child_assets": [child.to_json() for child in device.child_assets],
+            'is_device': 'c8y_IsDevice' in device,
+            'is_group': 'c8y_IsDeviceGroup' in device,
+            'child_devices': [child.to_json() for child in device.child_devices],
+            'child_additions': [child.to_json() for child in device.child_additions],
+            'child_assets': [child.to_json() for child in device.child_assets],
             'c8y_inventory': device.to_json(),
-            "depth": managedObject['depth']
+            'depth': managedObject['depth'],
+            'parent': managedObject['parent'] if 'parent' in managedObject else ''
         })
     return data
 
@@ -61,7 +64,7 @@ def _requestDeviceInventory():
     c8y_devices = []
     for device in tqdm(c8y.device_inventory.get_all(), desc=f'Requesting device inventory for depth {depth}',
                        bar_format=tqdmFormat):
-        c8y_devices.append({'depth': depth, "device": device})
+        c8y_devices.append({'depth': depth, 'device': device})
 
     current_devices = c8y_devices
     uniqueIds = set([obj['device'].id for obj in c8y_devices])
@@ -83,7 +86,6 @@ def _requestDeviceInventory():
                           bar_format=tqdmFormat):
             child['depth'] = depth
             child['device'] = c8y.device_inventory.get(child['id'])
-            del child['id']
 
         c8y_devices += device_children
         current_devices = device_children
@@ -93,13 +95,13 @@ def _requestDeviceInventory():
 def _listChildDevices(devices):
     device_children = []
     for parentObj in devices:
-        parent = parentObj["device"]
+        parent = parentObj['device']
 
         child_devices = []
         for child in parent.child_devices:
             child_devices.append({
-                "id": child.id,
-                "parent": parent.id
+                'id': child.id,
+                'parent': parent.id
             })
         device_children += child_devices
     return device_children
