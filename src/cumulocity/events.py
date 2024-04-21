@@ -1,76 +1,84 @@
-from tqdm import tqdm
 from datetime import date
 
+from .measurements import requestMonthBounds
 from .config import getCumulocityApi
-from src.utils import tqdmFormat
+from dateutil.parser import parse
 
 c8y = getCumulocityApi()
 
 
-def getTotalEvents(devices, dateFrom: date, dateTo: date):
-    data = []
-    for device in tqdm(devices, desc="Requesting event count", bar_format=tqdmFormat):
+class Events:
+    def __init__(self, device: dict, enforceBounds=False):
+        self.enforceBounds = enforceBounds
+        self.deviceId = device['id']
+        self.deviceType = device['type']
 
-        if 'eventCount' in device and device['eventCount'] == -1:
-            response = requestLatestEvent(dateFrom, dateTo, device['id'])
-            eventCount = response['count']
-            latestEvent = response['latestEvent']
-        else:
-            latestEvent = device['latestEvent']
-            eventCount = device['eventCount']
+        if enforceBounds:
+            if device['latestEvent']:
+                self.latestEvent = parse(device['latestEvent']['time']).date()
+            if device['oldestEvent']:
+                self.oldestEvent = parse(device['oldestEvent']['time']).date()
 
-        if 'eventCountValidation' in device and device['eventCountValidation'] == -1:
-            response = requestOldestEvent(dateFrom, dateTo, device['id'])
-            eventCountValidation = response['count']
-            oldestEvent = response['oldestEvent']
-        else:
-            oldestEvent = device['latestEvent']
-            eventCountValidation = device['eventCount']
+    def hasEvents(self, dateFrom: date, dateTo: date) -> bool:
+        if self.enforceBounds:
+            if not self.latestEvent or not self.oldestEvent:
+                return False
+            if self.latestEvent < dateFrom or dateTo < self.oldestEvent:
+                return False
+        return True
 
-        data.append({
-            **device,
-            'eventCount': eventCount,
-            'latestEvent': latestEvent,
-            'eventCountValidation': eventCountValidation,
-            'oldestEvent': oldestEvent
-        })
-    return data
+    def requestLatestEvent(self, dateFrom: date, dateTo: date) -> dict:
+        additionalParameters = {'revert': 'false'}
+        response = self.requestEventCount(dateFrom, dateTo, additionalParameters)
+        return {'count': response['count'], 'latestEvent': response['event']}
 
+    def requestOldestEvent(self, dateFrom: date, dateTo: date) -> dict:
+        additionalParameters = {'revert': 'true'}
+        response = self.requestEventCount(dateFrom, dateTo, additionalParameters)
+        return {'count': response['count'], 'oldestEvent': response['event']}
 
-def requestLatestEvent(dateFrom, dateTo, deviceId):
-    additionalParameters = {'revert': 'false'}
-    response = requestEventCount(dateFrom, dateTo, deviceId, additionalParameters)
-    return {'count': response['count'], 'latestEvent': response['latestEvent']}
+    def requestEventCount(self, dateFrom: date, dateTo: date, additionalParameters: dict = None) -> dict:
+        parameters = {
+            'dateFrom': dateFrom.isoformat(),
+            'dateTo': dateTo.isoformat(),
+            'source': self.deviceId,
+            'pageSize': 1,
+            'currentPage': 1,
+            'withTotalPages': 'true',
+            'revert': 'false'
+        }
+        if additionalParameters:
+            parameters.update(additionalParameters)
 
+        try:
+            response = c8y.get(resource="/event/events", params=parameters)
+            eventCount = response['statistics']['totalPages']
 
-def requestOldestEvent(dateFrom, dateTo, deviceId):
-    additionalParameters = {'revert': 'true'}
-    response = requestEventCount(dateFrom, dateTo, deviceId, additionalParameters)
-    return {'count': response['count'], 'oldestEvent': response['latestEvent']}
-
-
-def requestEventCount(dateFrom, dateTo, deviceId, additionalParameters):
-    parameters = {
-        'dateFrom': dateFrom.isoformat(),
-        'dateTo': dateTo.isoformat(),
-        'source': deviceId,
-        'pageSize': 1,
-        'currentPage': 1,
-        'withTotalPages': 'true',
-        'revert': 'false'
-    }
-    if additionalParameters:
-        parameters.update(additionalParameters)
-
-    try:
-        response = c8y.get(resource="/event/events", params=parameters)
-        eventCount = response['statistics']['totalPages']
-
-        if eventCount > 0:
-            latestEvent = response['events'][0]
-        else:
+            if eventCount > 0:
+                latestEvent = response['events'][0]
+            else:
+                latestEvent = {}
+        except:
             latestEvent = {}
-    except:
-        latestEvent = {}
-        eventCount = -1
-    return {'count': eventCount, 'latestEvent': latestEvent}
+            eventCount = -1
+        return {'count': eventCount, 'event': latestEvent}
+
+
+class MonthlyEvents(Events):
+    def __init__(self, device: dict, enforceBounds=True):
+        super().__init__(device, enforceBounds)
+
+    def requestLatestMeasurement(self, year: int, month: int) -> dict:
+        return super().requestLatestEvent(*requestMonthBounds(year, month))
+
+    def requestOldestMeasurement(self, year: int, month: int) -> dict:
+        return super().requestOldestEvent(*requestMonthBounds(year, month))
+
+    def requestMeasurementCount(self, year, month, additionalParameters: dict = None) -> dict:
+        dateFrom, dateTo = requestMonthBounds(year, month)
+        return super().requestEventCount(dateFrom, dateTo, additionalParameters)
+
+    @staticmethod
+    def fileName(year: int, month: int) -> str:
+        dateFrom, dateTo = requestMonthBounds(year, month)
+        return f'c8y_events ({dateFrom} - {dateTo}).json'

@@ -1,4 +1,5 @@
 from datetime import date
+from typing import Tuple
 
 from .config import getCumulocityApi
 from dateutil.parser import parse
@@ -8,7 +9,7 @@ c8y = getCumulocityApi()
 
 
 class Measurements:
-    def __init__(self, device: dict, enforceBounds=True):
+    def __init__(self, device: dict, enforceBounds=False):
         self.enforceBounds = enforceBounds
         self.deviceId = device['id']
         self.deviceType = device['type']
@@ -30,17 +31,17 @@ class Measurements:
                 return False
         return True
 
-    def requestLatestMeasurement(self, dateFrom: date, dateTo: date):
+    def requestLatestMeasurement(self, dateFrom: date, dateTo: date) -> dict:
         additionalParameters = {'revert': 'true'}
         response = self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
         return {'count': response['count'], 'latestMeasurement': response['measurement']}
 
-    def requestOldestMeasurement(self, dateFrom: date, dateTo: date):
+    def requestOldestMeasurement(self, dateFrom: date, dateTo: date) -> dict:
         additionalParameters = {'revert': 'false'}
         response = self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
         return {'count': response['count'], 'oldestMeasurement': response['measurement']}
 
-    def requestMeasurementCount(self, dateFrom: date, dateTo: date, additionalParameters: dict = None):
+    def requestMeasurementCount(self, dateFrom: date, dateTo: date, additionalParameters: dict = None) -> dict:
         parameters = {
             'dateFrom': dateFrom.isoformat(),
             'dateTo': dateTo.isoformat(),
@@ -71,7 +72,7 @@ class Measurements:
             del latestMeasurement['source']['self']
         return {'count': measurementCount, 'measurement': latestMeasurement}
 
-    def requestLatestMeasurementValidation(self, dateTo: date):
+    def requestLatestMeasurementValidation(self, dateTo: date) -> dict:
         try:
             return c8y.measurements.get_last(source=self.deviceId, before=dateTo).to_json()
         except IndexError:
@@ -79,26 +80,26 @@ class Measurements:
 
 
 class MonthlyMeasurements(Measurements):
-    def __init__(self, device: dict):
-        super().__init__(device, True)
+    def __init__(self, device: dict, enforceBounds=True):
+        super().__init__(device, enforceBounds)
 
-    def requestLatestMeasurement(self, year: int, month: int):
+    def requestLatestMeasurement(self, year: int, month: int) -> dict:
         return super().requestLatestMeasurement(*requestMonthBounds(year, month))
 
-    def requestOldestMeasurement(self, year: int, month: int):
+    def requestOldestMeasurement(self, year: int, month: int) -> dict:
         return super().requestOldestMeasurement(*requestMonthBounds(year, month))
 
-    def requestMeasurementCount(self, year, month, additionalParameters: dict = None):
+    def requestMeasurementCount(self, year, month, additionalParameters: dict = None) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
         return super().requestMeasurementCount(dateFrom, dateTo, additionalParameters)
 
     @staticmethod
-    def fileName(year: int, month: int):
+    def fileName(year: int, month: int) -> str:
         dateFrom, dateTo = requestMonthBounds(year, month)
         return f'c8y_measurements ({dateFrom} - {dateTo}).json'
 
 
-def requestMonthBounds(year: int, month: int):
+def requestMonthBounds(year: int, month: int) -> Tuple[date, date]:
     inclusiveDateFrom = date(year, month, 1)
     exclusiveDateTo = inclusiveDateFrom + relativedelta(months=1)
     return inclusiveDateFrom, exclusiveDateTo
