@@ -102,7 +102,7 @@ class MonthlyMeasurements:
 
     def requestLastMeasurementValidation(self):
         try:
-            return c8y.measurements.get_last(source=self.deviceId).to_json()
+            return c8y.measurements.get_last(source=self.deviceId, before=self.dateTo).to_json()
         except IndexError:
             return {}
 
