@@ -7,88 +7,60 @@ from dateutil.relativedelta import relativedelta
 c8y = getCumulocityApi()
 
 
-class MonthlyMeasurements:
+class Measurements:
+    def __init__(self, device: dict, enforceBounds=True):
+        self.enforceBounds = enforceBounds
+        self.deviceId = device['id']
+        self.deviceType = device['type']
+        self.supportedFragmentAndSeries = device['c8y_supportedSeries']
 
-    def __init__(self, deviceObj: dict, year: int, month: int):
-        dateFrom = date(year, month, 1)
-        dateTo = dateFrom + relativedelta(months=1)
+        if enforceBounds:
+            if device['latestMeasurement']:
+                self.latestMeasurement = parse(device['latestMeasurement']['time']).date()
+            if device['oldestMeasurement']:
+                self.oldestMeasurement = parse(device['oldestMeasurement']['time']).date()
 
-        if dateFrom > dateTo:
-            raise ValueError("dateTo cannot be before dateFrom")
-
-        self.deviceId = deviceObj['id']
-        self.dateFrom = dateFrom  # inclusive
-        self.dateTo = dateTo  # non-inclusive
-        self.supportedFragmentAndSeries = deviceObj['c8y_supportedSeries']
-
-        if deviceObj['latestMeasurement']:
-            self.latestMeasurement = parse(deviceObj['latestMeasurement']['time']).date()
-        if deviceObj['oldestMeasurement']:
-            self.oldestMeasurement = parse(deviceObj['oldestMeasurement']['time']).date()
-
-    def hasMeasurements(self):
+    def hasMeasurements(self, dateFrom: date, dateTo: date) -> bool:
         if not self.supportedFragmentAndSeries:
             return False
-        if not self.latestMeasurement or not self.oldestMeasurement:
-            return False
-        if self.latestMeasurement < self.dateFrom or self.dateTo < self.oldestMeasurement:
-            return False
+        if self.enforceBounds:
+            if not self.latestMeasurement or not self.oldestMeasurement:
+                return False
+            if self.latestMeasurement < dateFrom or dateTo < self.oldestMeasurement:
+                return False
         return True
 
-    def requestLatestMeasurement(self):
+    def requestLatestMeasurement(self, dateFrom: date, dateTo: date):
         additionalParameters = {'revert': 'true'}
-        return self.requestMeasurementCount(additionalParameters)
+        response = self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
+        return {'count': response['count'], 'latestMeasurement': response['measurement']}
 
-    def requestOldestMeasurement(self):
+    def requestOldestMeasurement(self, dateFrom: date, dateTo: date):
         additionalParameters = {'revert': 'false'}
-        response = self.requestMeasurementCount(additionalParameters)
-        return {'count': response['count'], 'oldestMeasurement': response['latestMeasurement']}
+        response = self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
+        return {'count': response['count'], 'oldestMeasurement': response['measurement']}
 
-    def requestFragmentSeries(self):
-        """
-        return [{fragment, series, count, latestMeasurement}, ...]
-        """
-        fragmentSeries = []
-        for seriesObj in self.supportedFragmentAndSeries:
-            fragment = seriesObj['fragment']
-            series = seriesObj['series']
-
-            if self.hasMeasurements():
-                additionalParameters = {'valueFragmentType': fragment, 'valueFragmentSeries': series}
-                try:
-                    measurementCount, latestMeasurement = self.requestMeasurementCount(additionalParameters)
-                except:
-                    measurementCount = -1
-                    latestMeasurement = {}
-            else:
-                measurementCount = 0
-                latestMeasurement = {}
-
-            fragmentSeries.append({
-                "fragment": fragment,
-                "series": series,
-                "count": measurementCount,
-                'latestMeasurement': latestMeasurement
-            })
-        return fragmentSeries
-
-    def requestMeasurementCount(self, additionalParameters: dict = None):
+    def requestMeasurementCount(self, dateFrom: date, dateTo: date, additionalParameters: dict = None):
         parameters = {
-            'dateFrom': self.dateFrom.isoformat(),
-            'dateTo': self.dateTo.isoformat(),
+            'dateFrom': dateFrom.isoformat(),
+            'dateTo': dateTo.isoformat(),
             'source': self.deviceId,
             'pageSize': 1,
             'currentPage': 1,
             'withTotalPages': 'true',
-            'revert': 'false',  # returns most recent measurement
+            'revert': 'false',
         }
         if additionalParameters:
             parameters.update(additionalParameters)
 
-        if self.hasMeasurements():
-            response = c8y.get(resource="/measurement/measurements", params=parameters)
-            measurementCount = response['statistics']['totalPages']
-            latestMeasurement = response['measurements']
+        if self.hasMeasurements(dateFrom, dateTo):
+            try:
+                response = c8y.get(resource="/measurement/measurements", params=parameters)
+                measurementCount = response['statistics']['totalPages']
+                latestMeasurement = response['measurements']
+            except:
+                measurementCount = -1
+                latestMeasurement = {}
         else:
             measurementCount = 0
             latestMeasurement = {}
@@ -97,29 +69,36 @@ class MonthlyMeasurements:
             latestMeasurement = latestMeasurement[0]
             del latestMeasurement['self']
             del latestMeasurement['source']['self']
+        return {'count': measurementCount, 'measurement': latestMeasurement}
 
-        return {'count': measurementCount, 'latestMeasurement': latestMeasurement}
-
-    def requestLatestMeasurementValidation(self):
+    def requestLatestMeasurementValidation(self, dateTo: date):
         try:
-            return c8y.measurements.get_last(source=self.deviceId, before=self.dateTo).to_json()
+            return c8y.measurements.get_last(source=self.deviceId, before=dateTo).to_json()
         except IndexError:
             return {}
 
 
-class TotalMeasurements(MonthlyMeasurements):
-    def __init__(self, deviceObj: dict, exclusiveStartingDate: date, nonInclusiveDateTo: date):
-        missingParameters = {'latestMeasurement': {}, 'oldestMeasurement': {}}
-        super().__init__({**missingParameters, **deviceObj}, 1970, 1)
+class MonthlyMeasurements(Measurements):
+    def __init__(self, device: dict):
+        super().__init__(device, True)
 
-        # Fixed dates
-        self.dateFrom = exclusiveStartingDate
-        self.dateTo = nonInclusiveDateTo
+    def requestLatestMeasurement(self, year: int, month: int):
+        return super().requestLatestMeasurement(*requestMonthBounds(year, month))
 
-    def hasMeasurements(self):
-        if not self.supportedFragmentAndSeries:
-            return False
-        return True
+    def requestOldestMeasurement(self, year: int, month: int):
+        return super().requestOldestMeasurement(*requestMonthBounds(year, month))
 
-    def requestFragmentSeries(self):
-        raise Exception("don't call this from subclass")
+    def requestMeasurementCount(self, year, month, additionalParameters: dict = None):
+        dateFrom, dateTo = requestMonthBounds(year, month)
+        return super().requestMeasurementCount(dateFrom, dateTo, additionalParameters)
+
+    @staticmethod
+    def fileName(year: int, month: int):
+        dateFrom, dateTo = requestMonthBounds(year, month)
+        return f'c8y_measurements ({dateFrom} - {dateTo}).json'
+
+
+def requestMonthBounds(year: int, month: int):
+    inclusiveDateFrom = date(year, month, 1)
+    exclusiveDateTo = inclusiveDateFrom + relativedelta(months=1)
+    return inclusiveDateFrom, exclusiveDateTo
