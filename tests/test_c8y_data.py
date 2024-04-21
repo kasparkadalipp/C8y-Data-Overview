@@ -104,3 +104,19 @@ def test_valid_time_format():
                 parse(dateString)
             except ParserError:
                 pytest.fail(f"Parsing failed for date string: {dateString}")
+
+
+def test_validate_last_and_first_measurement_order():
+    for device in c8y_data:
+        earliest = device['firstMeasurement']
+        latest = device['lastMeasurement']
+        if earliest and latest:
+            assert parse(earliest['time']).date() <= parse(latest['time']).date()
+
+
+def test_validate_last_and_first_event_order():
+    for device in c8y_data:
+        earliest = device['lastEvent']
+        latest = device['firstEvent']
+        if earliest and latest:
+            assert parse(earliest['time']).date() <= parse(latest['time']).date()
