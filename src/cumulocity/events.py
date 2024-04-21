@@ -15,16 +15,16 @@ class Events:
         self.ignoredEvent = 'ignoredEvent' in device
 
         if enforceBounds:
-            if device['latestEvent']:
-                self.latestEvent = parse(device['latestEvent']['time']).date()
-            if device['oldestEvent']:
-                self.oldestEvent = parse(device['oldestEvent']['time']).date()
+            self.latestEvent = device['latestEvent']
+            self.oldestEvent = device['oldestEvent']
 
     def hasEvents(self, dateFrom: date, dateTo: date) -> bool:
         if self.enforceBounds:
             if not self.latestEvent or not self.oldestEvent:
                 return False
-            if self.latestEvent < dateFrom or dateTo < self.oldestEvent:
+            latestDate = parse(self.latestEvent['time']).date()
+            oldestDate = parse(self.oldestEvent['time']).date()
+            if latestDate < dateFrom or dateTo < oldestDate:
                 return False
         return True
 
