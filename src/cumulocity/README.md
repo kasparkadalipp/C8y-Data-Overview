@@ -77,7 +77,7 @@
 
 ```JSON
 {
-  "id": 11904,
+  "deviceId": 11904,
   "deviceType": "com_cityntel_light",
   "typeFragmentSeries": [
     {
@@ -96,11 +96,11 @@
 
 ```JSON
 {
-  "id": 11904,
+  "deviceId": 11904,
   "deviceType": "com_cityntel_light",
   "total": {
     "count": 15660,
-    "measurement": <event>
+    "event": <event>
   }
 }
 
