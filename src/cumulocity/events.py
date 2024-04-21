@@ -83,4 +83,4 @@ class MonthlyEvents(Events):
     @staticmethod
     def fileName(year: int, month: int) -> str:
         dateFrom, dateTo = requestMonthBounds(year, month)
-        return f'c8y_events ({dateFrom} - {dateTo}).json'
+        return f'c8y_events {dateFrom} - {dateTo}.json'

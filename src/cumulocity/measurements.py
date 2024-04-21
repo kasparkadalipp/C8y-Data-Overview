@@ -97,7 +97,7 @@ class MonthlyMeasurements(Measurements):
     @staticmethod
     def fileName(year: int, month: int) -> str:
         dateFrom, dateTo = requestMonthBounds(year, month)
-        return f'c8y_measurements ({dateFrom} - {dateTo}).json'
+        return f'c8y_measurements {dateFrom} - {dateTo}.json'
 
 
 def requestMonthBounds(year: int, month: int) -> Tuple[date, date]:
