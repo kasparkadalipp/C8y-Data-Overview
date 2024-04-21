@@ -128,4 +128,4 @@ def test_validate_oldest_and_latest_event_order():
 
 def test_data_has_ignored_events():
     for device in c8y_data:
-        assert 'ignoredEvent' not in device, f"These devices {device['id']}"
+        assert 'ignoredEvent' not in device, f"Fix requesting data for {device['id']}"
