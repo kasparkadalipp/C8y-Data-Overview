@@ -15,10 +15,8 @@ class Measurements:
         self.supportedFragmentAndSeries = device['c8y_supportedSeries']
 
         if enforceBounds:
-            if device['latestMeasurement']:
-                self.latestMeasurement = parse(device['latestMeasurement']['time']).date()
-            if device['oldestMeasurement']:
-                self.oldestMeasurement = parse(device['oldestMeasurement']['time']).date()
+            self.latestMeasurement = device['latestMeasurement']
+            self.oldestMeasurement = device['oldestMeasurement']
 
     def hasMeasurements(self, dateFrom: date, dateTo: date) -> bool:
         if not self.supportedFragmentAndSeries:
@@ -26,7 +24,9 @@ class Measurements:
         if self.enforceBounds:
             if not self.latestMeasurement or not self.oldestMeasurement:
                 return False
-            if self.latestMeasurement < dateFrom or dateTo < self.oldestMeasurement:
+            latestDate = parse(self.latestMeasurement['time']).date()
+            oldestDate = parse(self.oldestMeasurement['time']).date()
+            if latestDate < dateFrom or dateTo < oldestDate:
                 return False
         return True
 
