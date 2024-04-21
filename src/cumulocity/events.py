@@ -12,41 +12,41 @@ def getTotalEvents(devices, dateFrom: date, dateTo: date):
     for device in tqdm(devices, desc="Requesting event count", bar_format=tqdmFormat):
 
         if 'eventCount' in device and device['eventCount'] == -1:
-            response = requestLastEvent(dateFrom, dateTo, device['id'])
+            response = requestLatestEvent(dateFrom, dateTo, device['id'])
             eventCount = response['count']
-            lastEvent = response['lastEvent']
+            latestEvent = response['latestEvent']
         else:
-            lastEvent = device['lastEvent']
+            latestEvent = device['latestEvent']
             eventCount = device['eventCount']
 
         if 'eventCountValidation' in device and device['eventCountValidation'] == -1:
-            response = requestFirstEvent(dateFrom, dateTo, device['id'])
+            response = requestOldestEvent(dateFrom, dateTo, device['id'])
             eventCountValidation = response['count']
-            firstEvent = response['firstEvent']
+            oldestEvent = response['oldestEvent']
         else:
-            firstEvent = device['lastEvent']
+            oldestEvent = device['latestEvent']
             eventCountValidation = device['eventCount']
 
         data.append({
             **device,
             'eventCount': eventCount,
-            'lastEvent': lastEvent,
+            'latestEvent': latestEvent,
             'eventCountValidation': eventCountValidation,
-            'firstEvent': firstEvent
+            'oldestEvent': oldestEvent
         })
     return data
 
 
-def requestLastEvent(dateFrom, dateTo, deviceId):
+def requestLatestEvent(dateFrom, dateTo, deviceId):
     additionalParameters = {'revert': 'false'}
     response = requestEventCount(dateFrom, dateTo, deviceId, additionalParameters)
-    return {'count': response['count'], 'lastEvent': response['lastEvent']}
+    return {'count': response['count'], 'latestEvent': response['latestEvent']}
 
 
-def requestFirstEvent(dateFrom, dateTo, deviceId):
+def requestOldestEvent(dateFrom, dateTo, deviceId):
     additionalParameters = {'revert': 'true'}
     response = requestEventCount(dateFrom, dateTo, deviceId, additionalParameters)
-    return {'count': response['count'], 'firstEvent': response['lastEvent']}
+    return {'count': response['count'], 'oldestEvent': response['latestEvent']}
 
 
 def requestEventCount(dateFrom, dateTo, deviceId, additionalParameters):
@@ -67,10 +67,10 @@ def requestEventCount(dateFrom, dateTo, deviceId, additionalParameters):
         eventCount = response['statistics']['totalPages']
 
         if eventCount > 0:
-            lastEvent = response['events'][0]
+            latestEvent = response['events'][0]
         else:
-            lastEvent = {}
+            latestEvent = {}
     except:
-        lastEvent = {}
+        latestEvent = {}
         eventCount = -1
-    return {'count': eventCount, 'lastEvent': lastEvent}
+    return {'count': eventCount, 'latestEvent': latestEvent}

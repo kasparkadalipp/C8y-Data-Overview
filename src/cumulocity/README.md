@@ -25,18 +25,18 @@
   "dataAfter": "1970-01-01",
   "dataBefore": "2024-04-01",
 
-  "lastMeasurement": <measurement>,
+  "latestMeasurement": <measurement>,
   "measurementCount": 39878,
 
-  "firstMeasurement": <measurement>,
+  "oldestMeasurement": <measurement>,
   "measurementCountValidation": 39878,
 
-  "lastMeasurementValidation": <measurement>,
+  "latestMeasurementValidation": <measurement>,
 
-  "lastEvent": <event>,
+  "latestEvent": <event>,
   "eventCount": 40192,
 
-  "firstEvent": <event>,
+  "oldestEvent": <event>,
   "eventCountValidation": 40192
 }
 ```

@@ -27,18 +27,18 @@ example_c8y_data = {
     "dataAfter": "1970-01-01",
     "dataBefore": "2024-04-01",
 
-    "lastMeasurement": "<measurement>",
+    "latestMeasurement": "<measurement>",
     "measurementCount": 39878,
 
-    "firstMeasurement": "<measurement>",
+    "oldestMeasurement": "<measurement>",
     "measurementCountValidation": 39878,
 
-    "lastMeasurementValidation": "<measurement>",
+    "latestMeasurementValidation": "<measurement>",
 
-    "lastEvent": "<event>",
+    "latestEvent": "<event>",
     "eventCount": 40192,
 
-    "firstEvent": "<event>",
+    "oldestEvent": "<event>",
     "eventCountValidation": 40192
 }
 
@@ -95,8 +95,8 @@ def test_validate_event_count():
 
 def test_valid_time_format():
     for device in c8y_data:
-        for dataObject in ['lastMeasurement', 'firstMeasurement', 'firstEvent', 'lastEvent',
-                           'lastMeasurementValidation']:
+        for dataObject in ['latestMeasurement', 'oldestMeasurement', 'oldestEvent', 'latestEvent',
+                           'latestMeasurementValidation']:
             if not device[dataObject]:
                 continue
             dateString = device[dataObject]['time']
@@ -106,20 +106,20 @@ def test_valid_time_format():
                 pytest.fail(f"Parsing failed for date string: {dateString}")
 
 
-def test_validate_last_and_first_measurement_order():
+def test_validate_oldest_and_latest_measurement_order():
     for device in c8y_data:
-        earliest = device['firstMeasurement']
-        latest = device['lastMeasurement']
-        if earliest and latest:
-            dateFrom = parse(earliest['time']).date()
+        oldest = device['oldestMeasurement']
+        latest = device['latestMeasurement']
+        if oldest and latest:
+            dateFrom = parse(oldest['time']).date()
             dateTo = parse(latest['time']).date()
             assert dateFrom <= dateTo, f"Device {device['id']} measurement order mismatch: {dateFrom} > {dateTo}"
 
 
-def test_validate_last_and_first_event_order():
+def test_validate_oldest_and_latest_event_order():
     for device in c8y_data:
-        earliest = device['firstEvent']
-        latest = device['lastEvent']
+        earliest = device['oldestEvent']
+        latest = device['latestEvent']
         if earliest and latest:
             dateFrom = parse(earliest['time']).date()
             dateTo = parse(latest['time']).date()
