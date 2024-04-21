@@ -84,23 +84,23 @@ class Measurements:
             return {}
 
 
-class MonthlyMeasurements(Measurements):
+class MonthlyMeasurements:
     def __init__(self, device: dict, enforceBounds=True):
-        super().__init__(device, enforceBounds)
+        self.cumulocity = Measurements(device, enforceBounds)
 
     def requestLatestMeasurement(self, year: int, month: int) -> dict:
-        return super().requestLatestMeasurement(*requestMonthBounds(year, month))
+        return self.cumulocity.requestLatestMeasurement(*requestMonthBounds(year, month))
 
     def requestOldestMeasurement(self, year: int, month: int) -> dict:
-        return super().requestOldestMeasurement(*requestMonthBounds(year, month))
+        return self.cumulocity.requestOldestMeasurement(*requestMonthBounds(year, month))
 
     def requestFragmentSeriesCount(self, year: int, month: int, fragment: str, series: str):
         dateFrom, dateTo = requestMonthBounds(year, month)
-        return super().requestFragmentSeriesCount(dateFrom, dateTo, fragment, series)
+        return self.cumulocity.requestFragmentSeriesCount(dateFrom, dateTo, fragment, series)
 
     def requestMeasurementCount(self, year, month, additionalParameters: dict = None) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
-        return super().requestMeasurementCount(dateFrom, dateTo, additionalParameters)
+        return self.cumulocity.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
 
     @staticmethod
     def fileName(year: int, month: int) -> str:
