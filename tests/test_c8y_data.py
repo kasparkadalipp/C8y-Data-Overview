@@ -111,12 +111,16 @@ def test_validate_last_and_first_measurement_order():
         earliest = device['firstMeasurement']
         latest = device['lastMeasurement']
         if earliest and latest:
-            assert parse(earliest['time']).date() <= parse(latest['time']).date()
+            dateFrom = parse(earliest['time']).date()
+            dateTo = parse(latest['time']).date()
+            assert dateFrom <= dateTo, f"Device {device['id']} measurement order mismatch: {dateFrom} > {dateTo}"
 
 
 def test_validate_last_and_first_event_order():
     for device in c8y_data:
-        earliest = device['lastEvent']
-        latest = device['firstEvent']
+        earliest = device['firstEvent']
+        latest = device['lastEvent']
         if earliest and latest:
-            assert parse(earliest['time']).date() <= parse(latest['time']).date()
+            dateFrom = parse(earliest['time']).date()
+            dateTo = parse(latest['time']).date()
+            assert dateFrom <= dateTo, f"Device {device['id']} event order mismatch: {dateFrom} > {dateTo}"
