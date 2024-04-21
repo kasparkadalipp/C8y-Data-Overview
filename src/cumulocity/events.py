@@ -12,6 +12,7 @@ class Events:
         self.enforceBounds = enforceBounds
         self.deviceId = device['id']
         self.deviceType = device['type']
+        self.ignoredEvent = 'ignoredEvent' in device
 
         if enforceBounds:
             if device['latestEvent']:
@@ -50,19 +51,27 @@ class Events:
         if additionalParameters:
             parameters.update(additionalParameters)
 
-        try:
-            response = c8y.get(resource="/event/events", params=parameters)
-            eventCount = response['statistics']['totalPages']
-
-            if eventCount > 0:
-                latestEvent = response['events'][0]
-            else:
-                latestEvent = {}
-        except KeyboardInterrupt:  # TODO better error handling
-            raise KeyboardInterrupt
-        except:
+        if self.ignoredEvent:
+            eventCount = -2
             latestEvent = {}
-            eventCount = -1
+        elif self.hasEvents(dateFrom, dateTo):
+            try:
+                response = c8y.get(resource="/event/events", params=parameters)
+                eventCount = response['statistics']['totalPages']
+
+                if eventCount > 0:
+                    latestEvent = response['events'][0]
+                else:
+                    latestEvent = {}
+            except KeyboardInterrupt:  # TODO better error handling
+                raise KeyboardInterrupt
+            except:
+                latestEvent = {}
+                eventCount = -1
+        else:
+            eventCount = 0
+            latestEvent = {}
+
         return {'count': eventCount, 'event': latestEvent}
 
 
