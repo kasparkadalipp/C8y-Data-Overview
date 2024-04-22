@@ -112,11 +112,13 @@
 {
   "deviceId": 11904,
   "deviceType": "com_cityntel_light",
-  "eventsByType": {
-    "type": "com_cityntel_status",
-    "count": 15660,
-    "event": <event>
-  }
+    "eventsByType": [
+    {
+      "type": "com_cityntel_status",
+      "count": 12760,
+      "event": <event>
+    }
+  ]
 }
 
 ```
