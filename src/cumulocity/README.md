@@ -106,6 +106,22 @@
 
 ```
 
+### c8y_events (type)
+
+```JSON
+{
+  "deviceId": 11904,
+  "deviceType": "com_cityntel_light",
+  "eventsByType": {
+    "type": "com_cityntel_status",
+    "count": 15660,
+    "event": <event>
+  }
+}
+
+```
+
+
 ### c8y_groups
 
 ```JSON
