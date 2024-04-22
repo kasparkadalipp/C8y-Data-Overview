@@ -18,8 +18,7 @@ with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
 
 def requestTotalEvents(year, month):
     c8y_measurements = []
-    for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}",
-                       bar_format=tqdmFormat):
+    for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         response = MonthlyEvents(device, enforceBounds=True).requestEventCount(year, month)
         c8y_measurements.append({
             "deviceId": device['id'],

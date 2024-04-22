@@ -15,6 +15,7 @@ from dateutil.parser import parse
 with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
     c8y_data = json.load(json_file)
 
+
 def requestTotal(year, month):
     c8y_measurements = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}",

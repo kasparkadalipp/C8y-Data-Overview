@@ -14,6 +14,7 @@ from dateutil.parser import parse
 with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
     c8y_data = json.load(json_file)
 
+
 def requestFragmentSeries(year, month):
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}",
@@ -29,8 +30,7 @@ def requestFragmentSeries(year, month):
             fragment = fragmentSeries['fragment']
             series = fragmentSeries['series']
 
-            response = MonthlyMeasurements(device, enforceBounds=True).requestFragmentSeriesCount(year, month, fragment,
-                                                                                                  series)
+            response = MonthlyMeasurements(device, enforceBounds=True).requestFragmentSeriesCount(year, month, fragment, series)
             c8y_measurements['fragmentSeries'].append({
                 "fragment": fragment,
                 "series": series,
