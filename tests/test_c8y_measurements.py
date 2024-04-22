@@ -2,11 +2,38 @@ import pytest
 import json
 import os
 
+from datetime import date
+from dotenv import load_dotenv
+from dateutil.relativedelta import relativedelta
+
+load_dotenv('../notebooks/.env.telia')
+from src.cumulocity import MonthlyMeasurements
+from src.utils import pathExists
+
 basePath = "../data/telia/measurements/"
 
 
 def getFiles(folder):
     return os.listdir(basePath + folder)
+
+
+@pytest.mark.parametrize("folder", ['total', 'fragmentSeries', 'typeFragmentSeries'])
+def test_all_files_present(folder):
+    assert pathExists(basePath + folder), f'Path "{basePath + folder}" does not exist'
+    earliestMeasurementDate = date(2014, 1, 1)
+    oldestMeasurementDate = date(2024, 3, 1)
+    expected_files = set()
+
+    currentDate = earliestMeasurementDate
+    while currentDate <= oldestMeasurementDate:
+        expected_files.add(MonthlyMeasurements.fileName(currentDate.year, currentDate.month))
+        currentDate += relativedelta(months=1)
+
+    for file in getFiles(folder):
+        expected_files.remove(file)
+    missingFilesCount = len(expected_files)
+
+    assert missingFilesCount == 0, f"Missing data for files: {expected_files}"
 
 
 @pytest.mark.parametrize("fileName", getFiles('total'))
