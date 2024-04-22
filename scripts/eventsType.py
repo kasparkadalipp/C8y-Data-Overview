@@ -54,9 +54,10 @@ print(f'Latest event {max([parse(d['latestEvent']['time']).date() for d in c8y_d
 startingDate = date(2016, 11, 1)
 lastDate = date(2024, 3, 1)
 
-while startingDate <= lastDate:
-    year = startingDate.year
-    month = startingDate.month
+currentDate = lastDate
+while startingDate <= currentDate <= lastDate:
+    year = currentDate.year
+    month = currentDate.month
 
     filePath = f"telia/events/type/{MonthlyEvents.fileName(year, month)}"
     if pathExists(filePath):
@@ -64,4 +65,4 @@ while startingDate <= lastDate:
     else:
         data = requestFragmentSeries(year, month)
         saveToFile(data, filePath, overwrite=False)
-    startingDate += relativedelta(months=1)
+    currentDate -= relativedelta(months=1)

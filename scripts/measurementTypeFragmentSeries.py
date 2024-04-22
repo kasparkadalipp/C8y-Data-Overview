@@ -73,9 +73,10 @@ print(f'Latest measurement {max([parse(d['latestMeasurement']['time']).date() fo
 startingDate = date(2014, 11, 1)
 lastDate = date(2024, 3, 1)
 
-while startingDate <= lastDate:
-    year = startingDate.year
-    month = startingDate.month
+currentDate = lastDate
+while startingDate <= currentDate <= lastDate:
+    year = currentDate.year
+    month = currentDate.month
 
     filePath = f"telia/measurements/typeFragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
     if pathExists(filePath):
@@ -83,4 +84,4 @@ while startingDate <= lastDate:
     else:
         data = requestFragmentSeries(year, month)
         saveToFile(data, filePath, overwrite=False)
-    startingDate += relativedelta(months=1)
+    currentDate -= relativedelta(months=1)
