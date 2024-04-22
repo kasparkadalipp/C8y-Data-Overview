@@ -44,6 +44,10 @@ class Measurements:
         additionalParameters = {'valueFragmentType': fragment, 'valueFragmentSeries': series}
         return self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
 
+    def requestTypeFragmentSeriesCount(self, dateFrom, dateTo, measurementType: str, fragment: str, series: str):
+        additionalParameters = {'type': measurementType, 'valueFragmentType': fragment, 'valueFragmentSeries': series}
+        return self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
+
     def requestMeasurementCount(self, dateFrom: date, dateTo: date, additionalParameters: dict = None) -> dict:
         parameters = {
             'dateFrom': dateFrom.isoformat(),
@@ -97,6 +101,10 @@ class MonthlyMeasurements:
     def requestFragmentSeriesCount(self, year: int, month: int, fragment: str, series: str):
         dateFrom, dateTo = requestMonthBounds(year, month)
         return self.cumulocity.requestFragmentSeriesCount(dateFrom, dateTo, fragment, series)
+
+    def requestTypeFragmentSeriesCount(self, year:int, month:int, measurementType: str, fragment: str, series: str):
+        dateFrom, dateTo = requestMonthBounds(year, month)
+        return self.cumulocity.requestTypeFragmentSeriesCount(dateFrom, dateTo, measurementType, fragment, series)
 
     def requestMeasurementCount(self, year, month, additionalParameters: dict = None) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)

@@ -38,6 +38,10 @@ class Events:
         response = self.requestEventCount(dateFrom, dateTo, additionalParameters)
         return {'count': response['count'], 'oldestEvent': response['event']}
 
+    def requestEventCountForType(self, dateFrom, dateTo, eventType):
+        additionalParameters = {'type': eventType}
+        return self.requestEventCount(dateFrom, dateTo, additionalParameters)
+
     def requestEventCount(self, dateFrom: date, dateTo: date, additionalParameters: dict = None) -> dict:
         parameters = {
             'dateFrom': dateFrom.isoformat(),
@@ -88,6 +92,10 @@ class MonthlyEvents:
     def requestEventCount(self, year, month, additionalParameters: dict = None) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
         return self.cumulocity.requestEventCount(dateFrom, dateTo, additionalParameters)
+
+    def requestEventCountForType(self, year, month, eventType):
+        dateFrom, dateTo = requestMonthBounds(year, month)
+        return self.cumulocity.requestEventCountForType(dateFrom, dateTo, eventType)
 
     @staticmethod
     def fileName(year: int, month: int) -> str:
