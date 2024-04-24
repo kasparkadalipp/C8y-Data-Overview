@@ -17,7 +17,7 @@ def getFiles(folder):
     return os.listdir(basePath + folder)
 
 
-@pytest.mark.parametrize("folder", ['total', 'fragmentSeries', 'typeFragmentSeries'])
+@pytest.mark.parametrize("folder", ['total', 'type'])
 def test_all_files_present(folder):
     assert pathExists(basePath + folder), f'Path "{basePath + folder}" does not exist'
     earliestEventDate = date(2016, 11, 1)
@@ -61,7 +61,51 @@ class TestTotalMeasurements:
                 assert key in device['total'].keys()
 
     def test_no_failed_requests(self, fileName):
+        failedEventCount = 0
         for device in self.getContents(fileName):
             if device['total']['count'] == -2:  # Ignored Event
                 continue
-            assert device['total']['count'] >= 0
+            if device['total']['count'] >= 0:
+                failedEventCount += 1
+        assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
+
+
+@pytest.mark.parametrize("fileName", getFiles('type'))
+class TestTotalMeasurements:
+    folder = 'type'
+    example = {
+        "deviceId": 11904,
+        "deviceType": "com_cityntel_light",
+        "eventByType": [
+            {
+                "type": "com_cityntel_status_data",
+                "count": 15660,
+                "event": "<measurement>"
+            }
+        ]
+    }
+
+    def getContents(self, fileName):
+        filePath = f"{basePath}{self.folder}/{fileName}"
+        with open(filePath, 'r', encoding='utf8') as json_file:
+            return json.load(json_file)
+
+    def test_required_keys(self, fileName):
+        for device in self.getContents(fileName):
+            for key in self.example.keys():
+                assert key in device.keys()
+            for event in device['eventByType']:
+                for key in self.example['eventByType'][0].keys():
+                    assert key in event.keys()
+
+    def test_no_failed_requests(self, fileName):
+        failedEventCount = 0
+
+        for device in self.getContents(fileName):
+            hasFailedEvents = False
+            for event in device['eventByType']:
+                if event['count'] < 0:
+                    hasFailedEvents = True
+            if hasFailedEvents:
+                failedEventCount += 1
+        assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
