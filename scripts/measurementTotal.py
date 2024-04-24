@@ -35,7 +35,7 @@ def requestTotal(year, month):
 print(f'Oldest measurement {min([parse(d['oldestMeasurement']['time']).date() for d in c8y_data if d['oldestMeasurement']])}')
 print(f'Latest measurement {max([parse(d['latestMeasurement']['time']).date() for d in c8y_data if d['latestMeasurement']])}')
 
-startingDate = date(2014, 1, 1)
+startingDate = date(2014, 7, 1)
 lastDate = date(2024, 3, 1)
 
 currentDate = lastDate
