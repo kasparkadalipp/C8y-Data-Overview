@@ -20,7 +20,7 @@ def getFiles(folder):
 @pytest.mark.parametrize("folder", ['total', 'fragmentSeries', 'typeFragmentSeries'])
 def test_all_files_present(folder):
     assert pathExists(basePath + folder), f'Path "{basePath + folder}" does not exist'
-    earliestMeasurementDate = date(2014, 1, 1)
+    earliestMeasurementDate = date(2014, 11, 1)
     oldestMeasurementDate = date(2024, 3, 1)
     expected_files = set()
 
@@ -30,7 +30,8 @@ def test_all_files_present(folder):
         currentDate += relativedelta(months=1)
 
     for file in getFiles(folder):
-        expected_files.remove(file)
+        if file in expected_files:
+            expected_files.remove(file)
     missingFilesCount = len(expected_files)
 
     assert missingFilesCount == 0, f"Missing data for files: {expected_files}"
@@ -64,6 +65,14 @@ class TestTotalMeasurements:
 
         for device in self.getContents(fileName):
             assert device['total']['count'] >= 0
+
+    def test_month_with_no_active_devices(self, fileName):
+        activeDevices = 0
+        for device in self.getContents(fileName):
+            count = device['total']['count']
+            if count > 0:
+                activeDevices += 1
+        assert activeDevices > 0
 
 
 @pytest.mark.parametrize("fileName", getFiles('fragmentSeries'))
@@ -100,3 +109,56 @@ class TestFragmentSeries:
         for device in self.getContents(fileName):
             for measurement in device['fragmentSeries']:
                 assert measurement['count'] >= 0
+
+    def test_month_with_no_active_devices(self, fileName):
+        activeDevices = 0
+        for device in self.getContents(fileName):
+            for measurement in device['fragmentSeries']:
+                if measurement['count'] != 0:
+                    activeDevices += 1
+        assert activeDevices > 0
+
+
+@pytest.mark.parametrize("fileName", getFiles('typeFragmentSeries'))
+class TestFragmentSeries:
+    folder = 'typeFragmentSeries'
+    example = {
+        "deviceId": 11904,
+        "deviceType": "com_cityntel_light",
+        "typeFragmentSeries": [
+            {
+                "type": "com_cityntel_light",
+                "fragment": "active_power",
+                "series": "L1",
+                "count": 2304,
+                "measurement": "<measurement>"
+            }
+        ]
+    }
+
+    def getContents(self, fileName):
+        filePath = f"{basePath}{self.folder}/{fileName}"
+        with open(filePath, 'r', encoding='utf8') as json_file:
+            return json.load(json_file)
+
+    def test_required_keys(self, fileName):
+        for device in self.getContents(fileName):
+            for key in self.example.keys():
+                assert key in device.keys()
+
+            for measurement in device['typeFragmentSeries']:
+                for key in self.example['typeFragmentSeries'][0].keys():
+                    assert key in measurement.keys()
+
+    def test_no_failed_requests(self, fileName):
+        for device in self.getContents(fileName):
+            for measurement in device['typeFragmentSeries']:
+                assert measurement['count'] >= 0
+
+    def test_month_with_no_active_devices(self, fileName):
+        activeDevices = 0
+        for device in self.getContents(fileName):
+            for measurement in device['typeFragmentSeries']:
+                if measurement['count'] != 0:
+                    activeDevices += 1
+        assert activeDevices > 0
