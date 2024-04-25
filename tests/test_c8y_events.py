@@ -37,7 +37,7 @@ def test_all_files_present(folder):
 
 
 @pytest.mark.parametrize("fileName", getFiles('total'))
-class TestTotalMeasurements:
+class TestTotalEvents:
     folder = 'total'
     example = {
         "deviceId": 11904,
@@ -63,15 +63,13 @@ class TestTotalMeasurements:
     def test_no_failed_requests(self, fileName):
         failedEventCount = 0
         for device in self.getContents(fileName):
-            if device['total']['count'] == -2:  # Ignored Event
-                continue
-            if device['total']['count'] >= 0:
+            if device['total']['count'] < 0:
                 failedEventCount += 1
         assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
 
 
 @pytest.mark.parametrize("fileName", getFiles('type'))
-class TestTotalMeasurements:
+class TestEventType:
     folder = 'type'
     example = {
         "deviceId": 11904,
