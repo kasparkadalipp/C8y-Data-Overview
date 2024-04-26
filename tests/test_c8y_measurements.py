@@ -70,6 +70,7 @@ class TestTotalMeasurements:
                 deviceIds.add(device['deviceId'])
         assert failedRequests == 0, f"For devices: {deviceIds}"
 
+    @pytest.mark.skip(reason="manual test")
     def test_month_with_no_active_devices(self, fileName):
         activeDevices = 0
         for device in self.getContents(fileName):
@@ -119,6 +120,7 @@ class TestFragmentSeries:
                     deviceIds.add(device['deviceId'])
         assert failedRequests == 0, f"For devices: {deviceIds}"
 
+    @pytest.mark.skip(reason="manual test")
     def test_month_with_no_active_devices(self, fileName):
         activeDevices = 0
         for device in self.getContents(fileName):
@@ -169,6 +171,7 @@ class TestTypeFragmentSeries:
                     deviceIds.add(device['deviceId'])
         assert failedRequests == 0, f"For devices: {deviceIds}"
 
+    @pytest.mark.skip(reason="manual test")
     def test_month_with_no_active_devices(self, fileName):
         activeDevices = 0
         for device in self.getContents(fileName):

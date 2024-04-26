@@ -11,8 +11,7 @@ import calendar
 from dateutil.parser import parse
 
 c8y_data = readFile('telia/c8y_data.json')
-
-files = fileContentsFromFolder('../data/telia/measurements/fragmentSeries')
+deviceIdMapping = {device['id']: device for device in c8y_data}
 
 
 def getMeasurementTypes(measurement: dict):
@@ -27,8 +26,8 @@ def getMeasurementTypes(measurement: dict):
     return result
 
 
+files = fileContentsFromFolder('../data/telia/measurements/fragmentSeries')
 typeFragmentSeriesMapping = {device['id']: set() for device in c8y_data}
-
 for jsonFile in files:
     for device in jsonFile:
         deviceId = device['deviceId']
@@ -38,8 +37,53 @@ for jsonFile in files:
                 typeFragmentSeries = getMeasurementTypes(measurement)
                 typeFragmentSeriesMapping[deviceId] = typeFragmentSeriesMapping[deviceId].union(typeFragmentSeries)
 
+def requestMissingValues(year, month, filePath):
+    fileContents = readFile(filePath)
 
-def requestFragmentSeries(year, month):
+    missingValueCount = 0
+    for device in fileContents:
+        for typeFragmentSeries in device['typeFragmentSeries']:
+            if typeFragmentSeries['count'] < 0:
+                missingValueCount += 1
+    if missingValueCount == 0:
+        return []
+
+    c8y_measurements = []
+    for savedMeasurement in tqdm(readFile(filePath), desc=f"{calendar.month_abbr[month]} {year}",
+                                 bar_format=tqdmFormat):
+        device = deviceIdMapping[savedMeasurement['deviceId']]
+
+        result = {
+            "deviceId": device['id'],
+            "deviceType": device['type'],
+            "typeFragmentSeries": []
+        }
+
+        for measurement in savedMeasurement['typeFragmentSeries']:
+            measurementType = measurement['type']
+            fragment = measurement['fragment']
+            series = measurement['series']
+            count = measurement['count']
+
+            if count >= 0:
+                result['typeFragmentSeries'].append(measurement)
+                continue
+
+            print(f"device {device['id']} - requesting: {measurementType}, {fragment}, {series}")
+            response = MonthlyMeasurements(device, enforceBounds=True).requestAggregatedTypeFragmentSeriesCount(year, month, measurementType, fragment, series)
+            result['typeFragmentSeries'].append({
+                "type": measurementType,
+                "fragment": fragment,
+                "series": series,
+                "count": response['count'],
+                "measurement": response['measurement']
+            })
+        c8y_measurements.append(result)
+    return c8y_measurements
+
+
+
+def requestTypeFragmentSeries(year, month):
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         deviceId = device['id']
@@ -78,8 +122,12 @@ while startingDate <= currentDate <= lastDate:
 
     filePath = f"telia/measurements/typeFragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
     if pathExists(filePath):
-        print(f"{calendar.month_abbr[month]} {year} - skipped")
+        data = requestMissingValues(year, month, filePath)
+        if data:
+            saveToFile(data, filePath, overwrite=True)
+        else:
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
     else:
-        data = requestFragmentSeries(year, month)
+        data = requestTypeFragmentSeries(year, month)
         saveToFile(data, filePath, overwrite=False)
     currentDate -= relativedelta(months=1)
