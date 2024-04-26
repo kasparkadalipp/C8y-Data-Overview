@@ -6,14 +6,41 @@ from dotenv import load_dotenv
 load_dotenv('../.env.telia')
 
 from src.cumulocity import MonthlyEvents
-from src.utils import tqdmFormat, saveToFile, pathExists
+from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
-import json
 import calendar
 from dateutil.parser import parse
 
-with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
-    c8y_data = json.load(json_file)
+
+c8y_data = readFile('telia/c8y_data.json')
+deviceIdMapping = {device['id']: device for device in c8y_data}
+
+
+def requestMissingValues(year, month, filePath):
+    c8y_measurements = []
+    fileContents = readFile(filePath)
+
+    if all([device['total']['count'] >= 0 for device in fileContents]):
+        return []
+
+    for savedMeasurement in tqdm(readFile(filePath), desc=f"{calendar.month_abbr[month]} {year}",
+                                 bar_format=tqdmFormat):
+        if savedMeasurement['total']['count'] >= 0:
+            c8y_measurements.append(savedMeasurement)
+            continue
+
+        device = deviceIdMapping[savedMeasurement['deviceId']]
+
+        response = MonthlyEvents(device, enforceBounds=True).requestAggregatedEventCount(year, month)
+        c8y_measurements.append({
+            "deviceId": device['id'],
+            "deviceType": device['type'],
+            "total": {
+                "count": response['count'],
+                "event": response['event']
+            }
+        })
+    return c8y_measurements
 
 
 def requestTotalEvents(year, month):
@@ -44,7 +71,11 @@ while startingDate <= currentDate <= lastDate:
 
     filePath = f"telia/events/total/{MonthlyEvents.fileName(year, month)}"
     if pathExists(filePath):
-        print(f"{calendar.month_abbr[month]} {year} - skipped")
+        data = requestMissingValues(year, month, filePath)
+        if data:
+            saveToFile(data, filePath, overwrite=True)
+        else:
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
     else:
         data = requestTotalEvents(year, month)
         saveToFile(data, filePath, overwrite=False)

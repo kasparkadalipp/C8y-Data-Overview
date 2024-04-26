@@ -5,14 +5,13 @@ from dotenv import load_dotenv
 
 load_dotenv('../.env.telia')
 from src.cumulocity import MonthlyMeasurements
-from src.utils import tqdmFormat, saveToFile, pathExists
+from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 import json
 import calendar
 from dateutil.parser import parse
 
-with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
-    c8y_data = json.load(json_file)
+c8y_data = readFile('telia/c8y_data.json')
 
 
 def requestFragmentSeries(year, month):

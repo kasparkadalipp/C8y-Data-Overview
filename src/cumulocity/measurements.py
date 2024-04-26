@@ -40,11 +40,11 @@ class Measurements:
         response = self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
         return {'count': response['count'], 'oldestMeasurement': response['measurement']}
 
-    def requestFragmentSeriesCount(self, dateFrom: date, dateTo: date, fragment: str, series: str):
+    def requestFragmentSeriesCount(self, dateFrom: date, dateTo: date, fragment: str, series: str) -> dict:
         additionalParameters = {'valueFragmentType': fragment, 'valueFragmentSeries': series}
         return self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
 
-    def requestTypeFragmentSeriesCount(self, dateFrom, dateTo, measurementType: str, fragment: str, series: str):
+    def requestTypeFragmentSeriesCount(self, dateFrom, dateTo, measurementType: str, fragment: str, series: str) -> dict:
         additionalParameters = {'type': measurementType, 'valueFragmentType': fragment, 'valueFragmentSeries': series}
         return self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
 
@@ -98,17 +98,38 @@ class MonthlyMeasurements:
     def requestOldestMeasurement(self, year: int, month: int) -> dict:
         return self.cumulocity.requestOldestMeasurement(*requestMonthBounds(year, month))
 
-    def requestFragmentSeriesCount(self, year: int, month: int, fragment: str, series: str):
+    def requestFragmentSeriesCount(self, year: int, month: int, fragment: str, series: str) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
         return self.cumulocity.requestFragmentSeriesCount(dateFrom, dateTo, fragment, series)
 
-    def requestTypeFragmentSeriesCount(self, year:int, month:int, measurementType: str, fragment: str, series: str):
+    def requestTypeFragmentSeriesCount(self, year: int, month: int, measurementType: str, fragment: str, series: str) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
         return self.cumulocity.requestTypeFragmentSeriesCount(dateFrom, dateTo, measurementType, fragment, series)
 
     def requestMeasurementCount(self, year, month, additionalParameters: dict = None) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
         return self.cumulocity.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
+
+    def requestAggregatedFragmentSeriesCount(self, year: int, month: int, fragment: str, series: str) -> dict:
+        additionalParameters = {'valueFragmentType': fragment, 'valueFragmentSeries': series}
+        return self.requestAggregatedMeasurementCount(year, month, additionalParameters)
+
+    def requestAggregatedTypeFragmentSeriesCount(self, year: int, month: int, measurementType: str, fragment: str, series: str) -> dict:
+        additionalParameters = {'type': measurementType, 'valueFragmentType': fragment, 'valueFragmentSeries': series}
+        return self.requestAggregatedMeasurementCount(year, month, additionalParameters)
+
+    def requestAggregatedMeasurementCount(self, year: int, month: int, additionalParameters: dict = None) -> dict:
+        dateFrom, dateTo = requestMonthBounds(year, month)
+        result = {'measurement': {}, 'count': 0}
+        currentDate = dateFrom + relativedelta(days=1)
+        while currentDate <= dateTo:
+            response = self.cumulocity.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
+            result['count'] += response['count']
+            if response['measurement']:
+                result['measurement'] = response['measurement']
+            dateFrom += relativedelta(days=1)
+            currentDate += relativedelta(days=1)
+        return result
 
     @staticmethod
     def fileName(year: int, month: int) -> str:

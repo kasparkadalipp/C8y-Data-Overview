@@ -62,9 +62,13 @@ class TestTotalMeasurements:
                 assert key in device['total'].keys()
 
     def test_no_failed_requests(self, fileName):
-
+        failedRequests = 0
+        deviceIds = set()
         for device in self.getContents(fileName):
-            assert device['total']['count'] >= 0
+            if device['total']['count'] < 0:
+                failedRequests += 1
+                deviceIds.add(device['deviceId'])
+        assert failedRequests == 0, f"For devices: {deviceIds}"
 
     def test_month_with_no_active_devices(self, fileName):
         activeDevices = 0
@@ -106,9 +110,14 @@ class TestFragmentSeries:
                     assert key in measurement.keys()
 
     def test_no_failed_requests(self, fileName):
+        failedRequests = 0
+        deviceIds = set()
         for device in self.getContents(fileName):
             for measurement in device['fragmentSeries']:
-                assert measurement['count'] >= 0
+                if measurement['count'] < 0:
+                    failedRequests += 1
+                    deviceIds.add(device['deviceId'])
+        assert failedRequests == 0, f"For devices: {deviceIds}"
 
     def test_month_with_no_active_devices(self, fileName):
         activeDevices = 0
@@ -120,7 +129,7 @@ class TestFragmentSeries:
 
 
 @pytest.mark.parametrize("fileName", getFiles('typeFragmentSeries'))
-class TestFragmentSeries:
+class TestTypeFragmentSeries:
     folder = 'typeFragmentSeries'
     example = {
         "deviceId": 11904,
@@ -151,9 +160,14 @@ class TestFragmentSeries:
                     assert key in measurement.keys()
 
     def test_no_failed_requests(self, fileName):
+        deviceIds = set()
+        failedRequests = 0
         for device in self.getContents(fileName):
             for measurement in device['typeFragmentSeries']:
-                assert measurement['count'] >= 0
+                if measurement['count'] < 0:
+                    failedRequests += 1
+                    deviceIds.add(device['deviceId'])
+        assert failedRequests == 0, f"For devices: {deviceIds}"
 
     def test_month_with_no_active_devices(self, fileName):
         activeDevices = 0

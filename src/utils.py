@@ -19,9 +19,25 @@ def saveToFile(devices: list, filePath: str, overwrite: bool):
         json.dump(devices, file, indent=2, ensure_ascii=False)
 
 
+def readFile(filePath: str):
+    if not pathExists(filePath):
+        print('Path does not exist:', filePath)
+        return None
+
+    path = Path(f"{dataRoot}{filePath}")
+    with path.open("r", encoding='utf8') as json_file:
+        return json.load(json_file)
+
 def pathExists(filePath: str):
     path = Path(f"{dataRoot}{filePath}")
     return path.exists()
+
+
+def fileNamesInFolder(folder):
+    if not pathExists(folder):
+        print('Folder does not exist: ' + folder)
+        return []
+    return os.listdir(folder)
 
 
 def filePathsInFolder(folder):

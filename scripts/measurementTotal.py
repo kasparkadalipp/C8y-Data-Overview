@@ -6,20 +6,43 @@ from dotenv import load_dotenv
 load_dotenv('../.env.telia')
 
 from src.cumulocity import MonthlyMeasurements
-from src.utils import tqdmFormat, saveToFile, pathExists
+from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
-import json
 import calendar
-from dateutil.parser import parse
 
-with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
-    c8y_data = json.load(json_file)
+c8y_data = readFile('telia/c8y_data.json')
+deviceIdMapping = {device['id']: device for device in c8y_data}
+
+
+def requestMissingValues(year, month, filePath):
+    c8y_measurements = []
+    fileContents = readFile(filePath)
+
+    if all([device['total']['count'] >= 0 for device in fileContents]):
+        return []
+
+    for savedMeasurement in tqdm(readFile(filePath), desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
+        if savedMeasurement['total']['count'] >= 0:
+            c8y_measurements.append(savedMeasurement)
+            continue
+
+        device = deviceIdMapping[savedMeasurement['deviceId']]
+
+        response = MonthlyMeasurements(device, enforceBounds=True).requestAggregatedMeasurementCount(year, month)
+        c8y_measurements.append({
+            "deviceId": device['id'],
+            "deviceType": device['type'],
+            "total": {
+                "count": response['count'],
+                "measurement": response['measurement']
+            }
+        })
+    return c8y_measurements
 
 
 def requestTotal(year, month):
     c8y_measurements = []
-    for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}",
-                       bar_format=tqdmFormat):
+    for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         response = MonthlyMeasurements(device, enforceBounds=True).requestMeasurementCount(year, month)
         c8y_measurements.append({
             "deviceId": device['id'],
@@ -32,8 +55,8 @@ def requestTotal(year, month):
     return c8y_measurements
 
 
-print(f'Oldest measurement {min([parse(d['oldestMeasurement']['time']).date() for d in c8y_data if d['oldestMeasurement']])}')
-print(f'Latest measurement {max([parse(d['latestMeasurement']['time']).date() for d in c8y_data if d['latestMeasurement']])}')
+# print(f'Oldest measurement {min([parse(d['oldestMeasurement']['time']).date() for d in c8y_data if d['oldestMeasurement']])}')
+# print(f'Latest measurement {max([parse(d['latestMeasurement']['time']).date() for d in c8y_data if d['latestMeasurement']])}')
 
 startingDate = date(2014, 7, 1)
 lastDate = date(2024, 3, 1)
@@ -45,7 +68,11 @@ while startingDate <= currentDate <= lastDate:
 
     filePath = f"telia/measurements/total/{MonthlyMeasurements.fileName(year, month)}"
     if pathExists(filePath):
-        print(f"{calendar.month_abbr[month]} {year} - skipped")
+        data = requestMissingValues(year, month, filePath)
+        if data:
+            saveToFile(data, filePath, overwrite=True)
+        else:
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
     else:
         data = requestTotal(year, month)
         saveToFile(data, filePath, overwrite=False)

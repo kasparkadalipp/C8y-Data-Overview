@@ -2,17 +2,14 @@ from dotenv import load_dotenv
 
 load_dotenv('../.env.telia')
 from src.cumulocity import MonthlyEvents
-from src.utils import tqdmFormat, saveToFile, pathExists, fileContentsFromFolder
+from src.utils import tqdmFormat, saveToFile, pathExists, fileContentsFromFolder, readFile
 from tqdm import tqdm
-import json
 import calendar
 from datetime import date
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 
-with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
-    c8y_data = json.load(json_file)
-
+c8y_data = readFile('telia/c8y_data.json')
 files = fileContentsFromFolder('../data/telia/events/total')
 
 eventTypesMapping = {device['id']: set() for device in c8y_data}

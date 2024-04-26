@@ -1,5 +1,7 @@
 from datetime import date
 
+from dateutil.relativedelta import relativedelta
+
 from .measurements import requestMonthBounds
 from .config import getCumulocityApi
 from dateutil.parser import parse
@@ -12,7 +14,6 @@ class Events:
         self.enforceBounds = enforceBounds
         self.deviceId = device['id']
         self.deviceType = device['type']
-        self.ignoredEvent = 'ignoredEvent' in device
 
         if enforceBounds:
             self.latestEvent = device['latestEvent']
@@ -55,10 +56,7 @@ class Events:
         if additionalParameters:
             parameters.update(additionalParameters)
 
-        if self.ignoredEvent:
-            eventCount = -2
-            latestEvent = {}
-        elif self.hasEvents(dateFrom, dateTo):
+        if self.hasEvents(dateFrom, dateTo):
             try:
                 response = c8y.get(resource="/event/events", params=parameters)
                 eventCount = response['statistics']['totalPages']
@@ -93,9 +91,27 @@ class MonthlyEvents:
         dateFrom, dateTo = requestMonthBounds(year, month)
         return self.cumulocity.requestEventCount(dateFrom, dateTo, additionalParameters)
 
-    def requestEventCountForType(self, year, month, eventType):
+    def requestEventCountForType(self, year: int, month: int, eventType: str) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
         return self.cumulocity.requestEventCountForType(dateFrom, dateTo, eventType)
+
+    def requestAggregatedEventCountForType(self, year: int, month: int, eventType: str) -> dict:
+        additionalParameters = {'type': eventType}
+        return self.requestAggregatedEventCount(year, month, additionalParameters)
+
+    def requestAggregatedEventCount(self, year: int, month: int, additionalParameters: dict = None) -> dict:
+        dateFrom, dateTo = requestMonthBounds(year, month)
+        result = {'event': {}, 'count': 0}
+        currentDate = dateFrom + relativedelta(days=1)
+        while currentDate <= dateTo:
+            response = self.cumulocity.requestEventCount(dateFrom, dateTo, additionalParameters)
+            result['count'] += response['count']
+            if response['event']:
+                result['event'] = response['event']
+
+            dateFrom += relativedelta(days=1)
+            currentDate += relativedelta(days=1)
+        return result
 
     @staticmethod
     def fileName(year: int, month: int) -> str:
