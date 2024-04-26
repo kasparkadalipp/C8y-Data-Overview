@@ -69,7 +69,6 @@ def requestMissingValues(year, month, filePath):
                 result['typeFragmentSeries'].append(measurement)
                 continue
 
-            print(f"device {device['id']} - requesting: {measurementType}, {fragment}, {series}")
             response = MonthlyMeasurements(device, enforceBounds=True).requestAggregatedTypeFragmentSeriesCount(year, month, measurementType, fragment, series)
             result['typeFragmentSeries'].append({
                 "type": measurementType,

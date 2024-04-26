@@ -102,15 +102,17 @@ class MonthlyEvents:
     def requestAggregatedEventCount(self, year: int, month: int, additionalParameters: dict = None) -> dict:
         dateFrom, dateTo = requestMonthBounds(year, month)
         result = {'event': {}, 'count': 0}
-        currentDate = dateFrom + relativedelta(days=1)
-        while currentDate <= dateTo:
-            response = self.cumulocity.requestEventCount(dateFrom, dateTo, additionalParameters)
+
+        startingDate = dateFrom
+        endingDate = startingDate + relativedelta(days=1)
+        while startingDate <= dateTo:
+            response = self.cumulocity.requestEventCount(startingDate, endingDate, additionalParameters)
             result['count'] += response['count']
             if response['event']:
                 result['event'] = response['event']
 
-            dateFrom += relativedelta(days=1)
-            currentDate += relativedelta(days=1)
+            startingDate += relativedelta(days=1)
+            endingDate += relativedelta(days=1)
         return result
 
     @staticmethod

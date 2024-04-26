@@ -23,8 +23,7 @@ def requestMissingValues(year, month, filePath):
     if all([device['total']['count'] >= 0 for device in fileContents]):
         return []
 
-    for savedMeasurement in tqdm(readFile(filePath), desc=f"{calendar.month_abbr[month]} {year}",
-                                 bar_format=tqdmFormat):
+    for savedMeasurement in tqdm(readFile(filePath), desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         if savedMeasurement['total']['count'] >= 0:
             c8y_measurements.append(savedMeasurement)
             continue
@@ -44,10 +43,10 @@ def requestMissingValues(year, month, filePath):
 
 
 def requestTotalEvents(year, month):
-    c8y_measurements = []
+    c8y_events = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         response = MonthlyEvents(device, enforceBounds=True).requestEventCount(year, month)
-        c8y_measurements.append({
+        c8y_events.append({
             "deviceId": device['id'],
             "deviceType": device['type'],
             "total": {
@@ -55,7 +54,7 @@ def requestTotalEvents(year, month):
                 "event": response['event']
             }
         })
-    return c8y_measurements
+    return c8y_events
 
 
 print(f'Oldest event {min([parse(d['oldestEvent']['time']).date() for d in c8y_data if d['oldestEvent']])}')

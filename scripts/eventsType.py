@@ -10,6 +10,8 @@ from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 
 c8y_data = readFile('telia/c8y_data.json')
+deviceIdMapping = {device['id']: device for device in c8y_data}
+
 files = fileContentsFromFolder('../data/telia/events/total')
 
 eventTypesMapping = {device['id']: set() for device in c8y_data}
@@ -22,7 +24,46 @@ for jsonFile in files:
             eventTypesMapping[deviceId].add(event['type'])
 
 
-def requestFragmentSeries(year, month):
+def requestMissingValues(year, month, filePath):
+    fileContents = readFile(filePath)
+
+    missingValueCount = 0
+    for device in fileContents:
+        for eventType in device['eventByType']:
+            if eventType['count'] < 0:
+                missingValueCount += 1
+    if missingValueCount == 0:
+        return []
+
+    c8y_events = []
+    for savedEvents in tqdm(readFile(filePath), desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
+        device = deviceIdMapping[savedEvents['deviceId']]
+
+        result = {
+            "deviceId": device['id'],
+            "deviceType": device['type'],
+            "eventByType": []
+        }
+
+        for event in savedEvents['eventByType']:
+            eventType = event['type']
+            count = event['count']
+
+            if count >= 0:
+                result['eventByType'].append(event)
+                continue
+
+            response = MonthlyEvents(device, enforceBounds=True).requestAggregatedEventCountForType(year, month, eventType)
+            result['eventByType'].append({
+                "type": eventType,
+                "count": response['count'],
+                "event": response['event']
+            })
+        c8y_events.append(result)
+    return c8y_events
+
+
+def requestEventTypes(year, month):
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         deviceId = device['id']
@@ -58,8 +99,12 @@ while startingDate <= currentDate <= lastDate:
 
     filePath = f"telia/events/type/{MonthlyEvents.fileName(year, month)}"
     if pathExists(filePath):
-        print(f"{calendar.month_abbr[month]} {year} - skipped")
+        data = requestMissingValues(year, month, filePath)
+        if data:
+            saveToFile(data, filePath, overwrite=True)
+        else:
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
     else:
-        data = requestFragmentSeries(year, month)
+        data = requestEventTypes(year, month)
         saveToFile(data, filePath, overwrite=False)
     currentDate -= relativedelta(months=1)

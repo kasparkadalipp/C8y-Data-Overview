@@ -28,6 +28,7 @@ def readFile(filePath: str):
     with path.open("r", encoding='utf8') as json_file:
         return json.load(json_file)
 
+
 def pathExists(filePath: str):
     path = Path(f"{dataRoot}{filePath}")
     return path.exists()
