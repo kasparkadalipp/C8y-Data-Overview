@@ -125,7 +125,7 @@ class MonthlyMeasurements:
         startingDate = dateFrom
         endingDate = startingDate + relativedelta(days=1)
 
-        while startingDate <= dateTo:
+        while startingDate < dateTo <= endingDate:
             response = self.cumulocity.requestMeasurementCount(startingDate, endingDate, additionalParameters)
             result['count'] += response['count']
             if response['measurement']:

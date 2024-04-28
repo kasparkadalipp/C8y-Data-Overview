@@ -83,8 +83,10 @@ class TestEventType:
         ]
     }
 
-    def getContents(self, fileName):
-        filePath = f"{basePath}{self.folder}/{fileName}"
+    def getContents(self, fileName, folder=None):
+        if folder is None:
+            folder = self.folder
+        filePath = f"{basePath}{folder}/{fileName}"
         with open(filePath, 'r', encoding='utf8') as json_file:
             return json.load(json_file)
 
@@ -107,3 +109,18 @@ class TestEventType:
             if hasFailedEvents:
                 failedEventCount += 1
         assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
+
+
+    def test_count_matches_total(self, fileName):
+        failedEventCount = 0
+
+        for current, expected in zip(self.getContents(fileName), self.getContents(fileName, "total")):
+
+            expectedCount = expected['total']['count']
+            currentCount = 0
+            for event in current['eventByType']:
+                currentCount += event['count']
+
+            if currentCount < expectedCount:
+                failedEventCount += 1
+        assert failedEventCount == 0, f"Total event count doesn't match for {failedEventCount} devices"
