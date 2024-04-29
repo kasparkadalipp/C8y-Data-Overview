@@ -23,7 +23,6 @@ for jsonFile in files:
         if event:
             eventTypesMapping[deviceId].add(event['type'])
 
-
 def requestMissingValues(year, month, filePath):
     fileContents = readFile(filePath)
 
@@ -36,7 +35,7 @@ def requestMissingValues(year, month, filePath):
         return []
 
     c8y_events = []
-    for savedEvents in tqdm(readFile(filePath), desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
+    for savedEvents in tqdm(fileContents, desc=f"{calendar.month_abbr[month]} {year} - missing values", bar_format=tqdmFormat):
         device = deviceIdMapping[savedEvents['deviceId']]
 
         result = {
@@ -53,7 +52,7 @@ def requestMissingValues(year, month, filePath):
                 result['eventByType'].append(event)
                 continue
 
-            response = MonthlyEvents(device, enforceBounds=True).requestAggregatedEventCountForType(year, month, eventType)
+            response = MonthlyEvents(device, enforceBounds=True).requestEventCountForType(year, month, eventType)
             result['eventByType'].append({
                 "type": eventType,
                 "count": response['count'],
@@ -68,7 +67,7 @@ def requestEventTypes(year, month):
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         deviceId = device['id']
 
-        c8y_measurements = {
+        c8y_events = {
             "deviceId": deviceId,
             "deviceType": device['type'],
             "eventByType": []
@@ -76,13 +75,12 @@ def requestEventTypes(year, month):
 
         for eventType in eventTypesMapping[deviceId]:
             response = MonthlyEvents(device, enforceBounds=True).requestEventCountForType(year, month, eventType)
-
-            c8y_measurements['eventByType'].append({
+            c8y_events['eventByType'].append({
                 "type": eventType,
                 "count": response['count'],
                 "event": response['event']
             })
-        result.append(c8y_measurements)
+        result.append(c8y_events)
     return result
 
 
