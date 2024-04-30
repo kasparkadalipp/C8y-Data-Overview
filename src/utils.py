@@ -7,7 +7,7 @@ tqdmFormat = "{l_bar}{bar}| {n_fmt}/{total_fmt} [time elapsed: {elapsed}]"
 dataRoot = "../data/"
 
 
-def saveToFile(devices: list, filePath: str, overwrite: bool):
+def saveToFile(devices: list | dict, filePath: str, overwrite: bool):
     path = Path(f"{dataRoot}{filePath}")
 
     if not overwrite and path.exists():
