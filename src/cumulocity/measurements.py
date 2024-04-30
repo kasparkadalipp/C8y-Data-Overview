@@ -122,16 +122,18 @@ class MonthlyMeasurements:
         dateFrom, dateTo = requestMonthBounds(year, month)
         result = {'measurement': {}, 'count': 0}
 
+        periodDays = 3
         startingDate = dateFrom
-        endingDate = startingDate + relativedelta(days=1)
-
-        while startingDate < dateTo <= endingDate:
+        endingDate = startingDate + relativedelta(days=periodDays)
+        while startingDate < dateTo:
             response = self.cumulocity.requestMeasurementCount(startingDate, endingDate, additionalParameters)
             result['count'] += response['count']
             if response['measurement']:
                 result['measurement'] = response['measurement']
-            startingDate += relativedelta(days=1)
-            endingDate += relativedelta(days=1)
+            if response['count'] < 0:
+                return {'measurement': {}, 'count': -1}
+            startingDate += relativedelta(days=periodDays)
+            endingDate = min(endingDate + relativedelta(days=periodDays), dateTo)
         return result
 
     @staticmethod
