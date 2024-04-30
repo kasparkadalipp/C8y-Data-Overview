@@ -2,7 +2,6 @@ import os
 from src.utils import fileNamesInFolder, readFile
 from src.utils import readFileContents, saveToFile
 from collections import Counter
-import json
 from tabulate import tabulate
 
 def listDirectories(path):
@@ -42,8 +41,7 @@ def createMeasurementMapping():
 
 
 def mappingOverview():
-    with open("../data/telia/c8y_measurements_id_to_type_mapping.json", "r", encoding='utf8') as json_file:
-        jsonData = json.load(json_file)
+    jsonData = readFile("../data/telia/c8y_measurements_id_to_type_mapping.json")
     counter = Counter([tuple(value) for key, value in jsonData.items() if value])
 
     data = [(value, key) for key, value in counter.items()]
