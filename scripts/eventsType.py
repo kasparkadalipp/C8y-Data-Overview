@@ -52,7 +52,8 @@ def requestMissingValues(year, month, filePath):
                 result['eventByType'].append(event)
                 continue
 
-            response = MonthlyEvents(device, enforceBounds=True).requestEventCountForType(year, month, eventType)
+            response = MonthlyEvents(device, enforceBounds=True).requestAggregatedEventCountForType(year, month, eventType)
+
             result['eventByType'].append({
                 "type": eventType,
                 "count": response['count'],

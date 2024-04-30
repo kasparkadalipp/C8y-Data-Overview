@@ -30,7 +30,7 @@ def requestMissingValues(year, month, filePath):
 
         device = deviceIdMapping[savedMeasurement['deviceId']]
 
-        response = MonthlyEvents(device, enforceBounds=True).requestEventCount(year, month)
+        response = MonthlyEvents(device, enforceBounds=True).requestAggregatedEventCount(year, month)
         c8y_measurements.append({
             "deviceId": device['id'],
             "deviceType": device['type'],
