@@ -147,8 +147,10 @@ class TestTypeFragmentSeries:
         ]
     }
 
-    def getContents(self, fileName):
-        filePath = f"{basePath}{self.folder}/{fileName}"
+    def getContents(self, fileName, folder=None):
+        if folder is None:
+            folder = self.folder
+        filePath = f"{basePath}{folder}/{fileName}"
         with open(filePath, 'r', encoding='utf8') as json_file:
             return json.load(json_file)
 
@@ -170,6 +172,21 @@ class TestTypeFragmentSeries:
                     failedRequests += 1
                     deviceIds.add(device['deviceId'])
         assert failedRequests == 0, f"For devices: {deviceIds}"
+
+    def test_count_matches_total(self, fileName):
+        failedEventCount = 0
+
+        for current, expected in zip(self.getContents(fileName), self.getContents(fileName, "fragmentSeries")):
+
+            countMapping = {(event['fragment'], event['series']): event['count'] for event in expected['fragmentSeries']}
+
+            for event in current['typeFragmentSeries']:
+                countMapping[(event['fragment'], event['series'])] -= event['count']
+
+            mismatchedCounts = len([value for value in countMapping.values() if value != 0])
+            if mismatchedCounts != 0:
+                failedEventCount += 1
+        assert failedEventCount == 0, f"Total measurement count doesn't match for {failedEventCount} devices"
 
     # @pytest.mark.skip(reason="manual test")
     # def test_month_with_no_active_devices(self, fileName):
