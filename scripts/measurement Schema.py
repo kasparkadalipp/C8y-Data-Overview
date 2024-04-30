@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 import pandas as pd
-
+import re
 from src.utils import fileNamesInFolder, readFile
 
 
@@ -14,12 +14,17 @@ def formatUnits(units):
     return units
 
 
-folder = "telia/measurements/typeFragmentSeries_v1/"
+def fixSensorFragment(name):
+    match = re.match("^(sensor)_\\d{1,4}(.*)", name)  # sensor_1235_daily -> sensor_daily
+    if match:
+        return match.group(1) + match.group(2)
+    return name
 
+
+folder = "telia/measurements/typeFragmentSeries/"
 result = defaultdict(lambda: {'count': 0, 'units': set(), 'example': {}, 'values': set()})
 for fileName in fileNamesInFolder('../data/' + folder):
     for device in readFile(folder + fileName):
-        deviceId = device['deviceId']
         deviceType = device['deviceType']
 
         for fragmentSeries in device['typeFragmentSeries']:
@@ -33,14 +38,13 @@ for fileName in fileNamesInFolder('../data/' + folder):
                 measurementValue = measurement[fragment][series]
                 unit = measurementValue['unit'] if 'unit' in measurementValue else ''
                 value = measurementValue['value'] if 'value' in measurementValue else ''
-
+                # fragment = fixSensorFragment(fragment)
                 key = (deviceType, measurementType, fragment, series)
                 result[key]['units'].add(unit)
                 result[key]['count'] += count
                 result[key]['example'] = measurement
                 if len(result[key]['values']) < 10:
                     result[key]['values'].add(value)
-
 
 data = []
 for key, value in result.items():
