@@ -11,6 +11,7 @@ def listDirectories(path):
 
 
 def createMeasurementMapping():
+    print("hello here")
     c8y_data = readFile('telia/c8y_data.json')
     eventTypesMapping = {device['id']: set() for device in c8y_data}
 
@@ -47,5 +48,3 @@ def mappingOverview():
     data = [(value, key) for key, value in counter.items()]
     table = tabulate(data, headers=["Count", "Types"], tablefmt="pipe")
     print(table)
-
-createMeasurementMapping()
