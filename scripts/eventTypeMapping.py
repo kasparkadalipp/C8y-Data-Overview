@@ -37,7 +37,7 @@ def createEventTypeMapping():
 
 def mappingOverview():
     jsonData = readFile("../data/telia/c8y_events_id_to_type_mapping.json")
-    counter = Counter([tuple(value) for key, value in jsonData.items() if value])
+    counter = Counter([tuple(value) for key, value in sorted(jsonData.items())])
 
     data = [(value, key) for key, value in counter.items()]
     table = tabulate(data, headers=["Count", "Types"], tablefmt="pipe")
