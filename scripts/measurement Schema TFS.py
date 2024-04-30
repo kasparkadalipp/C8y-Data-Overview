@@ -67,4 +67,4 @@ for key, value in result.items():
     data.append(row)
 
 df = pd.DataFrame(data)
-df.to_csv("../data/telia/Measurement schema.csv", index=False, encoding='utf-8-sig')
+df.to_csv("../data/telia/Measurement schema (type + fragment + series).csv", index=False, encoding='utf-8-sig')
