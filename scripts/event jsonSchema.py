@@ -42,4 +42,4 @@ for eventType, values in eventTypeMapping.items():
     data.append(row)
 
 df = pd.DataFrame(data)
-df.to_csv("../data/telia/Event jsonSchema.csv", index=False)
+df.to_csv("../data/telia/Event jsonSchema.csv", index=False, encoding='utf-8-sig')
