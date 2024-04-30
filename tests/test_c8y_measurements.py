@@ -70,14 +70,14 @@ class TestTotalMeasurements:
                 deviceIds.add(device['deviceId'])
         assert failedRequests == 0, f"For devices: {deviceIds}"
 
-    @pytest.mark.skip(reason="manual test")
-    def test_month_with_no_active_devices(self, fileName):
-        activeDevices = 0
-        for device in self.getContents(fileName):
-            count = device['total']['count']
-            if count > 0:
-                activeDevices += 1
-        assert activeDevices > 0
+    # @pytest.mark.skip(reason="manual test")
+    # def test_month_with_no_active_devices(self, fileName):
+    #     activeDevices = 0
+    #     for device in self.getContents(fileName):
+    #         count = device['total']['count']
+    #         if count > 0:
+    #             activeDevices += 1
+    #     assert activeDevices > 0
 
 
 @pytest.mark.parametrize("fileName", getFiles('fragmentSeries'))
@@ -120,14 +120,14 @@ class TestFragmentSeries:
                     deviceIds.add(device['deviceId'])
         assert failedRequests == 0, f"For devices: {deviceIds}"
 
-    @pytest.mark.skip(reason="manual test")
-    def test_month_with_no_active_devices(self, fileName):
-        activeDevices = 0
-        for device in self.getContents(fileName):
-            for measurement in device['fragmentSeries']:
-                if measurement['count'] != 0:
-                    activeDevices += 1
-        assert activeDevices > 0
+    # @pytest.mark.skip(reason="manual test")
+    # def test_month_with_no_active_devices(self, fileName):
+    #     activeDevices = 0
+    #     for device in self.getContents(fileName):
+    #         for measurement in device['fragmentSeries']:
+    #             if measurement['count'] != 0:
+    #                 activeDevices += 1
+    #     assert activeDevices > 0
 
 
 @pytest.mark.parametrize("fileName", getFiles('typeFragmentSeries'))
@@ -171,11 +171,11 @@ class TestTypeFragmentSeries:
                     deviceIds.add(device['deviceId'])
         assert failedRequests == 0, f"For devices: {deviceIds}"
 
-    @pytest.mark.skip(reason="manual test")
-    def test_month_with_no_active_devices(self, fileName):
-        activeDevices = 0
-        for device in self.getContents(fileName):
-            for measurement in device['typeFragmentSeries']:
-                if measurement['count'] != 0:
-                    activeDevices += 1
-        assert activeDevices > 0
+    # @pytest.mark.skip(reason="manual test")
+    # def test_month_with_no_active_devices(self, fileName):
+    #     activeDevices = 0
+    #     for device in self.getContents(fileName):
+    #         for measurement in device['typeFragmentSeries']:
+    #             if measurement['count'] != 0:
+    #                 activeDevices += 1
+    #     assert activeDevices > 0
