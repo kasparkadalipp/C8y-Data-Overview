@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 
+
 load_dotenv('../.env.telia')
 from src.cumulocity import MonthlyEvents
 from src.utils import tqdmFormat, saveToFile, pathExists, fileContentsFromFolder, readFile
@@ -8,22 +9,18 @@ import calendar
 from datetime import date
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
+from eventTypeMapping import createEventTypeMapping
+
 
 c8y_data = readFile('telia/c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
 files = fileContentsFromFolder('../data/telia/events/total')
 
-if pathExists('telia/c8y_events_id_to_type_mapping.json'):
-    eventTypesMapping = readFile('telia/c8y_events_id_to_type_mapping.json')
-else:
-    eventTypesMapping = {device['id']: set() for device in c8y_data}
-    for jsonFile in files:
-        for device in jsonFile:
-            deviceId = device['deviceId']
-            event = device['total']['event']
-            if event:
-                eventTypesMapping[deviceId].add(event['type'])
+if not pathExists('telia/c8y_events_id_to_type_mapping.json'):
+    createEventTypeMapping()
+eventTypesMapping = readFile('telia/c8y_events_id_to_type_mapping.json')
+
 
 def requestMissingValues(year, month, filePath):
     fileContents = readFile(filePath)

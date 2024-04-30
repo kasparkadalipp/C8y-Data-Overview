@@ -9,6 +9,7 @@ from src.utils import tqdmFormat, saveToFile, pathExists, fileContentsFromFolder
 from tqdm import tqdm
 import calendar
 from dateutil.parser import parse
+from measurementTypeMapping import createMeasurementMapping
 
 c8y_data = readFile('telia/c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
@@ -26,16 +27,9 @@ def getMeasurementTypes(measurement: dict):
     return result
 
 
-files = fileContentsFromFolder('../data/telia/measurements/fragmentSeries')
-typeFragmentSeriesMapping = {device['id']: set() for device in c8y_data}
-for jsonFile in files:
-    for device in jsonFile:
-        deviceId = device['deviceId']
-        for fragmentSeries in device['fragmentSeries']:
-            measurement = fragmentSeries['measurement']
-            if measurement:
-                typeFragmentSeries = getMeasurementTypes(measurement)
-                typeFragmentSeriesMapping[deviceId] = typeFragmentSeriesMapping[deviceId].union(typeFragmentSeries)
+if not pathExists('telia/c8y_measurements_id_to_type_mapping.json'):
+    createMeasurementMapping()
+typeFragmentSeriesMapping = readFile('telia/c8y_measurements_id_to_type_mapping.json')
 
 def requestMissingValues(year, month, filePath):
     fileContents = readFile(filePath)
