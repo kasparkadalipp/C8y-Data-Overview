@@ -13,7 +13,6 @@ class Events:
     def __init__(self, device: dict, enforceBounds=False):
         self.enforceBounds = enforceBounds
         self.deviceId = device['id']
-        self.deviceType = device['type']
 
         if enforceBounds:
             self.latestEvent = device['latestEvent']
@@ -103,16 +102,20 @@ class MonthlyEvents:
         dateFrom, dateTo = requestMonthBounds(year, month)
         result = {'event': {}, 'count': 0}
 
+        periodDays = 3
         startingDate = dateFrom
-        endingDate = startingDate + relativedelta(days=1)
-        while startingDate <= dateTo:
+        endingDate = startingDate + relativedelta(days=periodDays)
+        while startingDate < dateTo:
             response = self.cumulocity.requestEventCount(startingDate, endingDate, additionalParameters)
-            result['count'] += response['count']
             if response['event']:
                 result['event'] = response['event']
 
-            startingDate += relativedelta(days=1)
-            endingDate += relativedelta(days=1)
+            if response['count'] < 0:
+                return {'event': {}, 'count': -1}
+            result['count'] += response['count']
+
+            startingDate += relativedelta(days=periodDays)
+            endingDate = min(endingDate + relativedelta(days=periodDays), dateTo)
         return result
 
     @staticmethod
