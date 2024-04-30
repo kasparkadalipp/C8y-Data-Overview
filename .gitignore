@@ -11,6 +11,7 @@ __pycache__/
 **/*.json
 **/.env*
 **/.log
+**/*.csv
 
 # sample environment setup
 !.env.sample
