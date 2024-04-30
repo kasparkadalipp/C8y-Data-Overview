@@ -121,6 +121,6 @@ class TestEventType:
             for event in current['eventByType']:
                 currentCount += event['count']
 
-            if currentCount < expectedCount:
+            if currentCount != expectedCount:
                 failedEventCount += 1
         assert failedEventCount == 0, f"Total event count doesn't match for {failedEventCount} devices"
