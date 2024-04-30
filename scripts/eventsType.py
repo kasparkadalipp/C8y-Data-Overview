@@ -14,14 +14,16 @@ deviceIdMapping = {device['id']: device for device in c8y_data}
 
 files = fileContentsFromFolder('../data/telia/events/total')
 
-eventTypesMapping = {device['id']: set() for device in c8y_data}
-
-for jsonFile in files:
-    for device in jsonFile:
-        deviceId = device['deviceId']
-        event = device['total']['event']
-        if event:
-            eventTypesMapping[deviceId].add(event['type'])
+if pathExists('telia/c8y_events_id_to_type_mapping.json'):
+    eventTypesMapping = readFile('telia/c8y_events_id_to_type_mapping.json')
+else:
+    eventTypesMapping = {device['id']: set() for device in c8y_data}
+    for jsonFile in files:
+        for device in jsonFile:
+            deviceId = device['deviceId']
+            event = device['total']['event']
+            if event:
+                eventTypesMapping[deviceId].add(event['type'])
 
 def requestMissingValues(year, month, filePath):
     fileContents = readFile(filePath)
