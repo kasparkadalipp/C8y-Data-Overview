@@ -48,7 +48,7 @@ for fileName in fileNamesInFolder('../data/' + folder):
 
 data = []
 for key, value in result.items():
-    deviceType, measurementType, fragment, series = key
+    deviceType, fragment, series = key
     count = value['count']
     units = formatUnits(value['units'])
     exampleMeasurement = value['example']
