@@ -43,7 +43,13 @@ def createMeasurementMapping():
 
 def mappingOverview():
     jsonData = readFile("../data/telia/c8y_measurements_id_to_type_mapping.json")
-    counter = Counter([tuple(value) for key, value in sorted(jsonData.items())])
+    data = []
+    for key, value in jsonData.items():
+        deviceTypes = set()
+        for measurementType, fragment, series in value:
+            deviceTypes.add(measurementType)
+        data.append(tuple(sorted(deviceTypes)))
+    counter = Counter([tuple(value) for value in sorted(data)])
 
     data = [(value, key) for key, value in counter.items()]
     table = tabulate(data, headers=["Count", "Types"], tablefmt="pipe")
