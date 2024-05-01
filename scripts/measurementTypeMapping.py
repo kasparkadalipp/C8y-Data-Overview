@@ -11,7 +11,6 @@ def listDirectories(path):
 
 
 def createMeasurementMapping():
-    print("hello here")
     c8y_data = readFile('telia/c8y_data.json')
     eventTypesMapping = {device['id']: set() for device in c8y_data}
 
