@@ -4,6 +4,7 @@ from src.utils import readFileContents, saveToFile
 from collections import Counter
 from tabulate import tabulate
 
+
 def listDirectories(path):
     entries = os.listdir(path)
     directories = [entry for entry in entries if os.path.isdir(os.path.join(path, entry))]
