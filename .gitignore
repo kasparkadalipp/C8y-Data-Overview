@@ -7,6 +7,9 @@
 # Python compiled files and directories
 __pycache__/
 
+#resources folder
+data/
+
 # files in any subdirectory
 **/*.json
 **/.env*
