@@ -59,5 +59,4 @@ wordcloudInput = ','.join(wordcloudInput).replace("_", ' ')
 wordcloud = WordCloud(background_color="white", max_words=5000, contour_width=3, contour_color='steelblue', width=1600,
                       height=800)
 wordcloud.generate(wordcloudInput)
-wordcloud.to_file('measurements wordcloud.png')
-wordcloud.to_image()
+wordcloud.to_file('../data/telia/word cloud measurements.png')
