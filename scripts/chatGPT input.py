@@ -79,7 +79,9 @@ for key, value in measurementMapping.items():
     deviceId, deviceType, measurementType, fragment, series = key
     deviceName = deviceIdMapping[deviceId]['name']
     units = formatUnits(value['units'])
-    exampleMeasurement = value['example']
+
+    alwaysPresentKeys = ["lastUpdated", "creationTime", "self", "source", "time", "id", "text", "type"]
+    exampleMeasurement = {key: value for key, value in value['example'].items() if key not in alwaysPresentKeys}
 
     if deviceId not in deviceMapping:
         deviceMapping[deviceId] = {'device': deviceName}
@@ -97,8 +99,8 @@ for key, event in eventTypeMapping.items():
         deviceMapping[deviceId] = {'device': deviceName}
 
     alwaysPresentKeys = ["lastUpdated", "creationTime", "self", "source", "time", "id", "text", "type"]
-    exampleMeasurement = {key: value for key, value in event.items() if key not in alwaysPresentKeys}
+    exampleEvent = {key: value for key, value in event.items() if key not in alwaysPresentKeys}
 
-    deviceMapping[deviceId][eventType] = shortenEvent(event)
+    deviceMapping[deviceId][eventType] = shortenEvent(exampleEvent)
 
 saveToFile(deviceMapping, "telia/chatGPT input.json", overwrite=True)
