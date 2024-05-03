@@ -1,27 +1,19 @@
 from dotenv import load_dotenv
-
-load_dotenv('.env.telia')
-import pandas as pd
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 from skllm.config import SKLLMConfig
-
-SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
-SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))
-from tqdm import tqdm
-
-tqdm.pandas()
 from tqdm import tqdm
 from src.utils import readFile
 from pydantic import BaseModel
 from openai import OpenAI
-import instructor
 from src.utils import tqdmFormat
+import pandas as pd
+import instructor
+import os
+
+load_dotenv('.env.telia')
+SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
+SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))
 
 client = instructor.patch(OpenAI())
-
 inputData = readFile('telia/chatGPT input.json')
 
 
@@ -52,13 +44,12 @@ def send_request(message_data, model="gpt-3.5-turbo"):  # "gpt-4-turbo"
     )
 
 
-
 result = {}
 failedRequests = []
 
 for deviceId, data in tqdm(inputData.items(), desc="requesting data for gpt-3.5-turbo", bar_format=tqdmFormat):
     try:
-        response = send_request(data, model = "gpt-3.5-turbo")
+        response = send_request(data, model="gpt-3.5-turbo")
         result[deviceId] = {
             'id': deviceId,
             'name': data['device'],
