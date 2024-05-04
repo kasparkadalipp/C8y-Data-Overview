@@ -123,6 +123,24 @@
 
 ```
 
+### c8y_events (type + fragment)
+
+```JSON
+{
+  "deviceId": 11904,
+  "deviceType": "com_cityntel_light",
+    "typeFragment": [
+    {
+      "type": "com_cityntel_status",
+      "fragment": "com_cityntel_status_data",
+      "count": 12760,
+      "event": <event>
+    }
+  ]
+}
+
+```
+
 
 ### c8y_groups
 
