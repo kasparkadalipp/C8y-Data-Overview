@@ -11,7 +11,7 @@ def listDirectories(path):
     return directories
 
 
-def createEventTypeMapping():
+def createEventFragmentMapping():
     alwaysPresentKeys = ["lastUpdated", "creationTime", "self", "source", "time", "id", "text", "type"]
     c8y_data = readFile('telia/c8y_data.json')
     eventTypesMapping = {device['id']: set() for device in c8y_data}
