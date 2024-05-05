@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 import pytest
 import json
 import os
@@ -168,3 +170,23 @@ class TestEventType:
             if hasFailedEvents:
                 failedEventCount += 1
         assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
+
+    def test_count_exeeds_total(self, fileName):
+        failedEventCount = 0
+        for current, expected in zip(self.getContents(fileName), self.getContents(fileName, "type")):
+
+            expectedCountMapping = defaultdict(int)
+            deviceType = expected['deviceType']
+            for event in expected['eventByType']:
+                expectedCountMapping[(deviceType, event['type'])] += event['count']
+
+            currentCountMapping = defaultdict(set)
+            deviceType = current['deviceType']
+            for event in current['typeFragment']:
+                currentCountMapping[(deviceType, event['type'])].add(event['count'])
+            currentCountMapping = {key: sum(value) for key, value in currentCountMapping.items()}
+
+            for key in currentCountMapping:
+                if expectedCountMapping[key] < currentCountMapping[key]:
+                    failedEventCount += 1
+        assert failedEventCount == 0, f"Total event count doesn't match for {failedEventCount} devices"
