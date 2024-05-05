@@ -171,7 +171,7 @@ class TestEventType:
                 failedEventCount += 1
         assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
 
-    def test_count_exeeds_total(self, fileName):
+    def test_count_exceeds_total(self, fileName):
         failedEventCount = 0
         for current, expected in zip(self.getContents(fileName), self.getContents(fileName, "type")):
 
