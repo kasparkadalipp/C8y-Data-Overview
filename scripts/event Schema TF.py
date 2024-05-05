@@ -16,12 +16,12 @@ def createSchema(event):
     return jsonSchema
 
 
-folder = "telia/events/typeFragment/"
+eventTypeFragmentFolder = "telia/events/typeFragment/"
 
-eventTypeMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}})
+eventTypeFragmentMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}})
 
-for fileName in fileNamesInFolder('../data/' + folder):
-    for event in readFile(folder + fileName):
+for fileName in fileNamesInFolder('../data/' + eventTypeFragmentFolder):
+    for event in readFile(eventTypeFragmentFolder + fileName):
         eventTypeSum = 0
         deviceId = event['deviceId']
         deviceType = event['deviceType']
@@ -33,12 +33,12 @@ for fileName in fileNamesInFolder('../data/' + folder):
             if event:
                 jsonSchema = createSchema(event)
                 key = (deviceType, eventType, fragment)
-                eventTypeMapping[key]['schema'].add_schema(jsonSchema)
-                eventTypeMapping[key]['count'] += count
-                eventTypeMapping[key]['example'] = event
+                eventTypeFragmentMapping[key]['schema'].add_schema(jsonSchema)
+                eventTypeFragmentMapping[key]['count'] += count
+                eventTypeFragmentMapping[key]['example'] = event
 
 data = []
-for key, values in eventTypeMapping.items():
+for key, values in eventTypeFragmentMapping.items():
     eventType, deviceType, fragment = key
     row = {
         'deviceType': deviceType,

@@ -16,12 +16,12 @@ def createSchema(event):
     return jsonSchema
 
 
-folder = "telia/events/type/"
+eventTypeFolder = "telia/events/type/"
 
 eventTypeMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}})
 
-for fileName in fileNamesInFolder('../data/' + folder):
-    for event in readFile(folder + fileName):
+for fileName in fileNamesInFolder('../data/' + eventTypeFolder):
+    for event in readFile(eventTypeFolder + fileName):
         eventTypeSum = 0
         deviceId = event['deviceId']
         deviceType = event['deviceType']
