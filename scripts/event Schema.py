@@ -56,7 +56,8 @@ for fileName in fileNamesInFolder('../data/' + eventTypeFragmentFolder):
 
 data = []
 usedEventTypes = set()
-for eventTypeFragment, typeFragment in eventTypeFragmentMapping.items():
+sortedTypeFragment = dict(sorted(eventTypeFragmentMapping.items(), reverse=True, key=lambda item: (item[0][0], item[0][1], item[1]['count'])))
+for eventTypeFragment, typeFragment in sortedTypeFragment.items():
     eventType, deviceType, fragment = eventTypeFragment
 
     eventTypeKey = (eventType, deviceType)
@@ -79,6 +80,20 @@ for eventTypeFragment, typeFragment in eventTypeFragmentMapping.items():
         'example event': typeFragment['example']
     }
     data.append(row)
+
+for key, values in eventTypeMapping.items():
+    if key not in usedEventTypes:
+        eventType, deviceType = key
+        row = {
+            'deviceType': deviceType,
+            'eventType': eventType,
+            'count': values['count'],
+            'fragment': '',
+            'fragmentCount': '',
+            'jsonSchema': str(values['schema'].to_schema()).replace("'", '"'),
+            'example event': values['example']
+        }
+        data.append(row)
 
 df = pd.DataFrame(data)
 df.to_csv("../data/telia/Events.csv", index=False, encoding='utf-8-sig')
