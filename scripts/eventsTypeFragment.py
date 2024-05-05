@@ -30,8 +30,8 @@ def requestMissingValues(year, month, filePath):
 
     missingValueCount = 0
     for device in fileContents:
-        for eventType in device['eventByType']:
-            if eventType['count'] < 0:
+        for eventTypeFragment in device['typeFragment']:
+            if eventTypeFragment['count'] < 0:
                 missingValueCount += 1
     if missingValueCount == 0:
         return []
@@ -94,8 +94,7 @@ def requestEventTypes(year, month):
 print(f'Oldest event {min([parse(d['oldestEvent']['time']).date() for d in c8y_data if d['oldestEvent']])}')
 print(f'Latest event {max([parse(d['latestEvent']['time']).date() for d in c8y_data if d['latestEvent']])}')
 
-# startingDate = date(2016, 11, 1)
-startingDate = date(2024, 1, 1)
+startingDate = date(2016, 11, 1)
 lastDate = date(2024, 3, 1)
 
 currentDate = lastDate

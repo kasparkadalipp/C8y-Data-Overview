@@ -38,8 +38,12 @@ class Events:
         response = self.requestEventCount(dateFrom, dateTo, additionalParameters)
         return {'count': response['count'], 'oldestEvent': response['event']}
 
-    def requestEventCountForType(self, dateFrom, dateTo, eventType):
+    def requestEventCountForType(self, dateFrom: date, dateTo: date, eventType : str):
         additionalParameters = {'type': eventType}
+        return self.requestEventCount(dateFrom, dateTo, additionalParameters)
+
+    def requestEventCountForTypeFragment(self, dateFrom: date, dateTo: date, eventType: str, fragment: str):
+        additionalParameters = {'type': eventType, 'fragmentType': fragment}
         return self.requestEventCount(dateFrom, dateTo, additionalParameters)
 
     def requestEventCount(self, dateFrom: date, dateTo: date, additionalParameters: dict = None) -> dict:
@@ -96,6 +100,14 @@ class MonthlyEvents:
 
     def requestAggregatedEventCountForType(self, year: int, month: int, eventType: str) -> dict:
         additionalParameters = {'type': eventType}
+        return self.requestAggregatedEventCount(year, month, additionalParameters)
+
+    def requestEventCountForTypeFragment(self, year: int, month: int, eventType: str, fragment: str):
+        additionalParameters = {'type': eventType, 'fragmentType': fragment}
+        return self.requestEventCount(year, month, additionalParameters)
+
+    def requestAggregatedEventCountForTypeFragment(self, year: int, month: int, eventType: str, fragment: str) -> dict:
+        additionalParameters = {'type': eventType, 'fragmentType': fragment}
         return self.requestAggregatedEventCount(year, month, additionalParameters)
 
     def requestAggregatedEventCount(self, year: int, month: int, additionalParameters: dict = None) -> dict:

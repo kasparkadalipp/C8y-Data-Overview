@@ -124,3 +124,47 @@ class TestEventType:
             if currentCount != expectedCount:
                 failedEventCount += 1
         assert failedEventCount == 0, f"Total event count doesn't match for {failedEventCount} devices"
+
+
+@pytest.mark.parametrize("fileName", getFiles('typeFragment'))
+class TestEventType:
+    example = {
+        "deviceId": 11904,
+        "deviceType": "com_cityntel_light",
+        "typeFragment": [
+            {
+                "type": "com_cityntel_status_data",
+                'fragment': 'com_cityntel_status_data',
+                "count": 15660,
+                "event": "<measurement>"
+            }
+        ]
+    }
+    folder = 'typeFragment'
+
+    def getContents(self, fileName, folder=None):
+        if folder is None:
+            folder = self.folder
+        filePath = f"{basePath}{folder}/{fileName}"
+        with open(filePath, 'r', encoding='utf8') as json_file:
+            return json.load(json_file)
+
+    def test_required_keys(self, fileName):
+        for device in self.getContents(fileName):
+            for key in self.example.keys():
+                assert key in device.keys()
+            for event in device['typeFragment']:
+                for key in self.example['typeFragment'][0].keys():
+                    assert key in event.keys()
+
+    def test_no_failed_requests(self, fileName):
+        failedEventCount = 0
+
+        for device in self.getContents(fileName):
+            hasFailedEvents = False
+            for event in device['typeFragment']:
+                if event['count'] < 0:
+                    hasFailedEvents = True
+            if hasFailedEvents:
+                failedEventCount += 1
+        assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
