@@ -25,7 +25,7 @@ for fileName in fileNamesInFolder('../data/' + folder):
         eventTypeSum = 0
         deviceId = event['deviceId']
         deviceType = event['deviceType']
-        for eventTypeObj in event['eventByType']:
+        for eventTypeObj in event['typeFragment']:
             eventType = eventTypeObj['type']
             event = eventTypeObj['event']
             count = eventTypeObj['count']
@@ -39,12 +39,12 @@ for fileName in fileNamesInFolder('../data/' + folder):
 
 data = []
 for key, values in eventTypeMapping.items():
-    eventType, deviceType = key
+    eventType, deviceType, fragment = key
     row = {
         'deviceType': deviceType,
         'eventType': eventType,
+        'fragment': fragment,
         'count': values['count'],
-        'fragment': values['fragment'],
         'jsonSchema': str(values['schema'].to_schema()).replace("'", '"'),
         'example event': values['example']
     }
