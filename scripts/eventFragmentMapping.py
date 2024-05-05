@@ -35,6 +35,13 @@ def createEventFragmentMapping():
                         for key in eventKeys:
                             eventTypesMapping[deviceId].add(key)
 
+                if 'typeFragment' in device:
+                    for eventByType in device['typeFragment']:
+                        event = eventByType['event']
+                        eventKeys = [key for key in event.keys() if key not in alwaysPresentKeys]
+                        for key in eventKeys:
+                            eventTypesMapping[deviceId].add(key)
+
     data = {key: sorted(value) for key, value in eventTypesMapping.items()}
     saveToFile(data, "telia/c8y_events_id_to_fragment_mapping.json", overwrite=True)
 
