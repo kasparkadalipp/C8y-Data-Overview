@@ -20,7 +20,6 @@ inputData = readFile('telia/chatGPT input.json')
 class Measurement(BaseModel):
     description: str
     domain: str
-    isAggregated: bool
 
 
 def send_request(message_data, model="gpt-3.5-turbo"):  # "gpt-4-turbo"
@@ -29,17 +28,21 @@ def send_request(message_data, model="gpt-3.5-turbo"):  # "gpt-4-turbo"
         messages=[
             {
                 "role": "system",
-                "content": "Take on the persona of a data analyst. The user will provide JSON "
-                           "objects representing measurement data from a smart city IoT device."
+                "content":
+                    'Take on the persona of a data analyst who is proficient in interpreting JSON objects and '
+                    'extracting meaningful insights from them. '
+                    'The user will provide JSON objects representing measurement data from a smart city IoT device.'
 
             },
             {
                 "role": "user",
-                "content": f'In one sentence describe the type of data that kind of device sends. '
-                           f'Avoid referencing any specific device structures or proprietary terms and '
-                           f'don\'t use generic terms like "IoT" and "smart city. {message_data}'
+                "content": 'Ignore device specific information and concisely summarise what kind of data is being sent. '
+                           'Avoid generic terms like "IoT" and "smart city". '
+                           'Also provide example of a smart city domain this device belongs to.'
+                           f"{message_data} "
             }
         ],
+        max_retries=5,
         response_model=Measurement
     )
 
