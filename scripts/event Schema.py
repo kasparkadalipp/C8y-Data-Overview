@@ -17,41 +17,43 @@ def createSchema(event):
 
 
 eventTypeFolder = "telia/events/type/"
-eventTypeMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}})
+eventTypeMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}, 'devices': set()})
 for fileName in fileNamesInFolder('../data/' + eventTypeFolder):
-    for event in readFile(eventTypeFolder + fileName):
+    for device in readFile(eventTypeFolder + fileName):
         eventTypeSum = 0
-        deviceId = event['deviceId']
-        deviceType = event['deviceType']
-        for eventTypeObj in event['eventByType']:
-            eventType = eventTypeObj['type']
-            event = eventTypeObj['event']
-            count = eventTypeObj['count']
-            if event:
-                jsonSchema = createSchema(event)
+        deviceId = device['deviceId']
+        deviceType = device['deviceType']
+        for event in device['eventByType']:
+            eventType = event['type']
+            device = event['event']
+            count = event['count']
+            if device:
+                jsonSchema = createSchema(device)
                 key = (deviceType, eventType)
                 eventTypeMapping[key]['schema'].add_schema(jsonSchema)
                 eventTypeMapping[key]['count'] += count
-                eventTypeMapping[key]['example'] = event
+                eventTypeMapping[key]['example'] = device
+                eventTypeMapping[key]['devices'].add(deviceId)
 
 eventTypeFragmentFolder = "telia/events/typeFragment/"
-eventTypeFragmentMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}})
+eventTypeFragmentMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}, 'devices': set()})
 for fileName in fileNamesInFolder('../data/' + eventTypeFragmentFolder):
-    for event in readFile(eventTypeFragmentFolder + fileName):
+    for device in readFile(eventTypeFragmentFolder + fileName):
         eventTypeSum = 0
-        deviceId = event['deviceId']
-        deviceType = event['deviceType']
-        for eventTypeObj in event['typeFragment']:
-            eventType = eventTypeObj['type']
-            event = eventTypeObj['event']
-            count = eventTypeObj['count']
-            fragment = eventTypeObj['fragment']
-            if event:
-                jsonSchema = createSchema(event)
+        deviceId = device['deviceId']
+        deviceType = device['deviceType']
+        for event in device['typeFragment']:
+            eventType = event['type']
+            device = event['event']
+            count = event['count']
+            fragment = event['fragment']
+            if device:
+                jsonSchema = createSchema(device)
                 key = (deviceType, eventType, fragment)
                 eventTypeFragmentMapping[key]['schema'].add_schema(jsonSchema)
                 eventTypeFragmentMapping[key]['count'] += count
-                eventTypeFragmentMapping[key]['example'] = event
+                eventTypeFragmentMapping[key]['example'] = device
+                eventTypeFragmentMapping[key]['devices'].add(deviceId)
 
 
 data = []
@@ -62,18 +64,23 @@ for eventTypeFragment, typeFragment in sortedTypeFragment.items():
 
     eventTypeKey = (eventType, deviceType)
     eventTypeCount = eventTypeMapping[eventTypeKey]['count']
+    deviceCountForType = len(eventTypeMapping[eventTypeKey]['devices'])
+    deviceCountForFragment = len(typeFragment['devices'])
 
     if eventTypeKey in usedEventTypes:
         deviceType = ''
         eventType = ''
         eventTypeCount = ''
+        deviceCountForType = ''
     else:
         usedEventTypes.add(eventTypeKey)
 
     row = {
+        'devicesCount': deviceCountForType,
         'deviceType': deviceType,
         'eventType': eventType,
-        'count': eventTypeCount,
+        'eventCount': eventTypeCount,
+        'fragmentDeviceCount': deviceCountForFragment,
         'fragment': fragment,
         'fragmentCount': typeFragment['count'],
         'jsonSchema': str(typeFragment['schema'].to_schema()).replace("'", '"'),
@@ -85,6 +92,7 @@ for key, values in eventTypeMapping.items():
     if key not in usedEventTypes:
         eventType, deviceType = key
         row = {
+            'devicesCount': len(values['devices']),
             'deviceType': deviceType,
             'eventType': eventType,
             'count': values['count'],
