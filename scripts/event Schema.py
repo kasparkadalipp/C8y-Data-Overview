@@ -29,7 +29,7 @@ for fileName in fileNamesInFolder('../data/' + eventTypeFolder):
             count = event['count']
             if device:
                 jsonSchema = createSchema(device)
-                key = (eventType, deviceType)
+                key = (deviceType, eventType)
                 eventTypeMapping[key]['schema'].add_schema(jsonSchema)
                 eventTypeMapping[key]['count'] += count
                 eventTypeMapping[key]['example'] = device
@@ -90,7 +90,7 @@ for eventTypeFragment, typeFragment in sortedTypeFragment.items():
 
 for key, values in eventTypeMapping.items():
     if key not in usedEventTypes:
-        eventType, deviceType = key
+        deviceType, eventType = key
         row = {
             'devicesCount': len(values['devices']),
             'deviceType': deviceType,
