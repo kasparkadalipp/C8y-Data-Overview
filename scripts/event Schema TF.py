@@ -32,7 +32,7 @@ for fileName in fileNamesInFolder('../data/' + eventTypeFragmentFolder):
             fragment = eventTypeObj['fragment']
             if event:
                 jsonSchema = createSchema(event)
-                key = (deviceType, eventType, fragment)
+                key = (eventType, deviceType, fragment)
                 eventTypeFragmentMapping[key]['schema'].add_schema(jsonSchema)
                 eventTypeFragmentMapping[key]['count'] += count
                 eventTypeFragmentMapping[key]['example'] = event

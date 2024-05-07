@@ -31,7 +31,7 @@ for fileName in fileNamesInFolder('../data/' + eventTypeFolder):
             count = eventTypeObj['count']
             if event:
                 jsonSchema = createSchema(event)
-                key = (deviceType, eventType)
+                key = (eventType, deviceType)
                 eventTypeMapping[key]['schema'].add_schema(jsonSchema)
                 eventTypeMapping[key]['count'] += count
                 eventTypeMapping[key]['example'] = event
