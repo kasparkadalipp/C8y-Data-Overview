@@ -42,7 +42,7 @@ def formatName(item, group):
     return str(item)[2:]
 
 
-def createNetworkData(inputData: dict):
+def createMeasurementNetwork(inputData: dict):
     data = {"nodes": [], 'links': []}
 
     links = set()
@@ -104,11 +104,11 @@ def createNetworkData(inputData: dict):
 
 def visualizeWholeDataset():
     inputData = getUniqueFields(fileNamesInFolder(basePath))
-    network = createNetworkData(inputData)
+    network = createMeasurementNetwork(inputData)
     saveToFile(network, 'telia/visualizations/network (total).json', overwrite=True)
 
 
 def visualiseMonth():
     inputData = getUniqueFields([basePath + 'c8y_measurements 2024-03-01 - 2024-04-01.json'])
-    network = createNetworkData(inputData)
+    network = createMeasurementNetwork(inputData)
     saveToFile(network, 'telia/visualizations/network (month).json', overwrite=True)
