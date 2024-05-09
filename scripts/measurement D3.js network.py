@@ -12,6 +12,7 @@ def fixSensorFragment(name):
         return match.group(1) + match.group(2)
     return name
 
+
 def getUniqueFields(filePaths):
     result = defaultdict(int)
 
@@ -111,5 +112,3 @@ def visualiseMonth():
     inputData = getUniqueFields([basePath + 'c8y_measurements 2024-03-01 - 2024-04-01.json'])
     network = createNetworkData(inputData)
     saveToFile(network, 'telia/visualizations/network (month).json', overwrite=True)
-
-visualiseMonth()
