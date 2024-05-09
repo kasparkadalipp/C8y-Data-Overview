@@ -71,11 +71,11 @@ def createMeasurementNetwork(inputData: dict):
 
         keys = [
             (root, 0),
-            (level1, 1),
-            (level2, 2),
-            (level3, 3),
-            (level4, 4),
-            (level5, 5)
+            (source1, 1),
+            (source2, 2),
+            (source3, 3),
+            (source4, 4),
+            (source5, 5)
         ]
 
         for key in keys:
@@ -89,6 +89,7 @@ def createMeasurementNetwork(inputData: dict):
         links.add((source4, source5))
 
     data['links'] = [{"source": source, "target": target} for source, target in links]
+
     for node, count in nodes.items():
         nodeId, group = node
         data['nodes'].append(
@@ -96,7 +97,7 @@ def createMeasurementNetwork(inputData: dict):
                 "id": nodeId,
                 "group": group,
                 "name": formatName(nodeId, group),
-                'measurementCount': count['measurements'],
+                'dataCount': count['measurements'],
                 'deviceCount': len(count['devices'])
             })
     return data
@@ -108,7 +109,7 @@ def visualizeWholeDataset():
     saveToFile(network, 'telia/visualizations/network (total).json', overwrite=True)
 
 
-def visualiseMonth():
+def visualizeMonth():
     inputData = getUniqueFields([basePath + 'c8y_measurements 2024-03-01 - 2024-04-01.json'])
     network = createMeasurementNetwork(inputData)
-    saveToFile(network, 'telia/visualizations/network (month).json', overwrite=True)
+    saveToFile(network, 'telia/visualizations/network (test).json', overwrite=True)
