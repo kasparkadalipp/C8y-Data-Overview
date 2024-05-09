@@ -71,11 +71,11 @@ def createNetworkData(inputData: dict):
 
         keys = [
             (root, 0),
-            (f"1_{level1}", 1),
-            (f"2_{level2}", 2),
-            (f"3_{level3}", 3),
-            (f"4_{level4}", 4),
-            (f"5_{level5}", 5)
+            (level1, 1),
+            (level2, 2),
+            (level3, 3),
+            (level4, 4),
+            (level5, 5)
         ]
 
         for key in keys:
