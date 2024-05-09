@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from src.utils import saveToFile, readFileContents, readFile, fileNamesInFolder
+from src.utils import saveToFile, readFile, fileNamesInFolder
 import re
 
 basePath = '../data/telia/measurements/typeFragmentSeries/'
