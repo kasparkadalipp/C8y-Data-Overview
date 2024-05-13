@@ -21,7 +21,7 @@
 </div>
 
 
-### Built With
+### Used Technologies
 
 * [![Python][Python.org]][Python-url]
 * [![D3][D3.js]][D3-url]
