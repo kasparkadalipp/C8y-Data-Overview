@@ -4,7 +4,7 @@
     <img src="images/ut_logo.png" alt="Logo" width="120" height="120">
   </a>
 
-  <h3 align="center">Knowledge graphs for cataloging and making sense of Smart City data</h3>
+  <h3 align="center">Knowledge Graphs for Cataloging and Making Sense of Smart City Data</h3>
 
   <p align="center">
     Project WIP
