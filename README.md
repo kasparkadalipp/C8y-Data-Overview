@@ -57,6 +57,3 @@ OPENAI_API_KEY=dGhpcyBpcyBhIHNhbXBsZSBBUEkga2V5
 OPENAI_ORGANIZATION_ID=org-b3JnYW5pemF0aW9uIGlk
 ```
 
----
-
-**Note:** Accessing Cumulocity data and using the OpenAI API may incur costs. Ensure you have the necessary permissions and funds before proceeding.
