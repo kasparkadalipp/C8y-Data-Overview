@@ -7,11 +7,6 @@
   <h3 align="center">Knowledge Graphs for Cataloging and Making Sense of Smart City Data</h3>
 
   <p align="center">
-    Project WIP
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
     <a href="https://kodu.ut.ee/~kadalipp/Measurements/Test/network.html">Measurement Graph Visualization</a>
     ·
     <a href="https://kodu.ut.ee/~kadalipp/Events/Test/network.html">Event Graph Visualization</a>
