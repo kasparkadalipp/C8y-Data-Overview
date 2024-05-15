@@ -6,6 +6,48 @@ import re
 basePath = '../data/telia/measurements/typeFragmentSeries/'
 
 
+def calculateFrequency(measurements, days_in_month=31):
+    # Total seconds, minutes, hours, and days in the given month
+    total_seconds = days_in_month * 24 * 60 * 60
+    total_minutes = days_in_month * 24 * 60
+    total_hours = days_in_month * 24
+    total_days = days_in_month
+
+    # Calculate frequencies
+    frequency_per_second = measurements / total_seconds
+    frequency_per_minute = measurements / total_minutes
+    frequency_per_hour = measurements / total_hours
+    frequency_per_day = measurements / total_days
+
+    # Determine the most fitting unit
+    if frequency_per_second >= 1:
+        most_fitting = round(frequency_per_second, 2)
+        unit = "second"
+    elif frequency_per_minute >= 1:
+        most_fitting = round(frequency_per_minute, 2)
+        unit = "minute"
+    elif frequency_per_hour >= 1:
+        most_fitting = round(frequency_per_hour, 2)
+        unit = "hour"
+    else:
+        most_fitting = round(frequency_per_day, 2)
+        unit = "day"
+
+    most_fitting_str = f"{most_fitting:.2f}".rstrip('0').rstrip('.')
+
+    return f"{most_fitting_str}/{unit}"
+
+
+def fixSensorFragment(name):
+    match = re.match("^(sensor)_\\d{1,4}(.*)", name)  # sensor_1235_daily -> sensor_daily
+    if match:
+        return match.group(1) + match.group(2)
+    return name
+
+
+basePath = '../data/telia/measurements/typeFragmentSeries/'
+
+
 def fixSensorFragment(name):
     match = re.match("^(sensor)_\\d{1,4}(.*)", name)  # sensor_1235_daily -> sensor_daily
     if match:
@@ -37,17 +79,23 @@ def getUniqueFields(filePaths):
 
 
 def formatName(item, group):
-    if group == 0:
-        return "Measurements"
     return str(item)[2:]
+
+
+def calculateTopPercentages(data, total_count):
+    sorted_data = dict(sorted(data.items(), key=lambda item: item[1], reverse=True))
+    top_entries = dict(list(sorted_data.items())[:5])  # top 5 entries
+    percentages = [(k, f"{round((v / total_count) * 100, 2)}%") for k, v in top_entries.items()]
+    return percentages
 
 
 def createMeasurementNetwork(inputData: dict):
     data = {"nodes": [], 'links': []}
 
     links = set()
-    nodes = defaultdict(lambda: {'devices': set(), 'measurements': 0})
+    nodes = defaultdict(lambda: {'devices': set(), 'measurements': 0, 'topics': defaultdict(int)})
 
+    topicModel = readFile('telia/visualisations/topic model.json')
     for key, count in inputData.items():
         deviceId, deviceType, measurementType, fragment, series, unit = key
         level1 = deviceType
@@ -78,9 +126,25 @@ def createMeasurementNetwork(inputData: dict):
             (source5, 5)
         ]
 
+        topic = topicModel['topic'][deviceId]
+        topicName = topicModel['name'][topic]
+        topicId = "T_" + topicName
+        parent = topicModel['parent'][topic]
+        parentId = "P_" + parent
+
+        if not topicName == "Outlier Topic":
+            nodes[(topicId, 6)]['measurements'] += count
+            nodes[(topicId, 6)]['devices'].add(deviceId)
+
+            if level5 == "<missing unit>":
+                links.add((source4, topicId))
+            else:
+                links.add((source5, topicId))
+
         for key in keys:
             nodes[key]['measurements'] += count
             nodes[key]['devices'].add(deviceId)
+            nodes[key]['topics'][topicName] += 1
 
         links.add((root, source1))
         links.add((source1, source2))
@@ -97,6 +161,8 @@ def createMeasurementNetwork(inputData: dict):
                 "id": nodeId,
                 "group": group,
                 "name": formatName(nodeId, group),
+                "frequency": calculateFrequency(count['measurements']),
+                "topics": calculateTopPercentages(count['topics'], len(count['devices'])),
                 'dataCount': count['measurements'],
                 'deviceCount': len(count['devices'])
             })
