@@ -7,16 +7,9 @@
   <h3 align="center">Knowledge Graphs for Cataloging and Making Sense of Smart City Data</h3>
 
   <p align="center">
-    Project WIP
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://kodu.ut.ee/~kadalipp/Measurements/Test/network.html">Measurement Graph Visualization</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://kodu.ut.ee/~kadalipp/Events/Test/network.html">Event Graph Visualization</a>
   </p>
 </div>
 
@@ -38,4 +31,29 @@
 [D3-url]: https://d3js.org/
 [ChatGPT]: https://img.shields.io/badge/chatGPT-74aa9c?logo=openai&logoColor=white&style=for-the-badge
 [ChatGPT-url]: https://platform.openai.com/docs/api-reference
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- A Cumulocity account with sufficient permissions to request data schemas.
+- An OpenAI API key with sufficient funds for dataset transformation.
+- Python installed on your local machine.
+- Necessary Python libraries installed (see the `requirements.txt` file).
+
+## Environment Variables
+
+Set the following environment variables for the scripts to work properly. These can be defined in the `.env` file in the project root.
+
+```bash
+# Cumulocity credentials
+C8Y_USERNAME=firstname.lastname
+C8Y_PASSWORD=password
+C8Y_TENANT_URL=sample.platvorm.iot.ee
+C8Y_TENANT_ID=t12345
+
+# OpenAI credentials
+OPENAI_API_KEY=dGhpcyBpcyBhIHNhbXBsZSBBUEkga2V5
+OPENAI_ORGANIZATION_ID=org-b3JnYW5pemF0aW9uIGlk
+```
 
