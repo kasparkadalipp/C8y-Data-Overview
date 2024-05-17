@@ -15,6 +15,7 @@ data/
 **/.env*
 **/.log
 **/*.csv
+**/*.png
 
 # sample environment setup
 !.env.sample
