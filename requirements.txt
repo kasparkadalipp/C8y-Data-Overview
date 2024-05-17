@@ -10,17 +10,11 @@ jupyter==1.0.0
 jupyter-console==6.6.3
 jupyter-events==0.9.0
 jupyter-lsp==2.2.2
-jupyter_bokeh==4.0.0
-jupyter_client==8.6.0
-jupyter_core==5.7.1
-jupyter_server==2.12.5
-jupyter_server_terminals==0.5.2
 numpy==1.26.2
 openai==1.13.3
 pandas==1.5.3
 pydantic==2.6.0
 pydantic-settings==2.2.1
-pydantic-core==2.16.1
 pyperclip==1.8.2
 pytest==8.1.1
 python-dateutil==2.8.2
@@ -28,7 +22,6 @@ python-dotenv==1.0.0
 scikit-llm==1.0.0
 tabulate==0.9.0
 tqdm==4.66.1
-typing-extensions==4.9.0
 urllib3==2.1.0
 wordcloud==1.9.3
 
