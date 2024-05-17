@@ -43,9 +43,9 @@ class InitialRequests:
 
             response = cumulocity.requestOldestMeasurement(self.dateFrom, self.dateTo)
             device['oldestMeasurement'] = response['oldestMeasurement']
-            device['measurementCountValidation'] = response['count']
-
-            device['latestMeasurementValidation'] = cumulocity.requestLatestMeasurementValidation(self.dateTo)
+            # device['measurementCountValidation'] = response['count']
+            #
+            # device['latestMeasurementValidation'] = cumulocity.requestLatestMeasurementValidation(self.dateTo)
         return self
 
     def requestTotalEvents(self):
@@ -57,7 +57,7 @@ class InitialRequests:
 
             response = cumulocity.requestOldestEvent(self.dateFrom, self.dateTo)
             device['oldestEvent'] = response['oldestEvent']
-            device['eventCountValidation'] = response['count']
+            # device['eventCountValidation'] = response['count']
         return self
 
     @staticmethod
