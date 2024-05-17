@@ -37,7 +37,7 @@ Before you begin, ensure you have met the following requirements:
 
 - A Cumulocity account with sufficient permissions to request data schemas.
 - An OpenAI API key with sufficient funds for dataset transformation.
-- Python installed on your local machine.
+- Python 3.12
 - Necessary Python libraries installed (see the `requirements.txt` file).
 
 ## Environment Variables
