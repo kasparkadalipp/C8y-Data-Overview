@@ -1,11 +1,9 @@
 from src.utils import saveToFile
-import json
 from collections import defaultdict
 
 from src.utils import fileNamesInFolder, readFile
 
-with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
-    c8y_data = json.load(json_file)
+c8y_data = readFile('telia/c8y_data.json')
 
 deviceIdMapping = {device['id']: device for device in c8y_data}
 

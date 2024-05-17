@@ -3,7 +3,7 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
 
-load_dotenv('../.env.telia')
+load_dotenv('../.env')
 from src.cumulocity import MonthlyMeasurements
 from src.utils import tqdmFormat, saveToFile, pathExists, fileContentsFromFolder, readFile
 from tqdm import tqdm

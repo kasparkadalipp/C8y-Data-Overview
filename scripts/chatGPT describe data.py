@@ -9,7 +9,7 @@ import pandas as pd
 import instructor
 import os
 
-load_dotenv('.env.telia')
+load_dotenv('../.env')
 SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
 SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))
 

@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 
 
-load_dotenv('../.env.telia')
+load_dotenv('../.env')
 from src.cumulocity import MonthlyEvents
 from src.utils import tqdmFormat, saveToFile, pathExists, fileContentsFromFolder, readFile
 from tqdm import tqdm
