@@ -26,18 +26,12 @@
   "dataBefore": "2024-04-01",
 
   "latestMeasurement": <measurement>,
-  "measurementCount": 39878,
-
   "oldestMeasurement": <measurement>,
-  "measurementCountValidation": 39878,
-
-  "latestMeasurementValidation": <measurement>,
-
+  "measurementCount": 39878,
+  
   "latestEvent": <event>,
-  "eventCount": 40192,
-
   "oldestEvent": <event>,
-  "eventCountValidation": 40192
+  "eventCount": 40192,
 }
 ```
 
