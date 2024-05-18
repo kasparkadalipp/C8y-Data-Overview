@@ -56,3 +56,10 @@ OPENAI_API_KEY=dGhpcyBpcyBhIHNhbXBsZSBBUEkga2V5
 OPENAI_ORGANIZATION_ID=org-b3JnYW5pemF0aW9uIGlk
 ```
 
+## Saved data
+
+Results get saved in the **/data** folder as JSON.
+
+For a detailed description of the data format, please refer to the [Saved Data Format Documentation](/src/README.md).
+
+
