@@ -1,9 +1,9 @@
+from .config import getCumulocityApi
 from datetime import date
 from typing import Tuple
-
-from .config import getCumulocityApi
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
+import sys
 
 
 class Measurements:
@@ -50,7 +50,9 @@ class Measurements:
             latestMeasurement = response['measurements']
         except KeyboardInterrupt:
             raise KeyboardInterrupt
-        except:
+        except Exception as e:
+            if "Status: 401" in str(e):
+                sys.exit("Invalid cumulocity tenant credentials.")
             measurementCount = -1
             latestMeasurement = {}
 

@@ -1,10 +1,9 @@
-from datetime import date
-
-from dateutil.relativedelta import relativedelta
-
 from .measurements import requestMonthBounds
 from .config import getCumulocityApi
+from datetime import date
+from dateutil.relativedelta import relativedelta
 from dateutil.parser import parse
+import sys
 
 
 class Events:
@@ -69,7 +68,9 @@ class Events:
                     latestEvent = {}
             except KeyboardInterrupt:  # TODO better error handling
                 raise KeyboardInterrupt
-            except:
+            except Exception as e:
+                if "Status: 401" in str(e):
+                    sys.exit("Invalid cumulocity tenant credentials.")
                 latestEvent = {}
                 eventCount = -1
         else:
