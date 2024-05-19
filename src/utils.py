@@ -11,7 +11,7 @@ def saveToFile(devices: list | dict, filePath: str, overwrite: bool):
     path = Path(f"{dataRoot}{filePath}")
 
     if not overwrite and path.exists():
-        return 'skipped'
+        return
 
     path.parent.mkdir(parents=True, exist_ok=True)
 

@@ -2,7 +2,7 @@ from datetime import date
 
 from tqdm import tqdm
 
-from ..cumulocity import requestDeviceInventory, requestSupportedMeasurements, Measurements, Events
+from ..cumulocity import Inventory, Measurements, Events
 from ..utils import tqdmFormat
 
 
@@ -10,11 +10,12 @@ class InitialRequests:
     def __init__(self, dateFrom: date, dateTo: date, c8y_data: list = None):
         self.dateFrom = dateFrom
         self.dateTo = dateTo
+        self.Inventory = Inventory()
 
         if c8y_data:
             self.c8y_data = c8y_data
         else:
-            self.c8y_data = requestDeviceInventory()
+            self.c8y_data = self.Inventory.requestDeviceInventory()
             print()
 
         for device in self.c8y_data:
@@ -31,7 +32,7 @@ class InitialRequests:
 
     def requestSupportedSeries(self):
         for device in tqdm(self.c8y_data, desc="Requesting supported series", bar_format=tqdmFormat):
-            device['c8y_supportedSeries'] = requestSupportedMeasurements(device['id'])
+            device['c8y_supportedSeries'] = self.Inventory.requestSupportedMeasurements(device['id'])
         return self
 
     def requestTotalMeasurements(self):

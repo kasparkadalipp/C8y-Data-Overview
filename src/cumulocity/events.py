@@ -6,13 +6,12 @@ from .measurements import requestMonthBounds
 from .config import getCumulocityApi
 from dateutil.parser import parse
 
-c8y = getCumulocityApi()
-
 
 class Events:
     def __init__(self, device: dict, enforceBounds=False):
         self.enforceBounds = enforceBounds
         self.deviceId = device['id']
+        self.c8y = getCumulocityApi()
 
         if enforceBounds:
             self.latestEvent = device['latestEvent']
@@ -61,7 +60,7 @@ class Events:
 
         if self.hasEvents(dateFrom, dateTo):
             try:
-                response = c8y.get(resource="/event/events", params=parameters)
+                response = self.c8y.get(resource="/event/events", params=parameters)
                 eventCount = response['statistics']['totalPages']
 
                 if eventCount > 0:

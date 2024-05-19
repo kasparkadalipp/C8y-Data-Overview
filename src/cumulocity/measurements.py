@@ -5,14 +5,13 @@ from .config import getCumulocityApi
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 
-c8y = getCumulocityApi()
-
 
 class Measurements:
     def __init__(self, device: dict, enforceBounds=False):
         self.enforceBounds = enforceBounds
         self.deviceId = device['id']
         self.supportedFragmentAndSeries = device['c8y_supportedSeries']
+        self.c8y = getCumulocityApi()
 
         if enforceBounds:
             self.latestMeasurement = device['latestMeasurement']
@@ -63,7 +62,7 @@ class Measurements:
 
         if self.hasMeasurements(dateFrom, dateTo):
             try:
-                response = c8y.get(resource="/measurement/measurements", params=parameters)
+                response = self.c8y.get(resource="/measurement/measurements", params=parameters)
                 measurementCount = response['statistics']['totalPages']
                 latestMeasurement = response['measurements']
             except KeyboardInterrupt:  # TODO better error handling
