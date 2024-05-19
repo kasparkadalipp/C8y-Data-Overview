@@ -82,7 +82,7 @@ class Measurements:
 
     def requestLatestMeasurementValidation(self, dateTo: date) -> dict:
         try:
-            return c8y.measurements.get_last(source=self.deviceId, before=dateTo).to_json()
+            return self.c8y.measurements.get_last(source=self.deviceId, before=dateTo).to_json()
         except IndexError:
             return {}
 
