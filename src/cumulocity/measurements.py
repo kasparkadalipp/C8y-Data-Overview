@@ -13,10 +13,6 @@ class Measurements:
         self.supportedFragmentAndSeries = device['c8y_supportedSeries']
         self.c8y = getCumulocityApi()
 
-        if enforceBounds:
-            self.latestMeasurement = device['latestMeasurement']
-            self.oldestMeasurement = device['oldestMeasurement']
-
     def requestLatestMeasurement(self, dateFrom: date, dateTo: date) -> dict:
         additionalParameters = {'revert': 'true'}
         response = self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
