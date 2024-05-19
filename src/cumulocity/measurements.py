@@ -17,18 +17,6 @@ class Measurements:
             self.latestMeasurement = device['latestMeasurement']
             self.oldestMeasurement = device['oldestMeasurement']
 
-    def hasMeasurements(self, dateFrom: date, dateTo: date) -> bool:
-        if not self.supportedFragmentAndSeries:
-            return False
-        if self.enforceBounds:
-            if not self.latestMeasurement or not self.oldestMeasurement:
-                return False
-            latestDate = parse(self.latestMeasurement['time']).date()
-            oldestDate = parse(self.oldestMeasurement['time']).date()
-            if latestDate < dateFrom or dateTo < oldestDate:
-                return False
-        return True
-
     def requestLatestMeasurement(self, dateFrom: date, dateTo: date) -> dict:
         additionalParameters = {'revert': 'true'}
         response = self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
@@ -60,18 +48,14 @@ class Measurements:
         if additionalParameters:
             parameters.update(additionalParameters)
 
-        if self.hasMeasurements(dateFrom, dateTo):
-            try:
-                response = self.c8y.get(resource="/measurement/measurements", params=parameters)
-                measurementCount = response['statistics']['totalPages']
-                latestMeasurement = response['measurements']
-            except KeyboardInterrupt:  # TODO better error handling
-                raise KeyboardInterrupt
-            except:
-                measurementCount = -1
-                latestMeasurement = {}
-        else:
-            measurementCount = 0
+        try:
+            response = self.c8y.get(resource="/measurement/measurements", params=parameters)
+            measurementCount = response['statistics']['totalPages']
+            latestMeasurement = response['measurements']
+        except KeyboardInterrupt:
+            raise KeyboardInterrupt
+        except:
+            measurementCount = -1
             latestMeasurement = {}
 
         if latestMeasurement:
@@ -145,3 +129,19 @@ def requestMonthBounds(year: int, month: int) -> Tuple[date, date]:
     inclusiveDateFrom = date(year, month, 1)
     exclusiveDateTo = inclusiveDateFrom + relativedelta(months=1)
     return inclusiveDateFrom, exclusiveDateTo
+
+
+def hasMeasurements(device: dict, year: int, month: int) -> bool:
+    dateFrom, dateTo = requestMonthBounds(year, month)
+    latestMeasurement = device['latestMeasurement']
+    oldestMeasurement = device['oldestMeasurement']
+
+    if latestMeasurement:
+        latestDate = parse(latestMeasurement['time']).date()
+        if latestDate < dateFrom:
+            return False
+    if oldestMeasurement:
+        oldestDate = parse(oldestMeasurement['time']).date()
+        if dateTo < oldestDate:
+            return False
+    return True

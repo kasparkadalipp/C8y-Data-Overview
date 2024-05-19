@@ -2,14 +2,15 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
 from src.cumulocity import MonthlyMeasurements
+from src.cumulocity.measurements import hasMeasurements
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 import calendar
 
 load_dotenv('../.env')
-c8y_data = readFile('example/c8y_data.json')
+folder = "telia"
+c8y_data = readFile(f'{folder}/c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
-
 
 def requestMissingValues(year, month, filePath):
     c8y_measurements = []
@@ -18,8 +19,7 @@ def requestMissingValues(year, month, filePath):
     if all([device['total']['count'] >= 0 for device in fileContents]):
         return []
 
-    for savedMeasurement in tqdm(readFile(filePath), desc=f"{calendar.month_abbr[month]} {year}",
-                                 bar_format=tqdmFormat):
+    for savedMeasurement in tqdm(readFile(filePath), desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         if savedMeasurement['total']['count'] >= 0:
             c8y_measurements.append(savedMeasurement)
             continue
@@ -41,13 +41,20 @@ def requestMissingValues(year, month, filePath):
 def requestTotal(year, month):
     c8y_measurements = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
-        response = MonthlyMeasurements(device, enforceBounds=True).requestMeasurementCount(year, month)
+        if hasMeasurements(device, year, month):
+            response = MonthlyMeasurements(device, enforceBounds=True).requestMeasurementCount(year, month)
+            measurementCount = response['count']
+            latestMeasurement = response['measurement']
+        else:
+            measurementCount = 0
+            latestMeasurement = {}
+
         c8y_measurements.append({
             "deviceId": device['id'],
             "deviceType": device['type'],
             "total": {
-                "count": response['count'],
-                "measurement": response['measurement']
+                "count": measurementCount,
+                "measurement": latestMeasurement
             }
         })
     return c8y_measurements
@@ -64,7 +71,7 @@ while startingDate <= currentDate <= lastDate:
     year = currentDate.year
     month = currentDate.month
 
-    filePath = f"telia/measurements/total/{MonthlyMeasurements.fileName(year, month)}"
+    filePath = f"{folder}/measurements/total/{MonthlyMeasurements.fileName(year, month)}"
     if pathExists(filePath):
         data = requestMissingValues(year, month, filePath)
         if data:
