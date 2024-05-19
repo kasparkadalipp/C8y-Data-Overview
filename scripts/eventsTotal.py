@@ -1,17 +1,13 @@
 from datetime import date
-
 from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
-
-load_dotenv('../.env')
-
 from src.cumulocity import MonthlyEvents
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 import calendar
 from dateutil.parser import parse
 
-
+load_dotenv('../.env')
 c8y_data = readFile('telia/c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 

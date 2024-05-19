@@ -1,7 +1,4 @@
 from dotenv import load_dotenv
-
-
-load_dotenv('../.env')
 from src.cumulocity import MonthlyEvents
 from src.utils import tqdmFormat, saveToFile, pathExists, fileContentsFromFolder, readFile
 from tqdm import tqdm
@@ -11,7 +8,7 @@ from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from eventTypeMapping import createEventTypeMapping
 
-
+load_dotenv('../.env')
 c8y_data = readFile('telia/c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 

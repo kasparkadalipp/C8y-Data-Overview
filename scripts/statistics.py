@@ -1,10 +1,9 @@
 import json
 from dateutil.parser import parse
+from src.utils import readFile
 import os
 
-with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
-    c8y_data = json.load(json_file)
-
+c8y_data = readFile('telia/c8y_data.json')
 basePath = "../data/telia/"
 
 

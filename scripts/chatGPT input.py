@@ -4,7 +4,6 @@ from collections import defaultdict
 from src.utils import fileNamesInFolder, readFile
 
 c8y_data = readFile('telia/c8y_data.json')
-
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
 
