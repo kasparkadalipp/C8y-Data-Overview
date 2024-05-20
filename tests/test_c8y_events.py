@@ -2,14 +2,13 @@ import pytest
 import json
 import os
 from datetime import date
-from dotenv import load_dotenv
 from dateutil.relativedelta import relativedelta
 from collections import defaultdict
 from src.cumulocity import MonthlyEvents
 from src.utils import pathExists
 
 basePath = "events/"
-load_dotenv('../.env')
+
 
 def getFiles(folder):
     return os.listdir(basePath + folder)

@@ -1,9 +1,7 @@
-from dotenv import load_dotenv
 import pandas as pd
 import tiktoken
 import os
 import random
-from dotenv import load_dotenv
 from tqdm import tqdm
 import json
 from sklearn.model_selection import train_test_split
@@ -36,7 +34,6 @@ from bertopic.backend import BaseEmbedder
 from pydantic import BaseModel, Field
 import instructor
 
-load_dotenv('../.env')
 inputData = readFile('chatGPT input.json')
 
 

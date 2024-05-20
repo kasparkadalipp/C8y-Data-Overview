@@ -1,19 +1,14 @@
 import calendar
 from datetime import date
-from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
-from dotenv import load_dotenv
 from src.cumulocity import MonthlyMeasurements
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 
 
-load_dotenv('../.env')
-c8y_data = readFile(f'c8y_data.json')
-deviceIdMapping = {device['id']: device for device in c8y_data}
-
-
 def requestMissingValues(year, month, filePath):
+    c8y_data = readFile(f'c8y_data.json')
+    deviceIdMapping = {device['id']: device for device in c8y_data}
     fileContents = readFile(filePath)
 
     missingValueCount = 0
@@ -56,6 +51,7 @@ def requestMissingValues(year, month, filePath):
 
 
 def requestFragmentSeries(year, month):
+    c8y_data = readFile(f'c8y_data.json')
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}",
                        bar_format=tqdmFormat):
@@ -81,9 +77,6 @@ def requestFragmentSeries(year, month):
     return result
 
 
-print(f'Oldest measurement {min([parse(d['oldestMeasurement']['time']).date() for d in c8y_data if d['oldestMeasurement']])}')
-print(f'Latest measurement {max([parse(d['latestMeasurement']['time']).date() for d in c8y_data if d['latestMeasurement']])}')
-
 startingDate = date(2024, 3, 1)
 lastDate = date(2014, 7, 1)
 
@@ -94,11 +87,11 @@ while lastDate <= currentDate <= startingDate:
 
     filePath = f"measurements/fragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
     fileExists = pathExists(filePath)
-    
+
     if not fileExists:
         data = requestFragmentSeries(year, month)
         saveToFile(data, filePath, overwrite=False)
-        
+
     data = requestMissingValues(year, month, filePath)
     if data:
         saveToFile(data, filePath, overwrite=True)

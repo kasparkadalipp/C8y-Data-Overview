@@ -1,7 +1,5 @@
 import calendar
-from dotenv import load_dotenv
 from datetime import date
-from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from eventFragmentMapping import createEventFragmentMapping
 from eventTypeMapping import createEventTypeMapping
@@ -9,7 +7,6 @@ from src.cumulocity import MonthlyEvents
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 
-load_dotenv('../.env')
 c8y_data = readFile('c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
@@ -87,9 +84,6 @@ def requestEventTypes(year, month):
         result.append(c8y_events)
     return result
 
-
-print(f'Oldest event {min([parse(d['oldestEvent']['time']).date() for d in c8y_data if d['oldestEvent']])}')
-print(f'Latest event {max([parse(d['latestEvent']['time']).date() for d in c8y_data if d['latestEvent']])}')
 
 startingDate = date(2024, 3, 1)
 lastDate = date(2016, 11, 1)

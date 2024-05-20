@@ -1,14 +1,12 @@
 import calendar
 from datetime import date
 from dateutil.relativedelta import relativedelta
-from dotenv import load_dotenv
 from src.cumulocity import MonthlyMeasurements
 from src.cumulocity.measurements import hasMeasurements
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 
 
-load_dotenv('../.env')
 c8y_data = readFile('c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 

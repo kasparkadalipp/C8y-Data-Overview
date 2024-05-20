@@ -2,14 +2,11 @@ import pytest
 import json
 import os
 from datetime import date
-from dotenv import load_dotenv
 from dateutil.relativedelta import relativedelta
 from src.cumulocity import MonthlyMeasurements
 from src.utils import pathExists
 
-load_dotenv('../.env')
 basePath = "measurements/"
-
 
 def getFiles(folder):
     return os.listdir(basePath + folder)
