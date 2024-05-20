@@ -1,8 +1,7 @@
 import pandas as pd
 from genson import SchemaBuilder
 from collections import defaultdict
-from src.utils import fileNamesInFolder, readFile
-
+from src.utils import listFileNames, readFile, getPath
 
 def createSchema(event):
     alwaysPresentKeys = ["lastUpdated", "creationTime", "self", "source", "time", "id", "text", "type"]
@@ -16,12 +15,11 @@ def createSchema(event):
     return jsonSchema
 
 
-eventTypeFragmentFolder = "telia/events/typeFragment/"
 
 eventTypeFragmentMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}})
 
-for fileName in fileNamesInFolder('../data/' + eventTypeFragmentFolder):
-    for event in readFile(eventTypeFragmentFolder + fileName):
+for fileName in listFileNames("events/typeFragment/"):
+    for event in readFile(fileName):
         eventTypeSum = 0
         deviceId = event['deviceId']
         deviceType = event['deviceType']
@@ -51,4 +49,4 @@ for key, values in eventTypeFragmentMapping.items():
     data.append(row)
 
 df = pd.DataFrame(data)
-df.to_csv("../data/telia/Events (type + fragment).csv", index=False, encoding='utf-8-sig')
+df.to_csv(getPath("telia/Events (type + fragment).csv"), index=False, encoding='utf-8-sig')

@@ -1,8 +1,7 @@
-from collections import defaultdict
-
-import pandas as pd
 import re
-from src.utils import fileNamesInFolder, readFile
+import pandas as pd
+from collections import defaultdict
+from src.utils import listFileNames, readFile, getPath
 
 
 def formatUnits(units):
@@ -21,9 +20,9 @@ def fixSensorFragment(name):
     return name
 
 
-folder = "telia/measurements/fragmentSeries/"
+folder = "measurements/fragmentSeries/"
 result = defaultdict(lambda: {'count': 0, 'units': set(), 'example': {}, 'values': set()})
-for fileName in fileNamesInFolder('../data/' + folder):
+for fileName in listFileNames('../data/' + folder):
     for device in readFile(folder + fileName):
         deviceType = device['deviceType']
 
@@ -66,4 +65,4 @@ for key, value in result.items():
     data.append(row)
 
 df = pd.DataFrame(data)
-df.to_csv("../data/telia/Measurement schema (fragment + series).csv", index=False, encoding='utf-8-sig')
+df.to_csv(getPath('Measurement schema (fragment + series).csv'), index=False, encoding='utf-8-sig')

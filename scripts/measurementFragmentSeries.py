@@ -1,17 +1,15 @@
+import calendar
 from datetime import date
-
+from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
-
-load_dotenv('../.env')
 from src.cumulocity import MonthlyMeasurements
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
-import calendar
-from dateutil.parser import parse
 
-folder = "telia"
-c8y_data = readFile(f'{folder}/c8y_data.json')
+
+load_dotenv('../.env')
+c8y_data = readFile(f'c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
 
@@ -94,13 +92,13 @@ while lastDate <= currentDate <= startingDate:
     year = currentDate.year
     month = currentDate.month
 
-    filePath = f"{folder}/measurements/fragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
+    filePath = f"measurements/fragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
     fileExists = pathExists(filePath)
-
+    
     if not fileExists:
         data = requestFragmentSeries(year, month)
         saveToFile(data, filePath, overwrite=False)
-
+        
     data = requestMissingValues(year, month, filePath)
     if data:
         saveToFile(data, filePath, overwrite=True)

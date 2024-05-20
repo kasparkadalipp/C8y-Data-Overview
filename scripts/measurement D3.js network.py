@@ -1,9 +1,6 @@
-from collections import defaultdict
-
-from src.utils import saveToFile, readFile, fileNamesInFolder
 import re
-
-basePath = '../data/telia/measurements/typeFragmentSeries/'
+from collections import defaultdict
+from src.utils import saveToFile, readFile, listFileNames
 
 
 def calculateFrequency(measurements, days_in_month=31):
@@ -36,16 +33,6 @@ def calculateFrequency(measurements, days_in_month=31):
     most_fitting_str = f"{most_fitting:.2f}".rstrip('0').rstrip('.')
 
     return f"{most_fitting_str}/{unit}"
-
-
-def fixSensorFragment(name):
-    match = re.match("^(sensor)_\\d{1,4}(.*)", name)  # sensor_1235_daily -> sensor_daily
-    if match:
-        return match.group(1) + match.group(2)
-    return name
-
-
-basePath = '../data/telia/measurements/typeFragmentSeries/'
 
 
 def fixSensorFragment(name):
@@ -95,7 +82,7 @@ def createMeasurementNetwork(inputData: dict):
     links = set()
     nodes = defaultdict(lambda: {'devices': set(), 'measurements': 0, 'topics': defaultdict(int)})
 
-    topicModel = readFile('telia/visualisations/topic model.json')
+    topicModel = readFile('visualisations/topic model.json')
     for key, count in inputData.items():
         deviceId, deviceType, measurementType, fragment, series, unit = key
         level1 = deviceType
@@ -170,12 +157,12 @@ def createMeasurementNetwork(inputData: dict):
 
 
 def visualizeWholeDataset():
-    inputData = getUniqueFields(fileNamesInFolder(basePath))
+    inputData = getUniqueFields(listFileNames('measurements/typeFragmentSeries/'))
     network = createMeasurementNetwork(inputData)
-    saveToFile(network, 'telia/visualizations/network (total).json', overwrite=True)
+    saveToFile(network, 'visualizations/network (total).json', overwrite=True)
 
 
 def visualizeMonth():
-    inputData = getUniqueFields([basePath + 'c8y_measurements 2024-03-01 - 2024-04-01.json'])
+    inputData = getUniqueFields(['measurements/typeFragmentSeries/c8y_measurements 2024-03-01 - 2024-04-01.json'])
     network = createMeasurementNetwork(inputData)
-    saveToFile(network, 'telia/visualizations/network (test).json', overwrite=True)
+    saveToFile(network, 'visualizations/network (test).json', overwrite=True)

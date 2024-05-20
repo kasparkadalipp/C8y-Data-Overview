@@ -1,14 +1,14 @@
-from src.utils import readFile, fileNamesInFolder
 from collections import defaultdict
+from src.utils import readFile, listFileNames, getPath
 from wordcloud import WordCloud
 
-c8y_data = readFile('telia/c8y_data.json')
+
+c8y_data = readFile('c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
 uniqueValues = defaultdict(set)
-measurementFolder = "telia/measurements/typeFragmentSeries/"
-for fileName in fileNamesInFolder('../data/' + measurementFolder):
-    for device in readFile(measurementFolder + fileName):
+for fileName in listFileNames('measurements/typeFragmentSeries/'):
+    for device in readFile(fileName):
         deviceType = device['deviceType']
         deviceId = device['deviceId']
         deviceName = deviceIdMapping[deviceId]['name']
@@ -59,4 +59,4 @@ wordcloudInput = ','.join(wordcloudInput).replace("_", ' ')
 wordcloud = WordCloud(background_color="white", max_words=5000, contour_width=3, contour_color='steelblue', width=1600,
                       height=800)
 wordcloud.generate(wordcloudInput)
-wordcloud.to_file('../data/telia/wordcloud measurements.png')
+wordcloud.to_file(getPath('wordcloud measurements.png'))

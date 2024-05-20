@@ -1,7 +1,7 @@
 import pandas as pd
 from genson import SchemaBuilder
 from collections import defaultdict
-from src.utils import fileNamesInFolder, readFile
+from src.utils import listFileNames, readFile, getPath
 
 
 def createSchema(event):
@@ -16,10 +16,9 @@ def createSchema(event):
     return jsonSchema
 
 
-eventTypeFolder = "telia/events/type/"
 eventTypeMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}, 'devices': set()})
-for fileName in fileNamesInFolder('../data/' + eventTypeFolder):
-    for device in readFile(eventTypeFolder + fileName):
+for fileName in listFileNames('events/type/'):
+    for device in readFile(fileName):
         eventTypeSum = 0
         deviceId = device['deviceId']
         deviceType = device['deviceType']
@@ -35,10 +34,9 @@ for fileName in fileNamesInFolder('../data/' + eventTypeFolder):
                 eventTypeMapping[key]['example'] = device
                 eventTypeMapping[key]['devices'].add(deviceId)
 
-eventTypeFragmentFolder = "telia/events/typeFragment/"
 eventTypeFragmentMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}, 'devices': set()})
-for fileName in fileNamesInFolder('../data/' + eventTypeFragmentFolder):
-    for device in readFile(eventTypeFragmentFolder + fileName):
+for fileName in listFileNames('events/typeFragment/'):
+    for device in readFile(fileName):
         eventTypeSum = 0
         deviceId = device['deviceId']
         deviceType = device['deviceType']
@@ -104,4 +102,4 @@ for key, values in eventTypeMapping.items():
         data.append(row)
 
 df = pd.DataFrame(data)
-df.to_csv("../data/telia/Events.csv", index=False, encoding='utf-8-sig')
+df.to_csv(getPath('Events.csv'), index=False, encoding='utf-8-sig')

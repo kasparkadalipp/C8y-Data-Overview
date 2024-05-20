@@ -1,16 +1,14 @@
 import pytest
 import json
 import os
-
 from datetime import date
 from dotenv import load_dotenv
 from dateutil.relativedelta import relativedelta
-
-load_dotenv('../notebooks/.env.telia')
 from src.cumulocity import MonthlyMeasurements
 from src.utils import pathExists
 
-basePath = "../data/telia/measurements/"
+load_dotenv('../.env')
+basePath = "measurements/"
 
 
 def getFiles(folder):

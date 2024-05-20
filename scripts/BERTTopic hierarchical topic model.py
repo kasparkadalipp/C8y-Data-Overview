@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-load_dotenv('../.env')
 import pandas as pd
 import tiktoken
 import os
@@ -25,7 +24,7 @@ from tqdm import tqdm
 import yaml
 from collections import defaultdict
 from typing import List, Dict
-from src.utils import saveToFile, readFile, fileNamesInFolder
+from src.utils import saveToFile, readFile, listFileNames
 from pydantic import BaseModel, Field
 import instructor
 import numpy as np
@@ -37,7 +36,8 @@ from bertopic.backend import BaseEmbedder
 from pydantic import BaseModel, Field
 import instructor
 
-inputData = readFile('telia/chatGPT input.json')
+load_dotenv('../.env')
+inputData = readFile('chatGPT input.json')
 
 
 client = BertOpenAI()
@@ -64,7 +64,7 @@ hierarchical_topics = topic_model.hierarchical_topics(docs)
 
 
 deviceMapping = {deviceId: str(topicId) for deviceId, topicId in zip(inputData.keys(), topics)}
-saveToFile(deviceMapping, 'telia/visualisations/deviceID topicID mapping.json', True)
+saveToFile(deviceMapping, 'visualisations/deviceID topicID mapping.json', True)
 
 
 
@@ -92,6 +92,6 @@ parentMapping["-1"] = rootNode
 nameMapping[rootNode] = "Topic model root"
 
 nodeMapping = {'root': rootNode, 'name': nameMapping, 'parent': parentMapping}
-saveToFile(nodeMapping,'telia/visualisations/topic model.json',True)
+saveToFile(nodeMapping,'visualisations/topic model.json',True)
 
 

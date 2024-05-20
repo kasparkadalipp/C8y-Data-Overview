@@ -1,9 +1,8 @@
-from src.utils import saveToFile
 from collections import defaultdict
+from src.utils import saveToFile
+from src.utils import listFileNames, readFile
 
-from src.utils import fileNamesInFolder, readFile
-
-c8y_data = readFile('telia/c8y_data.json')
+c8y_data = readFile('c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
 
@@ -31,10 +30,9 @@ def shortenEvent(event):
     return process_node(event)
 
 
-measurementFolder = "telia/measurements/typeFragmentSeries/"
 measurementMapping = defaultdict(lambda: {'count': 0, 'units': set(), 'example': {}})
-for fileName in fileNamesInFolder('../data/' + measurementFolder):
-    for device in readFile(measurementFolder + fileName):
+for fileName in listFileNames('measurements/typeFragmentSeries/'):
+    for device in readFile(fileName):
         deviceType = device['deviceType']
         deviceId = device['deviceId']
 
@@ -54,10 +52,9 @@ for fileName in fileNamesInFolder('../data/' + measurementFolder):
                 measurementMapping[key]['count'] += count
                 measurementMapping[key]['example'] = measurement
 
-eventFolder = "telia/events/type/"
 eventTypeMapping = {}
-for fileName in fileNamesInFolder('../data/' + eventFolder):
-    for event in readFile(eventFolder + fileName):
+for fileName in listFileNames('events/type/'):
+    for event in readFile(fileName):
         eventTypeSum = 0
         deviceId = event['deviceId']
         deviceType = event['deviceType']
@@ -100,4 +97,4 @@ for key, event in eventTypeMapping.items():
 
     deviceMapping[deviceId][eventType] = shortenEvent(exampleEvent)
 
-saveToFile(deviceMapping, "telia/chatGPT input.json", overwrite=True)
+saveToFile(deviceMapping, "chatGPT input.json", overwrite=True)

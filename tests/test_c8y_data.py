@@ -1,9 +1,8 @@
 import pytest
-import json
 from dateutil.parser import parse, ParserError
+from src.utils import readFile
 
-with open('../data/telia/c8y_data.json', 'r', encoding='utf8') as json_file:
-    c8y_data = json.load(json_file)
+c8y_data = readFile('c8y_data.json')
 
 example_c8y_data = {
     "id": "11904",

@@ -1,28 +1,25 @@
-from dotenv import load_dotenv
-
-
-load_dotenv('../.env')
-from src.cumulocity import MonthlyEvents
-from src.utils import tqdmFormat, saveToFile, pathExists, fileContentsFromFolder, readFile
-from tqdm import tqdm
 import calendar
+from dotenv import load_dotenv
 from datetime import date
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from eventFragmentMapping import createEventFragmentMapping
 from eventTypeMapping import createEventTypeMapping
+from src.cumulocity import MonthlyEvents
+from src.utils import tqdmFormat, saveToFile, pathExists, readFile
+from tqdm import tqdm
 
-
-c8y_data = readFile('telia/c8y_data.json')
+load_dotenv('../.env')
+c8y_data = readFile('c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
-if not pathExists('telia/c8y_events_id_to_type_mapping.json'):
+if not pathExists('c8y_events_id_to_type_mapping.json'):
     createEventTypeMapping()
-typeMapping = readFile('telia/c8y_events_id_to_type_mapping.json')
+typeMapping = readFile('c8y_events_id_to_type_mapping.json')
 
-if not pathExists('telia/c8y_events_id_to_fragment_mapping.json'):
+if not pathExists('c8y_events_id_to_fragment_mapping.json'):
     createEventFragmentMapping()
-fragmentMapping = readFile('telia/c8y_events_id_to_fragment_mapping.json')
+fragmentMapping = readFile('c8y_events_id_to_fragment_mapping.json')
 
 
 def requestMissingValues(year, month, filePath):
@@ -102,7 +99,7 @@ while lastDate <= currentDate <= startingDate:
     year = currentDate.year
     month = currentDate.month
 
-    filePath = f"telia/events/typeFragment/{MonthlyEvents.fileName(year, month)}"
+    filePath = f"events/typeFragment/{MonthlyEvents.fileName(year, month)}"
     fileExists = pathExists(filePath)
 
     if not fileExists:

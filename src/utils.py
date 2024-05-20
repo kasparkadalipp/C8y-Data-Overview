@@ -1,10 +1,12 @@
 import json
 import os
+import pandas as pd
 from pathlib import Path
+from dotenv import load_dotenv
 
+load_dotenv('../.env')
+dataRoot = f"../data/{os.getenv('DATA_FOLDER')}/"
 tqdmFormat = "{l_bar}{bar}| {n_fmt}/{total_fmt} [time elapsed: {elapsed}]"
-
-dataRoot = "../data/"
 
 
 def saveToFile(devices: list | dict, filePath: str, overwrite: bool):
@@ -17,6 +19,23 @@ def saveToFile(devices: list | dict, filePath: str, overwrite: bool):
 
     with path.open("w+", encoding='utf8') as file:
         json.dump(devices, file, indent=2, ensure_ascii=False)
+
+
+def getPath(filePath):
+    filePath = filePath if filePath and not filePath.startswith("/") else filePath[1:]
+    return Path(f"{dataRoot}{filePath}")
+
+
+def saveToCsv(data: list, filePath: str, overwrite: bool = True):
+    path = Path(f"{dataRoot}{filePath}")
+
+    if not overwrite and path.exists():
+        return
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    df = pd.DataFrame(data)
+    df.to_csv(path, index=False, encoding='utf-8-sig')
 
 
 def readFile(filePath: str):
@@ -34,26 +53,31 @@ def pathExists(filePath: str):
     return path.exists()
 
 
-def fileNamesInFolder(folder):
-    if not pathExists(folder):
-        print('Folder does not exist: ' + folder)
+def ensureTrailingSlash(func):
+    def wrapper(filePath, *args, **kwargs):
+        filePath = filePath if filePath and filePath.endswith("/") else filePath + "/"
+        return func(filePath, *args, **kwargs)
+
+    return wrapper
+
+
+@ensureTrailingSlash
+def listFileNames(folderPath: str = ''):
+    path = Path(f"{dataRoot}{folderPath}")
+    if not path.exists():
+        print('Path does not exist: ', path)
         return []
-    return os.listdir(folder)
+    entries = os.listdir(path)
+    files = [folderPath + entry for entry in entries if os.path.isfile(os.path.join(path, entry))]
+    return files
 
 
-def filePathsInFolder(folder):
-    if not pathExists(folder):
-        print('Folder does not exist: ' + folder)
+@ensureTrailingSlash
+def listDirectories(folderPath: str = ''):
+    path = Path(f"{dataRoot}{folderPath}")
+    if not path.exists():
+        print('Path does not exist: ', path)
         return []
-    folder += '' if folder.endswith("/") else '/'
-    fileNames = os.listdir(folder)
-    return [folder + file for file in fileNames]
-
-
-def readFileContents(filePath):
-    with open(filePath, 'r', encoding='utf8') as json_file:
-        return json.load(json_file)
-
-
-def fileContentsFromFolder(folderPath):
-    return [readFileContents(filePath) for filePath in filePathsInFolder(folderPath)]
+    entries = os.listdir(path)
+    directories = [folderPath + entry for entry in entries if os.path.isdir(os.path.join(path, entry))]
+    return directories

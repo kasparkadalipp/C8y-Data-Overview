@@ -1,16 +1,16 @@
+import calendar
 from datetime import date
+from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
+from measurementTypeMapping import createMeasurementMapping
 from src.cumulocity import MonthlyMeasurements
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
-import calendar
-from dateutil.parser import parse
-from measurementTypeMapping import createMeasurementMapping
+
 
 load_dotenv('../.env')
-folder = "telia"
-c8y_data = readFile(f'{folder}/c8y_data.json')
+c8y_data = readFile(f'c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
 
@@ -73,7 +73,7 @@ def requestMissingValues(year, month, filePath):
 def requestTypeFragmentSeries(year, month):
     if not pathExists(f'{folder}/c8y_measurements_id_to_type_mapping.json'):
         createMeasurementMapping()
-    typeFragmentSeriesMapping = readFile(f'{folder}/c8y_measurements_id_to_type_mapping.json')
+    typeFragmentSeriesMapping = readFile(f'c8y_measurements_id_to_type_mapping.json')
 
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
@@ -110,7 +110,7 @@ while lastDate <= currentDate <= startingDate:
     year = currentDate.year
     month = currentDate.month
 
-    filePath = f"{folder}/measurements/typeFragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
+    filePath = f"measurements/typeFragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
     fileExists = pathExists(filePath)
     if not fileExists:
         data = requestTypeFragmentSeries(year, month)

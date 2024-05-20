@@ -1,14 +1,14 @@
+import calendar
 from datetime import date
+from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
 from src.cumulocity import MonthlyEvents
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
-import calendar
-from dateutil.parser import parse
 
 load_dotenv('../.env')
-c8y_data = readFile('telia/c8y_data.json')
+c8y_data = readFile('c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
 
@@ -64,7 +64,7 @@ while lastDate <= currentDate <= startingDate:
     year = currentDate.year
     month = currentDate.month
 
-    filePath = f"telia/events/total/{MonthlyEvents.fileName(year, month)}"
+    filePath = f"events/total/{MonthlyEvents.fileName(year, month)}"
     fileExists = pathExists(filePath)
 
     if not fileExists:

@@ -1,6 +1,5 @@
 import os
-from src.utils import fileNamesInFolder, readFile
-from src.utils import readFileContents, saveToFile
+from src.utils import listFileNames, readFile, saveToFile
 from collections import Counter
 from tabulate import tabulate
 
@@ -12,13 +11,12 @@ def listDirectories(path):
 
 
 def createMeasurementMapping():
-    c8y_data = readFile('telia/c8y_data.json')
+    c8y_data = readFile('c8y_data.json')
     eventTypesMapping = {device['id']: set() for device in c8y_data}
 
-    for folder in listDirectories('../data/telia/measurements'):
-        for file in fileNamesInFolder(f'../data/telia/measurements/{folder}'):
-            jsonFile = readFileContents(f'../data/telia/measurements/{folder}/{file}')
-            for device in jsonFile:
+    for folder in listDirectories('measurements'):
+        for fileName in listFileNames(folder):
+            for device in readFile(fileName):
                 deviceId = device['deviceId']
                 # if 'total' in device:
                 #     measurement = device['total']['measurement']
@@ -38,11 +36,11 @@ def createMeasurementMapping():
                             eventTypesMapping[deviceId].add((measurement['type'], typeFragmentSeries['fragment'], typeFragmentSeries['series']))
 
     data = {key: sorted(value) for key, value in eventTypesMapping.items()}
-    saveToFile(data, "telia/c8y_measurements_id_to_type_mapping.json", overwrite=True)
+    saveToFile(f"c8y_measurements_id_to_type_mapping.json", overwrite=True)
 
 
 def mappingOverview():
-    jsonData = readFile("../data/telia/c8y_measurements_id_to_type_mapping.json")
+    jsonData = readFile("c8y_measurements_id_to_type_mapping.json")
     data = []
     for key, value in jsonData.items():
         deviceTypes = set()

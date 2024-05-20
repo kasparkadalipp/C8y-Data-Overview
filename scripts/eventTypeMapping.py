@@ -1,7 +1,6 @@
 import os
 from collections import Counter
-from src.utils import fileNamesInFolder, readFile
-from src.utils import readFileContents, saveToFile
+from src.utils import listFileNames, readFile, saveToFile
 from tabulate import tabulate
 
 
@@ -12,13 +11,12 @@ def listDirectories(path):
 
 
 def createEventTypeMapping():
-    c8y_data = readFile('telia/c8y_data.json')
+    c8y_data = readFile('c8y_data.json')
     eventTypesMapping = {device['id']: set() for device in c8y_data}
 
-    for folder in listDirectories('../data/telia/events'):
-        for file in fileNamesInFolder(f'../data/telia/events/{folder}'):
-            jsonFile = readFileContents(f'../data/telia/events/{folder}/{file}')
-            for device in jsonFile:
+    for folder in listDirectories('events/'):
+        for fileName in listFileNames(folder):
+            for device in readFile(fileName):
                 deviceId = device['deviceId']
                 if 'total' in device:
                     event = device['total']['event']
@@ -32,11 +30,11 @@ def createEventTypeMapping():
                             eventTypesMapping[deviceId].add(event['type'])
 
     data = {key: sorted(value) for key, value in eventTypesMapping.items()}
-    saveToFile(data, "telia/c8y_events_id_to_type_mapping.json", overwrite=True)
+    saveToFile(data, f'c8y_events_id_to_type_mapping.json', overwrite=True)
 
 
 def mappingOverview():
-    jsonData = readFile("../data/telia/c8y_events_id_to_type_mapping.json")
+    jsonData = readFile("c8y_events_id_to_type_mapping.json")
     counter = Counter([tuple(value) for key, value in sorted(jsonData.items())])
 
     data = [(value, key) for key, value in counter.items()]

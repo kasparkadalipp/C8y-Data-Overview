@@ -1,31 +1,10 @@
-import json
 from dateutil.parser import parse
-from src.utils import readFile
-import os
-
-c8y_data = readFile('telia/c8y_data.json')
-basePath = "../data/telia/"
-
-
-def getFilePaths(folder):
-    path = basePath + folder
-    if not os.path.exists(path):
-        return []
-    fileNames = os.listdir(path)
-    return [path + file for file in fileNames]
-
-
-def getFileContents(filePath):
-    with open(filePath, 'r', encoding='utf8') as json_file:
-        return json.load(json_file)
-
-
-def getFileContentsByFolder(folder):
-    return [getFileContents(filePath) for filePath in getFilePaths(folder)]
+from src.utils import readFile, listFileNames
 
 
 def statistics():
-    print('Data from 1970-01-01 to 2024-04-01')
+    c8y_data = readFile('c8y_data.json')
+
     print(f'Total events : {sum([device['eventCount'] for device in c8y_data]):,}')
     print(f'Total measurements : {sum([device['measurementCount'] for device in c8y_data]):,}')
     print(
@@ -43,56 +22,50 @@ def statistics():
 
 
 def monthlyMeasurementTotal():
-    monthlyFileContents = getFileContentsByFolder('measurements/total/')
     total = 0
-    for file in monthlyFileContents:
-        total += sum([measurement['total']['count'] for measurement in file])
+    for fileName in listFileNames('measurements/total/'):
+        total += sum([measurement['total']['count'] for measurement in readFile(fileName)])
     print(f'Total measurements from monthly measurement: {total:,}')
 
 
 def monthlyMeasurementFragmentSeries():
-    monthlyFileContents = getFileContentsByFolder('measurements/fragmentSeries/')
     total = 0
-    for file in monthlyFileContents:
-        for device in file:
+    for fileName in listFileNames('measurements/fragmentSeries/'):
+        for device in readFile(fileName):
             for fragmentSeries in device['fragmentSeries']:
                 total += fragmentSeries['count']
     print(f'Total measurements from monthly fragment + series: {total:,}')
 
 
 def monthlyMeasurementFragmentSeriesType():
-    monthlyFileContents = getFileContentsByFolder('measurements/typeFragmentSeries/')
     total = 0
-    for file in monthlyFileContents:
-        for device in file:
+    for fileName in listFileNames('measurements/typeFragmentSeries/'):
+        for device in readFile(fileName):
             for fragmentSeries in device['typeFragmentSeries']:
                 total += fragmentSeries['count']
     print(f'Total measurements from monthly fragment + series + type: {total:,}')
 
 
 def monthlyEventTotal():
-    monthlyFileContents = getFileContentsByFolder('events/total/')
     total = 0
-    for file in monthlyFileContents:
-        total += sum([device['total']['count'] for device in file])
+    for fileName in listFileNames('events/total/'):
+        total += sum([device['total']['count'] for device in readFile(fileName)])
     print(f'Total events from monthly events: {total:,}')
 
 
 def monthlyEventType():
-    monthlyFileContents = getFileContentsByFolder('events/type/')
     total = 0
-    for file in monthlyFileContents:
-        for device in file:
+    for fileName in listFileNames('events/type/'):
+        for device in readFile(fileName):
             for event in device['eventByType']:
                 total += event['count']
     print(f'Total events from monthly event types: {total:,}')
 
 
 def monthlyEventTypeFragment():
-    monthlyFileContents = getFileContentsByFolder('events/typeFragment/')
     total = 0
-    for file in monthlyFileContents:
-        for device in file:
+    for fileName in listFileNames('events/typeFragment/'):
+        for device in readFile(fileName):
             for event in device['typeFragment']:
                 total += event['count']
     print(f'Total events from monthly event types + fragments: {total:,}')

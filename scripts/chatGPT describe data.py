@@ -1,3 +1,6 @@
+import pandas as pd
+import instructor
+import os
 from dotenv import load_dotenv
 from skllm.config import SKLLMConfig
 from tqdm import tqdm
@@ -5,16 +8,13 @@ from src.utils import readFile
 from pydantic import BaseModel
 from openai import OpenAI
 from src.utils import tqdmFormat
-import pandas as pd
-import instructor
-import os
 
 load_dotenv('../.env')
 SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
 SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))
 
 client = instructor.patch(OpenAI())
-inputData = readFile('telia/chatGPT input.json')
+inputData = readFile('chatGPT input.json')
 
 
 class Measurement(BaseModel):
