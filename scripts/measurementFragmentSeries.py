@@ -10,7 +10,8 @@ from tqdm import tqdm
 import calendar
 from dateutil.parser import parse
 
-c8y_data = readFile('telia/c8y_data.json')
+folder = "telia"
+c8y_data = readFile(f'{folder}/c8y_data.json')
 deviceIdMapping = {device['id']: device for device in c8y_data}
 
 
@@ -55,6 +56,7 @@ def requestMissingValues(year, month, filePath):
         c8y_measurements.append(result)
     return c8y_measurements
 
+
 def requestFragmentSeries(year, month):
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}",
@@ -84,22 +86,25 @@ def requestFragmentSeries(year, month):
 print(f'Oldest measurement {min([parse(d['oldestMeasurement']['time']).date() for d in c8y_data if d['oldestMeasurement']])}')
 print(f'Latest measurement {max([parse(d['latestMeasurement']['time']).date() for d in c8y_data if d['latestMeasurement']])}')
 
-startingDate = date(2014, 7, 1)
-lastDate = date(2024, 3, 1)
+startingDate = date(2024, 3, 1)
+lastDate = date(2014, 7, 1)
 
-currentDate = lastDate
-while startingDate <= currentDate <= lastDate:
+currentDate = startingDate
+while lastDate <= currentDate <= startingDate:
     year = currentDate.year
     month = currentDate.month
 
-    filePath = f"telia/measurements/fragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
-    if pathExists(filePath):
-        data = requestMissingValues(year, month, filePath)
-        if data:
-            saveToFile(data, filePath, overwrite=True)
-        else:
-            print(f"{calendar.month_abbr[month]} {year} - skipped")
-    else:
+    filePath = f"{folder}/measurements/fragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
+    fileExists = pathExists(filePath)
+
+    if not fileExists:
         data = requestFragmentSeries(year, month)
         saveToFile(data, filePath, overwrite=False)
+
+    data = requestMissingValues(year, month, filePath)
+    if data:
+        saveToFile(data, filePath, overwrite=True)
+    elif fileExists:
+        print(f"{calendar.month_abbr[month]} {year} - skipped")
+
     currentDate -= relativedelta(months=1)

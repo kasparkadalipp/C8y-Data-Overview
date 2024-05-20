@@ -56,22 +56,25 @@ def requestTotalEvents(year, month):
 print(f'Oldest event {min([parse(d['oldestEvent']['time']).date() for d in c8y_data if d['oldestEvent']])}')
 print(f'Latest event {max([parse(d['latestEvent']['time']).date() for d in c8y_data if d['latestEvent']])}')
 
-startingDate = date(2016, 11, 1)
-lastDate = date(2024, 3, 1)
+startingDate = date(2024, 3, 1)
+lastDate = date(2016, 11, 1)
 
-currentDate = lastDate
-while startingDate <= currentDate <= lastDate:
+currentDate = startingDate
+while lastDate <= currentDate <= startingDate:
     year = currentDate.year
     month = currentDate.month
 
     filePath = f"telia/events/total/{MonthlyEvents.fileName(year, month)}"
-    if pathExists(filePath):
-        data = requestMissingValues(year, month, filePath)
-        if data:
-            saveToFile(data, filePath, overwrite=True)
-        else:
-            print(f"{calendar.month_abbr[month]} {year} - skipped")
-    else:
+    fileExists = pathExists(filePath)
+
+    if not fileExists:
         data = requestTotalEvents(year, month)
         saveToFile(data, filePath, overwrite=False)
+
+    data = requestMissingValues(year, month, filePath)
+    if data:
+        saveToFile(data, filePath, overwrite=True)
+    elif fileExists:
+        print(f"{calendar.month_abbr[month]} {year} - skipped")
+
     currentDate -= relativedelta(months=1)
