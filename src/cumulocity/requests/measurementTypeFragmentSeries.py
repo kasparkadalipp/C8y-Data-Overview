@@ -1,8 +1,7 @@
 import calendar
 from datetime import date
-from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
-from measurementTypeMapping import createMeasurementMapping
+from src.cumulocity.requests.mapping.measurementTypeMapping import createMeasurementMapping
 from src.cumulocity import MonthlyMeasurements
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
@@ -99,27 +98,27 @@ def requestTypeFragmentSeries(year, month):
     return result
 
 
-print(f'Oldest measurement {min([parse(d['oldestMeasurement']['time']).date() for d in c8y_data if d['oldestMeasurement']])}')
-print(f'Latest measurement {max([parse(d['latestMeasurement']['time']).date() for d in c8y_data if d['latestMeasurement']])}')
+def requestMonthlyData(startingDate: date, lastDate: date):
+    if startingDate <= lastDate:
+        raise ValueError("Last date can't be before starting date")
 
-startingDate = date(2024, 3, 1)
-lastDate = date(2024, 2, 1)
+    startingDate = startingDate.replace(day=1)
+    lastDate = lastDate.replace(day=1)
+    currentDate = startingDate
+    while lastDate <= currentDate <= startingDate:
+        year = currentDate.year
+        month = currentDate.month
 
-currentDate = startingDate
-while lastDate <= currentDate <= startingDate:
-    year = currentDate.year
-    month = currentDate.month
+        filePath = f"measurements/typeFragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
+        fileExists = pathExists(filePath)
+        if not fileExists:
+            data = requestTypeFragmentSeries(year, month)
+            saveToFile(data, filePath, overwrite=False)
 
-    filePath = f"measurements/typeFragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
-    fileExists = pathExists(filePath)
-    if not fileExists:
-        data = requestTypeFragmentSeries(year, month)
-        saveToFile(data, filePath, overwrite=False)
+        data = requestMissingValues(year, month, filePath)
+        if data:
+            saveToFile(data, filePath, overwrite=True)
+        elif fileExists:
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
 
-    data = requestMissingValues(year, month, filePath)
-    if data:
-        saveToFile(data, filePath, overwrite=True)
-    elif fileExists:
-        print(f"{calendar.month_abbr[month]} {year} - skipped")
-
-    currentDate -= relativedelta(months=1)
+        currentDate -= relativedelta(months=1)

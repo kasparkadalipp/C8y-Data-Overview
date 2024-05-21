@@ -77,25 +77,28 @@ def requestFragmentSeries(year, month):
     return result
 
 
-startingDate = date(2024, 3, 1)
-lastDate = date(2014, 7, 1)
+def requestMonthlyData(startingDate: date, lastDate: date):
+    if startingDate <= lastDate:
+        raise ValueError("Last date can't be before starting date")
 
-currentDate = startingDate
-while lastDate <= currentDate <= startingDate:
-    year = currentDate.year
-    month = currentDate.month
+    startingDate = startingDate.replace(day=1)
+    lastDate = lastDate.replace(day=1)
+    currentDate = startingDate
+    while lastDate <= currentDate <= startingDate:
+        year = currentDate.year
+        month = currentDate.month
 
-    filePath = f"measurements/fragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
-    fileExists = pathExists(filePath)
+        filePath = f"measurements/fragmentSeries/{MonthlyMeasurements.fileName(year, month)}"
+        fileExists = pathExists(filePath)
 
-    if not fileExists:
-        data = requestFragmentSeries(year, month)
-        saveToFile(data, filePath, overwrite=False)
+        if not fileExists:
+            data = requestFragmentSeries(year, month)
+            saveToFile(data, filePath, overwrite=False)
 
-    data = requestMissingValues(year, month, filePath)
-    if data:
-        saveToFile(data, filePath, overwrite=True)
-    elif fileExists:
-        print(f"{calendar.month_abbr[month]} {year} - skipped")
+        data = requestMissingValues(year, month, filePath)
+        if data:
+            saveToFile(data, filePath, overwrite=True)
+        elif fileExists:
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
 
-    currentDate -= relativedelta(months=1)
+        currentDate -= relativedelta(months=1)

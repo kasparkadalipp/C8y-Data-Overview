@@ -43,7 +43,6 @@ def requestTotal(year, month):
     c8y_data = readFile('c8y_data.json')
     c8y_measurements = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
-
         response = MonthlyMeasurements(device, enforceBounds=True).requestMeasurementCount(year, month)
         measurementCount = response['count']
         latestMeasurement = response['measurement']
@@ -59,28 +58,28 @@ def requestTotal(year, month):
     return c8y_measurements
 
 
-# print(f'Oldest measurement {min([parse(d['oldestMeasurement']['time']).date() for d in c8y_data if d['oldestMeasurement']])}')
-# print(f'Latest measurement {max([parse(d['latestMeasurement']['time']).date() for d in c8y_data if d['latestMeasurement']])}')
+def requestMonthlyData(startingDate: date, lastDate: date):
+    if startingDate <= lastDate:
+        raise ValueError("Last date can't be before starting date")
 
-startingDate = date(2024, 3, 1)
-lastDate = date(2014, 7, 1)
+    startingDate = startingDate.replace(day=1)
+    lastDate = lastDate.replace(day=1)
+    currentDate = startingDate
+    while lastDate <= currentDate <= startingDate:
+        year = currentDate.year
+        month = currentDate.month
 
-currentDate = startingDate
-while lastDate <= currentDate <= startingDate:
-    year = currentDate.year
-    month = currentDate.month
+        filePath = f"measurements/total/{MonthlyMeasurements.fileName(year, month)}"
+        fileExists = pathExists(filePath)
 
-    filePath = f"measurements/total/{MonthlyMeasurements.fileName(year, month)}"
-    fileExists = pathExists(filePath)
+        if not fileExists:
+            data = requestTotal(year, month)
+            saveToFile(data, filePath, overwrite=False)
 
-    if not fileExists:
-        data = requestTotal(year, month)
-        saveToFile(data, filePath, overwrite=False)
+        data = requestMissingValues(year, month, filePath)
+        if data:
+            saveToFile(data, filePath, overwrite=True)
+        elif fileExists:
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
 
-    data = requestMissingValues(year, month, filePath)
-    if data:
-        saveToFile(data, filePath, overwrite=True)
-    elif fileExists:
-        print(f"{calendar.month_abbr[month]} {year} - skipped")
-
-    currentDate -= relativedelta(months=1)
+        currentDate -= relativedelta(months=1)
