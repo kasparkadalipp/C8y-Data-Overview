@@ -6,21 +6,23 @@ from tqdm import tqdm
 from src.utils import readFile
 from pydantic import BaseModel
 from openai import OpenAI
-from src.utils import tqdmFormat
+from src.utils import tqdmFormat, getPath
 
 SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
 SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))
 
 client = instructor.patch(OpenAI())
 inputData = readFile('chatGPT input.json')
+model = "gpt-4-turbo" # "gpt-3.5-turbo"
 
 
 class Measurement(BaseModel):
     description: str
     domain: str
+    subdomain: str
 
 
-def send_request(message_data, model="gpt-3.5-turbo"):  # "gpt-4-turbo"
+def requestChatGPTDescription(message_data, model):
     return client.chat.completions.create(
         model=model,
         messages=[
@@ -47,10 +49,9 @@ def send_request(message_data, model="gpt-3.5-turbo"):  # "gpt-4-turbo"
 
 result = {}
 failedRequests = []
-
 for deviceId, data in tqdm(inputData.items(), desc="requesting data for gpt-3.5-turbo", bar_format=tqdmFormat):
     try:
-        response = send_request(data, model="gpt-3.5-turbo")
+        response = requestChatGPTDescription(data, model)
         result[deviceId] = {
             'id': deviceId,
             'name': data['device'],
@@ -63,4 +64,4 @@ for deviceId, data in tqdm(inputData.items(), desc="requesting data for gpt-3.5-
         failedRequests.append(deviceId)
 
 df = pd.DataFrame(result.values())
-df.to_csv("chatgpt 3.5 description.csv", encoding='utf-8-sig', index=False)
+df.to_csv(getPath(f"{model} description.csv"), encoding='utf-8-sig', index=False)
