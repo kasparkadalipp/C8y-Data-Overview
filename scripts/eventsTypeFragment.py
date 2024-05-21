@@ -7,19 +7,10 @@ from src.cumulocity import MonthlyEvents
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 
-c8y_data = readFile('c8y_data.json')
-deviceIdMapping = {device['id']: device for device in c8y_data}
-
-if not pathExists('c8y_events_id_to_type_mapping.json'):
-    createEventTypeMapping()
-typeMapping = readFile('c8y_events_id_to_type_mapping.json')
-
-if not pathExists('c8y_events_id_to_fragment_mapping.json'):
-    createEventFragmentMapping()
-fragmentMapping = readFile('c8y_events_id_to_fragment_mapping.json')
-
 
 def requestMissingValues(year, month, filePath):
+    c8y_data = readFile('c8y_data.json')
+    deviceIdMapping = {device['id']: device for device in c8y_data}
     fileContents = readFile(filePath)
 
     missingValueCount = 0
@@ -62,6 +53,14 @@ def requestMissingValues(year, month, filePath):
 
 
 def requestEventTypes(year, month):
+    c8y_data = readFile('c8y_data.json')
+    if not pathExists('c8y_events_id_to_type_mapping.json'):
+        createEventTypeMapping()
+    typeMapping = readFile('c8y_events_id_to_type_mapping.json')
+    if not pathExists('c8y_events_id_to_fragment_mapping.json'):
+        createEventFragmentMapping()
+    fragmentMapping = readFile('c8y_events_id_to_fragment_mapping.json')
+
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         deviceId = device['id']
@@ -74,7 +73,9 @@ def requestEventTypes(year, month):
 
         for eventType in typeMapping[deviceId]:
             for fragment in fragmentMapping[deviceId]:
-                response = MonthlyEvents(device, enforceBounds=True).requestEventCountForTypeFragment(year, month, eventType, fragment)
+                response = MonthlyEvents(device, enforceBounds=True).requestEventCountForTypeFragment(year, month,
+                                                                                                      eventType,
+                                                                                                      fragment)
                 c8y_events['typeFragment'].append({
                     "type": eventType,
                     "fragment": fragment,

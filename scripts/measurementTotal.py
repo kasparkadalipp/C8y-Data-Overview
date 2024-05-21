@@ -7,10 +7,6 @@ from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 
 
-c8y_data = readFile('c8y_data.json')
-deviceIdMapping = {device['id']: device for device in c8y_data}
-
-
 def requestMissingValues(year, month, filePath):
     c8y_measurements = []
     fileContents = readFile(filePath)
@@ -42,6 +38,8 @@ def requestMissingValues(year, month, filePath):
 
 
 def requestTotal(year, month):
+    c8y_data = readFile('c8y_data.json')
+    deviceIdMapping = {device['id']: device for device in c8y_data}
     c8y_measurements = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         if hasMeasurements(device, year, month):

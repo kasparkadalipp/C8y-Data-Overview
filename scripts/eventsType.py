@@ -7,17 +7,10 @@ from src.cumulocity import MonthlyEvents
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 
-c8y_data = readFile('c8y_data.json')
-deviceIdMapping = {device['id']: device for device in c8y_data}
-
-files = readFile('events/total')
-
-if not pathExists('c8y_events_id_to_type_mapping.json'):
-    createEventTypeMapping()
-eventTypesMapping = readFile('c8y_events_id_to_type_mapping.json')
-
 
 def requestMissingValues(year, month, filePath):
+    c8y_data = readFile('c8y_data.json')
+    deviceIdMapping = {device['id']: device for device in c8y_data}
     fileContents = readFile(filePath)
 
     missingValueCount = 0
@@ -58,6 +51,11 @@ def requestMissingValues(year, month, filePath):
 
 
 def requestEventTypes(year, month):
+    c8y_data = readFile('c8y_data.json')
+    if not pathExists('c8y_events_id_to_type_mapping.json'):
+        createEventTypeMapping()
+    eventTypesMapping = readFile('c8y_events_id_to_type_mapping.json')
+
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         deviceId = device['id']

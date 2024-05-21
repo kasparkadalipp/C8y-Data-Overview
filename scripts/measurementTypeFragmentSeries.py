@@ -8,8 +8,7 @@ from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 
 
-c8y_data = readFile(f'c8y_data.json')
-deviceIdMapping = {device['id']: device for device in c8y_data}
+
 
 
 def getMeasurementTypes(measurement: dict):
@@ -25,6 +24,8 @@ def getMeasurementTypes(measurement: dict):
 
 
 def requestMissingValues(year, month, filePath):
+    c8y_data = readFile(f'c8y_data.json')
+    deviceIdMapping = {device['id']: device for device in c8y_data}
     fileContents = readFile(filePath)
 
     missingValueCount = 0
@@ -69,7 +70,8 @@ def requestMissingValues(year, month, filePath):
 
 
 def requestTypeFragmentSeries(year, month):
-    if not pathExists(f'{folder}/c8y_measurements_id_to_type_mapping.json'):
+    c8y_data = readFile(f'c8y_data.json')
+    if not pathExists(f'c8y_measurements_id_to_type_mapping.json'):
         createMeasurementMapping()
     typeFragmentSeriesMapping = readFile(f'c8y_measurements_id_to_type_mapping.json')
 
