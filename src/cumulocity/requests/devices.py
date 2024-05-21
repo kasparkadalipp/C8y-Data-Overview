@@ -1,12 +1,10 @@
 from datetime import date
-
 from tqdm import tqdm
+from src.cumulocity import Inventory, Measurements, Events
+from src.utils import tqdmFormat
 
-from ..cumulocity import Inventory, Measurements, Events
-from ..utils import tqdmFormat
 
-
-class InitialRequests:
+class Devices:
     def __init__(self, dateFrom: date, dateTo: date, c8y_data: list = None):
         self.dateFrom = dateFrom
         self.dateTo = dateTo

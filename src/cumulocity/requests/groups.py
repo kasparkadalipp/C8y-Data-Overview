@@ -1,7 +1,6 @@
 from tqdm import tqdm
-
-from ..cumulocity import getCumulocityApi
-from ..utils import tqdmFormat
+from src.cumulocity import getCumulocityApi
+from src.utils import tqdmFormat
 
 
 def getDeviceGroups():

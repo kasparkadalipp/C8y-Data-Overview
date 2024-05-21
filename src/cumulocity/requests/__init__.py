@@ -1,2 +1,2 @@
 from .groups import getDeviceGroups
-from .initial import InitialRequests
+from .devices import Devices
