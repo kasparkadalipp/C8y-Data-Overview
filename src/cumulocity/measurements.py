@@ -13,6 +13,10 @@ class Measurements:
         self.supportedFragmentAndSeries = device['c8y_supportedSeries']
         self.c8y = getCumulocityApi()
 
+        if enforceBounds:
+            self.latestMeasurement = device['latestMeasurement']
+            self.oldestMeasurement = device['oldestMeasurement']
+
     def requestLatestMeasurement(self, dateFrom: date, dateTo: date) -> dict:
         additionalParameters = {'revert': 'true'}
         response = self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
@@ -31,6 +35,17 @@ class Measurements:
         additionalParameters = {'type': measurementType, 'valueFragmentType': fragment, 'valueFragmentSeries': series}
         return self.requestMeasurementCount(dateFrom, dateTo, additionalParameters)
 
+    def hasMeasurements(self, dateFrom: date, dateTo: date) -> bool:
+        if self.latestMeasurement:
+            latestDate = parse(self.latestMeasurement['time']).date()
+            if latestDate < dateFrom:
+                return False
+        if self.oldestMeasurement:
+            oldestDate = parse(self.oldestMeasurement['time']).date()
+            if dateTo < oldestDate:
+                return False
+        return True
+
     def requestMeasurementCount(self, dateFrom: date, dateTo: date, additionalParameters: dict = None) -> dict:
         parameters = {
             'dateFrom': dateFrom.isoformat(),
@@ -43,6 +58,9 @@ class Measurements:
         }
         if additionalParameters:
             parameters.update(additionalParameters)
+
+        if self.enforceBounds and not self.hasMeasurements(dateFrom, dateTo):
+            return {'count': 0, 'measurement': {}}
 
         try:
             response = self.c8y.get(resource="/measurement/measurements", params=parameters)
@@ -127,19 +145,3 @@ def requestMonthBounds(year: int, month: int) -> Tuple[date, date]:
     inclusiveDateFrom = date(year, month, 1)
     exclusiveDateTo = inclusiveDateFrom + relativedelta(months=1)
     return inclusiveDateFrom, exclusiveDateTo
-
-
-def hasMeasurements(device: dict, year: int, month: int) -> bool:
-    dateFrom, dateTo = requestMonthBounds(year, month)
-    latestMeasurement = device['latestMeasurement']
-    oldestMeasurement = device['oldestMeasurement']
-
-    if latestMeasurement:
-        latestDate = parse(latestMeasurement['time']).date()
-        if latestDate < dateFrom:
-            return False
-    if oldestMeasurement:
-        oldestDate = parse(oldestMeasurement['time']).date()
-        if dateTo < oldestDate:
-            return False
-    return True
