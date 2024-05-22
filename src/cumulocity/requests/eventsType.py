@@ -3,7 +3,7 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 from src.cumulocity.requests.mapping.eventTypeMapping import createEventTypeMapping
 from src.cumulocity import MonthlyEvents
-from src.utils import tqdmFormat, saveToFile, pathExists, readFile, YearMonthDate
+from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 
 
@@ -76,7 +76,7 @@ def requestEventTypes(year, month):
     return result
 
 
-def requestMonthlyData(startingDate: YearMonthDate, lastDate: YearMonthDate):
+def requestMonthlyData(startingDate: date, lastDate: date):
     if startingDate <= lastDate:
         raise ValueError("Last date can't be before starting date")
 
