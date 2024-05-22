@@ -37,7 +37,7 @@ def monthlyMeasurementFragmentSeries():
     print(f'Total measurements from monthly fragment + series: {total:,}')
 
 
-def monthlyMeasurementFragmentSeriesType():
+def monthlyMeasurementTypeFragmentSeries():
     total = 0
     for fileName in listFileNames('measurements/typeFragmentSeries/'):
         for device in readFile(fileName):
