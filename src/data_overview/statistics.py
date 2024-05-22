@@ -69,12 +69,3 @@ def monthlyEventTypeFragment():
             for event in device['typeFragment']:
                 total += event['count']
     print(f'Total events from monthly event types + fragments: {total:,}')
-
-
-statistics()
-monthlyMeasurementTotal()
-monthlyMeasurementFragmentSeries()
-monthlyMeasurementFragmentSeriesType()
-monthlyEventTotal()
-monthlyEventType()
-monthlyEventTypeFragment()
