@@ -2,7 +2,7 @@ import calendar
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from src.cumulocity import MonthlyMeasurements
-from src.utils import tqdmFormat, saveToFile, pathExists, readFile
+from src.utils import tqdmFormat, saveToFile, pathExists, readFile, YearMonthDate
 from tqdm import tqdm
 
 
@@ -77,7 +77,7 @@ def requestFragmentSeries(year, month):
     return result
 
 
-def requestMonthlyData(startingDate: date, lastDate: date):
+def requestMonthlyData(startingDate: YearMonthDate, lastDate: YearMonthDate):
     if startingDate <= lastDate:
         raise ValueError("Last date can't be before starting date")
 

@@ -1,6 +1,7 @@
 import json
 import os
 import pandas as pd
+from datetime import date
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -81,3 +82,8 @@ def listDirectories(folderPath: str = ''):
     entries = os.listdir(path)
     directories = [folderPath + entry for entry in entries if os.path.isdir(os.path.join(path, entry))]
     return directories
+
+
+class YearMonthDate(date):
+    def __new__(cls, year, month):
+        return super().__new__(cls, year, month, 1)

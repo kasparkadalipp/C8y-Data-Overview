@@ -97,4 +97,4 @@ for key, event in eventTypeMapping.items():
 
     deviceMapping[deviceId][eventType] = shortenEvent(exampleEvent)
 
-saveToFile(deviceMapping, "chatGPT input.json", overwrite=True)
+saveToFile(deviceMapping, "chatGPT input.json")

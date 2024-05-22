@@ -3,7 +3,7 @@ from datetime import date
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from src.cumulocity import MonthlyEvents
-from src.utils import tqdmFormat, saveToFile, pathExists, readFile
+from src.utils import tqdmFormat, saveToFile, pathExists, readFile, YearMonthDate
 from tqdm import tqdm
 
 
@@ -53,7 +53,7 @@ def requestTotalEvents(year, month):
     return c8y_events
 
 
-def requestMonthlyData(startingDate: date, lastDate: date):
+def requestMonthlyData(startingDate: YearMonthDate, lastDate: YearMonthDate):
     if startingDate <= lastDate:
         raise ValueError("Last date can't be before starting date")
 
