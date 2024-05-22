@@ -1,13 +1,6 @@
-import os
 from collections import Counter
-from src.utils import listFileNames, readFile, saveToFile
+from src.utils import listFileNames, readFile, saveToFile, listDirectories
 from tabulate import tabulate
-
-
-def listDirectories(path):
-    entries = os.listdir(path)
-    directories = [entry for entry in entries if os.path.isdir(os.path.join(path, entry))]
-    return directories
 
 
 def createEventFragmentMapping():

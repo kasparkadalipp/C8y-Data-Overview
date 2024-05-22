@@ -1,19 +1,11 @@
-import os
-from src.utils import listFileNames, readFile, saveToFile
+from src.utils import listFileNames, readFile, saveToFile, listDirectories
 from collections import Counter
 from tabulate import tabulate
-
-
-def listDirectories(path):
-    entries = os.listdir(path)
-    directories = [entry for entry in entries if os.path.isdir(os.path.join(path, entry))]
-    return directories
 
 
 def createMeasurementMapping():
     c8y_data = readFile('c8y_data.json')
     eventTypesMapping = {device['id']: set() for device in c8y_data}
-
     for folder in listDirectories('measurements'):
         for fileName in listFileNames(folder):
             for device in readFile(fileName):

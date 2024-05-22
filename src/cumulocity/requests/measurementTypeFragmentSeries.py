@@ -7,9 +7,6 @@ from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
 
 
-
-
-
 def getMeasurementTypes(measurement: dict):
     result = set()
     measurementType = measurement['type']
