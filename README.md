@@ -54,6 +54,8 @@ C8Y_TENANT_ID=t12345
 # OpenAI credentials
 OPENAI_API_KEY=dGhpcyBpcyBhIHNhbXBsZSBBUEkga2V5
 OPENAI_ORGANIZATION_ID=org-b3JnYW5pemF0aW9uIGlk
+
+DATA_FOLDER=example
 ```
 
 ## Saved data
