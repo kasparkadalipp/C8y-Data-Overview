@@ -74,11 +74,11 @@ def requestMonthlyData(startingDate: date, lastDate: date):
 
         if not fileExists:
             data = requestTotal(year, month)
-            saveToFile(data, filePath, overwrite=False)
+            saveToFile(data, filePath)
 
         data = requestMissingValues(year, month, filePath)
         if data:
-            saveToFile(data, filePath, overwrite=True)
+            saveToFile(data, filePath)
         elif fileExists:
             print(f"{calendar.month_abbr[month]} {year} - skipped")
 

@@ -28,7 +28,7 @@ def createMeasurementMapping():
                             eventTypesMapping[deviceId].add((measurement['type'], typeFragmentSeries['fragment'], typeFragmentSeries['series']))
 
     data = {key: sorted(value) for key, value in eventTypesMapping.items()}
-    saveToFile(data, f"c8y_measurements_id_to_type_mapping.json", overwrite=True)
+    saveToFile(data, f"c8y_measurements_id_to_type_mapping.json")
 
 
 def mappingOverview():

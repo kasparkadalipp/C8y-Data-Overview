@@ -34,7 +34,7 @@ def createEventFragmentMapping():
                             eventTypesMapping[deviceId].add(key)
 
     data = {key: sorted(value) for key, value in eventTypesMapping.items()}
-    saveToFile(data, f'c8y_events_id_to_fragment_mapping.json', overwrite=True)
+    saveToFile(data, f'c8y_events_id_to_fragment_mapping.json')
 
 
 def mappingOverview():

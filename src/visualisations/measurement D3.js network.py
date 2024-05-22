@@ -159,10 +159,10 @@ def createMeasurementNetwork(inputData: dict):
 def visualizeWholeDataset():
     inputData = getUniqueFields(listFileNames('measurements/typeFragmentSeries/'))
     network = createMeasurementNetwork(inputData)
-    saveToFile(network, 'visualizations/network (total).json', overwrite=True)
+    saveToFile(network, 'visualizations/network (total).json')
 
 
 def visualizeMonth():
     inputData = getUniqueFields(['measurements/typeFragmentSeries/c8y_measurements 2024-03-01 - 2024-04-01.json'])
     network = createMeasurementNetwork(inputData)
-    saveToFile(network, 'visualizations/network (test).json', overwrite=True)
+    saveToFile(network, 'visualizations/network (test).json')

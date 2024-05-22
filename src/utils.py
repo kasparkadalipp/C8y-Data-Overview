@@ -9,7 +9,7 @@ dataRoot = f"../data/{os.getenv('DATA_FOLDER')}/"
 tqdmFormat = "{l_bar}{bar}| {n_fmt}/{total_fmt} [time elapsed: {elapsed}]"
 
 
-def saveToFile(devices: list | dict, filePath: str, overwrite: bool):
+def saveToFile(devices: list | dict, filePath: str, overwrite: bool = True):
     path = Path(f"{dataRoot}{filePath}")
 
     if not overwrite and path.exists():
