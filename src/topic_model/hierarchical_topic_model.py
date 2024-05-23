@@ -60,7 +60,7 @@ def createTopicModel(model="gpt-4-turbo"):
     """
 
     openai_model = BertOpenAI(OpenAI(), model=model, exponential_backoff=True, chat=True, prompt=prompt)
-    topic_model = BERTopic(representation_model=openai_model, embedding_model=CustomEmbedder, nr_topics='auto')
+    topic_model = BERTopic(representation_model={"OpenAI": openai_model}, embedding_model=CustomEmbedder, nr_topics='auto')
     topics, probs = topic_model.fit_transform(docs)
     hierarchical_topics = topic_model.hierarchical_topics(docs)
 
