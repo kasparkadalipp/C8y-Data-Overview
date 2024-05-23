@@ -64,16 +64,18 @@ def createTopicModel(model="gpt-4-turbo"):
     topics, probs = topic_model.fit_transform(docs)
     hierarchical_topics = topic_model.hierarchical_topics(docs)
 
-    createTopicModelMapping(docs, topic_model, hierarchical_topics, topics)
+    chatgpt_topic_labels = {topic: " | ".join(list(zip(*values))[0]) for topic, values in topic_model.topic_aspects_["OpenAI"].items()}
+    chatgpt_topic_labels[-1] = "Outlier Topic"
 
-    return topic_model, hierarchical_topics, topics, probs
+    createTopicModelMapping(docs, hierarchical_topics, topics, chatgpt_topic_labels)
+
+    return topic_model, hierarchical_topics, topics, probs, chatgpt_topic_labels
 
 
-def createTopicModelMapping(docs, topic_model, hierarchical_topics, topics):
+def createTopicModelMapping(docs, hierarchical_topics, topics, chatgpt_topic_labels):
     deviceMapping = {deviceId: str(topicId) for deviceId, topicId in zip(docs, topics)}
     saveToFile(deviceMapping, 'visualisations/deviceID topicID mapping.json', True)
-    labelMapping = {topic: " | ".join(list(zip(*values))[0]) for topic, values in
-                    topic_model.topic_aspects_["OpenAI"].items()}
+
     nameMapping = {}
     parentMapping = {}
     rootNode = -1
@@ -84,13 +86,13 @@ def createTopicModelMapping(docs, topic_model, hierarchical_topics, topics):
         rootNode = max(rootNode, parent)
         # nodeTopics = row['Topics']
 
-        nameMapping[parent] = labelMapping.get(parent, 'default')
+        nameMapping[parent] = chatgpt_topic_labels.get(parent, 'default')
         parentMapping[leftChild] = str(parent)
         parentMapping[rightChild] = str(parent)
-    for topicId, label in labelMapping.items():
-        nameMapping[topicId] = labelMapping[topicId]
+    for topicId, label in chatgpt_topic_labels.items():
+        nameMapping[topicId] = chatgpt_topic_labels[topicId]
     rootNode = str(rootNode)
     parentMapping["-1"] = rootNode
     nameMapping[rootNode] = "Topic model root"
     nodeMapping = {'root': rootNode, 'name': nameMapping, 'parent': parentMapping}
-    saveToFile(nodeMapping, 'topic model/topic model.json', True)
+    saveToFile(nodeMapping, 'topic model/topic model.json')
