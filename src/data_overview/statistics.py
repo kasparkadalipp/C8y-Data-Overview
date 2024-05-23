@@ -5,25 +5,19 @@ from src.utils import readFile, listFileNames
 def measurementStatistics():
     c8y_data = readFile('c8y_data.json')
     print(f"Device count: {len(c8y_data)}")
-    print(f'Total measurements : {sum([device['measurementCount'] for device in c8y_data]):,}')
-    print(
-        f'Devices that send measurements {sum([bool(device['latestMeasurement']) for device in c8y_data]) / len(c8y_data) * 100:.2f}%')
-    print(
-        f'Oldest measurement {min([parse(device['oldestMeasurement']['time']).date() for device in c8y_data if device['oldestMeasurement']])}')
-    print(
-        f'Latest measurement {max([parse(device['latestMeasurement']['time']).date() for device in c8y_data if device['latestMeasurement']])}')
+    print(f'Total measurements: {sum([device['measurementCount'] for device in c8y_data]):,}')
+    print(f'Devices that send measurements: {sum([bool(device['latestMeasurement']) for device in c8y_data]) / len(c8y_data) * 100:.2f}%')
+    print(f'Oldest measurement: {min([parse(device['oldestMeasurement']['time']).date() for device in c8y_data if device['oldestMeasurement']])}')
+    print(f'Latest measurement: {max([parse(device['latestMeasurement']['time']).date() for device in c8y_data if device['latestMeasurement']])}')
 
 
 def eventStatistics():
     c8y_data = readFile('c8y_data.json')
     print(f"Device count: {len(c8y_data)}")
-    print(
-        f'Devices that send events {sum([bool(device['latestEvent']) for device in c8y_data]) / len(c8y_data) * 100:.2f}%')
-    print(f'Total events : {sum([device['eventCount'] for device in c8y_data]):,}')
-    print(
-        f'Oldest event {min([parse(device['oldestEvent']['time']).date() for device in c8y_data if device['oldestEvent']])}')
-    print(
-        f'Latest event {max([parse(device['latestEvent']['time']).date() for device in c8y_data if device['latestEvent']])}')
+    print(f'Devices that send events {sum([bool(device['latestEvent']) for device in c8y_data]) / len(c8y_data) * 100:.2f}%')
+    print(f'Total events: {sum([device['eventCount'] for device in c8y_data]):,}')
+    print(f'Oldest event: {min([parse(device['oldestEvent']['time']).date() for device in c8y_data if device['oldestEvent']])}')
+    print(f'Latest event: {max([parse(device['latestEvent']['time']).date() for device in c8y_data if device['latestEvent']])}')
 
 
 def monthlyMeasurementTotal():
