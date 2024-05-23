@@ -4,36 +4,11 @@ from bertopic.backend import BaseEmbedder
 from bertopic.representation import OpenAI as BertOpenAI
 from openai import OpenAI
 from skllm.config import SKLLMConfig
-from tqdm import tqdm
-from src.utils import saveToFile, readFile, tqdmFormat, pathExists
+from src.topic_model.embeddings import getDeviceEmbeddings
+from src.utils import saveToFile, readFile
 
 SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
 SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))
-
-
-def requestEmbeddings(text, model="text-embedding-3-large"):
-    client = OpenAI()
-    return client.embeddings.create(input=text, model=model).data[0].embedding
-
-
-def getDeviceEmbeddings(devices, model):
-    fileName = f'topic model/{model} embeddings.json'
-    deviceEmbeddings = readFile(fileName) if pathExists(fileName) else {}
-
-    embeddings = []
-    addedValues = {}
-    for deviceId, device in tqdm(devices.items(), desc="requesting description embeddings", bar_format=tqdmFormat):
-        if deviceId in deviceEmbeddings:
-            embeddings.append(deviceEmbeddings[deviceId])
-        else:
-            textEmbedding = requestEmbeddings(device)
-            embeddings.append(textEmbedding)
-            addedValues[deviceId] = textEmbedding
-
-    if len(addedValues) > 0:
-        deviceEmbeddings.update(addedValues)
-        saveToFile(deviceEmbeddings, fileName)
-    return embeddings
 
 
 def createTopicModel(model="gpt-4-turbo"):
