@@ -1,5 +1,5 @@
 bert==2.2.0
-bertopic @ git+https://github.com/MaartenGr/BERTopic@127e794f5630bc0d48071f012b07e9e41dd7d8ba
+bertopic==0.16.0
 c8y-api==1.9.2
 fastjsonschema==2.19.1
 genson==1.2.2
