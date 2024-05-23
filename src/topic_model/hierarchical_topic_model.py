@@ -17,12 +17,12 @@ def requestEmbeddings(text, model="text-embedding-3-large"):
 
 
 def getDeviceEmbeddings(devices, model):
-    fileName = f'{model} embeddings.json'
+    fileName = f'topic model/{model} embeddings.json'
     deviceEmbeddings = readFile(fileName) if pathExists(fileName) else {}
 
     embeddings = []
     addedValues = {}
-    for deviceId, device in tqdm(devices.items(), desc="getting embeddings", bar_format=tqdmFormat):
+    for deviceId, device in tqdm(devices.items(), desc="requesting description embeddings", bar_format=tqdmFormat):
         if deviceId in deviceEmbeddings:
             embeddings.append(deviceEmbeddings[deviceId])
         else:
@@ -37,7 +37,7 @@ def getDeviceEmbeddings(devices, model):
 
 
 def createTopicModel(model="gpt-4-turbo"):
-    fileName = f"topic model/{model} descriptions.csv"
+    fileName = f"topic model/{model} descriptions.json"
     deviceDescriptions = readFile(fileName)
     embeddings = getDeviceEmbeddings(deviceDescriptions, model)
     docs = list(deviceDescriptions.values())
@@ -60,7 +60,7 @@ def createTopicModel(model="gpt-4-turbo"):
     """
 
     openai_model = BertOpenAI(OpenAI(), model=model, exponential_backoff=True, chat=True, prompt=prompt)
-    topic_model = BERTopic(representation_model=openai_model, embedding_model=CustomEmbedder, nr_topics="auto")
+    topic_model = BERTopic(representation_model=openai_model, embedding_model=CustomEmbedder, nr_topics='auto')
     topics, probs = topic_model.fit_transform(docs)
     hierarchical_topics = topic_model.hierarchical_topics(docs)
 
