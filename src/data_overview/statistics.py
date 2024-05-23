@@ -4,6 +4,7 @@ from src.utils import readFile, listFileNames
 
 def measurementStatistics():
     c8y_data = readFile('c8y_data.json')
+    print(f"Device count: {len(c8y_data)}")
     print(f'Total measurements : {sum([device['measurementCount'] for device in c8y_data]):,}')
     print(
         f'Devices that send measurements {sum([bool(device['latestMeasurement']) for device in c8y_data]) / len(c8y_data) * 100:.2f}%')
@@ -15,6 +16,7 @@ def measurementStatistics():
 
 def eventStatistics():
     c8y_data = readFile('c8y_data.json')
+    print(f"Device count: {len(c8y_data)}")
     print(
         f'Devices that send events {sum([bool(device['latestEvent']) for device in c8y_data]) / len(c8y_data) * 100:.2f}%')
     print(f'Total events : {sum([device['eventCount'] for device in c8y_data]):,}')
