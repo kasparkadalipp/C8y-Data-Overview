@@ -5,12 +5,10 @@ from src.utils import listFileNames, readFile, getPath, mapToJsonSchema
 
 
 def createEventTypeMapping():
-    global eventTypeMapping, fileName, device, eventTypeSum, deviceId, deviceType, event, eventType, count, jsonSchema, key
     eventTypeMapping = defaultdict(
         lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}, 'devices': set()})
     for fileName in listFileNames('events/type/'):
         for device in readFile(fileName):
-            eventTypeSum = 0
             deviceId = device['deviceId']
             deviceType = device['deviceType']
             for event in device['eventByType']:
@@ -24,10 +22,10 @@ def createEventTypeMapping():
                     eventTypeMapping[key]['count'] += count
                     eventTypeMapping[key]['example'] = device
                     eventTypeMapping[key]['devices'].add(deviceId)
+    return eventTypeMapping
 
 
 def createEventTypeFragmentMapping():
-    global eventTypeFragmentMapping, fileName, device, eventTypeSum, deviceId, deviceType, event, eventType, count, fragment, jsonSchema, key
     eventTypeFragmentMapping = defaultdict(
         lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}, 'devices': set()})
     for fileName in listFileNames('events/typeFragment/'):
@@ -47,12 +45,12 @@ def createEventTypeFragmentMapping():
                     eventTypeFragmentMapping[key]['count'] += count
                     eventTypeFragmentMapping[key]['example'] = device
                     eventTypeFragmentMapping[key]['devices'].add(deviceId)
+    return eventTypeFragmentMapping
 
 
-def createEventSchema():
-    global eventType, deviceType, fragment, key, values
-    createEventTypeMapping()
-    createEventTypeFragmentMapping()
+def createEventTypeFragmentSchema():
+    eventTypeMapping = createEventTypeMapping()
+    eventTypeFragmentMapping = createEventTypeFragmentMapping()
     data = []
     usedEventTypes = set()
     sortedTypeFragment = dict(sorted(eventTypeFragmentMapping.items(), reverse=True,
@@ -100,4 +98,23 @@ def createEventSchema():
             }
             data.append(row)
     df = pd.DataFrame(data)
-    df.to_csv(getPath('Events.csv'), index=False, encoding='utf-8-sig')
+    df.to_csv(getPath('Events (type + fragment).csv'), index=False, encoding='utf-8-sig')
+
+
+def createEventTypeSchema():
+    eventTypeMapping = createEventTypeMapping()
+
+    data = []
+    for key, values in eventTypeMapping.items():
+        deviceType, eventType = key
+        row = {
+            'deviceType': deviceType,
+            'eventType': eventType,
+            'count': values['count'],
+            'jsonSchema': str(values['schema'].to_schema()).replace("'", '"'),
+            'example event': values['example']
+        }
+        data.append(row)
+
+    df = pd.DataFrame(data)
+    df.to_csv(getPath('telia/Events (type).csv'), index=False, encoding='utf-8-sig')
