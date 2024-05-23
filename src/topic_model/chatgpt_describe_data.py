@@ -39,7 +39,7 @@ def requestChatGPTDescription(client, message_data, model):
     )
 
 
-def transformData( model="gpt-4-turbo"):  # "gpt-3.5-turbo"
+def transformData(model="gpt-4-turbo"):  # "gpt-3.5-turbo"
     inputData = readFile('chatGPT input.json'),
 
     SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
@@ -48,7 +48,7 @@ def transformData( model="gpt-4-turbo"):  # "gpt-3.5-turbo"
 
     result = {}
     failedRequests = []
-    for deviceId, data in tqdm(inputData.items(), desc="requesting data for gpt-3.5-turbo", bar_format=tqdmFormat):
+    for deviceId, data in tqdm(inputData.items(), desc=f"requesting data for {model}", bar_format=tqdmFormat):
         try:
             response = requestChatGPTDescription(client, data, model)
             result[deviceId] = {
