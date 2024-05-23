@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from pathlib import Path
 from dotenv import load_dotenv
+from genson import SchemaBuilder
 
 load_dotenv('../.env')
 dataRoot = f"../data/{os.getenv('DATA_FOLDER')}/"
@@ -81,3 +82,15 @@ def listDirectories(folderPath: str = ''):
     entries = os.listdir(path)
     directories = [folderPath + entry for entry in entries if os.path.isdir(os.path.join(path, entry))]
     return directories
+
+
+def mapToJsonSchema(event):
+    alwaysPresentKeys = ["lastUpdated", "creationTime", "self", "source", "time", "id", "text", "type"]
+    builder = SchemaBuilder(schema_uri=False)
+    if isinstance(event, list):
+        for item in event:
+            builder.add_object({key: value for key, value in item.items() if key not in alwaysPresentKeys})
+    else:
+        builder.add_object({key: value for key, value in event.items() if key not in alwaysPresentKeys})
+    jsonSchema = builder.to_schema()
+    return jsonSchema

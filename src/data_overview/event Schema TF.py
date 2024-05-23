@@ -1,20 +1,7 @@
 import pandas as pd
 from genson import SchemaBuilder
 from collections import defaultdict
-from src.utils import listFileNames, readFile, getPath
-
-def createSchema(event):
-    alwaysPresentKeys = ["lastUpdated", "creationTime", "self", "source", "time", "id", "text", "type"]
-    builder = SchemaBuilder(schema_uri=False)
-    if isinstance(event, list):
-        for item in event:
-            builder.add_object({key: value for key, value in item.items() if key not in alwaysPresentKeys})
-    else:
-        builder.add_object({key: value for key, value in event.items() if key not in alwaysPresentKeys})
-    jsonSchema = builder.to_schema()
-    return jsonSchema
-
-
+from src.utils import listFileNames, readFile, getPath, mapToJsonSchema
 
 eventTypeFragmentMapping = defaultdict(lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}})
 
@@ -29,7 +16,7 @@ for fileName in listFileNames("events/typeFragment/"):
             count = eventTypeObj['count']
             fragment = eventTypeObj['fragment']
             if event:
-                jsonSchema = createSchema(event)
+                jsonSchema = mapToJsonSchema(event)
                 key = (deviceType, eventType, fragment)
                 eventTypeFragmentMapping[key]['schema'].add_schema(jsonSchema)
                 eventTypeFragmentMapping[key]['count'] += count
