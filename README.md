@@ -63,6 +63,6 @@ DATA_FOLDER=example
 
 Results get saved in the **/data** folder as JSON.
 
-For a detailed description of the data format, please refer to the [Saved Data Format Documentation](/src/README.md).
+For a detailed description of the data format, please refer to the [Saved Data Format Documentation](/docs/README.md).
 
 
