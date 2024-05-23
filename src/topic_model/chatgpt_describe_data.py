@@ -1,10 +1,10 @@
+import os
 import instructor
 import pandas as pd
-import os
 from openai import OpenAI
 from pydantic import BaseModel
 from skllm.config import SKLLMConfig
-from src.utils import tqdmFormat, getPath, readFile
+from src.utils import tqdmFormat, getPath, readFile, saveToFile
 from tqdm import tqdm
 
 
@@ -34,13 +34,13 @@ def requestChatGPTDescription(client, message_data, model):
                            f"{message_data} "
             }
         ],
-        max_retries=5,
+        max_retries=10,
         response_model=Measurement
     )
 
 
-def transformData(model="gpt-4-turbo"):  # "gpt-3.5-turbo"
-    inputData = readFile('chatGPT input.json'),
+def describeDeviceData(model="gpt-4-turbo"):  # "gpt-3.5-turbo"
+    inputData = readFile('topic model/chatGPT input.json'),
 
     SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
     SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))
@@ -55,12 +55,18 @@ def transformData(model="gpt-4-turbo"):  # "gpt-3.5-turbo"
                 'id': deviceId,
                 'name': data['device'],
                 'domain': response.domain,
+                'subdomain': response.subdomain,
                 'description': response.description,
-                'isAggregated': response.isAggregated,
                 'input': data
             }
-        except:
+        except KeyboardInterrupt:
+            break
+        except Exception as e:
+            print(e)
             failedRequests.append(deviceId)
 
     df = pd.DataFrame(result.values())
     df.to_csv(getPath(f"{model} description.csv"), encoding='utf-8-sig', index=False)
+
+    documents = {deviceId: f"{device['domain']} {device['subdomain']} {device['description']}" for deviceId, device in result.items()}
+    saveToFile(documents, f"topic model/{model} descriptions.json")

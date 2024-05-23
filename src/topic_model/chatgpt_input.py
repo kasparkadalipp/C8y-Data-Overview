@@ -100,4 +100,4 @@ def createDatasetMapping():
 
         deviceMapping[deviceId][eventType] = shortenEvent(exampleEvent)
 
-    saveToFile(deviceMapping, "chatGPT input.json", overwrite=True)
+    saveToFile(deviceMapping, "topic model/chatGPT input.json", overwrite=True)

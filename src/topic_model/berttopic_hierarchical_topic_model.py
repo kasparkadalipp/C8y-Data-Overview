@@ -1,16 +1,54 @@
 import os
+from bertopic import BERTopic
+from bertopic.backend import BaseEmbedder
+from bertopic.representation import OpenAI as BertOpenAI
+from openai import OpenAI
 from skllm.config import SKLLMConfig
+from tqdm import tqdm
+from src.utils import saveToFile, readFile, tqdmFormat, pathExists
 
 SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
 SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))
-from src.utils import saveToFile, readFile
-from bertopic.representation import OpenAI as BertOpenAI
-from bertopic import BERTopic
 
-def createTopicModel():
-    inputData = readFile('chatGPT input.json')
-    docs = [str(device) for device in inputData.values()]
-    client = BertOpenAI()
+
+def requestEmbeddings(text, model="text-embedding-3-large"):
+    client = OpenAI()
+    return client.embeddings.create(input=text, model=model).data[0].embedding
+
+
+def getDeviceEmbeddings(devices, model):
+    fileName = f'{model} embeddings.json'
+    deviceEmbeddings = readFile(fileName) if pathExists(fileName) else {}
+
+    embeddings = []
+    addedValues = {}
+    for deviceId, device in tqdm(devices.items(), desc="getting embeddings", bar_format=tqdmFormat):
+        if deviceId in deviceEmbeddings:
+            embeddings.append(deviceEmbeddings[deviceId])
+        else:
+            textEmbedding = requestEmbeddings(device)
+            embeddings.append(textEmbedding)
+            addedValues[deviceId] = textEmbedding
+
+    if len(addedValues) > 0:
+        deviceEmbeddings.update(addedValues)
+        saveToFile(deviceEmbeddings, fileName)
+    return embeddings
+
+
+def createTopicModel(model="gpt-4-turbo"):
+    fileName = f"topic model/{model} descriptions.csv"
+    deviceDescriptions = readFile(fileName)
+    embeddings = getDeviceEmbeddings(deviceDescriptions, model)
+    docs = list(deviceDescriptions.values())
+
+    class CustomEmbedder(BaseEmbedder):
+        def __init__(self, embedding_model):
+            super().__init__()
+            self.embedding_model = embedding_model
+
+        def embed(self, documents, verbose=False):
+            return embeddings
 
     prompt = """
     I have a topic that contains the following documents: 
@@ -21,13 +59,17 @@ def createTopicModel():
     topic: <topic label>
     """
 
-    openai_model = BertOpenAI(client, model="gpt-3.5-turbo", exponential_backoff=True, chat=True, prompt=prompt)
-
-    topic_model = BERTopic(representation_model={"OpenAI": openai_model}, nr_topics="auto")
+    openai_model = BertOpenAI(OpenAI(), model=model, exponential_backoff=True, chat=True, prompt=prompt)
+    topic_model = BERTopic(representation_model=openai_model, embedding_model=CustomEmbedder, nr_topics="auto")
     topics, probs = topic_model.fit_transform(docs)
     hierarchical_topics = topic_model.hierarchical_topics(docs)
 
+    createTopicModelMapping(docs, topic_model, hierarchical_topics, topics)
 
+    return topic_model, hierarchical_topics, topics, probs
+
+
+def createTopicModelMapping(docs, topic_model, hierarchical_topics, topics):
     deviceMapping = {deviceId: str(topicId) for deviceId, topicId in zip(docs, topics)}
     saveToFile(deviceMapping, 'visualisations/deviceID topicID mapping.json', True)
     labelMapping = {topic: " | ".join(list(zip(*values))[0]) for topic, values in
@@ -51,4 +93,4 @@ def createTopicModel():
     parentMapping["-1"] = rootNode
     nameMapping[rootNode] = "Topic model root"
     nodeMapping = {'root': rootNode, 'name': nameMapping, 'parent': parentMapping}
-    saveToFile(nodeMapping, 'visualisations/topic model.json', True)
+    saveToFile(nodeMapping, 'topic model/topic model.json', True)
