@@ -29,8 +29,6 @@ def wordCloudDevices():
                 measurementType = fragmentSeries['type']
                 fragment = fragmentSeries['fragment']
                 series = fragmentSeries['series']
-                count = fragmentSeries['count']
-
                 measurement = fragmentSeries['measurement']
                 if measurement:
                     measurementValue = measurement[fragment][series]
@@ -73,3 +71,5 @@ def wordCloudDevices():
                           height=800)
     wordcloud.generate(wordcloudInput)
     wordcloud.to_file(getPath('wordcloud measurements.png'))
+
+    return wordcloud.to_image()
