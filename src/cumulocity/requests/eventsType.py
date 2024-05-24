@@ -74,7 +74,9 @@ def requestMonthlyData(startingDate: date, lastDate: date):
 
         filePath = f"events/type/{MonthlyEvents.fileName(year, month)}"
 
-        if not pathExists(filePath):
+        if pathExists(filePath):
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
+        else:
             data = requestEventTypes(year, month)
             saveToFile(data, filePath)
 
