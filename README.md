@@ -42,7 +42,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Environment Variables
 
-Set the following environment variables for the scripts to work properly. These can be defined in the `.env` file in the project root.
+Set the following environment variables in the `.env` file in the project root.
 
 ```bash
 # Cumulocity credentials
