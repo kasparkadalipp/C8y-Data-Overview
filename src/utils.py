@@ -1,8 +1,7 @@
 import json
 import os
-from typing import Callable
-
 import pandas as pd
+from typing import Callable
 from pathlib import Path
 from dotenv import load_dotenv
 from genson import SchemaBuilder
