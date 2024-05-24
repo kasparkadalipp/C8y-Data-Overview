@@ -65,7 +65,6 @@ def requestTypeFragmentSeries(year, month):
 
             response = (MonthlyMeasurements(device, enforceBounds=True)
                         .requestTypeFragmentSeriesCount(year, month, measurementType, fragment, series))
-
             while response['count'] < 0:
                 response = MonthlyMeasurements(device).requestAggregatedTypeFragmentSeriesCount(
                     year, month, measurementType, fragment, series)

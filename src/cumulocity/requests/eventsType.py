@@ -73,7 +73,6 @@ def requestMonthlyData(startingDate: date, lastDate: date):
         month = currentDate.month
 
         filePath = f"events/type/{MonthlyEvents.fileName(year, month)}"
-
         if pathExists(filePath):
             print(f"{calendar.month_abbr[month]} {year} - skipped")
         else:

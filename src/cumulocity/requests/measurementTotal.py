@@ -44,15 +44,15 @@ def requestTotal(year, month):
     c8y_measurements = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
         response = MonthlyMeasurements(device, enforceBounds=True).requestMeasurementCount(year, month)
-        measurementCount = response['count']
-        latestMeasurement = response['measurement']
+        while response['count'] < 0:
+            response = MonthlyMeasurements(device, enforceBounds=True).requestAggregatedMeasurementCount(year, month)
 
         c8y_measurements.append({
             "deviceId": device['id'],
             "deviceType": device['type'],
             "total": {
-                "count": measurementCount,
-                "measurement": latestMeasurement
+                "count": response['count'],
+                "measurement": response['measurement']
             }
         })
     return c8y_measurements
@@ -70,16 +70,10 @@ def requestMonthlyData(startingDate: date, lastDate: date):
         month = currentDate.month
 
         filePath = f"measurements/total/{MonthlyMeasurements.fileName(year, month)}"
-        fileExists = pathExists(filePath)
-
-        if not fileExists:
+        if pathExists(filePath):
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
+        else:
             data = requestTotal(year, month)
             saveToFile(data, filePath)
-
-        data = requestMissingValues(year, month, filePath)
-        if data:
-            saveToFile(data, filePath)
-        elif fileExists:
-            print(f"{calendar.month_abbr[month]} {year} - skipped")
 
         currentDate -= relativedelta(months=1)
