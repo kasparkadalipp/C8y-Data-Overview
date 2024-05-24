@@ -60,7 +60,6 @@ def requestTypeFragmentSeries(year, month):
                 if foundNewType:
                     continue
                 else:
-                    print("No new types found")
                     break
 
             response = (MonthlyMeasurements(device, enforceBounds=True)
