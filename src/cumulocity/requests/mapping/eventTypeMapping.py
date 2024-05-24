@@ -23,11 +23,11 @@ def createEventTypeMapping():
                             eventTypesMapping[deviceId].add(event['type'])
 
     data = {key: sorted(value) for key, value in eventTypesMapping.items()}
-    saveToFile(data, f'events/c8y_events_id_to_fragment_mapping.json')
+    saveToFile(data, f'events/events/c8y_events_id_to_fragment_mapping.json')
 
 
 def mappingOverview():
-    jsonData = readFile("events/c8y_events_id_to_fragment_mapping.json")
+    jsonData = readFile("events/events/c8y_events_id_to_fragment_mapping.json")
     counter = Counter([tuple(value) for key, value in sorted(jsonData.items())])
 
     data = [(value, key) for key, value in counter.items()]
