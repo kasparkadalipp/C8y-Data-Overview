@@ -28,11 +28,11 @@ def createMeasurementMapping():
                             eventTypesMapping[deviceId].add((measurement['type'], typeFragmentSeries['fragment'], typeFragmentSeries['series']))
 
     data = {key: sorted(value) for key, value in eventTypesMapping.items()}
-    saveToFile(data, f"c8y_measurements_id_to_type_mapping.json")
+    saveToFile(data, f"measurements/c8y_measurements_id_to_type_mapping.json")
 
 
 def mappingOverview():
-    jsonData = readFile("c8y_measurements_id_to_type_mapping.json")
+    jsonData = readFile("measurements/c8y_measurements_id_to_type_mapping.json")
     data = []
     for key, value in jsonData.items():
         deviceTypes = set()

@@ -51,9 +51,9 @@ def requestMissingValues(year, month, filePath):
 
 def requestEventTypes(year, month):
     c8y_data = readFile('c8y_data.json')
-    if not pathExists('c8y_events_id_to_type_mapping.json'):
+    if not pathExists('events/c8y_events_id_to_fragment_mapping.json'):
         createEventTypeMapping()
-    eventTypesMapping = readFile('c8y_events_id_to_type_mapping.json')
+    eventTypesMapping = readFile('events/c8y_events_id_to_fragment_mapping.json')
 
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
