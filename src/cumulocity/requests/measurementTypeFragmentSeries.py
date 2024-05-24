@@ -1,4 +1,5 @@
 import calendar
+from collections import defaultdict
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from src.cumulocity.requests.mapping.measurementTypeMapping import createMeasurementMapping
@@ -9,9 +10,15 @@ from tqdm import tqdm
 
 def requestTypeFragmentSeries(year, month):
     validation = {}
+    skippedFragmentSeries = defaultdict(set)
     for obj in readFile(f"measurements/fragmentSeries/{MonthlyMeasurements.fileName(year, month)}"):
         deviceId = obj['deviceId']
         validation[deviceId] = sum([measurement['count'] for measurement in obj['fragmentSeries']])
+        for measurement in obj['fragmentSeries']:
+            if measurement['count'] == 0:
+                fragment = measurement['fragment']
+                series = measurement['series']
+                skippedFragmentSeries[deviceId].add((fragment, series))
 
     c8y_data = readFile(f'c8y_data.json')
     typeFragmentSeriesMapping = ensureFileAndRead(f'measurements/c8y_measurements_id_to_type_mapping.json', createMeasurementMapping)
@@ -61,9 +68,11 @@ def requestTypeFragmentSeries(year, month):
                     continue
                 else:
                     break
-
-            response = (MonthlyMeasurements(device, enforceBounds=True)
-                        .requestTypeFragmentSeriesCount(year, month, measurementType, fragment, series))
+            if (fragment, series) in skippedFragmentSeries[deviceId]:
+                response = {'count': 0, 'measurement': {}}
+            else:
+                response = (MonthlyMeasurements(device, enforceBounds=True)
+                            .requestTypeFragmentSeriesCount(year, month, measurementType, fragment, series))
             while response['count'] < 0:
                 response = MonthlyMeasurements(device).requestAggregatedTypeFragmentSeriesCount(
                     year, month, measurementType, fragment, series)
@@ -79,7 +88,6 @@ def requestTypeFragmentSeries(year, month):
         result.append(c8y_measurements)
     if updateTypes:
         saveToFile(typeFragmentSeriesMapping, 'measurements/c8y_measurements_id_to_type_mapping.json')
-
     return result
 
 
