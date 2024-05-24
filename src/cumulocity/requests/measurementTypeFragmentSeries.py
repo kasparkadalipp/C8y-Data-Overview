@@ -3,7 +3,7 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 from src.cumulocity.requests.mapping.measurementTypeMapping import createMeasurementMapping
 from src.cumulocity import MonthlyMeasurements
-from src.utils import tqdmFormat, saveToFile, pathExists, readFile
+from src.utils import tqdmFormat, saveToFile, pathExists, readFile, ensureFileAndRead
 from tqdm import tqdm
 
 
@@ -67,9 +67,7 @@ def requestMissingValues(year, month, filePath):
 
 def requestTypeFragmentSeries(year, month):
     c8y_data = readFile(f'c8y_data.json')
-    if not pathExists(f'measurements/c8y_measurements_id_to_type_mapping.json'):
-        createMeasurementMapping()
-    typeFragmentSeriesMapping = readFile(f'measurements/c8y_measurements_id_to_type_mapping.json')
+    typeFragmentSeriesMapping = ensureFileAndRead(f'measurements/c8y_measurements_id_to_type_mapping.json', createMeasurementMapping)
 
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):

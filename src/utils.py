@@ -1,5 +1,7 @@
 import json
 import os
+from typing import Callable
+
 import pandas as pd
 from pathlib import Path
 from dotenv import load_dotenv
@@ -47,6 +49,12 @@ def readFile(filePath: str):
     path = Path(f"{dataRoot}{filePath}")
     with path.open("r", encoding='utf8') as json_file:
         return json.load(json_file)
+
+
+def ensureFileAndRead(filePath: str, createFile: Callable):
+    if not pathExists(filePath):
+        createFile()
+    return readFile(filePath)
 
 
 def pathExists(filePath: str):

@@ -4,7 +4,7 @@ from dateutil.relativedelta import relativedelta
 from src.cumulocity.requests.mapping.eventFragmentMapping import createEventFragmentMapping
 from src.cumulocity.requests.mapping.eventTypeMapping import createEventTypeMapping
 from src.cumulocity import MonthlyEvents
-from src.utils import tqdmFormat, saveToFile, pathExists, readFile
+from src.utils import tqdmFormat, saveToFile, pathExists, readFile, ensureFileAndRead
 from tqdm import tqdm
 
 
@@ -54,12 +54,8 @@ def requestMissingValues(year, month, filePath):
 
 def requestEventTypes(year, month):
     c8y_data = readFile('c8y_data.json')
-    if not pathExists('events/events/c8y_events_id_to_fragment_mapping.json'):
-        createEventTypeMapping()
-    typeMapping = readFile('events/events/c8y_events_id_to_fragment_mapping.json')
-    if not pathExists('events/c8y_events_id_to_fragment_mapping.json'):
-        createEventFragmentMapping()
-    fragmentMapping = readFile('events/c8y_events_id_to_fragment_mapping.json')
+    typeMapping = ensureFileAndRead('events/events/c8y_events_id_to_fragment_mapping.json', createEventTypeMapping)
+    fragmentMapping = ensureFileAndRead('events/c8y_events_id_to_fragment_mapping.json', createEventFragmentMapping)
 
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):

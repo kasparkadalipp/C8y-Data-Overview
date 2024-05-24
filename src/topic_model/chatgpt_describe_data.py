@@ -5,7 +5,7 @@ import pandas as pd
 from openai import OpenAI
 from pydantic import BaseModel
 from skllm.config import SKLLMConfig
-from src.utils import tqdmFormat, getPath, readFile, saveToFile, pathExists, listFileNames
+from src.utils import tqdmFormat, getPath, readFile, saveToFile, listFileNames, ensureFileAndRead
 from tqdm import tqdm
 
 
@@ -41,9 +41,7 @@ def requestChatGPTDescription(client, message_data, model):
 
 
 def describeDeviceData(model="gpt-4-turbo"):
-    if not pathExists('topic model/chatGPT input.json'):
-        createDatasetMapping()
-    inputData = readFile('topic model/chatGPT input.json')
+    inputData = ensureFileAndRead('topic model/chatGPT input.json', createDatasetMapping)
 
     SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
     SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))

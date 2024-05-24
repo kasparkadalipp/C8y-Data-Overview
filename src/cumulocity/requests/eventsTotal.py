@@ -1,12 +1,9 @@
 import calendar
 from datetime import date
-from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from src.cumulocity import MonthlyEvents
 from src.utils import tqdmFormat, saveToFile, pathExists, readFile
 from tqdm import tqdm
-
-
 
 
 def requestMissingValues(year, month, filePath):
