@@ -54,7 +54,7 @@ def requestMissingValues(year, month, filePath):
 
 def requestEventTypes(year, month):
     c8y_data = readFile('c8y_data.json')
-    typeMapping = ensureFileAndRead('events/events/c8y_events_id_to_fragment_mapping.json', createEventTypeMapping)
+    typeMapping = ensureFileAndRead('events/c8y_events_id_to_fragment_mapping.json', createEventTypeMapping)
     fragmentMapping = ensureFileAndRead('events/c8y_events_id_to_fragment_mapping.json', createEventFragmentMapping)
 
     result = []

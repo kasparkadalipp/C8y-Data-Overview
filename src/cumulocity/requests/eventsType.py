@@ -51,7 +51,7 @@ def requestMissingValues(year, month, filePath):
 
 def requestEventTypes(year, month):
     c8y_data = readFile('c8y_data.json')
-    eventTypesMapping = ensureFileAndRead('events/events/c8y_events_id_to_fragment_mapping.json', createEventTypeMapping)
+    eventTypesMapping = ensureFileAndRead('events/c8y_events_id_to_fragment_mapping.json', createEventTypeMapping)
 
     result = []
     for device in tqdm(c8y_data, desc=f"{calendar.month_abbr[month]} {year}", bar_format=tqdmFormat):
@@ -90,6 +90,33 @@ def requestMonthlyData(startingDate: date, lastDate: date):
 
         if not fileExists:
             data = requestEventTypes(year, month)
+            saveToFile(data, filePath)
+
+        data = requestMissingValues(year, month, filePath)
+        if data:
+            saveToFile(data, filePath)
+        elif fileExists:
+            print(f"{calendar.month_abbr[month]} {year} - skipped")
+
+        currentDate -= relativedelta(months=1)
+
+
+def requestMissingTypes(startingDate: date, lastDate: date):
+    if startingDate <= lastDate:
+        raise ValueError("Last date can't be before starting date")
+
+    startingDate = startingDate.replace(day=1)
+    lastDate = lastDate.replace(day=1)
+    currentDate = startingDate
+    while lastDate <= currentDate <= startingDate:
+        year = currentDate.year
+        month = currentDate.month
+
+        filePath = f"events/type/{MonthlyEvents.fileName(year, month)}"
+        fileExists = pathExists(filePath)
+
+        if not fileExists:
+            data = requestMissingTypesForMonth(year, month)
             saveToFile(data, filePath)
 
         data = requestMissingValues(year, month, filePath)
