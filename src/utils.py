@@ -70,13 +70,16 @@ def ensureTrailingSlash(func):
 
 
 @ensureTrailingSlash
-def listFileNames(folderPath: str = ''):
+def listFileNames(folderPath: str = '', folderPrefix=True):
     path = Path(f"{dataRoot}{folderPath}")
     if not path.exists():
         print('Path does not exist: ', path)
         return []
     entries = os.listdir(path)
-    files = [folderPath + entry for entry in entries if os.path.isfile(os.path.join(path, entry))]
+    files = [entry for entry in entries if os.path.isfile(os.path.join(path, entry))]
+
+    if folderPrefix:
+        files = [folderPath + entry for entry in files]
     return files
 
 
