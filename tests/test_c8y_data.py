@@ -26,19 +26,13 @@ example_c8y_data = {
     "dataAfter": "1970-01-01",
     "dataBefore": "2024-04-01",
 
-    "latestMeasurement": "<measurement>",
     "measurementCount": 39878,
-
+    "latestMeasurement": "<measurement>",
     "oldestMeasurement": "<measurement>",
-    # "measurementCountValidation": 39878,
 
-    # "latestMeasurementValidation": "<measurement>",
-
-    "latestEvent": "<event>",
     "eventCount": 40192,
-
+    "latestEvent": "<event>",
     "oldestEvent": "<event>",
-    # "eventCountValidation": 40192
 }
 
 
@@ -69,7 +63,6 @@ def test_supported_series_has_measurements():
 def test_missing_measurement_values():
     for device in c8y_data:
         assert not device['measurementCount'] == -1, f"{device['id']}"
-        # assert not device['measurementCountValidation'] == -1, f"{device['id']}"
 
 
 def test_missing_event_values():
@@ -78,24 +71,9 @@ def test_missing_event_values():
         assert not device['eventCountValidation'] == -1, f"{device['id']}"
 
 
-# def test_validate_measurement_count():
-#     for device in c8y_data:
-#         if -1 in [device['measurementCount'], device['measurementCountValidation']]:
-#             continue
-#         assert device['measurementCount'] == device['measurementCountValidation'], f"{device['id']}"
-
-
-# def test_validate_event_count():
-#     for device in c8y_data:
-#         if -1 in [device['eventCount'], device['eventCountValidation']]:
-#             continue
-#         assert device['eventCount'] == device['eventCountValidation'], f"{device['id']}"
-
-
 def test_valid_time_format():
     for device in c8y_data:
         for dataObject in ['latestMeasurement', 'oldestMeasurement', 'oldestEvent', 'latestEvent']:
-                           # 'latestMeasurementValidation']:
             if not device[dataObject]:
                 continue
             dateString = device[dataObject]['time']

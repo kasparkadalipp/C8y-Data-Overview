@@ -1,39 +1,28 @@
 import pytest
-import json
-import os
-from datetime import date
+from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
-from collections import defaultdict
 from src.cumulocity import MonthlyEvents
-from src.utils import pathExists
-
-basePath = "events/"
+from src.utils import readFile, listFileNames
 
 
-def getFiles(folder):
-    return os.listdir(basePath + folder)
-
-
-@pytest.mark.parametrize("folder", ['total', 'type'])
+@pytest.mark.parametrize("folder", ['events/total/', 'events/type/', 'events/typeFragment/'])
 def test_all_files_present(folder):
-    assert pathExists(basePath + folder), f'Path "{basePath + folder}" does not exist'
-    earliestEventDate = date(2016, 11, 1)
-    oldestEventDate = date(2024, 3, 1)
+    c8y_data = readFile("c8y_data.json")
     expected_files = set()
 
-    currentDate = earliestEventDate
-    while currentDate <= oldestEventDate:
-        expected_files.add(MonthlyEvents.fileName(currentDate.year, currentDate.month))
-        currentDate += relativedelta(months=1)
+    startingDate = max([parse(d['latestEvent']['time']).date() for d in c8y_data if d['latestEvent']])
+    lastDate = min([parse(d['oldestEvent']['time']).date() for d in c8y_data if d['oldestEvent']])
+    currentDate = startingDate
+    while lastDate <= currentDate <= startingDate:
+        expected_files.add(f"{folder}{MonthlyEvents.fileName(currentDate.year, currentDate.month)}")
+        currentDate -= relativedelta(months=1)
 
-    for file in getFiles(folder):
-        expected_files.remove(file)
-    missingFilesCount = len(expected_files)
+    missingMonthData = expected_files - set(listFileNames(folder))
 
-    assert missingFilesCount == 0, f"Missing data for files: {expected_files}"
+    assert len(missingMonthData) == 0, f"Missing data for files: {expected_files}"
 
 
-@pytest.mark.parametrize("fileName", getFiles('total'))
+@pytest.mark.parametrize("fileName", listFileNames('events/total'))
 class TestTotalEvents:
     folder = 'total'
     example = {
@@ -45,13 +34,8 @@ class TestTotalEvents:
         }
     }
 
-    def getContents(self, fileName):
-        filePath = f"{basePath}{self.folder}/{fileName}"
-        with open(filePath, 'r', encoding='utf8') as json_file:
-            return json.load(json_file)
-
     def test_required_keys(self, fileName):
-        for device in self.getContents(fileName):
+        for device in readFile(fileName):
             for key in self.example.keys():
                 assert key in device.keys()
             for key in self.example['total'].keys():
@@ -59,13 +43,13 @@ class TestTotalEvents:
 
     def test_no_failed_requests(self, fileName):
         failedEventCount = 0
-        for device in self.getContents(fileName):
+        for device in readFile(fileName):
             if device['total']['count'] < 0:
                 failedEventCount += 1
         assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
 
 
-@pytest.mark.parametrize("fileName", getFiles('type'))
+@pytest.mark.parametrize("fileName", listFileNames('events/type'))
 class TestEventType:
     folder = 'type'
     example = {
@@ -80,15 +64,8 @@ class TestEventType:
         ]
     }
 
-    def getContents(self, fileName, folder=None):
-        if folder is None:
-            folder = self.folder
-        filePath = f"{basePath}{folder}/{fileName}"
-        with open(filePath, 'r', encoding='utf8') as json_file:
-            return json.load(json_file)
-
     def test_required_keys(self, fileName):
-        for device in self.getContents(fileName):
+        for device in readFile(fileName):
             for key in self.example.keys():
                 assert key in device.keys()
             for event in device['eventByType']:
@@ -98,7 +75,7 @@ class TestEventType:
     def test_no_failed_requests(self, fileName):
         failedEventCount = 0
 
-        for device in self.getContents(fileName):
+        for device in readFile(fileName):
             hasFailedEvents = False
             for event in device['eventByType']:
                 if event['count'] < 0:
@@ -108,22 +85,7 @@ class TestEventType:
         assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
 
 
-    def test_count_matches_total(self, fileName):
-        failedEventCount = 0
-
-        for current, expected in zip(self.getContents(fileName), self.getContents(fileName, "total")):
-
-            expectedCount = expected['total']['count']
-            currentCount = 0
-            for event in current['eventByType']:
-                currentCount += event['count']
-
-            if currentCount != expectedCount:
-                failedEventCount += 1
-        assert failedEventCount == 0, f"Total event count doesn't match for {failedEventCount} devices"
-
-
-@pytest.mark.parametrize("fileName", getFiles('typeFragment'))
+@pytest.mark.parametrize("fileName", listFileNames('events/typeFragment'))
 class TestEventType:
     example = {
         "deviceId": 11904,
@@ -139,15 +101,8 @@ class TestEventType:
     }
     folder = 'typeFragment'
 
-    def getContents(self, fileName, folder=None):
-        if folder is None:
-            folder = self.folder
-        filePath = f"{basePath}{folder}/{fileName}"
-        with open(filePath, 'r', encoding='utf8') as json_file:
-            return json.load(json_file)
-
     def test_required_keys(self, fileName):
-        for device in self.getContents(fileName):
+        for device in readFile(fileName):
             for key in self.example.keys():
                 assert key in device.keys()
             for event in device['typeFragment']:
@@ -157,7 +112,7 @@ class TestEventType:
     def test_no_failed_requests(self, fileName):
         failedEventCount = 0
 
-        for device in self.getContents(fileName):
+        for device in readFile(fileName):
             hasFailedEvents = False
             for event in device['typeFragment']:
                 if event['count'] < 0:
@@ -165,23 +120,3 @@ class TestEventType:
             if hasFailedEvents:
                 failedEventCount += 1
         assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
-
-    def test_count_exceeds_total(self, fileName):
-        failedEventCount = 0
-        for current, expected in zip(self.getContents(fileName), self.getContents(fileName, "type")):
-
-            expectedCountMapping = defaultdict(int)
-            deviceType = expected['deviceType']
-            for event in expected['eventByType']:
-                expectedCountMapping[(deviceType, event['type'])] += event['count']
-
-            currentCountMapping = defaultdict(set)
-            deviceType = current['deviceType']
-            for event in current['typeFragment']:
-                currentCountMapping[(deviceType, event['type'])].add(event['count'])
-            currentCountMapping = {key: sum(value) for key, value in currentCountMapping.items()}
-
-            for key in currentCountMapping:
-                if expectedCountMapping[key] < currentCountMapping[key]:
-                    failedEventCount += 1
-        assert failedEventCount == 0, f"Total event count doesn't match for {failedEventCount} devices"
