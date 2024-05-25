@@ -47,24 +47,23 @@ class TestTotalEvents:
         assert failedEventCount == 0, f"Devices with failed requests: {failedEventCount}"
 
 
-@pytest.mark.parametrize("fileName", listFileNames('events/type', folderPrefix=False))
-def test_count_matches_total(fileName):
-    totalEventsSum = sum([event['total']['count'] for event in readFile(f"events/total/{fileName}")])
-    eventTypesSum = 0
-    for obj in readFile(f"events/type/{fileName}"):
-        for event in obj['eventByType']:
-            eventTypesSum += event['count']
-    assert totalEventsSum == eventTypesSum, f"Total event count doesn't match for {fileName}"
+@pytest.mark.parametrize("fileName", listFileNames('events/total', folderPrefix=False))
+class TestValidateEventCount:
+    def test_type_count_matches_total(self, fileName):
+        totalEventsSum = sum([event['total']['count'] for event in readFile(f"events/total/{fileName}")])
+        eventTypesSum = 0
+        for obj in readFile(f"events/type/{fileName}"):
+            for event in obj['eventByType']:
+                eventTypesSum += event['count']
+        assert totalEventsSum == eventTypesSum, f"Missing types for events/type/{fileName}"
 
-
-@pytest.mark.parametrize("fileName", listFileNames('events/type', folderPrefix=False))
-def test_fragment_count_exceeds_total(fileName):
-    totalEventsSum = sum([event['total']['count'] for event in readFile(f"events/total/{fileName}")])
-    typeFragmentSum = 0
-    for obj in readFile(f"events/typeFragment/{fileName}"):
-        for event in obj['typeFragment']:
-            typeFragmentSum += event['count']
-    assert totalEventsSum <= typeFragmentSum, f"Missing typeFragment data for {fileName}"
+    def test_fragment_count_exceeds_total(self, fileName):
+        totalEventsSum = sum([event['total']['count'] for event in readFile(f"events/total/{fileName}")])
+        typeFragmentSum = 0
+        for obj in readFile(f"events/typeFragment/{fileName}"):
+            for event in obj['typeFragment']:
+                typeFragmentSum += event['count']
+        assert totalEventsSum <= typeFragmentSum, f"Missing fragments for events/typeFragment/{fileName}"
 
 
 @pytest.mark.parametrize("fileName", listFileNames('events/type'))
