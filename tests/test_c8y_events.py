@@ -16,9 +16,7 @@ def test_all_files_present(folder):
     while lastDate <= currentDate <= startingDate:
         expected_files.add(f"{folder}{MonthlyEvents.fileName(currentDate.year, currentDate.month)}")
         currentDate -= relativedelta(months=1)
-
     missingMonthData = expected_files - set(listFileNames(folder))
-
     assert len(missingMonthData) == 0, f"Missing data for files: {expected_files}"
 
 
@@ -56,19 +54,16 @@ def test_count_matches_total(fileName):
     for obj in readFile(f"events/type/{fileName}"):
         for event in obj['eventByType']:
             eventTypesSum += event['count']
-
     assert totalEventsSum == eventTypesSum, f"Total event count doesn't match for {fileName}"
 
 
 @pytest.mark.parametrize("fileName", listFileNames('events/type', folderPrefix=False))
 def test_fragment_count_exceeds_total(fileName):
     totalEventsSum = sum([event['total']['count'] for event in readFile(f"events/total/{fileName}")])
-
     typeFragmentSum = 0
     for obj in readFile(f"events/typeFragment/{fileName}"):
         for event in obj['typeFragment']:
             typeFragmentSum += event['count']
-
     assert totalEventsSum <= typeFragmentSum, f"Missing typeFragment data for {fileName}"
 
 
@@ -97,7 +92,6 @@ class TestEventType:
 
     def test_no_failed_requests(self, fileName):
         failedEventCount = 0
-
         for device in readFile(fileName):
             hasFailedEvents = False
             for event in device['eventByType']:
@@ -134,7 +128,6 @@ class TestEventType:
 
     def test_no_failed_requests(self, fileName):
         failedEventCount = 0
-
         for device in readFile(fileName):
             hasFailedEvents = False
             for event in device['typeFragment']:
