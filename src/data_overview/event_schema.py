@@ -99,6 +99,7 @@ def createEventTypeFragmentSchema():
             data.append(row)
     df = pd.DataFrame(data)
     df.to_csv(getPath('Events (type + fragment).csv'), index=False, encoding='utf-8-sig')
+    return df
 
 
 def createEventTypeSchema():
@@ -117,4 +118,5 @@ def createEventTypeSchema():
         data.append(row)
 
     df = pd.DataFrame(data)
-    df.to_csv(getPath('telia/Events (type).csv'), index=False, encoding='utf-8-sig')
+    df.to_csv(getPath('Event schema (type).csv'), index=False, encoding='utf-8-sig')
+    return df

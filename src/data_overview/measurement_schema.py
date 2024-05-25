@@ -13,10 +13,9 @@ def formatUnits(units):
 
 
 def createFragmentSeriesSchema():
-    folder = "measurements/fragmentSeries/"
     result = defaultdict(lambda: {'count': 0, 'units': set(), 'example': {}, 'values': set()})
-    for fileName in listFileNames('../data/' + folder):
-        for device in readFile(folder + fileName):
+    for fileName in listFileNames("measurements/fragmentSeries/"):
+        for device in readFile(fileName):
             deviceType = device['deviceType']
 
             for fragmentSeries in device['fragmentSeries']:
@@ -57,13 +56,13 @@ def createFragmentSeriesSchema():
 
     df = pd.DataFrame(data)
     df.to_csv(getPath('Measurement schema (fragment + series).csv'), index=False, encoding='utf-8-sig')
+    return df
 
 
 def createTypeFragmentSeriesSchema():
-    folder = "measurements/typeFragmentSeries/"
     result = defaultdict(lambda: {'count': 0, 'units': set(), 'example': {}, 'values': set()})
-    for fileName in listFileNames('../data/' + folder):
-        for device in readFile(folder + fileName):
+    for fileName in listFileNames("measurements/typeFragmentSeries/"):
+        for device in readFile(fileName):
             deviceType = device['deviceType']
 
             for fragmentSeries in device['typeFragmentSeries']:
@@ -106,3 +105,4 @@ def createTypeFragmentSeriesSchema():
 
     df = pd.DataFrame(data)
     df.to_csv(getPath('Measurement schema (type + fragment + series).csv'), index=False, encoding='utf-8-sig')
+    return df
