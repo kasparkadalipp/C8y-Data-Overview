@@ -30,7 +30,6 @@ def createEventTypeFragmentMapping():
         lambda: {'schema': SchemaBuilder(schema_uri=False), 'count': 0, 'example': {}, 'devices': set()})
     for fileName in listFileNames('events/typeFragment/'):
         for device in readFile(fileName):
-            eventTypeSum = 0
             deviceId = device['deviceId']
             deviceType = device['deviceType']
             for event in device['typeFragment']:

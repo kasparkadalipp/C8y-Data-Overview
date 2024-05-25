@@ -12,7 +12,7 @@ def formatUnits(units):
     return units
 
 
-def createFragmentSeriesSchema():
+def createMeasurementFragmentSeriesSchema():
     result = defaultdict(lambda: {'count': 0, 'units': set(), 'example': {}, 'values': set()})
     for fileName in listFileNames("measurements/fragmentSeries/"):
         for device in readFile(fileName):
@@ -59,7 +59,7 @@ def createFragmentSeriesSchema():
     return df
 
 
-def createTypeFragmentSeriesSchema():
+def createMeasurementTypeFragmentSeriesSchema():
     result = defaultdict(lambda: {'count': 0, 'units': set(), 'example': {}, 'values': set()})
     for fileName in listFileNames("measurements/typeFragmentSeries/"):
         for device in readFile(fileName):
