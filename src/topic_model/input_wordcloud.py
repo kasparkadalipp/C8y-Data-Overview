@@ -3,7 +3,7 @@ from src.utils import readFile, listFileNames, getPath
 from wordcloud import WordCloud
 
 
-def wordCloudDeviceNames():
+def wordCloudForDeviceNames():
     c8y_data = readFile('c8y_data.json')
     wordcloudInput = ','.join([device['name'] for device in c8y_data]).replace("_", ' ')
 
@@ -15,7 +15,7 @@ def wordCloudDeviceNames():
     return wordcloud.to_image()
 
 
-def wordCloudDevices():
+def wordCloudForGptInput():
     c8y_data = readFile('c8y_data.json')
     deviceIdMapping = {device['id']: device for device in c8y_data}
 
