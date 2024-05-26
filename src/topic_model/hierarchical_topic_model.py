@@ -5,16 +5,18 @@ from bertopic.representation import OpenAI as BertOpenAI
 from openai import OpenAI
 from skllm.config import SKLLMConfig
 from src.topic_model.embeddings import getDeviceEmbeddings
+from src.topic_model.models import GPTModel
 from src.utils import saveToFile, readFile
 
 SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
 SKLLMConfig.set_openai_org(os.getenv('OPENAPI_ORGANIZATION_ID'))
 
 
-def createTopicModel(model="gpt-4-turbo"):
+def createTopicModel(gptModel: GPTModel = GPTModel.GPT_4_TURBO):
+    model = gptModel.value
     fileName = f"topic model/{model} descriptions.json"
     deviceDescriptions = readFile(fileName)
-    embeddings = getDeviceEmbeddings(deviceDescriptions, model)
+    embeddings = getDeviceEmbeddings(gptModel)
     docs = list(deviceDescriptions.values())
 
     class CustomEmbedder(BaseEmbedder):

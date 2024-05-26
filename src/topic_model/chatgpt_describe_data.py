@@ -5,6 +5,7 @@ import pandas as pd
 from openai import OpenAI
 from pydantic import BaseModel
 from skllm.config import SKLLMConfig
+from src.topic_model.models import GPTModel
 from src.utils import tqdmFormat, getPath, readFile, saveToFile, listFileNames, ensureFileAndRead
 from tqdm import tqdm
 
@@ -40,7 +41,8 @@ def requestChatGPTDescription(client, message_data, model):
     )
 
 
-def describeDeviceData(model="gpt-4-turbo"):
+def describeDeviceData(gptModel: GPTModel = GPTModel.GPT_4_TURBO):
+    model = gptModel.value
     inputData = ensureFileAndRead('topic model/chatGPT input.json', createDatasetMapping)
 
     SKLLMConfig.set_openai_key(os.getenv('OPENAI_API_KEY'))
@@ -49,7 +51,8 @@ def describeDeviceData(model="gpt-4-turbo"):
 
     result = {}
     failedRequests = []
-    for deviceId, data in tqdm(inputData.items(), desc=f"requesting device descriptions for {model}", bar_format=tqdmFormat):
+    for deviceId, data in tqdm(inputData.items(), desc=f"requesting device descriptions for {model}",
+                               bar_format=tqdmFormat):
         try:
             response = requestChatGPTDescription(client, data, model)
             result[deviceId] = {
@@ -69,7 +72,8 @@ def describeDeviceData(model="gpt-4-turbo"):
     df = pd.DataFrame(result.values())
     df.to_csv(getPath(f"{model} description.csv"), encoding='utf-8-sig', index=False)
 
-    documents = {deviceId: f"{device['domain']} {device['subdomain']} {device['description']}" for deviceId, device in result.items()}
+    documents = {deviceId: f"{device['domain']} {device['subdomain']} {device['description']}" for deviceId, device in
+                 result.items()}
     saveToFile(documents, f"topic model/{model} descriptions.json")
     return df
 
