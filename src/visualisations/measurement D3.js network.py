@@ -1,20 +1,21 @@
 import re
 from collections import defaultdict
+from src.cumulocity import MonthlyMeasurements
 from src.utils import saveToFile, readFile, listFileNames
 
 
-def calculateFrequency(measurements, days_in_month=31):
+def calculateFrequency(measurementCount: int, daysInMonth: int = 31):
     # Total seconds, minutes, hours, and days in the given month
-    total_seconds = days_in_month * 24 * 60 * 60
-    total_minutes = days_in_month * 24 * 60
-    total_hours = days_in_month * 24
-    total_days = days_in_month
+    total_seconds = daysInMonth * 24 * 60 * 60
+    total_minutes = daysInMonth * 24 * 60
+    total_hours = daysInMonth * 24
+    total_days = daysInMonth
 
     # Calculate frequencies
-    frequency_per_second = measurements / total_seconds
-    frequency_per_minute = measurements / total_minutes
-    frequency_per_hour = measurements / total_hours
-    frequency_per_day = measurements / total_days
+    frequency_per_second = measurementCount / total_seconds
+    frequency_per_minute = measurementCount / total_minutes
+    frequency_per_hour = measurementCount / total_hours
+    frequency_per_day = measurementCount / total_days
 
     # Determine the most fitting unit
     if frequency_per_second >= 1:
@@ -35,18 +36,17 @@ def calculateFrequency(measurements, days_in_month=31):
     return f"{most_fitting_str}/{unit}"
 
 
-def fixSensorFragment(name):
+def fixSensorFragment(name: str):
     match = re.match("^(sensor)_\\d{1,4}(.*)", name)  # sensor_1235_daily -> sensor_daily
     if match:
         return match.group(1) + match.group(2)
     return name
 
 
-def getUniqueFields(filePaths):
+def getUniqueFields(filePaths: list):
     result = defaultdict(int)
-
-    for filePath in filePaths:
-        for device in readFile(filePath):
+    for fileName in filePaths:
+        for device in readFile(fileName):
             deviceId = device['deviceId']
             deviceType = device['deviceType']
 
@@ -162,7 +162,8 @@ def visualizeWholeDataset():
     saveToFile(network, 'visualizations/network (total).json')
 
 
-def visualizeMonth():
-    inputData = getUniqueFields(['measurements/typeFragmentSeries/c8y_measurements 2024-03-01 - 2024-04-01.json'])
+def visualizeMonth(year: int, month: int):
+    fileName = MonthlyMeasurements.fileName(year, month)
+    inputData = getUniqueFields([f'measurements/typeFragmentSeries/{fileName}'])
     network = createMeasurementNetwork(inputData)
-    saveToFile(network, 'visualizations/network (test).json')
+    saveToFile(network, 'visualizations/network (month).json')
