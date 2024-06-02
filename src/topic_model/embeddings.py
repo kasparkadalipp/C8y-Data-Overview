@@ -17,7 +17,7 @@ def requestEmbeddings(text, gptEmbedding: GPTEmbeddings = GPTEmbeddings.EMBEDDIN
 
 def getDeviceEmbeddings(gptModel: GPTModel = GPTModel.GPT_4_TURBO, embeddingsModel: GPTEmbeddings = GPTEmbeddings.EMBEDDINGS_LARGE):
     model = gptModel.value
-    devices = readFile(f'topic model/{model} descriptions')
+    devices = readFile(f'topic model/{model} descriptions.json')
     fileName = f'topic model/{model} embeddings.json'
     deviceEmbeddings = readFile(fileName) if pathExists(fileName) else {}
 
