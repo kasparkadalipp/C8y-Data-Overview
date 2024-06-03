@@ -18,6 +18,7 @@ def createTopicModel(gptModel: GPTModel = GPTModel.GPT_4_TURBO):
     deviceDescriptions = readFile(fileName)
     embeddings = getDeviceEmbeddings(gptModel)
     docs = list(deviceDescriptions.values())
+    devices = list(deviceDescriptions.keys())
 
     class CustomEmbedder(BaseEmbedder):
         def __init__(self, embedding_model):
@@ -44,14 +45,13 @@ def createTopicModel(gptModel: GPTModel = GPTModel.GPT_4_TURBO):
     chatgpt_topic_labels = {topic: " | ".join(list(zip(*values))[0]) for topic, values in topic_model.topic_aspects_["OpenAI"].items()}
     chatgpt_topic_labels[-1] = "Outlier Topic"
 
-    createTopicModelMapping(docs, hierarchical_topics, topics, chatgpt_topic_labels)
+    createTopicModelMapping(devices, hierarchical_topics, topics, chatgpt_topic_labels)
 
     return topic_model, hierarchical_topics, topics, probs, chatgpt_topic_labels
 
 
-def createTopicModelMapping(docs, hierarchical_topics, topics, chatgpt_topic_labels):
-    deviceMapping = {deviceId: str(topicId) for deviceId, topicId in zip(docs, topics)}
-    saveToFile(deviceMapping, 'visualisations/deviceID topicID mapping.json', True)
+def createTopicModelMapping(devices, hierarchical_topics, topics, chatgpt_topic_labels):
+    topicMapping = {deviceId: str(topicId) for deviceId, topicId in zip(devices, topics)}
 
     nameMapping = {}
     parentMapping = {}
@@ -71,5 +71,5 @@ def createTopicModelMapping(docs, hierarchical_topics, topics, chatgpt_topic_lab
     rootNode = str(rootNode)
     parentMapping["-1"] = rootNode
     nameMapping[rootNode] = "Topic model root"
-    nodeMapping = {'root': rootNode, 'name': nameMapping, 'parent': parentMapping}
+    nodeMapping = {'root': rootNode, 'name': nameMapping, 'parent': parentMapping, 'topic': topicMapping}
     saveToFile(nodeMapping, 'topic model/topic model.json')
