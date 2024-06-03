@@ -6,10 +6,15 @@
 
   <h3 align="center">Knowledge Graphs for Cataloging and Making Sense of Smart City Data</h3>
 
-  <p align="center">
-    <a href="https://kodu.ut.ee/~kadalipp/Measurements/Test/network.html">Measurement Graph Visualization</a>
+  <p>
+    <a href="https://kodu.ut.ee/~kadalipp/Measurements/Month/network.html">Monthly Measurement Visualization</a>
     ·
-    <a href="https://kodu.ut.ee/~kadalipp/Events/Test/network.html">Event Graph Visualization</a>
+    <a href="https://kodu.ut.ee/~kadalipp/Delta/network.html">Delta Measurements Visualization</a>
+  </p>
+  <p>
+    <a href="https://kodu.ut.ee/~kadalipp/Measurements/Total/network.html">Total Measurements Visualization</a>
+    ·
+    <a href="https://kodu.ut.ee/~kadalipp/Events/Total/network.html">Total Events Visualization </a>
   </p>
 </div>
 
@@ -58,6 +63,12 @@ OPENAI_ORGANIZATION_ID=org-b3JnYW5pemF0aW9uIGlk
 # Folder used to save query results
 DATA_FOLDER=example
 ```
+
+## Examples
+
+Examples
+You can find examples in the [notebooks](https://github.com/kasparkadalipp/C8y-Data-Overview/tree/main/notebooks) folder.
+
 
 ## Saved data
 
