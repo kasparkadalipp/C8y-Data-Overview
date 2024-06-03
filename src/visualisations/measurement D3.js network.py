@@ -82,7 +82,7 @@ def createMeasurementNetwork(inputData: dict):
     links = set()
     nodes = defaultdict(lambda: {'devices': set(), 'measurements': 0, 'topics': defaultdict(int)})
 
-    topicModel = readFile('visualisations/topic model.json')
+    topicModel = readFile('topic model/topic model.json')
     for key, count in inputData.items():
         deviceId, deviceType, measurementType, fragment, series, unit = key
         level1 = deviceType
