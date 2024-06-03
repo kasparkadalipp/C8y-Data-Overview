@@ -36,6 +36,10 @@
 [ChatGPT]: https://img.shields.io/badge/chatGPT-74aa9c?logo=openai&logoColor=white&style=for-the-badge
 [ChatGPT-url]: https://platform.openai.com/docs/api-reference
 
+## Examples
+
+You can find examples in the [notebooks](https://github.com/kasparkadalipp/C8y-Data-Overview/tree/main/notebooks) folder.
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -63,12 +67,6 @@ OPENAI_ORGANIZATION_ID=org-b3JnYW5pemF0aW9uIGlk
 # Folder used to save query results
 DATA_FOLDER=example
 ```
-
-## Examples
-
-Examples
-You can find examples in the [notebooks](https://github.com/kasparkadalipp/C8y-Data-Overview/tree/main/notebooks) folder.
-
 
 ## Saved data
 
