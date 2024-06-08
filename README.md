@@ -7,7 +7,7 @@
   <h3 align="center">Knowledge Graphs for Cataloging and Making Sense of Smart City Data</h3>
 
   <p>
-    <a href="https://kodu.ut.ee/~kadalipp/Measurements/Month/network.html">Monthly Measurement Visualization</a>
+    <a href="https://kodu.ut.ee/~kadalipp/Measurements/Month/network.html">Monthly Measurements Visualization</a>
     ·
     <a href="https://kodu.ut.ee/~kadalipp/Delta/network.html">Delta Measurements Visualization</a>
   </p>
