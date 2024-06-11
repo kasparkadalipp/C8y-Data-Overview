@@ -76,13 +76,14 @@ def calculateTopPercentages(data, total_count):
     return percentages
 
 
-def createMeasurementNetwork(inputData: dict):
+def createMeasurementNetwork(inputData: dict, addTopics=False):
     data = {"nodes": [], 'links': []}
 
     links = set()
     nodes = defaultdict(lambda: {'devices': set(), 'measurements': 0, 'topics': defaultdict(int)})
 
-    topicModel = readFile('topic model/topic model.json')
+    if addTopics:
+        topicModel = readFile('topic model/topic model.json')
     for key, count in inputData.items():
         deviceId, deviceType, measurementType, fragment, series, unit = key
         level1 = deviceType
@@ -113,31 +114,33 @@ def createMeasurementNetwork(inputData: dict):
             (source5, 5)
         ]
 
-        topic = topicModel['topic'][deviceId]
-        topicName = topicModel['name'][topic]
-        topicId = "T_" + topicName
-        parent = topicModel['parent'][topic]
-        parentId = "P_" + parent
-
-        if not topicName == "Outlier Topic":
-            nodes[(topicId, 6)]['measurements'] += count
-            nodes[(topicId, 6)]['devices'].add(deviceId)
-
-            if level5 == "<missing unit>":
-                links.add((source4, topicId))
-            else:
-                links.add((source5, topicId))
-
-        for key in keys:
-            nodes[key]['measurements'] += count
-            nodes[key]['devices'].add(deviceId)
-            nodes[key]['topics'][topicName] += 1
-
         links.add((root, source1))
         links.add((source1, source2))
         links.add((source2, source3))
         links.add((source3, source4))
         links.add((source4, source5))
+
+        if addTopics:
+            topic = topicModel['topic'][deviceId]
+            topicName = topicModel['name'][topic]
+            topicId = "T_" + topicName
+            parent = topicModel['parent'][topic]
+            parentId = "P_" + parent
+
+            if not topicName == "Outlier Topic":
+                nodes[(topicId, 6)]['measurements'] += count
+                nodes[(topicId, 6)]['devices'].add(deviceId)
+
+                if level5 == "<missing unit>":
+                    links.add((source4, topicId))
+                else:
+                    links.add((source5, topicId))
+
+        for key in keys:
+            nodes[key]['measurements'] += count
+            nodes[key]['devices'].add(deviceId)
+            if addTopics:
+                nodes[key]['topics'][topicName] += 1
 
     data['links'] = [{"source": source, "target": target} for source, target in links]
 
