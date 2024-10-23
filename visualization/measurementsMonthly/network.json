@@ -1,0 +1,7250 @@
+{
+  "nodes": [
+    {
+      "id": "T_Energy Consumption and Management",
+      "group": 6,
+      "name": "Energy Consumption and Management",
+      "frequency": "15.47/minute",
+      "dataCount": 690498,
+      "deviceCount": 351
+    },
+    {
+      "id": "0_Measurements",
+      "group": 0,
+      "name": "Measurements",
+      "frequency": "6.5/second",
+      "dataCount": 17401418,
+      "deviceCount": 4324
+    },
+    {
+      "id": "1_ee_telia_iot_meazon_device",
+      "group": 1,
+      "name": "ee_telia_iot_meazon_device",
+      "frequency": "3.21/minute",
+      "dataCount": 143255,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_c4t_metric",
+      "group": 2,
+      "name": "c4t_metric",
+      "frequency": "26.49/minute",
+      "dataCount": 1182488,
+      "deviceCount": 1176
+    },
+    {
+      "id": "3_active_power",
+      "group": 3,
+      "name": "active_power",
+      "frequency": "38.58/hour",
+      "dataCount": 28704,
+      "deviceCount": 2
+    },
+    {
+      "id": "4_L1",
+      "group": 4,
+      "name": "L1",
+      "frequency": "48.23/hour",
+      "dataCount": 35880,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_W",
+      "group": 5,
+      "name": "W",
+      "frequency": "28.94/hour",
+      "dataCount": 21528,
+      "deviceCount": 2
+    },
+    {
+      "id": "4_L2",
+      "group": 4,
+      "name": "L2",
+      "frequency": "48.23/hour",
+      "dataCount": 35880,
+      "deviceCount": 2
+    },
+    {
+      "id": "4_L3",
+      "group": 4,
+      "name": "L3",
+      "frequency": "48.23/hour",
+      "dataCount": 35880,
+      "deviceCount": 2
+    },
+    {
+      "id": "4_total",
+      "group": 4,
+      "name": "total",
+      "frequency": "19.29/hour",
+      "dataCount": 14352,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_kW",
+      "group": 5,
+      "name": "kW",
+      "frequency": "6.75/minute",
+      "dataCount": 301280,
+      "deviceCount": 200
+    },
+    {
+      "id": "3_current",
+      "group": 3,
+      "name": "current",
+      "frequency": "28.94/hour",
+      "dataCount": 21528,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_A",
+      "group": 5,
+      "name": "A",
+      "frequency": "28.94/hour",
+      "dataCount": 21528,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_energy_cons",
+      "group": 3,
+      "name": "energy_cons",
+      "frequency": "38.58/hour",
+      "dataCount": 28704,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_Wh",
+      "group": 5,
+      "name": "Wh",
+      "frequency": "28.94/hour",
+      "dataCount": 21528,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_kWh",
+      "group": 5,
+      "name": "kWh",
+      "frequency": "1.76/minute",
+      "dataCount": 78477,
+      "deviceCount": 70
+    },
+    {
+      "id": "3_freq",
+      "group": 3,
+      "name": "freq",
+      "frequency": "9.65/hour",
+      "dataCount": 7176,
+      "deviceCount": 2
+    },
+    {
+      "id": "4_all",
+      "group": 4,
+      "name": "all",
+      "frequency": "9.65/hour",
+      "dataCount": 7176,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_Hz",
+      "group": 5,
+      "name": "Hz",
+      "frequency": "9.65/hour",
+      "dataCount": 7176,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_mobile_network_signal",
+      "group": 3,
+      "name": "mobile_network_signal",
+      "frequency": "18.93/hour",
+      "dataCount": 14087,
+      "deviceCount": 2
+    },
+    {
+      "id": "4_lqi",
+      "group": 4,
+      "name": "lqi",
+      "frequency": "9.65/hour",
+      "dataCount": 7176,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_<missing unit>",
+      "group": 5,
+      "name": "<missing unit>",
+      "frequency": "19.95/minute",
+      "dataCount": 890577,
+      "deviceCount": 2113
+    },
+    {
+      "id": "4_rssi",
+      "group": 4,
+      "name": "rssi",
+      "frequency": "9.29/hour",
+      "dataCount": 6911,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_dBm",
+      "group": 5,
+      "name": "dBm",
+      "frequency": "9.29/hour",
+      "dataCount": 6911,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_power_factor",
+      "group": 3,
+      "name": "power_factor",
+      "frequency": "28.94/hour",
+      "dataCount": 21528,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_voltage",
+      "group": 3,
+      "name": "voltage",
+      "frequency": "28.94/hour",
+      "dataCount": 21528,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_V",
+      "group": 5,
+      "name": "V",
+      "frequency": "28.94/hour",
+      "dataCount": 21528,
+      "deviceCount": 2
+    },
+    {
+      "id": "1_<missing deviceType>",
+      "group": 1,
+      "name": "<missing deviceType>",
+      "frequency": "2.26/minute",
+      "dataCount": 100937,
+      "deviceCount": 21
+    },
+    {
+      "id": "2_aggregatedMeasurement",
+      "group": 2,
+      "name": "aggregatedMeasurement",
+      "frequency": "1.75/minute",
+      "dataCount": 78173,
+      "deviceCount": 17
+    },
+    {
+      "id": "3_vehiclesPer15Min",
+      "group": 3,
+      "name": "vehiclesPer15Min",
+      "frequency": "1.75/minute",
+      "dataCount": 78173,
+      "deviceCount": 17
+    },
+    {
+      "id": "4_lanein",
+      "group": 4,
+      "name": "lanein",
+      "frequency": "3.03/hour",
+      "dataCount": 2253,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_vehicles",
+      "group": 5,
+      "name": "vehicles",
+      "frequency": "2.74/minute",
+      "dataCount": 122360,
+      "deviceCount": 49
+    },
+    {
+      "id": "4_laneout",
+      "group": 4,
+      "name": "laneout",
+      "frequency": "3.03/hour",
+      "dataCount": 2252,
+      "deviceCount": 1
+    },
+    {
+      "id": "T_Urban Infrastructure Lighting Data",
+      "group": 6,
+      "name": "Urban Infrastructure Lighting Data",
+      "frequency": "28.99/minute",
+      "dataCount": 1293979,
+      "deviceCount": 1802
+    },
+    {
+      "id": "1_com_cityntel_light",
+      "group": 1,
+      "name": "com_cityntel_light",
+      "frequency": "14.4/minute",
+      "dataCount": 642958,
+      "deviceCount": 1150
+    },
+    {
+      "id": "3_Light",
+      "group": 3,
+      "name": "Light",
+      "frequency": "14.4/minute",
+      "dataCount": 642958,
+      "deviceCount": 1150
+    },
+    {
+      "id": "4_output",
+      "group": 4,
+      "name": "output",
+      "frequency": "18.14/minute",
+      "dataCount": 809822,
+      "deviceCount": 2171
+    },
+    {
+      "id": "5_percent",
+      "group": 5,
+      "name": "percent",
+      "frequency": "25.78/minute",
+      "dataCount": 1150664,
+      "deviceCount": 2179
+    },
+    {
+      "id": "T_Urban Pedestrian Traffic Monitoring",
+      "group": 6,
+      "name": "Urban Pedestrian Traffic Monitoring",
+      "frequency": "3.92/minute",
+      "dataCount": 175169,
+      "deviceCount": 76
+    },
+    {
+      "id": "1_com_cityntel_sensor",
+      "group": 1,
+      "name": "com_cityntel_sensor",
+      "frequency": "8.88/minute",
+      "dataCount": 396275,
+      "deviceCount": 24
+    },
+    {
+      "id": "3_sensor_1491",
+      "group": 3,
+      "name": "sensor_1491",
+      "frequency": "2.06/hour",
+      "dataCount": 1530,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_movement",
+      "group": 4,
+      "name": "movement",
+      "frequency": "1.7/minute",
+      "dataCount": 76087,
+      "deviceCount": 30
+    },
+    {
+      "id": "5_count",
+      "group": 5,
+      "name": "count",
+      "frequency": "4.34/minute",
+      "dataCount": 193692,
+      "deviceCount": 78
+    },
+    {
+      "id": "3_sensor_1492",
+      "group": 3,
+      "name": "sensor_1492",
+      "frequency": "2.06/hour",
+      "dataCount": 1531,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1494",
+      "group": 3,
+      "name": "sensor_1494",
+      "frequency": "1.33/hour",
+      "dataCount": 988,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1495",
+      "group": 3,
+      "name": "sensor_1495",
+      "frequency": "14.29/day",
+      "dataCount": 443,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1496",
+      "group": 3,
+      "name": "sensor_1496",
+      "frequency": "2.51/hour",
+      "dataCount": 1871,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1497",
+      "group": 3,
+      "name": "sensor_1497",
+      "frequency": "1.28/hour",
+      "dataCount": 954,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1498",
+      "group": 3,
+      "name": "sensor_1498",
+      "frequency": "1.92/hour",
+      "dataCount": 1429,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1499",
+      "group": 3,
+      "name": "sensor_1499",
+      "frequency": "2.6/hour",
+      "dataCount": 1937,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1500",
+      "group": 3,
+      "name": "sensor_1500",
+      "frequency": "2.58/hour",
+      "dataCount": 1916,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1521",
+      "group": 3,
+      "name": "sensor_1521",
+      "frequency": "14.92/hour",
+      "dataCount": 11102,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1522",
+      "group": 3,
+      "name": "sensor_1522",
+      "frequency": "7.41/hour",
+      "dataCount": 5511,
+      "deviceCount": 1
+    },
+    {
+      "id": "T_Vehicle Traffic Count Management",
+      "group": 6,
+      "name": "Vehicle Traffic Count Management",
+      "frequency": "21.54/minute",
+      "dataCount": 961515,
+      "deviceCount": 190
+    },
+    {
+      "id": "3_sensor_1523",
+      "group": 3,
+      "name": "sensor_1523",
+      "frequency": "8.17/hour",
+      "dataCount": 6080,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1524",
+      "group": 3,
+      "name": "sensor_1524",
+      "frequency": "16.48/hour",
+      "dataCount": 12258,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1526",
+      "group": 3,
+      "name": "sensor_1526",
+      "frequency": "17.65/hour",
+      "dataCount": 13129,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1527",
+      "group": 3,
+      "name": "sensor_1527",
+      "frequency": "17.41/hour",
+      "dataCount": 12950,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_147",
+      "group": 3,
+      "name": "sensor_147",
+      "frequency": "8.78/hour",
+      "dataCount": 6536,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_light",
+      "group": 4,
+      "name": "light",
+      "frequency": "3.74/minute",
+      "dataCount": 167090,
+      "deviceCount": 10
+    },
+    {
+      "id": "5_lx",
+      "group": 5,
+      "name": "lx",
+      "frequency": "3.8/minute",
+      "dataCount": 169614,
+      "deviceCount": 10
+    },
+    {
+      "id": "3_sensor_148",
+      "group": 3,
+      "name": "sensor_148",
+      "frequency": "15.03/hour",
+      "dataCount": 11183,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_ambient_temperature",
+      "group": 4,
+      "name": "ambient_temperature",
+      "frequency": "15.03/hour",
+      "dataCount": 11183,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_C",
+      "group": 5,
+      "name": "C",
+      "frequency": "59.17/hour",
+      "dataCount": 44021,
+      "deviceCount": 5
+    },
+    {
+      "id": "3_sensor_149",
+      "group": 3,
+      "name": "sensor_149",
+      "frequency": "15.09/hour",
+      "dataCount": 11225,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_relative_humidity",
+      "group": 4,
+      "name": "relative_humidity",
+      "frequency": "15.09/hour",
+      "dataCount": 11225,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_pct",
+      "group": 5,
+      "name": "pct",
+      "frequency": "15.09/hour",
+      "dataCount": 11225,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_150",
+      "group": 3,
+      "name": "sensor_150",
+      "frequency": "15.08/hour",
+      "dataCount": 11220,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_atmospheric_pressure",
+      "group": 4,
+      "name": "atmospheric_pressure",
+      "frequency": "15.08/hour",
+      "dataCount": 11220,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_Pa",
+      "group": 5,
+      "name": "Pa",
+      "frequency": "23.29/hour",
+      "dataCount": 17331,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_sensor_1",
+      "group": 3,
+      "name": "sensor_1",
+      "frequency": "42.63/hour",
+      "dataCount": 31720,
+      "deviceCount": 1
+    },
+    {
+      "id": "T_Environmental Air Quality Monitoring",
+      "group": 6,
+      "name": "Environmental Air Quality Monitoring",
+      "frequency": "3.61/minute",
+      "dataCount": 161043,
+      "deviceCount": 36
+    },
+    {
+      "id": "3_sensor_105",
+      "group": 3,
+      "name": "sensor_105",
+      "frequency": "17.17/hour",
+      "dataCount": 12773,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_surface_temperature",
+      "group": 4,
+      "name": "surface_temperature",
+      "frequency": "35.92/hour",
+      "dataCount": 26728,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_sensor_106",
+      "group": 3,
+      "name": "sensor_106",
+      "frequency": "17.13/hour",
+      "dataCount": 12746,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_particles_pm10_ug",
+      "group": 4,
+      "name": "particles_pm10_ug",
+      "frequency": "35.91/hour",
+      "dataCount": 26715,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_m",
+      "group": 5,
+      "name": "m",
+      "frequency": "1.96/minute",
+      "dataCount": 87388,
+      "deviceCount": 23
+    },
+    {
+      "id": "3_sensor_107",
+      "group": 3,
+      "name": "sensor_107",
+      "frequency": "17.48/hour",
+      "dataCount": 13008,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_particles_pm2_5_ug",
+      "group": 4,
+      "name": "particles_pm2_5_ug",
+      "frequency": "36.96/hour",
+      "dataCount": 27497,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_sensor_108",
+      "group": 3,
+      "name": "sensor_108",
+      "frequency": "17.16/hour",
+      "dataCount": 12768,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_no2",
+      "group": 4,
+      "name": "no2",
+      "frequency": "37.29/hour",
+      "dataCount": 27747,
+      "deviceCount": 4
+    },
+    {
+      "id": "5_ppm",
+      "group": 5,
+      "name": "ppm",
+      "frequency": "1.14/minute",
+      "dataCount": 50740,
+      "deviceCount": 9
+    },
+    {
+      "id": "3_sensor_123",
+      "group": 3,
+      "name": "sensor_123",
+      "frequency": "18.76/hour",
+      "dataCount": 13955,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_124",
+      "group": 3,
+      "name": "sensor_124",
+      "frequency": "18.78/hour",
+      "dataCount": 13969,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_125",
+      "group": 3,
+      "name": "sensor_125",
+      "frequency": "18.78/hour",
+      "dataCount": 13973,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_126",
+      "group": 3,
+      "name": "sensor_126",
+      "frequency": "18.76/hour",
+      "dataCount": 13957,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_127",
+      "group": 3,
+      "name": "sensor_127",
+      "frequency": "13.73/hour",
+      "dataCount": 10213,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_co2",
+      "group": 4,
+      "name": "co2",
+      "frequency": "14.13/hour",
+      "dataCount": 10516,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_sensor_49",
+      "group": 3,
+      "name": "sensor_49",
+      "frequency": "1.1/minute",
+      "dataCount": 49078,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_70",
+      "group": 3,
+      "name": "sensor_70",
+      "frequency": "1.37/minute",
+      "dataCount": 61094,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_91",
+      "group": 3,
+      "name": "sensor_91",
+      "frequency": "7.63/hour",
+      "dataCount": 5680,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_92",
+      "group": 3,
+      "name": "sensor_92",
+      "frequency": "2.6/hour",
+      "dataCount": 1935,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_sound_level",
+      "group": 4,
+      "name": "sound_level",
+      "frequency": "8.63/hour",
+      "dataCount": 6418,
+      "deviceCount": 6
+    },
+    {
+      "id": "5_dB",
+      "group": 5,
+      "name": "dB",
+      "frequency": "10.21/hour",
+      "dataCount": 7598,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_sensor_87",
+      "group": 3,
+      "name": "sensor_87",
+      "frequency": "9.87/hour",
+      "dataCount": 7345,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_88",
+      "group": 3,
+      "name": "sensor_88",
+      "frequency": "3.25/hour",
+      "dataCount": 2417,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_89",
+      "group": 3,
+      "name": "sensor_89",
+      "frequency": "5.88/hour",
+      "dataCount": 4375,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_90",
+      "group": 3,
+      "name": "sensor_90",
+      "frequency": "1.98/hour",
+      "dataCount": 1476,
+      "deviceCount": 1
+    },
+    {
+      "id": "1_DAL_series_target",
+      "group": 1,
+      "name": "DAL_series_target",
+      "frequency": "4.73/second",
+      "dataCount": 12657422,
+      "deviceCount": 998
+    },
+    {
+      "id": "2_VehiclesPerMinute",
+      "group": 2,
+      "name": "VehiclesPerMinute",
+      "frequency": "6.6/minute",
+      "dataCount": 294680,
+      "deviceCount": 18
+    },
+    {
+      "id": "3_VehiclesPerMinute",
+      "group": 3,
+      "name": "VehiclesPerMinute",
+      "frequency": "19.77/minute",
+      "dataCount": 882425,
+      "deviceCount": 21
+    },
+    {
+      "id": "4_throughput",
+      "group": 4,
+      "name": "throughput",
+      "frequency": "20.43/minute",
+      "dataCount": 912031,
+      "deviceCount": 60
+    },
+    {
+      "id": "5_vpm",
+      "group": 5,
+      "name": "vpm",
+      "frequency": "21.76/minute",
+      "dataCount": 971243,
+      "deviceCount": 60
+    },
+    {
+      "id": "4_lane1",
+      "group": 4,
+      "name": "lane1",
+      "frequency": "56.32/hour",
+      "dataCount": 41901,
+      "deviceCount": 32
+    },
+    {
+      "id": "4_lane2",
+      "group": 4,
+      "name": "lane2",
+      "frequency": "56.6/hour",
+      "dataCount": 42111,
+      "deviceCount": 32
+    },
+    {
+      "id": "2_dal_series_target_measurement",
+      "group": 2,
+      "name": "dal_series_target_measurement",
+      "frequency": "4.55/second",
+      "dataCount": 12186635,
+      "deviceCount": 974
+    },
+    {
+      "id": "4_lane3",
+      "group": 4,
+      "name": "lane3",
+      "frequency": "2.89/hour",
+      "dataCount": 2151,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_lane4",
+      "group": 4,
+      "name": "lane4",
+      "frequency": "3/hour",
+      "dataCount": 2234,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_Dal",
+      "group": 3,
+      "name": "Dal",
+      "frequency": "2.21/hour",
+      "dataCount": 1647,
+      "deviceCount": 9
+    },
+    {
+      "id": "4_value",
+      "group": 4,
+      "name": "value",
+      "frequency": "2.2/minute",
+      "dataCount": 98004,
+      "deviceCount": 67
+    },
+    {
+      "id": "T_Environmental Temperature Monitoring",
+      "group": 6,
+      "name": "Environmental Temperature Monitoring",
+      "frequency": "27.88/hour",
+      "dataCount": 20740,
+      "deviceCount": 15
+    },
+    {
+      "id": "5_degrees",
+      "group": 5,
+      "name": "degrees",
+      "frequency": "9.56/hour",
+      "dataCount": 7114,
+      "deviceCount": 8
+    },
+    {
+      "id": "5_mm",
+      "group": 5,
+      "name": "mm",
+      "frequency": "4.78/hour",
+      "dataCount": 3557,
+      "deviceCount": 4
+    },
+    {
+      "id": "5_mb",
+      "group": 5,
+      "name": "mb",
+      "frequency": "4.78/hour",
+      "dataCount": 3557,
+      "deviceCount": 4
+    },
+    {
+      "id": "5_km",
+      "group": 5,
+      "name": "km",
+      "frequency": "8.91/hour",
+      "dataCount": 6626,
+      "deviceCount": 6
+    },
+    {
+      "id": "5_degree",
+      "group": 5,
+      "name": "degree",
+      "frequency": "4.78/hour",
+      "dataCount": 3557,
+      "deviceCount": 4
+    },
+    {
+      "id": "5_km/h",
+      "group": 5,
+      "name": "km/h",
+      "frequency": "53.49/hour",
+      "dataCount": 39796,
+      "deviceCount": 27
+    },
+    {
+      "id": "T_Public Bus Passenger Counting",
+      "group": 6,
+      "name": "Public Bus Passenger Counting",
+      "frequency": "1.37/minute",
+      "dataCount": 61049,
+      "deviceCount": 50
+    },
+    {
+      "id": "3_dal",
+      "group": 3,
+      "name": "dal",
+      "frequency": "4.3/second",
+      "dataCount": 11511011,
+      "deviceCount": 900
+    },
+    {
+      "id": "4_series",
+      "group": 4,
+      "name": "series",
+      "frequency": "4.53/second",
+      "dataCount": 12129772,
+      "deviceCount": 1831
+    },
+    {
+      "id": "5_members/h",
+      "group": 5,
+      "name": "members/h",
+      "frequency": "8.25/hour",
+      "dataCount": 6139,
+      "deviceCount": 4
+    },
+    {
+      "id": "5_member",
+      "group": 5,
+      "name": "member",
+      "frequency": "9.71/hour",
+      "dataCount": 7221,
+      "deviceCount": 5
+    },
+    {
+      "id": "5_user",
+      "group": 5,
+      "name": "user",
+      "frequency": "4.12/hour",
+      "dataCount": 3069,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_trip",
+      "group": 5,
+      "name": "trip",
+      "frequency": "4.12/hour",
+      "dataCount": 3069,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_membership",
+      "group": 5,
+      "name": "membership",
+      "frequency": "4.12/hour",
+      "dataCount": 3069,
+      "deviceCount": 2
+    },
+    {
+      "id": "T_Bicycle Sharing Dock Statistics",
+      "group": 6,
+      "name": "Bicycle Sharing Dock Statistics",
+      "frequency": "1.04/second",
+      "dataCount": 2776361,
+      "deviceCount": 133
+    },
+    {
+      "id": "5_bicycle",
+      "group": 5,
+      "name": "bicycle",
+      "frequency": "2.76/second",
+      "dataCount": 7382057,
+      "deviceCount": 618
+    },
+    {
+      "id": "T_Urban Bicycle Usage Data",
+      "group": 6,
+      "name": "Urban Bicycle Usage Data",
+      "frequency": "55.99/minute",
+      "dataCount": 2499492,
+      "deviceCount": 352
+    },
+    {
+      "id": "T_Parking Space Availability Management",
+      "group": 6,
+      "name": "Parking Space Availability Management",
+      "frequency": "1.31/second",
+      "dataCount": 3514942,
+      "deviceCount": 233
+    },
+    {
+      "id": "5_space",
+      "group": 5,
+      "name": "space",
+      "frequency": "55.1/minute",
+      "dataCount": 2459677,
+      "deviceCount": 200
+    },
+    {
+      "id": "5_dock",
+      "group": 5,
+      "name": "dock",
+      "frequency": "55.94/minute",
+      "dataCount": 2497034,
+      "deviceCount": 202
+    },
+    {
+      "id": "T_Bicycle Docking Station Data",
+      "group": 6,
+      "name": "Bicycle Docking Station Data",
+      "frequency": "5.99/minute",
+      "dataCount": 267257,
+      "deviceCount": 12
+    },
+    {
+      "id": "5_MWh",
+      "group": 5,
+      "name": "MWh",
+      "frequency": "6.47/minute",
+      "dataCount": 288893,
+      "deviceCount": 194
+    },
+    {
+      "id": "T_Thermal Energy Measurement in Kilowatts",
+      "group": 6,
+      "name": "Thermal Energy Measurement in Kilowatts",
+      "frequency": "12.78/hour",
+      "dataCount": 9511,
+      "deviceCount": 13
+    },
+    {
+      "id": "2_group",
+      "group": 2,
+      "name": "group",
+      "frequency": "2.02/minute",
+      "dataCount": 90242,
+      "deviceCount": 23
+    },
+    {
+      "id": "3_group",
+      "group": 3,
+      "name": "group",
+      "frequency": "2.02/minute",
+      "dataCount": 90242,
+      "deviceCount": 23
+    },
+    {
+      "id": "T_Water Consumption Management",
+      "group": 6,
+      "name": "Water Consumption Management",
+      "frequency": "18/day",
+      "dataCount": 558,
+      "deviceCount": 18
+    },
+    {
+      "id": "T_Hot Water Consumption Measurement",
+      "group": 6,
+      "name": "Hot Water Consumption Measurement",
+      "frequency": "1.17/hour",
+      "dataCount": 868,
+      "deviceCount": 28
+    },
+    {
+      "id": "5_m3",
+      "group": 5,
+      "name": "m3",
+      "frequency": "11.96/hour",
+      "dataCount": 8897,
+      "deviceCount": 82
+    },
+    {
+      "id": "5_users/h",
+      "group": 5,
+      "name": "users/h",
+      "frequency": "6.89/hour",
+      "dataCount": 5127,
+      "deviceCount": 4
+    },
+    {
+      "id": "5_trips/h",
+      "group": 5,
+      "name": "trips/h",
+      "frequency": "4.12/hour",
+      "dataCount": 3069,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_formula",
+      "group": 2,
+      "name": "formula",
+      "frequency": "1/day",
+      "dataCount": 31,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_formula",
+      "group": 3,
+      "name": "formula",
+      "frequency": "1/day",
+      "dataCount": 31,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_kg/tunnis",
+      "group": 5,
+      "name": "kg/tunnis",
+      "frequency": "9.52/day",
+      "dataCount": 295,
+      "deviceCount": 3
+    },
+    {
+      "id": "5_%",
+      "group": 5,
+      "name": "%",
+      "frequency": "13.46/hour",
+      "dataCount": 10013,
+      "deviceCount": 35
+    },
+    {
+      "id": "T_Water Volume Management Metrics",
+      "group": 6,
+      "name": "Water Volume Management Metrics",
+      "frequency": "18.76/hour",
+      "dataCount": 13959,
+      "deviceCount": 45
+    },
+    {
+      "id": "T_Bicycle Management and Count",
+      "group": 6,
+      "name": "Bicycle Management and Count",
+      "frequency": "17.46/minute",
+      "dataCount": 779474,
+      "deviceCount": 35
+    },
+    {
+      "id": "2_EcoCounterData",
+      "group": 2,
+      "name": "EcoCounterData",
+      "frequency": "16.35/hour",
+      "dataCount": 12166,
+      "deviceCount": 43
+    },
+    {
+      "id": "3_Bicycle",
+      "group": 3,
+      "name": "Bicycle",
+      "frequency": "11.88/hour",
+      "dataCount": 8839,
+      "deviceCount": 5
+    },
+    {
+      "id": "4_counter",
+      "group": 4,
+      "name": "counter",
+      "frequency": "2.94/minute",
+      "dataCount": 131152,
+      "deviceCount": 89
+    },
+    {
+      "id": "5_pc",
+      "group": 5,
+      "name": "pc",
+      "frequency": "4.41/minute",
+      "dataCount": 196662,
+      "deviceCount": 89
+    },
+    {
+      "id": "3_Total",
+      "group": 3,
+      "name": "Total",
+      "frequency": "28.95/hour",
+      "dataCount": 21537,
+      "deviceCount": 10
+    },
+    {
+      "id": "3_Pedestrian",
+      "group": 3,
+      "name": "Pedestrian",
+      "frequency": "7.88/hour",
+      "dataCount": 5865,
+      "deviceCount": 4
+    },
+    {
+      "id": "3_BicycleOut",
+      "group": 3,
+      "name": "BicycleOut",
+      "frequency": "20.96/hour",
+      "dataCount": 15596,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_PedestrianOut",
+      "group": 3,
+      "name": "PedestrianOut",
+      "frequency": "20.77/hour",
+      "dataCount": 15456,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_PedestrianIn",
+      "group": 3,
+      "name": "PedestrianIn",
+      "frequency": "20.83/hour",
+      "dataCount": 15500,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_BicycleIn",
+      "group": 3,
+      "name": "BicycleIn",
+      "frequency": "20.97/hour",
+      "dataCount": 15604,
+      "deviceCount": 6
+    },
+    {
+      "id": "T_Renewable Energy Production Measurement",
+      "group": 6,
+      "name": "Renewable Energy Production Measurement",
+      "frequency": "1.12/minute",
+      "dataCount": 50094,
+      "deviceCount": 16
+    },
+    {
+      "id": "5_sõitu/päevas",
+      "group": 5,
+      "name": "sõitu/päevas",
+      "frequency": "1.49/hour",
+      "dataCount": 1110,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_km/päevas",
+      "group": 5,
+      "name": "km/päevas",
+      "frequency": "2.96/hour",
+      "dataCount": 2202,
+      "deviceCount": 4
+    },
+    {
+      "id": "5_kasutajat/päevas",
+      "group": 5,
+      "name": "kasutajat/päevas",
+      "frequency": "2.97/hour",
+      "dataCount": 2208,
+      "deviceCount": 4
+    },
+    {
+      "id": "5_sõidukit/tunnis",
+      "group": 5,
+      "name": "sõidukit/tunnis",
+      "frequency": "3.89/hour",
+      "dataCount": 2896,
+      "deviceCount": 8
+    },
+    {
+      "id": "T_Vehicle Traffic Monitoring Counts",
+      "group": 6,
+      "name": "Vehicle Traffic Monitoring Counts",
+      "frequency": "17.09/hour",
+      "dataCount": 12718,
+      "deviceCount": 12
+    },
+    {
+      "id": "5_microgram per cubic metre",
+      "group": 5,
+      "name": "microgram per cubic metre",
+      "frequency": "1.37/hour",
+      "dataCount": 1022,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_ug/m3",
+      "group": 5,
+      "name": "ug/m3",
+      "frequency": "2.75/hour",
+      "dataCount": 2044,
+      "deviceCount": 4
+    },
+    {
+      "id": "3_measure",
+      "group": 3,
+      "name": "measure",
+      "frequency": "0.03/day",
+      "dataCount": 1,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_item",
+      "group": 4,
+      "name": "item",
+      "frequency": "0.1/day",
+      "dataCount": 3,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_person",
+      "group": 5,
+      "name": "person",
+      "frequency": "17.41/hour",
+      "dataCount": 12950,
+      "deviceCount": 10
+    },
+    {
+      "id": "5_motorbike",
+      "group": 5,
+      "name": "motorbike",
+      "frequency": "6.44/hour",
+      "dataCount": 4788,
+      "deviceCount": 14
+    },
+    {
+      "id": "5_van",
+      "group": 5,
+      "name": "van",
+      "frequency": "45.57/hour",
+      "dataCount": 33907,
+      "deviceCount": 16
+    },
+    {
+      "id": "5_truck",
+      "group": 5,
+      "name": "truck",
+      "frequency": "28.67/hour",
+      "dataCount": 21327,
+      "deviceCount": 18
+    },
+    {
+      "id": "5_car",
+      "group": 5,
+      "name": "car",
+      "frequency": "56.72/hour",
+      "dataCount": 42200,
+      "deviceCount": 16
+    },
+    {
+      "id": "5_bus",
+      "group": 5,
+      "name": "bus",
+      "frequency": "46.2/hour",
+      "dataCount": 34370,
+      "deviceCount": 16
+    },
+    {
+      "id": "5_escooter",
+      "group": 5,
+      "name": "escooter",
+      "frequency": "1.97/day",
+      "dataCount": 61,
+      "deviceCount": 7
+    },
+    {
+      "id": "5_tractor",
+      "group": 5,
+      "name": "tractor",
+      "frequency": "1.48/hour",
+      "dataCount": 1102,
+      "deviceCount": 14
+    },
+    {
+      "id": "5_vehicle/hour",
+      "group": 5,
+      "name": "vehicle/hour",
+      "frequency": "22.79/hour",
+      "dataCount": 16958,
+      "deviceCount": 12
+    },
+    {
+      "id": "T_Urban Spatial Planning Analysis",
+      "group": 6,
+      "name": "Urban Spatial Planning Analysis",
+      "frequency": "6.61/minute",
+      "dataCount": 295076,
+      "deviceCount": 89
+    },
+    {
+      "id": "5_memberships/h",
+      "group": 5,
+      "name": "memberships/h",
+      "frequency": "4.12/hour",
+      "dataCount": 3069,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_kwh",
+      "group": 5,
+      "name": "kwh",
+      "frequency": "27.44/hour",
+      "dataCount": 20417,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_sõidukit/päevas",
+      "group": 5,
+      "name": "sõidukit/päevas",
+      "frequency": "24.19/hour",
+      "dataCount": 18000,
+      "deviceCount": 8
+    },
+    {
+      "id": "1_RidangoPunctualityDevice",
+      "group": 1,
+      "name": "RidangoPunctualityDevice",
+      "frequency": "3.5/hour",
+      "dataCount": 2604,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RidangoPunctuality",
+      "group": 2,
+      "name": "RidangoPunctuality",
+      "frequency": "3.5/hour",
+      "dataCount": 2604,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_LateDepartures",
+      "group": 3,
+      "name": "LateDepartures",
+      "frequency": "21/day",
+      "dataCount": 651,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_Departures",
+      "group": 5,
+      "name": "Departures",
+      "frequency": "1.75/hour",
+      "dataCount": 1302,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_LateDeparturesPercentage",
+      "group": 3,
+      "name": "LateDeparturesPercentage",
+      "frequency": "21/day",
+      "dataCount": 651,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_Mean Departure Deviation",
+      "group": 3,
+      "name": "Mean Departure Deviation",
+      "frequency": "21/day",
+      "dataCount": 651,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_s",
+      "group": 5,
+      "name": "s",
+      "frequency": "44.08/hour",
+      "dataCount": 32795,
+      "deviceCount": 21
+    },
+    {
+      "id": "3_TotalDepartures",
+      "group": 3,
+      "name": "TotalDepartures",
+      "frequency": "21/day",
+      "dataCount": 651,
+      "deviceCount": 1
+    },
+    {
+      "id": "1_DAL_series_aggregation",
+      "group": 1,
+      "name": "DAL_series_aggregation",
+      "frequency": "1.29/second",
+      "dataCount": 3447492,
+      "deviceCount": 2111
+    },
+    {
+      "id": "2_dal_series_target_agg",
+      "group": 2,
+      "name": "dal_series_target_agg",
+      "frequency": "1.29/second",
+      "dataCount": 3447492,
+      "deviceCount": 2111
+    },
+    {
+      "id": "3_Light_daily",
+      "group": 3,
+      "name": "Light_daily",
+      "frequency": "1.72/minute",
+      "dataCount": 76940,
+      "deviceCount": 1021
+    },
+    {
+      "id": "4_output_count",
+      "group": 4,
+      "name": "output_count",
+      "frequency": "3.74/minute",
+      "dataCount": 166864,
+      "deviceCount": 1021
+    },
+    {
+      "id": "4_output_max",
+      "group": 4,
+      "name": "output_max",
+      "frequency": "3.74/minute",
+      "dataCount": 166864,
+      "deviceCount": 1021
+    },
+    {
+      "id": "4_output_min",
+      "group": 4,
+      "name": "output_min",
+      "frequency": "3.74/minute",
+      "dataCount": 166864,
+      "deviceCount": 1021
+    },
+    {
+      "id": "3_Light_hourly",
+      "group": 3,
+      "name": "Light_hourly",
+      "frequency": "13.23/minute",
+      "dataCount": 590516,
+      "deviceCount": 1021
+    },
+    {
+      "id": "T_DAL Light Output Aggregations",
+      "group": 6,
+      "name": "DAL Light Output Aggregations",
+      "frequency": "1.07/minute",
+      "dataCount": 47724,
+      "deviceCount": 51
+    },
+    {
+      "id": "3_sensor_1491_daily",
+      "group": 3,
+      "name": "sensor_1491_daily",
+      "frequency": "2.71/day",
+      "dataCount": 84,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_movement_count",
+      "group": 4,
+      "name": "movement_count",
+      "frequency": "3.3/hour",
+      "dataCount": 2458,
+      "deviceCount": 15
+    },
+    {
+      "id": "4_movement_max",
+      "group": 4,
+      "name": "movement_max",
+      "frequency": "3.3/hour",
+      "dataCount": 2458,
+      "deviceCount": 15
+    },
+    {
+      "id": "4_movement_min",
+      "group": 4,
+      "name": "movement_min",
+      "frequency": "3.3/hour",
+      "dataCount": 2458,
+      "deviceCount": 15
+    },
+    {
+      "id": "3_sensor_1491_hourly",
+      "group": 3,
+      "name": "sensor_1491_hourly",
+      "frequency": "13.94/day",
+      "dataCount": 432,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1492_daily",
+      "group": 3,
+      "name": "sensor_1492_daily",
+      "frequency": "2.71/day",
+      "dataCount": 84,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1492_hourly",
+      "group": 3,
+      "name": "sensor_1492_hourly",
+      "frequency": "13.16/day",
+      "dataCount": 408,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1494_daily",
+      "group": 3,
+      "name": "sensor_1494_daily",
+      "frequency": "2.71/day",
+      "dataCount": 84,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1494_hourly",
+      "group": 3,
+      "name": "sensor_1494_hourly",
+      "frequency": "9.81/day",
+      "dataCount": 304,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1495_daily",
+      "group": 3,
+      "name": "sensor_1495_daily",
+      "frequency": "2.32/day",
+      "dataCount": 72,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1495_hourly",
+      "group": 3,
+      "name": "sensor_1495_hourly",
+      "frequency": "6.45/day",
+      "dataCount": 200,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1496_daily",
+      "group": 3,
+      "name": "sensor_1496_daily",
+      "frequency": "2.71/day",
+      "dataCount": 84,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1496_hourly",
+      "group": 3,
+      "name": "sensor_1496_hourly",
+      "frequency": "9.94/day",
+      "dataCount": 308,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1497_daily",
+      "group": 3,
+      "name": "sensor_1497_daily",
+      "frequency": "2.19/day",
+      "dataCount": 68,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1497_hourly",
+      "group": 3,
+      "name": "sensor_1497_hourly",
+      "frequency": "6.84/day",
+      "dataCount": 212,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1498_daily",
+      "group": 3,
+      "name": "sensor_1498_daily",
+      "frequency": "2.58/day",
+      "dataCount": 80,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1498_hourly",
+      "group": 3,
+      "name": "sensor_1498_hourly",
+      "frequency": "8.77/day",
+      "dataCount": 272,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1499_daily",
+      "group": 3,
+      "name": "sensor_1499_daily",
+      "frequency": "2.71/day",
+      "dataCount": 84,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1499_hourly",
+      "group": 3,
+      "name": "sensor_1499_hourly",
+      "frequency": "20/day",
+      "dataCount": 620,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1500_daily",
+      "group": 3,
+      "name": "sensor_1500_daily",
+      "frequency": "2.71/day",
+      "dataCount": 84,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1500_hourly",
+      "group": 3,
+      "name": "sensor_1500_hourly",
+      "frequency": "20.39/day",
+      "dataCount": 632,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1521_daily",
+      "group": 3,
+      "name": "sensor_1521_daily",
+      "frequency": "2.84/day",
+      "dataCount": 88,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1521_hourly",
+      "group": 3,
+      "name": "sensor_1521_hourly",
+      "frequency": "1.11/hour",
+      "dataCount": 824,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1522_daily",
+      "group": 3,
+      "name": "sensor_1522_daily",
+      "frequency": "2.84/day",
+      "dataCount": 88,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1522_hourly",
+      "group": 3,
+      "name": "sensor_1522_hourly",
+      "frequency": "1.1/hour",
+      "dataCount": 820,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1523_daily",
+      "group": 3,
+      "name": "sensor_1523_daily",
+      "frequency": "2.71/day",
+      "dataCount": 84,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1523_hourly",
+      "group": 3,
+      "name": "sensor_1523_hourly",
+      "frequency": "1.12/hour",
+      "dataCount": 836,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1524_daily",
+      "group": 3,
+      "name": "sensor_1524_daily",
+      "frequency": "2.97/day",
+      "dataCount": 92,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1524_hourly",
+      "group": 3,
+      "name": "sensor_1524_hourly",
+      "frequency": "1.21/hour",
+      "dataCount": 900,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1526_daily",
+      "group": 3,
+      "name": "sensor_1526_daily",
+      "frequency": "3.1/day",
+      "dataCount": 96,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1526_hourly",
+      "group": 3,
+      "name": "sensor_1526_hourly",
+      "frequency": "1.22/hour",
+      "dataCount": 908,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1527_daily",
+      "group": 3,
+      "name": "sensor_1527_daily",
+      "frequency": "2.84/day",
+      "dataCount": 88,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_1527_hourly",
+      "group": 3,
+      "name": "sensor_1527_hourly",
+      "frequency": "1.2/hour",
+      "dataCount": 896,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_108_daily",
+      "group": 3,
+      "name": "sensor_108_daily",
+      "frequency": "3.23/day",
+      "dataCount": 100,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_no2_count",
+      "group": 4,
+      "name": "no2_count",
+      "frequency": "1.37/hour",
+      "dataCount": 1022,
+      "deviceCount": 2
+    },
+    {
+      "id": "4_no2_max",
+      "group": 4,
+      "name": "no2_max",
+      "frequency": "1.37/hour",
+      "dataCount": 1022,
+      "deviceCount": 2
+    },
+    {
+      "id": "4_no2_min",
+      "group": 4,
+      "name": "no2_min",
+      "frequency": "1.37/hour",
+      "dataCount": 1022,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_sensor_108_hourly",
+      "group": 3,
+      "name": "sensor_108_hourly",
+      "frequency": "2.63/hour",
+      "dataCount": 1956,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_107_daily",
+      "group": 3,
+      "name": "sensor_107_daily",
+      "frequency": "3.23/day",
+      "dataCount": 100,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_particles_pm2_5_ug_count",
+      "group": 4,
+      "name": "particles_pm2_5_ug_count",
+      "frequency": "16.65/day",
+      "dataCount": 516,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_particles_pm2_5_ug_max",
+      "group": 4,
+      "name": "particles_pm2_5_ug_max",
+      "frequency": "16.65/day",
+      "dataCount": 516,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_particles_pm2_5_ug_min",
+      "group": 4,
+      "name": "particles_pm2_5_ug_min",
+      "frequency": "16.65/day",
+      "dataCount": 516,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_107_hourly",
+      "group": 3,
+      "name": "sensor_107_hourly",
+      "frequency": "2.64/hour",
+      "dataCount": 1964,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_127_daily",
+      "group": 3,
+      "name": "sensor_127_daily",
+      "frequency": "2.32/day",
+      "dataCount": 72,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_co2_count",
+      "group": 4,
+      "name": "co2_count",
+      "frequency": "9.77/day",
+      "dataCount": 303,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_co2_max",
+      "group": 4,
+      "name": "co2_max",
+      "frequency": "9.77/day",
+      "dataCount": 303,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_co2_min",
+      "group": 4,
+      "name": "co2_min",
+      "frequency": "9.77/day",
+      "dataCount": 303,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_127_hourly",
+      "group": 3,
+      "name": "sensor_127_hourly",
+      "frequency": "1.53/hour",
+      "dataCount": 1140,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_126_daily",
+      "group": 3,
+      "name": "sensor_126_daily",
+      "frequency": "3.23/day",
+      "dataCount": 100,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_126_hourly",
+      "group": 3,
+      "name": "sensor_126_hourly",
+      "frequency": "2.6/hour",
+      "dataCount": 1932,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_49_daily",
+      "group": 3,
+      "name": "sensor_49_daily",
+      "frequency": "4/day",
+      "dataCount": 124,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_light_count",
+      "group": 4,
+      "name": "light_count",
+      "frequency": "1.7/hour",
+      "dataCount": 1262,
+      "deviceCount": 3
+    },
+    {
+      "id": "4_light_max",
+      "group": 4,
+      "name": "light_max",
+      "frequency": "1.7/hour",
+      "dataCount": 1262,
+      "deviceCount": 3
+    },
+    {
+      "id": "4_light_min",
+      "group": 4,
+      "name": "light_min",
+      "frequency": "1.7/hour",
+      "dataCount": 1262,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_sensor_49_hourly",
+      "group": 3,
+      "name": "sensor_49_hourly",
+      "frequency": "3.99/hour",
+      "dataCount": 2972,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_49_monthly",
+      "group": 3,
+      "name": "sensor_49_monthly",
+      "frequency": "0.13/day",
+      "dataCount": 4,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_92_daily",
+      "group": 3,
+      "name": "sensor_92_daily",
+      "frequency": "2.58/day",
+      "dataCount": 80,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_sound_level_count",
+      "group": 4,
+      "name": "sound_level_count",
+      "frequency": "19.03/day",
+      "dataCount": 590,
+      "deviceCount": 3
+    },
+    {
+      "id": "4_sound_level_max",
+      "group": 4,
+      "name": "sound_level_max",
+      "frequency": "19.03/day",
+      "dataCount": 590,
+      "deviceCount": 3
+    },
+    {
+      "id": "4_sound_level_min",
+      "group": 4,
+      "name": "sound_level_min",
+      "frequency": "19.03/day",
+      "dataCount": 590,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_sensor_92_hourly",
+      "group": 3,
+      "name": "sensor_92_hourly",
+      "frequency": "1/hour",
+      "dataCount": 744,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_91_daily",
+      "group": 3,
+      "name": "sensor_91_daily",
+      "frequency": "4/day",
+      "dataCount": 124,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_91_hourly",
+      "group": 3,
+      "name": "sensor_91_hourly",
+      "frequency": "1.04/hour",
+      "dataCount": 772,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_91_monthly",
+      "group": 3,
+      "name": "sensor_91_monthly",
+      "frequency": "0.13/day",
+      "dataCount": 4,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_88_daily",
+      "group": 3,
+      "name": "sensor_88_daily",
+      "frequency": "2.32/day",
+      "dataCount": 72,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_88_hourly",
+      "group": 3,
+      "name": "sensor_88_hourly",
+      "frequency": "22.32/day",
+      "dataCount": 692,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_87_daily",
+      "group": 3,
+      "name": "sensor_87_daily",
+      "frequency": "3.48/day",
+      "dataCount": 108,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_87_hourly",
+      "group": 3,
+      "name": "sensor_87_hourly",
+      "frequency": "1.26/hour",
+      "dataCount": 940,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_90_daily",
+      "group": 3,
+      "name": "sensor_90_daily",
+      "frequency": "2.71/day",
+      "dataCount": 84,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_sensor_90_hourly",
+      "group": 3,
+      "name": "sensor_90_hourly",
+      "frequency": "22.19/day",
+      "dataCount": 688,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_VehiclesPerMinute_daily",
+      "group": 3,
+      "name": "VehiclesPerMinute_daily",
+      "frequency": "6.4/hour",
+      "dataCount": 4764,
+      "deviceCount": 39
+    },
+    {
+      "id": "4_throughput_count",
+      "group": 4,
+      "name": "throughput_count",
+      "frequency": "39.79/hour",
+      "dataCount": 29606,
+      "deviceCount": 39
+    },
+    {
+      "id": "4_throughput_max",
+      "group": 4,
+      "name": "throughput_max",
+      "frequency": "39.79/hour",
+      "dataCount": 29606,
+      "deviceCount": 39
+    },
+    {
+      "id": "4_throughput_min",
+      "group": 4,
+      "name": "throughput_min",
+      "frequency": "39.79/hour",
+      "dataCount": 29606,
+      "deviceCount": 39
+    },
+    {
+      "id": "3_VehiclesPerMinute_hourly",
+      "group": 3,
+      "name": "VehiclesPerMinute_hourly",
+      "frequency": "2.55/minute",
+      "dataCount": 113660,
+      "deviceCount": 39
+    },
+    {
+      "id": "3_vehiclesPer15Min_daily",
+      "group": 3,
+      "name": "vehiclesPer15Min_daily",
+      "frequency": "3.62/hour",
+      "dataCount": 2692,
+      "deviceCount": 32
+    },
+    {
+      "id": "4_lane1_count",
+      "group": 4,
+      "name": "lane1_count",
+      "frequency": "9.89/hour",
+      "dataCount": 7360,
+      "deviceCount": 16
+    },
+    {
+      "id": "4_lane1_max",
+      "group": 4,
+      "name": "lane1_max",
+      "frequency": "9.89/hour",
+      "dataCount": 7360,
+      "deviceCount": 16
+    },
+    {
+      "id": "4_lane1_min",
+      "group": 4,
+      "name": "lane1_min",
+      "frequency": "9.89/hour",
+      "dataCount": 7360,
+      "deviceCount": 16
+    },
+    {
+      "id": "3_vehiclesPer15Min_hourly",
+      "group": 3,
+      "name": "vehiclesPer15Min_hourly",
+      "frequency": "1.26/minute",
+      "dataCount": 56224,
+      "deviceCount": 32
+    },
+    {
+      "id": "4_lane2_count",
+      "group": 4,
+      "name": "lane2_count",
+      "frequency": "9.9/hour",
+      "dataCount": 7369,
+      "deviceCount": 16
+    },
+    {
+      "id": "4_lane2_max",
+      "group": 4,
+      "name": "lane2_max",
+      "frequency": "9.9/hour",
+      "dataCount": 7369,
+      "deviceCount": 16
+    },
+    {
+      "id": "4_lane2_min",
+      "group": 4,
+      "name": "lane2_min",
+      "frequency": "9.9/hour",
+      "dataCount": 7369,
+      "deviceCount": 16
+    },
+    {
+      "id": "3_Dal_daily",
+      "group": 3,
+      "name": "Dal_daily",
+      "frequency": "1.5/hour",
+      "dataCount": 1116,
+      "deviceCount": 9
+    },
+    {
+      "id": "4_value_count",
+      "group": 4,
+      "name": "value_count",
+      "frequency": "8.18/hour",
+      "dataCount": 6084,
+      "deviceCount": 34
+    },
+    {
+      "id": "4_value_max",
+      "group": 4,
+      "name": "value_max",
+      "frequency": "8.18/hour",
+      "dataCount": 6084,
+      "deviceCount": 34
+    },
+    {
+      "id": "4_value_min",
+      "group": 4,
+      "name": "value_min",
+      "frequency": "8.18/hour",
+      "dataCount": 6084,
+      "deviceCount": 34
+    },
+    {
+      "id": "3_Dal_hourly",
+      "group": 3,
+      "name": "Dal_hourly",
+      "frequency": "8.85/hour",
+      "dataCount": 6588,
+      "deviceCount": 9
+    },
+    {
+      "id": "3_dal_daily",
+      "group": 3,
+      "name": "dal_daily",
+      "frequency": "2.46/minute",
+      "dataCount": 109760,
+      "deviceCount": 907
+    },
+    {
+      "id": "4_series_count",
+      "group": 4,
+      "name": "series_count",
+      "frequency": "13.57/minute",
+      "dataCount": 605682,
+      "deviceCount": 913
+    },
+    {
+      "id": "4_series_max",
+      "group": 4,
+      "name": "series_max",
+      "frequency": "13.57/minute",
+      "dataCount": 605682,
+      "deviceCount": 913
+    },
+    {
+      "id": "4_series_min",
+      "group": 4,
+      "name": "series_min",
+      "frequency": "13.57/minute",
+      "dataCount": 605682,
+      "deviceCount": 913
+    },
+    {
+      "id": "3_dal_hourly",
+      "group": 3,
+      "name": "dal_hourly",
+      "frequency": "51.77/minute",
+      "dataCount": 2311188,
+      "deviceCount": 906
+    },
+    {
+      "id": "T_Urban Bicycle Traffic Monitoring",
+      "group": 6,
+      "name": "Urban Bicycle Traffic Monitoring",
+      "frequency": "36.02/hour",
+      "dataCount": 26796,
+      "deviceCount": 11
+    },
+    {
+      "id": "3_group_daily",
+      "group": 3,
+      "name": "group_daily",
+      "frequency": "1.56/hour",
+      "dataCount": 1160,
+      "deviceCount": 23
+    },
+    {
+      "id": "3_group_hourly",
+      "group": 3,
+      "name": "group_hourly",
+      "frequency": "20.32/hour",
+      "dataCount": 15116,
+      "deviceCount": 23
+    },
+    {
+      "id": "3_formula_daily",
+      "group": 3,
+      "name": "formula_daily",
+      "frequency": "5.68/day",
+      "dataCount": 176,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_formula_hourly",
+      "group": 3,
+      "name": "formula_hourly",
+      "frequency": "5.68/day",
+      "dataCount": 176,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_Bicycle_daily",
+      "group": 3,
+      "name": "Bicycle_daily",
+      "frequency": "22.19/day",
+      "dataCount": 688,
+      "deviceCount": 6
+    },
+    {
+      "id": "4_counter_count",
+      "group": 4,
+      "name": "counter_count",
+      "frequency": "44.03/hour",
+      "dataCount": 32755,
+      "deviceCount": 46
+    },
+    {
+      "id": "4_counter_max",
+      "group": 4,
+      "name": "counter_max",
+      "frequency": "44.03/hour",
+      "dataCount": 32755,
+      "deviceCount": 46
+    },
+    {
+      "id": "4_counter_min",
+      "group": 4,
+      "name": "counter_min",
+      "frequency": "44.03/hour",
+      "dataCount": 32755,
+      "deviceCount": 46
+    },
+    {
+      "id": "3_Bicycle_hourly",
+      "group": 3,
+      "name": "Bicycle_hourly",
+      "frequency": "22.04/hour",
+      "dataCount": 16396,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_Total_daily",
+      "group": 3,
+      "name": "Total_daily",
+      "frequency": "1.7/hour",
+      "dataCount": 1268,
+      "deviceCount": 11
+    },
+    {
+      "id": "3_Total_hourly",
+      "group": 3,
+      "name": "Total_hourly",
+      "frequency": "40.28/hour",
+      "dataCount": 29972,
+      "deviceCount": 11
+    },
+    {
+      "id": "3_Pedestrian_daily",
+      "group": 3,
+      "name": "Pedestrian_daily",
+      "frequency": "18.32/day",
+      "dataCount": 568,
+      "deviceCount": 5
+    },
+    {
+      "id": "3_Pedestrian_hourly",
+      "group": 3,
+      "name": "Pedestrian_hourly",
+      "frequency": "18.17/hour",
+      "dataCount": 13520,
+      "deviceCount": 5
+    },
+    {
+      "id": "3_BicycleOut_daily",
+      "group": 3,
+      "name": "BicycleOut_daily",
+      "frequency": "22.58/day",
+      "dataCount": 700,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_BicycleOut_hourly",
+      "group": 3,
+      "name": "BicycleOut_hourly",
+      "frequency": "22.11/hour",
+      "dataCount": 16452,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_PedestrianOut_daily",
+      "group": 3,
+      "name": "PedestrianOut_daily",
+      "frequency": "22.58/day",
+      "dataCount": 700,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_PedestrianOut_hourly",
+      "group": 3,
+      "name": "PedestrianOut_hourly",
+      "frequency": "22.11/hour",
+      "dataCount": 16452,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_PedestrianIn_daily",
+      "group": 3,
+      "name": "PedestrianIn_daily",
+      "frequency": "22.58/day",
+      "dataCount": 700,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_PedestrianIn_hourly",
+      "group": 3,
+      "name": "PedestrianIn_hourly",
+      "frequency": "22.11/hour",
+      "dataCount": 16452,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_BicycleIn_daily",
+      "group": 3,
+      "name": "BicycleIn_daily",
+      "frequency": "22.58/day",
+      "dataCount": 700,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_BicycleIn_hourly",
+      "group": 3,
+      "name": "BicycleIn_hourly",
+      "frequency": "22.11/hour",
+      "dataCount": 16452,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_measure_daily",
+      "group": 3,
+      "name": "measure_daily",
+      "frequency": "0.13/day",
+      "dataCount": 4,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_item_count",
+      "group": 4,
+      "name": "item_count",
+      "frequency": "0.06/day",
+      "dataCount": 2,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_item_max",
+      "group": 4,
+      "name": "item_max",
+      "frequency": "0.06/day",
+      "dataCount": 2,
+      "deviceCount": 1
+    },
+    {
+      "id": "4_item_min",
+      "group": 4,
+      "name": "item_min",
+      "frequency": "0.06/day",
+      "dataCount": 2,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_measure_hourly",
+      "group": 3,
+      "name": "measure_hourly",
+      "frequency": "0.13/day",
+      "dataCount": 4,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_gmaps_DirectionsAPI",
+      "group": 2,
+      "name": "gmaps_DirectionsAPI",
+      "frequency": "2.16/minute",
+      "dataCount": 96432,
+      "deviceCount": 20
+    },
+    {
+      "id": "3_gmaps_DistanceMeasurement",
+      "group": 3,
+      "name": "gmaps_DistanceMeasurement",
+      "frequency": "43.2/hour",
+      "dataCount": 32144,
+      "deviceCount": 20
+    },
+    {
+      "id": "4_distance",
+      "group": 4,
+      "name": "distance",
+      "frequency": "43.2/hour",
+      "dataCount": 32144,
+      "deviceCount": 20
+    },
+    {
+      "id": "3_gmaps_DurationMeasurement",
+      "group": 3,
+      "name": "gmaps_DurationMeasurement",
+      "frequency": "43.2/hour",
+      "dataCount": 32144,
+      "deviceCount": 20
+    },
+    {
+      "id": "4_duration",
+      "group": 4,
+      "name": "duration",
+      "frequency": "43.2/hour",
+      "dataCount": 32144,
+      "deviceCount": 20
+    },
+    {
+      "id": "3_gmaps_SpeedMeasurement",
+      "group": 3,
+      "name": "gmaps_SpeedMeasurement",
+      "frequency": "43.2/hour",
+      "dataCount": 32144,
+      "deviceCount": 20
+    },
+    {
+      "id": "4_speed",
+      "group": 4,
+      "name": "speed",
+      "frequency": "43.2/hour",
+      "dataCount": 32144,
+      "deviceCount": 20
+    },
+    {
+      "id": "1_RidangoValidationsDevice",
+      "group": 1,
+      "name": "RidangoValidationsDevice",
+      "frequency": "14.08/hour",
+      "dataCount": 10475,
+      "deviceCount": 17
+    },
+    {
+      "id": "2_RidangoLines",
+      "group": 2,
+      "name": "RidangoLines",
+      "frequency": "13.87/hour",
+      "dataCount": 10320,
+      "deviceCount": 17
+    },
+    {
+      "id": "3_RidangoValidations",
+      "group": 3,
+      "name": "RidangoValidations",
+      "frequency": "13.87/hour",
+      "dataCount": 10320,
+      "deviceCount": 17
+    },
+    {
+      "id": "5_noOfPassengers",
+      "group": 5,
+      "name": "noOfPassengers",
+      "frequency": "15.84/hour",
+      "dataCount": 11783,
+      "deviceCount": 23
+    },
+    {
+      "id": "2_RidangoAgentAggregation",
+      "group": 2,
+      "name": "RidangoAgentAggregation",
+      "frequency": "5/day",
+      "dataCount": 155,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLast4WeekWeekends",
+      "group": 3,
+      "name": "ValidationsLast4WeekWeekends",
+      "frequency": "0.32/day",
+      "dataCount": 10,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLast4WeekWorkDays",
+      "group": 3,
+      "name": "ValidationsLast4WeekWorkDays",
+      "frequency": "0.68/day",
+      "dataCount": 21,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLast4Weeks",
+      "group": 3,
+      "name": "ValidationsLast4Weeks",
+      "frequency": "1/day",
+      "dataCount": 31,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastDay",
+      "group": 3,
+      "name": "ValidationsLastDay",
+      "frequency": "1/day",
+      "dataCount": 31,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastWeek",
+      "group": 3,
+      "name": "ValidationsLastWeek",
+      "frequency": "1/day",
+      "dataCount": 31,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastWeekWeekends",
+      "group": 3,
+      "name": "ValidationsLastWeekWeekends",
+      "frequency": "0.32/day",
+      "dataCount": 10,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastWeekWorkDays",
+      "group": 3,
+      "name": "ValidationsLastWeekWorkDays",
+      "frequency": "0.68/day",
+      "dataCount": 21,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_dal_monthly",
+      "group": 3,
+      "name": "dal_monthly",
+      "frequency": "1.16/day",
+      "dataCount": 36,
+      "deviceCount": 9
+    },
+    {
+      "id": "3_group_monthly",
+      "group": 3,
+      "name": "group_monthly",
+      "frequency": "0.13/day",
+      "dataCount": 4,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RidangoValidations_daily",
+      "group": 3,
+      "name": "RidangoValidations_daily",
+      "frequency": "2.06/day",
+      "dataCount": 64,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RidangoValidations_hourly",
+      "group": 3,
+      "name": "RidangoValidations_hourly",
+      "frequency": "1.61/hour",
+      "dataCount": 1200,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastWeek_daily",
+      "group": 3,
+      "name": "ValidationsLastWeek_daily",
+      "frequency": "1.94/day",
+      "dataCount": 60,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastWeek_hourly",
+      "group": 3,
+      "name": "ValidationsLastWeek_hourly",
+      "frequency": "1.94/day",
+      "dataCount": 60,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastWeekWorkDays_daily",
+      "group": 3,
+      "name": "ValidationsLastWeekWorkDays_daily",
+      "frequency": "1.16/day",
+      "dataCount": 36,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastWeekWorkDays_hourly",
+      "group": 3,
+      "name": "ValidationsLastWeekWorkDays_hourly",
+      "frequency": "1.16/day",
+      "dataCount": 36,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastWeekWeekends_daily",
+      "group": 3,
+      "name": "ValidationsLastWeekWeekends_daily",
+      "frequency": "0.77/day",
+      "dataCount": 24,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastWeekWeekends_hourly",
+      "group": 3,
+      "name": "ValidationsLastWeekWeekends_hourly",
+      "frequency": "0.77/day",
+      "dataCount": 24,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastDay_daily",
+      "group": 3,
+      "name": "ValidationsLastDay_daily",
+      "frequency": "1.94/day",
+      "dataCount": 60,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLastDay_hourly",
+      "group": 3,
+      "name": "ValidationsLastDay_hourly",
+      "frequency": "1.94/day",
+      "dataCount": 60,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLast4Weeks_daily",
+      "group": 3,
+      "name": "ValidationsLast4Weeks_daily",
+      "frequency": "1.94/day",
+      "dataCount": 60,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ValidationsLast4Weeks_hourly",
+      "group": 3,
+      "name": "ValidationsLast4Weeks_hourly",
+      "frequency": "1.94/day",
+      "dataCount": 60,
+      "deviceCount": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "5_kWh",
+      "target": "T_Renewable Energy Production Measurement"
+    },
+    {
+      "source": "3_sensor_1498_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_formula_hourly",
+      "target": "4_value"
+    },
+    {
+      "source": "3_PedestrianIn_hourly",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "4_series",
+      "target": "5_bicycle"
+    },
+    {
+      "source": "5_users/h",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "5_pc",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_ValidationsLastDay_hourly",
+      "target": "4_series_count"
+    },
+    {
+      "source": "4_value",
+      "target": "5_degrees"
+    },
+    {
+      "source": "3_sensor_1522_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_sensor_1527_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_km/h"
+    },
+    {
+      "source": "3_sensor_1522_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_dal_monthly",
+      "target": "4_series_min"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLastWeekWorkDays_daily"
+    },
+    {
+      "source": "3_ValidationsLastDay",
+      "target": "4_series"
+    },
+    {
+      "source": "4_value",
+      "target": "5_kg/tunnis"
+    },
+    {
+      "source": "3_sensor_1492_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1527_daily"
+    },
+    {
+      "source": "3_sensor_1492_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_sensor_1491_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_all",
+      "target": "5_Hz"
+    },
+    {
+      "source": "3_sensor_1491_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_sensor_1496_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_formula_daily",
+      "target": "4_value_count"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_%"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Environmental Temperature Monitoring"
+    },
+    {
+      "source": "5_bicycle",
+      "target": "T_Bicycle Sharing Dock Statistics"
+    },
+    {
+      "source": "4_particles_pm2_5_ug_count",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "4_series",
+      "target": "5_percent"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_87_hourly"
+    },
+    {
+      "source": "4_no2_min",
+      "target": "5_ppm"
+    },
+    {
+      "source": "3_BicycleOut_hourly",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "4_particles_pm2_5_ug_max",
+      "target": "5_m"
+    },
+    {
+      "source": "3_vehiclesPer15Min_hourly",
+      "target": "4_lane1_max"
+    },
+    {
+      "source": "4_value",
+      "target": "5_sõitu/päevas"
+    },
+    {
+      "source": "5_s",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "4_movement_max",
+      "target": "5_count"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_106"
+    },
+    {
+      "source": "3_Dal_daily",
+      "target": "4_value_count"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLastDay_daily"
+    },
+    {
+      "source": "3_sensor_1495_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "5_kW",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "4_lane4",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "4_value",
+      "target": "5_sõidukit/tunnis"
+    },
+    {
+      "source": "3_ValidationsLastDay_hourly",
+      "target": "4_series"
+    },
+    {
+      "source": "3_sensor_125",
+      "target": "4_particles_pm2_5_ug"
+    },
+    {
+      "source": "4_series",
+      "target": "5_membership"
+    },
+    {
+      "source": "3_sensor_1526_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_ValidationsLastWeekWeekends",
+      "target": "4_series"
+    },
+    {
+      "source": "3_LateDeparturesPercentage",
+      "target": "4_series"
+    },
+    {
+      "source": "3_Pedestrian_daily",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "3_sensor_1526_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "2_gmaps_DirectionsAPI",
+      "target": "3_gmaps_DurationMeasurement"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_members/h"
+    },
+    {
+      "source": "3_sensor_1522_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_sensor_107_hourly",
+      "target": "4_particles_pm2_5_ug_count"
+    },
+    {
+      "source": "1_DAL_series_aggregation",
+      "target": "2_dal_series_target_agg"
+    },
+    {
+      "source": "3_RidangoValidations_hourly",
+      "target": "4_series_min"
+    },
+    {
+      "source": "5_%",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_km/h"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_formula_daily"
+    },
+    {
+      "source": "3_LateDepartures",
+      "target": "4_series"
+    },
+    {
+      "source": "3_ValidationsLastWeek_hourly",
+      "target": "4_series_max"
+    },
+    {
+      "source": "3_sensor_1521_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_sensor_1495_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_ValidationsLastWeekWorkDays_hourly",
+      "target": "4_series_max"
+    },
+    {
+      "source": "4_duration",
+      "target": "5_s"
+    },
+    {
+      "source": "3_sensor_1521_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "4_item_min",
+      "target": "5_kWh"
+    },
+    {
+      "source": "3_ValidationsLastDay_daily",
+      "target": "4_series_min"
+    },
+    {
+      "source": "5_van",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_truck"
+    },
+    {
+      "source": "4_value",
+      "target": "5_mm"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_VehiclesPerMinute_daily"
+    },
+    {
+      "source": "3_sensor_1498_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_dal_hourly",
+      "target": "4_series_count"
+    },
+    {
+      "source": "3_sensor_147",
+      "target": "4_light"
+    },
+    {
+      "source": "3_vehiclesPer15Min",
+      "target": "4_laneout"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1494_daily"
+    },
+    {
+      "source": "3_sensor_108_daily",
+      "target": "4_no2_count"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLastDay_hourly"
+    },
+    {
+      "source": "3_sensor_1522_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_dal_daily",
+      "target": "4_series_count"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_105"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Urban Spatial Planning Analysis"
+    },
+    {
+      "source": "3_Light",
+      "target": "4_output"
+    },
+    {
+      "source": "3_sensor_1492_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLast4Weeks_daily"
+    },
+    {
+      "source": "3_sensor_1491_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_BicycleIn_hourly",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_dal"
+    },
+    {
+      "source": "5_%",
+      "target": "T_Water Volume Management Metrics"
+    },
+    {
+      "source": "3_sensor_87_daily",
+      "target": "4_light_max"
+    },
+    {
+      "source": "3_sensor_126",
+      "target": "4_no2"
+    },
+    {
+      "source": "3_sensor_87_daily",
+      "target": "4_light_count"
+    },
+    {
+      "source": "4_lane1_min",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_group_monthly"
+    },
+    {
+      "source": "4_series",
+      "target": "5_microgram per cubic metre"
+    },
+    {
+      "source": "5_person",
+      "target": "T_Urban Pedestrian Traffic Monitoring"
+    },
+    {
+      "source": "4_series",
+      "target": "5_users/h"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_motorbike"
+    },
+    {
+      "source": "4_series",
+      "target": "5_kW"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Total_daily"
+    },
+    {
+      "source": "4_particles_pm2_5_ug_min",
+      "target": "5_m"
+    },
+    {
+      "source": "4_series",
+      "target": "5_s"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1498_hourly"
+    },
+    {
+      "source": "4_series",
+      "target": "5_members/h"
+    },
+    {
+      "source": "1_com_cityntel_sensor",
+      "target": "2_c4t_metric"
+    },
+    {
+      "source": "4_surface_temperature",
+      "target": "5_C"
+    },
+    {
+      "source": "3_formula_daily",
+      "target": "4_value"
+    },
+    {
+      "source": "2_RidangoAgentAggregation",
+      "target": "3_ValidationsLastWeekWeekends"
+    },
+    {
+      "source": "3_sensor_1526_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_sensor_1492_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "5_sõidukit/päevas",
+      "target": "T_Vehicle Traffic Monitoring Counts"
+    },
+    {
+      "source": "3_vehiclesPer15Min_hourly",
+      "target": "4_lane1"
+    },
+    {
+      "source": "3_sensor_1521_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_sensor_1492_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_kWh"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_49_monthly"
+    },
+    {
+      "source": "5_member",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "5_C",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Bicycle Sharing Dock Statistics"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_measure_daily"
+    },
+    {
+      "source": "3_group_hourly",
+      "target": "4_value_max"
+    },
+    {
+      "source": "3_BicycleOut_hourly",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "4_value_count",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_70"
+    },
+    {
+      "source": "4_value",
+      "target": "5_degree"
+    },
+    {
+      "source": "3_Light_daily",
+      "target": "4_output_max"
+    },
+    {
+      "source": "3_Dal_daily",
+      "target": "4_value"
+    },
+    {
+      "source": "4_series",
+      "target": "5_memberships/h"
+    },
+    {
+      "source": "3_Total_daily",
+      "target": "4_counter"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_tractor"
+    },
+    {
+      "source": "4_L3",
+      "target": "5_V"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_EcoCounterData"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_degrees"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_com_cityntel_sensor"
+    },
+    {
+      "source": "3_vehiclesPer15Min_daily",
+      "target": "4_lane1_max"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_person"
+    },
+    {
+      "source": "3_group_monthly",
+      "target": "4_value_count"
+    },
+    {
+      "source": "3_Pedestrian_daily",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "4_no2_count",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_sõidukit/päevas"
+    },
+    {
+      "source": "4_sound_level_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "4_series",
+      "target": "5_space"
+    },
+    {
+      "source": "5_kg/tunnis",
+      "target": "T_Bicycle Sharing Dock Statistics"
+    },
+    {
+      "source": "3_sensor_148",
+      "target": "4_ambient_temperature"
+    },
+    {
+      "source": "3_RidangoValidations_daily",
+      "target": "4_series"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_km"
+    },
+    {
+      "source": "3_ValidationsLastWeekWorkDays_hourly",
+      "target": "4_series_min"
+    },
+    {
+      "source": "3_voltage",
+      "target": "4_L1"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1496"
+    },
+    {
+      "source": "3_sensor_126_daily",
+      "target": "4_no2_max"
+    },
+    {
+      "source": "3_VehiclesPerMinute_daily",
+      "target": "4_throughput_count"
+    },
+    {
+      "source": "3_group_daily",
+      "target": "4_value_count"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_m3"
+    },
+    {
+      "source": "5_kwh",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_trips/h"
+    },
+    {
+      "source": "3_sensor_90_hourly",
+      "target": "4_sound_level_count"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_person"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_tractor"
+    },
+    {
+      "source": "3_ValidationsLastWeekWeekends_hourly",
+      "target": "4_series_count"
+    },
+    {
+      "source": "4_series",
+      "target": "5_van"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_123"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_dal_daily"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_BicycleOut"
+    },
+    {
+      "source": "3_BicycleOut_daily",
+      "target": "4_counter"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_kwh"
+    },
+    {
+      "source": "3_ValidationsLastWeek_daily",
+      "target": "4_series_count"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_88"
+    },
+    {
+      "source": "3_sensor_91",
+      "target": "4_light"
+    },
+    {
+      "source": "2_RidangoAgentAggregation",
+      "target": "3_ValidationsLast4WeekWorkDays"
+    },
+    {
+      "source": "3_sensor_49_daily",
+      "target": "4_light_max"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_VehiclesPerMinute"
+    },
+    {
+      "source": "3_sensor_126_hourly",
+      "target": "4_no2_max"
+    },
+    {
+      "source": "4_series",
+      "target": "5_kWh"
+    },
+    {
+      "source": "3_sensor_49_daily",
+      "target": "4_light_count"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_dock"
+    },
+    {
+      "source": "3_sensor_127_daily",
+      "target": "4_co2_count"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_Pa"
+    },
+    {
+      "source": "5_noOfPassengers",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "4_laneout",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "4_movement_count",
+      "target": "T_Urban Pedestrian Traffic Monitoring"
+    },
+    {
+      "source": "4_value",
+      "target": "5_%"
+    },
+    {
+      "source": "3_sensor_1523",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "5_Departures",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "4_no2",
+      "target": "5_ppm"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1498"
+    },
+    {
+      "source": "4_value",
+      "target": "5_mb"
+    },
+    {
+      "source": "4_counter",
+      "target": "5_pc"
+    },
+    {
+      "source": "5_degree",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "3_sensor_92_hourly",
+      "target": "4_sound_level_count"
+    },
+    {
+      "source": "5_bicycle",
+      "target": "T_Urban Bicycle Traffic Monitoring"
+    },
+    {
+      "source": "3_current",
+      "target": "4_L1"
+    },
+    {
+      "source": "4_series",
+      "target": "5_degrees"
+    },
+    {
+      "source": "5_membership",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_group_daily"
+    },
+    {
+      "source": "5_motorbike",
+      "target": "T_Urban Bicycle Traffic Monitoring"
+    },
+    {
+      "source": "3_RidangoValidations_hourly",
+      "target": "4_series"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1522"
+    },
+    {
+      "source": "3_sensor_90_daily",
+      "target": "4_sound_level_count"
+    },
+    {
+      "source": "3_Light_hourly",
+      "target": "4_output_count"
+    },
+    {
+      "source": "4_lane1_max",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "5_C",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "3_sensor_91_monthly",
+      "target": "4_light"
+    },
+    {
+      "source": "3_group_daily",
+      "target": "4_value_max"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1524"
+    },
+    {
+      "source": "2_group",
+      "target": "3_group"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_user"
+    },
+    {
+      "source": "3_BicycleOut_hourly",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "5_kg/tunnis",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "4_series",
+      "target": "5_ppm"
+    },
+    {
+      "source": "3_sensor_108",
+      "target": "4_no2"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1527"
+    },
+    {
+      "source": "4_value",
+      "target": "5_km/h"
+    },
+    {
+      "source": "3_vehiclesPer15Min_hourly",
+      "target": "4_lane1_count"
+    },
+    {
+      "source": "3_sensor_1523_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_counter_count",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "4_series",
+      "target": "5_MWh"
+    },
+    {
+      "source": "3_sensor_1499_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_PedestrianOut_daily",
+      "target": "4_counter"
+    },
+    {
+      "source": "4_series",
+      "target": "5_trip"
+    },
+    {
+      "source": "3_sensor_1499_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_group_monthly",
+      "target": "4_value"
+    },
+    {
+      "source": "3_sensor_1500_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1491"
+    },
+    {
+      "source": "3_sensor_87_daily",
+      "target": "4_light_min"
+    },
+    {
+      "source": "3_ValidationsLast4Weeks",
+      "target": "4_series"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_PedestrianIn"
+    },
+    {
+      "source": "3_sensor_1499_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_ValidationsLastWeekWeekends_daily",
+      "target": "4_series_count"
+    },
+    {
+      "source": "4_series",
+      "target": "5_ug/m3"
+    },
+    {
+      "source": "5_kW",
+      "target": "T_Thermal Energy Measurement in Kilowatts"
+    },
+    {
+      "source": "3_sensor_1499_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1523_daily"
+    },
+    {
+      "source": "3_ValidationsLastWeekWorkDays_daily",
+      "target": "4_series_max"
+    },
+    {
+      "source": "5_percent",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "4_item",
+      "target": "5_kWh"
+    },
+    {
+      "source": "4_lane1",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "5_member",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "4_co2_max",
+      "target": "5_ppm"
+    },
+    {
+      "source": "4_throughput_count",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_92_daily"
+    },
+    {
+      "source": "3_measure_hourly",
+      "target": "4_item"
+    },
+    {
+      "source": "3_ValidationsLast4Weeks_hourly",
+      "target": "4_series_min"
+    },
+    {
+      "source": "3_sensor_91_monthly",
+      "target": "4_light_max"
+    },
+    {
+      "source": "3_sensor_124",
+      "target": "4_particles_pm10_ug"
+    },
+    {
+      "source": "3_sensor_91_monthly",
+      "target": "4_light_count"
+    },
+    {
+      "source": "3_BicycleOut_daily",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "4_series",
+      "target": "5_mm"
+    },
+    {
+      "source": "4_sound_level",
+      "target": "5_dB"
+    },
+    {
+      "source": "5_%",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_noOfPassengers"
+    },
+    {
+      "source": "3_sensor_127_hourly",
+      "target": "4_co2"
+    },
+    {
+      "source": "3_PedestrianIn_daily",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_124"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_group"
+    },
+    {
+      "source": "5_mb",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_dal_series_target_measurement"
+    },
+    {
+      "source": "5_tractor",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "3_PedestrianIn_daily",
+      "target": "4_counter"
+    },
+    {
+      "source": "4_value",
+      "target": "5_km/päevas"
+    },
+    {
+      "source": "5_car",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1526_hourly"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "5_member",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "5_pc",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_dal_hourly",
+      "target": "4_series_max"
+    },
+    {
+      "source": "5_lx",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "3_sensor_1521_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_RidangoAgentAggregation",
+      "target": "3_ValidationsLastDay"
+    },
+    {
+      "source": "4_lqi",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_sensor_88_daily",
+      "target": "4_sound_level_min"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_VehiclesPerMinute"
+    },
+    {
+      "source": "3_dal_daily",
+      "target": "4_series_max"
+    },
+    {
+      "source": "3_sensor_1500",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1522_daily"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Urban Bicycle Traffic Monitoring"
+    },
+    {
+      "source": "3_sensor_1499_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1524_daily"
+    },
+    {
+      "source": "3_sensor_127_hourly",
+      "target": "4_co2_count"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_126_daily"
+    },
+    {
+      "source": "4_light_count",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "3_Dal_hourly",
+      "target": "4_value_count"
+    },
+    {
+      "source": "5_kWh",
+      "target": "T_Water Consumption Management"
+    },
+    {
+      "source": "3_sensor_1498",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_power_factor",
+      "target": "4_L3"
+    },
+    {
+      "source": "4_value",
+      "target": "5_sõidukit/päevas"
+    },
+    {
+      "source": "3_sensor_1499_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_gmaps_DurationMeasurement",
+      "target": "4_duration"
+    },
+    {
+      "source": "5_m3",
+      "target": "T_Hot Water Consumption Measurement"
+    },
+    {
+      "source": "4_counter_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_VehiclesPerMinute_hourly",
+      "target": "4_throughput_count"
+    },
+    {
+      "source": "3_ValidationsLastWeek_hourly",
+      "target": "4_series"
+    },
+    {
+      "source": "4_counter_count",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_sensor_92_daily",
+      "target": "4_sound_level_min"
+    },
+    {
+      "source": "4_series",
+      "target": "5_degree"
+    },
+    {
+      "source": "3_sensor_1496_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_Light_hourly",
+      "target": "4_output_min"
+    },
+    {
+      "source": "3_sensor_49_daily",
+      "target": "4_light_min"
+    },
+    {
+      "source": "3_ValidationsLastWeekWorkDays_hourly",
+      "target": "4_series"
+    },
+    {
+      "source": "4_value_count",
+      "target": "T_Water Volume Management Metrics"
+    },
+    {
+      "source": "3_sensor_1498_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_output_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "4_relative_humidity",
+      "target": "5_pct"
+    },
+    {
+      "source": "3_sensor_1498_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_Total_hourly",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "3_sensor_92",
+      "target": "4_sound_level"
+    },
+    {
+      "source": "3_sensor_1496_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_vehiclesPer15Min_daily",
+      "target": "4_lane1_count"
+    },
+    {
+      "source": "3_sensor_1495_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_throughput_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_sensor_1495_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_ValidationsLastWeekWorkDays_daily",
+      "target": "4_series_min"
+    },
+    {
+      "source": "1_RidangoPunctualityDevice",
+      "target": "2_RidangoPunctuality"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_vehiclesPer15Min_daily"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_Dal"
+    },
+    {
+      "source": "4_L2",
+      "target": "5_W"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_current"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_RidangoPunctualityDevice"
+    },
+    {
+      "source": "3_sensor_108_hourly",
+      "target": "4_no2"
+    },
+    {
+      "source": "3_BicycleOut_daily",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_89"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1523_hourly"
+    },
+    {
+      "source": "3_measure_daily",
+      "target": "4_item"
+    },
+    {
+      "source": "3_sensor_1495_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_series",
+      "target": "5_car"
+    },
+    {
+      "source": "3_sensor_1495_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_escooter"
+    },
+    {
+      "source": "3_sensor_1521",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_PedestrianIn_daily",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "3_sensor_1491_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_VehiclesPerMinute_daily",
+      "target": "4_throughput"
+    },
+    {
+      "source": "3_sensor_1527_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_value_count",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "2_RidangoPunctuality",
+      "target": "3_LateDeparturesPercentage"
+    },
+    {
+      "source": "5_dBm",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_Total"
+    },
+    {
+      "source": "3_sensor_1491_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_sensor_108_daily",
+      "target": "4_no2_max"
+    },
+    {
+      "source": "3_ValidationsLast4Weeks_daily",
+      "target": "4_series_count"
+    },
+    {
+      "source": "3_sensor_107_hourly",
+      "target": "4_particles_pm2_5_ug"
+    },
+    {
+      "source": "3_sensor_88_hourly",
+      "target": "4_sound_level_count"
+    },
+    {
+      "source": "1_RidangoValidationsDevice",
+      "target": "2_RidangoLines"
+    },
+    {
+      "source": "4_light_max",
+      "target": "5_lx"
+    },
+    {
+      "source": "2_formula",
+      "target": "3_formula"
+    },
+    {
+      "source": "3_sensor_127",
+      "target": "4_co2"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1495"
+    },
+    {
+      "source": "3_sensor_1496_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_series",
+      "target": "5_C"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_percent"
+    },
+    {
+      "source": "4_series",
+      "target": "5_%"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1521_daily"
+    },
+    {
+      "source": "5_kW",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "4_series",
+      "target": "5_member"
+    },
+    {
+      "source": "4_L2",
+      "target": "5_Wh"
+    },
+    {
+      "source": "3_sensor_108_hourly",
+      "target": "4_no2_min"
+    },
+    {
+      "source": "4_series",
+      "target": "5_mb"
+    },
+    {
+      "source": "4_distance",
+      "target": "5_m"
+    },
+    {
+      "source": "5_count",
+      "target": "T_Urban Pedestrian Traffic Monitoring"
+    },
+    {
+      "source": "4_lane1_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_ValidationsLastWeek_daily",
+      "target": "4_series_max"
+    },
+    {
+      "source": "5_microgram per cubic metre",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "4_value",
+      "target": "5_km"
+    },
+    {
+      "source": "3_formula_hourly",
+      "target": "4_value_max"
+    },
+    {
+      "source": "3_sensor_1498_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_L2",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_Dal_hourly",
+      "target": "4_value"
+    },
+    {
+      "source": "3_sensor_91_monthly",
+      "target": "4_light_min"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Bicycle_hourly"
+    },
+    {
+      "source": "4_L2",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_147"
+    },
+    {
+      "source": "4_sound_level_count",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1523"
+    },
+    {
+      "source": "5_user",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "3_BicycleOut_hourly",
+      "target": "4_counter"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1496_hourly"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_BicycleOut_hourly"
+    },
+    {
+      "source": "5_sõidukit/päevas",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "3_sensor_1499",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_dal",
+      "target": "4_series"
+    },
+    {
+      "source": "2_EcoCounterData",
+      "target": "3_Pedestrian"
+    },
+    {
+      "source": "3_formula_daily",
+      "target": "4_value_min"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_truck"
+    },
+    {
+      "source": "3_Bicycle",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_power_factor",
+      "target": "4_L2"
+    },
+    {
+      "source": "3_Total",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_PedestrianOut_daily",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_percent"
+    },
+    {
+      "source": "4_series",
+      "target": "5_km/h"
+    },
+    {
+      "source": "5_count",
+      "target": "T_Vehicle Traffic Monitoring Counts"
+    },
+    {
+      "source": "4_atmospheric_pressure",
+      "target": "5_Pa"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1"
+    },
+    {
+      "source": "4_value",
+      "target": "5_dock"
+    },
+    {
+      "source": "4_series",
+      "target": "5_count"
+    },
+    {
+      "source": "3_sensor_107_hourly",
+      "target": "4_particles_pm2_5_ug_min"
+    },
+    {
+      "source": "3_sensor_87_daily",
+      "target": "4_light"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_VehiclesPerMinute_hourly"
+    },
+    {
+      "source": "3_Pedestrian_daily",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_sensor_1527_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_sensor_1498_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_sensor_1527_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_measure_daily",
+      "target": "4_item_min"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Dal_daily"
+    },
+    {
+      "source": "3_Dal_daily",
+      "target": "4_value_min"
+    },
+    {
+      "source": "4_counter_min",
+      "target": "5_pc"
+    },
+    {
+      "source": "3_sensor_106",
+      "target": "4_particles_pm10_ug"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_membership"
+    },
+    {
+      "source": "3_sensor_1491_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_sensor_1522_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "5_sõitu/päevas",
+      "target": "T_Bicycle Sharing Dock Statistics"
+    },
+    {
+      "source": "3_Light_daily",
+      "target": "4_output"
+    },
+    {
+      "source": "3_group_hourly",
+      "target": "4_value_count"
+    },
+    {
+      "source": "3_ValidationsLast4Weeks_hourly",
+      "target": "4_series"
+    },
+    {
+      "source": "3_sensor_1492_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_sensor_1491_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_light_min",
+      "target": "5_lx"
+    },
+    {
+      "source": "3_active_power",
+      "target": "4_L3"
+    },
+    {
+      "source": "3_sensor_107_hourly",
+      "target": "4_particles_pm2_5_ug_max"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_motorbike"
+    },
+    {
+      "source": "5_bicycle",
+      "target": "T_Bicycle Management and Count"
+    },
+    {
+      "source": "5_trip",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "4_L1",
+      "target": "5_W"
+    },
+    {
+      "source": "4_L1",
+      "target": "5_V"
+    },
+    {
+      "source": "3_PedestrianIn_daily",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "3_ValidationsLastWeekWeekends_daily",
+      "target": "4_series_max"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_percent"
+    },
+    {
+      "source": "4_movement",
+      "target": "5_count"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLastWeek_hourly"
+    },
+    {
+      "source": "3_sensor_1526_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_PedestrianIn_daily"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_com_cityntel_light"
+    },
+    {
+      "source": "3_voltage",
+      "target": "4_L3"
+    },
+    {
+      "source": "3_sensor_70",
+      "target": "4_light"
+    },
+    {
+      "source": "5_vehicles",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_88_hourly"
+    },
+    {
+      "source": "5_pc",
+      "target": "T_Urban Pedestrian Traffic Monitoring"
+    },
+    {
+      "source": "3_RidangoValidations_daily",
+      "target": "4_series_count"
+    },
+    {
+      "source": "4_value_count",
+      "target": "T_Environmental Temperature Monitoring"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLastWeek_daily"
+    },
+    {
+      "source": "5_km/h",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "3_Mean Departure Deviation",
+      "target": "4_series"
+    },
+    {
+      "source": "3_sensor_1494_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "5_pct",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "3_sensor_1494_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_users/h"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_91_monthly"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Bicycle_daily"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1498_daily"
+    },
+    {
+      "source": "3_sensor_1527_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_kW"
+    },
+    {
+      "source": "5_km",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_bus"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1527_hourly"
+    },
+    {
+      "source": "5_escooter",
+      "target": "T_Urban Pedestrian Traffic Monitoring"
+    },
+    {
+      "source": "3_dal_monthly",
+      "target": "4_series_count"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1526"
+    },
+    {
+      "source": "3_active_power",
+      "target": "4_L1"
+    },
+    {
+      "source": "5_Hz",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "5_Pa",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "3_measure",
+      "target": "4_item"
+    },
+    {
+      "source": "5_truck",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "5_%",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "3_sensor_90_hourly",
+      "target": "4_sound_level_min"
+    },
+    {
+      "source": "2_RidangoPunctuality",
+      "target": "3_Mean Departure Deviation"
+    },
+    {
+      "source": "3_ValidationsLastWeekWorkDays_daily",
+      "target": "4_series"
+    },
+    {
+      "source": "4_L3",
+      "target": "5_W"
+    },
+    {
+      "source": "4_co2_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_sensor_49_daily",
+      "target": "4_light"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_m3"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_91_hourly"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Dal_hourly"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_trips/h"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_Light"
+    },
+    {
+      "source": "5_dB",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_92"
+    },
+    {
+      "source": "3_sensor_127_daily",
+      "target": "4_co2"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_bus"
+    },
+    {
+      "source": "3_current",
+      "target": "4_L3"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_127"
+    },
+    {
+      "source": "4_output_max",
+      "target": "5_percent"
+    },
+    {
+      "source": "3_sensor_88_daily",
+      "target": "4_sound_level"
+    },
+    {
+      "source": "3_VehiclesPerMinute_hourly",
+      "target": "4_throughput"
+    },
+    {
+      "source": "3_sensor_108_hourly",
+      "target": "4_no2_count"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_memberships/h"
+    },
+    {
+      "source": "3_sensor_1492",
+      "target": "4_movement"
+    },
+    {
+      "source": "5_space",
+      "target": "T_Bicycle Docking Station Data"
+    },
+    {
+      "source": "3_ValidationsLastWeek_hourly",
+      "target": "4_series_min"
+    },
+    {
+      "source": "1_<missing deviceType>",
+      "target": "2_gmaps_DirectionsAPI"
+    },
+    {
+      "source": "3_sensor_88_daily",
+      "target": "4_sound_level_max"
+    },
+    {
+      "source": "5_space",
+      "target": "T_Parking Space Availability Management"
+    },
+    {
+      "source": "3_Light_hourly",
+      "target": "4_output"
+    },
+    {
+      "source": "3_group_hourly",
+      "target": "4_value"
+    },
+    {
+      "source": "3_group_monthly",
+      "target": "4_value_min"
+    },
+    {
+      "source": "3_RidangoValidations_hourly",
+      "target": "4_series_count"
+    },
+    {
+      "source": "3_PedestrianOut_hourly",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_vehicle/hour"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1494"
+    },
+    {
+      "source": "3_PedestrianIn",
+      "target": "4_counter"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_148"
+    },
+    {
+      "source": "4_value",
+      "target": "5_kasutajat/päevas"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_kWh"
+    },
+    {
+      "source": "2_RidangoAgentAggregation",
+      "target": "3_ValidationsLastWeek"
+    },
+    {
+      "source": "1_<missing deviceType>",
+      "target": "2_aggregatedMeasurement"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_RidangoValidations_daily"
+    },
+    {
+      "source": "3_sensor_1492_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_ValidationsLastDay_daily",
+      "target": "4_series_count"
+    },
+    {
+      "source": "4_L3",
+      "target": "5_Wh"
+    },
+    {
+      "source": "3_sensor_90",
+      "target": "4_sound_level"
+    },
+    {
+      "source": "3_sensor_92_daily",
+      "target": "4_sound_level"
+    },
+    {
+      "source": "3_dal_hourly",
+      "target": "4_series"
+    },
+    {
+      "source": "3_active_power",
+      "target": "4_L2"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_dal_hourly"
+    },
+    {
+      "source": "3_sensor_90_daily",
+      "target": "4_sound_level_min"
+    },
+    {
+      "source": "3_sensor_92_daily",
+      "target": "4_sound_level_max"
+    },
+    {
+      "source": "3_sensor_1524_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_L3",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_sensor_1494_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_van"
+    },
+    {
+      "source": "3_sensor_1524_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_degrees"
+    },
+    {
+      "source": "3_gmaps_SpeedMeasurement",
+      "target": "4_speed"
+    },
+    {
+      "source": "5_pc",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "5_tractor",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "4_lane2_min",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_kg/tunnis"
+    },
+    {
+      "source": "5_memberships/h",
+      "target": "T_Urban Spatial Planning Analysis"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1499_daily"
+    },
+    {
+      "source": "2_EcoCounterData",
+      "target": "3_PedestrianOut"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_freq"
+    },
+    {
+      "source": "4_series",
+      "target": "5_tractor"
+    },
+    {
+      "source": "5_space",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "4_series",
+      "target": "5_trips/h"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_PedestrianOut"
+    },
+    {
+      "source": "3_sensor_1527",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_L2",
+      "target": "5_A"
+    },
+    {
+      "source": "4_series",
+      "target": "5_person"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_90_hourly"
+    },
+    {
+      "source": "5_van",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_voltage",
+      "target": "4_L2"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_group_hourly"
+    },
+    {
+      "source": "3_sensor_91_hourly",
+      "target": "4_light"
+    },
+    {
+      "source": "5_V",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_sensor_1494_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_sõitu/päevas"
+    },
+    {
+      "source": "3_sensor_107_daily",
+      "target": "4_particles_pm2_5_ug"
+    },
+    {
+      "source": "3_sensor_1494_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "2_RidangoPunctuality",
+      "target": "3_TotalDepartures"
+    },
+    {
+      "source": "3_sensor_1526_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1497"
+    },
+    {
+      "source": "4_series",
+      "target": "5_km"
+    },
+    {
+      "source": "3_sensor_1526_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "5_kasutajat/päevas",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "3_ValidationsLast4Weeks_daily",
+      "target": "4_series_max"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1495_daily"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_92_hourly"
+    },
+    {
+      "source": "3_Light_hourly",
+      "target": "4_output_max"
+    },
+    {
+      "source": "2_RidangoAgentAggregation",
+      "target": "3_ValidationsLast4WeekWeekends"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_sõidukit/tunnis"
+    },
+    {
+      "source": "5_Pa",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "5_escooter",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "4_lane2",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "3_Pedestrian_daily",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "5_truck",
+      "target": "T_Urban Bicycle Traffic Monitoring"
+    },
+    {
+      "source": "3_PedestrianIn_hourly",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_108"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_noOfPassengers"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_formula_hourly"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_ee_telia_iot_meazon_device"
+    },
+    {
+      "source": "4_series",
+      "target": "5_dock"
+    },
+    {
+      "source": "3_sensor_1494",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_series",
+      "target": "5_Pa"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_mm"
+    },
+    {
+      "source": "3_sensor_1500_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_VehiclesPerMinute_daily",
+      "target": "4_throughput_max"
+    },
+    {
+      "source": "3_sensor_91_hourly",
+      "target": "4_light_max"
+    },
+    {
+      "source": "3_current",
+      "target": "4_L2"
+    },
+    {
+      "source": "3_sensor_1500_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_sensor_150",
+      "target": "4_atmospheric_pressure"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_MWh"
+    },
+    {
+      "source": "3_group_daily",
+      "target": "4_value"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_kwh"
+    },
+    {
+      "source": "3_sensor_91_hourly",
+      "target": "4_light_count"
+    },
+    {
+      "source": "3_energy_cons",
+      "target": "4_L1"
+    },
+    {
+      "source": "3_sensor_1524_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Light_daily"
+    },
+    {
+      "source": "3_sensor_107_daily",
+      "target": "4_particles_pm2_5_ug_count"
+    },
+    {
+      "source": "3_ValidationsLastWeekWorkDays",
+      "target": "4_series"
+    },
+    {
+      "source": "3_vehiclesPer15Min",
+      "target": "4_lanein"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_<missing deviceType>"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_active_power"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Total_hourly"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_ug/m3"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_127_daily"
+    },
+    {
+      "source": "5_ppm",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "3_sensor_1497_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_ValidationsLastWeekWorkDays_hourly",
+      "target": "4_series_count"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_kg/tunnis"
+    },
+    {
+      "source": "3_sensor_1497_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "5_vehicle/hour",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "5_users/h",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "4_series",
+      "target": "5_user"
+    },
+    {
+      "source": "3_Pedestrian_hourly",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_mm"
+    },
+    {
+      "source": "4_value_count",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_RidangoAgentAggregation",
+      "target": "3_ValidationsLastWeekWorkDays"
+    },
+    {
+      "source": "3_sensor_1494_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_sensor_1524_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_sound_level_max",
+      "target": "5_dB"
+    },
+    {
+      "source": "3_sensor_123",
+      "target": "4_surface_temperature"
+    },
+    {
+      "source": "4_co2",
+      "target": "5_ppm"
+    },
+    {
+      "source": "3_formula",
+      "target": "4_value"
+    },
+    {
+      "source": "3_sensor_1524_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_sensor_1526_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_lane2_count",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_gmaps_DistanceMeasurement",
+      "target": "4_distance"
+    },
+    {
+      "source": "3_sensor_1499_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_sensor_1524",
+      "target": "4_movement"
+    },
+    {
+      "source": "5_users/h",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_sõitu/päevas"
+    },
+    {
+      "source": "3_sensor_1",
+      "target": "4_light"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Water Volume Management Metrics"
+    },
+    {
+      "source": "4_lqi",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_sensor_1499_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_PedestrianIn_hourly"
+    },
+    {
+      "source": "3_ValidationsLast4WeekWorkDays",
+      "target": "4_series"
+    },
+    {
+      "source": "4_movement_min",
+      "target": "5_count"
+    },
+    {
+      "source": "4_lane1_count",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_125"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_sõidukit/tunnis"
+    },
+    {
+      "source": "4_output_count",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "4_series",
+      "target": "5_noOfPassengers"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_degree"
+    },
+    {
+      "source": "5_van",
+      "target": "T_Urban Bicycle Traffic Monitoring"
+    },
+    {
+      "source": "3_sensor_107",
+      "target": "4_particles_pm2_5_ug"
+    },
+    {
+      "source": "3_sensor_1500_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_91"
+    },
+    {
+      "source": "5_vpm",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_88_daily"
+    },
+    {
+      "source": "3_ValidationsLast4WeekWeekends",
+      "target": "4_series"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_mm"
+    },
+    {
+      "source": "5_kg/tunnis",
+      "target": "T_Water Volume Management Metrics"
+    },
+    {
+      "source": "3_measure_hourly",
+      "target": "4_item_min"
+    },
+    {
+      "source": "3_sensor_1495",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_Dal_hourly",
+      "target": "4_value_min"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Pedestrian_hourly"
+    },
+    {
+      "source": "5_person",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_formula_hourly",
+      "target": "4_value_count"
+    },
+    {
+      "source": "5_percent",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "3_sensor_1497_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_sensor_1497_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_co2_min",
+      "target": "5_ppm"
+    },
+    {
+      "source": "3_sensor_1497_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_Total_hourly",
+      "target": "4_counter"
+    },
+    {
+      "source": "5_count",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "5_trips/h",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_EcoCounterData",
+      "target": "3_BicycleIn"
+    },
+    {
+      "source": "3_sensor_127_hourly",
+      "target": "4_co2_max"
+    },
+    {
+      "source": "3_sensor_88_hourly",
+      "target": "4_sound_level_min"
+    },
+    {
+      "source": "3_dal_monthly",
+      "target": "4_series_max"
+    },
+    {
+      "source": "5_truck",
+      "target": "T_Vehicle Traffic Monitoring Counts"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_87"
+    },
+    {
+      "source": "3_sensor_1524_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_sensor_1523_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_counter_max",
+      "target": "5_pc"
+    },
+    {
+      "source": "3_sensor_1523_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLast4Weeks_hourly"
+    },
+    {
+      "source": "4_series",
+      "target": "5_Departures"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_127_hourly"
+    },
+    {
+      "source": "5_ug/m3",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "3_sensor_90_hourly",
+      "target": "4_sound_level"
+    },
+    {
+      "source": "4_L3",
+      "target": "5_A"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1497_daily"
+    },
+    {
+      "source": "3_sensor_1491",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_measure_hourly"
+    },
+    {
+      "source": "3_ValidationsLast4Weeks_hourly",
+      "target": "4_series_count"
+    },
+    {
+      "source": "4_value_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_aggregatedMeasurement"
+    },
+    {
+      "source": "3_sensor_90_hourly",
+      "target": "4_sound_level_max"
+    },
+    {
+      "source": "3_measure_hourly",
+      "target": "4_item_count"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_%"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1526_daily"
+    },
+    {
+      "source": "4_value_count",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "4_lane2_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "5_space",
+      "target": "T_Urban Spatial Planning Analysis"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_mb"
+    },
+    {
+      "source": "3_Pedestrian_hourly",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "4_total",
+      "target": "5_kW"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_150"
+    },
+    {
+      "source": "3_sensor_89",
+      "target": "4_light"
+    },
+    {
+      "source": "3_ValidationsLastWeekWeekends_hourly",
+      "target": "4_series_max"
+    },
+    {
+      "source": "5_bicycle",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "3_dal_hourly",
+      "target": "4_series_min"
+    },
+    {
+      "source": "5_kWh",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_sensor_1498_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_throughput_min",
+      "target": "5_vpm"
+    },
+    {
+      "source": "4_lane2_max",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_PedestrianOut_hourly"
+    },
+    {
+      "source": "3_sensor_87",
+      "target": "4_light"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_49_hourly"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_degree"
+    },
+    {
+      "source": "5_%",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "4_light_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "5_motorbike",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "4_co2_count",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "3_ValidationsLastDay_daily",
+      "target": "4_series_max"
+    },
+    {
+      "source": "3_dal_daily",
+      "target": "4_series_min"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_149"
+    },
+    {
+      "source": "3_sensor_91_hourly",
+      "target": "4_light_min"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_bicycle"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_percent"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1494_hourly"
+    },
+    {
+      "source": "3_sensor_1495_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_BicycleIn_daily",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "5_dock",
+      "target": "T_Bicycle Docking Station Data"
+    },
+    {
+      "source": "3_sensor_1526",
+      "target": "4_movement"
+    },
+    {
+      "source": "5_km/h",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1524_hourly"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_C"
+    },
+    {
+      "source": "5_dock",
+      "target": "T_Parking Space Availability Management"
+    },
+    {
+      "source": "4_series",
+      "target": "5_escooter"
+    },
+    {
+      "source": "5_mb",
+      "target": "T_Water Volume Management Metrics"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_voltage"
+    },
+    {
+      "source": "5_sõidukit/tunnis",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_87_daily"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_km/h"
+    },
+    {
+      "source": "3_sensor_1522",
+      "target": "4_movement"
+    },
+    {
+      "source": "5_C",
+      "target": "T_Environmental Temperature Monitoring"
+    },
+    {
+      "source": "3_sensor_92_daily",
+      "target": "4_sound_level_count"
+    },
+    {
+      "source": "3_VehiclesPerMinute_hourly",
+      "target": "4_throughput_max"
+    },
+    {
+      "source": "3_sensor_90_daily",
+      "target": "4_sound_level"
+    },
+    {
+      "source": "3_vehiclesPer15Min_daily",
+      "target": "4_lane2_count"
+    },
+    {
+      "source": "3_sensor_1497_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_Bicycle_daily",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_mb"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_membership"
+    },
+    {
+      "source": "4_particles_pm10_ug",
+      "target": "5_m"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_RidangoValidationsDevice"
+    },
+    {
+      "source": "3_sensor_1495_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_Pedestrian"
+    },
+    {
+      "source": "5_%",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_sensor_90_daily",
+      "target": "4_sound_level_max"
+    },
+    {
+      "source": "3_Bicycle_daily",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_sensor_1522_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "5_user",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_energy_cons"
+    },
+    {
+      "source": "4_value",
+      "target": "5_kwh"
+    },
+    {
+      "source": "3_sensor_1491_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_sensor_1522_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_sensor_1523_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_counter_count",
+      "target": "T_Urban Pedestrian Traffic Monitoring"
+    },
+    {
+      "source": "5_van",
+      "target": "T_Vehicle Traffic Monitoring Counts"
+    },
+    {
+      "source": "4_item_max",
+      "target": "5_kWh"
+    },
+    {
+      "source": "4_movement_count",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_126"
+    },
+    {
+      "source": "3_Total_hourly",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "3_vehiclesPer15Min_hourly",
+      "target": "4_lane2_min"
+    },
+    {
+      "source": "3_PedestrianOut",
+      "target": "4_counter"
+    },
+    {
+      "source": "2_aggregatedMeasurement",
+      "target": "3_vehiclesPer15Min"
+    },
+    {
+      "source": "3_sensor_1497",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_vehiclesPer15Min",
+      "target": "4_lane3"
+    },
+    {
+      "source": "5_s",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_count"
+    },
+    {
+      "source": "4_item_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_power_factor"
+    },
+    {
+      "source": "4_item_count",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_sensor_108_hourly",
+      "target": "4_no2_max"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_49_daily"
+    },
+    {
+      "source": "3_TotalDepartures",
+      "target": "4_series"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Light_hourly"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_107_daily"
+    },
+    {
+      "source": "3_sensor_49_hourly",
+      "target": "4_light"
+    },
+    {
+      "source": "4_total",
+      "target": "5_kWh"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_mb"
+    },
+    {
+      "source": "5_A",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_km/päevas"
+    },
+    {
+      "source": "3_ValidationsLastWeekWorkDays_daily",
+      "target": "4_series_count"
+    },
+    {
+      "source": "5_noOfPassengers",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1500_hourly"
+    },
+    {
+      "source": "5_Wh",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_group_hourly",
+      "target": "4_value_min"
+    },
+    {
+      "source": "3_sensor_87_hourly",
+      "target": "4_light"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_microgram per cubic metre"
+    },
+    {
+      "source": "5_km",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_users/h"
+    },
+    {
+      "source": "3_measure_daily",
+      "target": "4_item_count"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_90"
+    },
+    {
+      "source": "4_output_min",
+      "target": "5_percent"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_Pedestrian_daily"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_kW"
+    },
+    {
+      "source": "3_Pedestrian_hourly",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "4_series",
+      "target": "5_truck"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_DAL_series_target"
+    },
+    {
+      "source": "2_gmaps_DirectionsAPI",
+      "target": "3_gmaps_DistanceMeasurement"
+    },
+    {
+      "source": "5_membership",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "3_ValidationsLastWeekWeekends_hourly",
+      "target": "4_series_min"
+    },
+    {
+      "source": "3_sensor_105",
+      "target": "4_surface_temperature"
+    },
+    {
+      "source": "3_ValidationsLast4Weeks_daily",
+      "target": "4_series"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "3_group",
+      "target": "4_value"
+    },
+    {
+      "source": "3_sensor_91_daily",
+      "target": "4_light"
+    },
+    {
+      "source": "3_sensor_1527_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_sound_level_min",
+      "target": "5_dB"
+    },
+    {
+      "source": "5_degree",
+      "target": "T_Environmental Temperature Monitoring"
+    },
+    {
+      "source": "5_space",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_ValidationsLastWeek_daily",
+      "target": "4_series_min"
+    },
+    {
+      "source": "5_count",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_microgram per cubic metre"
+    },
+    {
+      "source": "3_sensor_1522_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "3_sensor_49_hourly",
+      "target": "4_light_max"
+    },
+    {
+      "source": "3_sensor_126_daily",
+      "target": "4_no2"
+    },
+    {
+      "source": "3_BicycleIn_daily",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_sõidukit/päevas"
+    },
+    {
+      "source": "3_vehiclesPer15Min",
+      "target": "4_lane4"
+    },
+    {
+      "source": "3_sensor_49_hourly",
+      "target": "4_light_count"
+    },
+    {
+      "source": "3_active_power",
+      "target": "4_total"
+    },
+    {
+      "source": "5_member",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "4_L1",
+      "target": "5_Wh"
+    },
+    {
+      "source": "2_VehiclesPerMinute",
+      "target": "3_VehiclesPerMinute"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_members/h"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_107_hourly"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1491_hourly"
+    },
+    {
+      "source": "3_sensor_87_hourly",
+      "target": "4_light_max"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_memberships/h"
+    },
+    {
+      "source": "3_formula_daily",
+      "target": "4_value_max"
+    },
+    {
+      "source": "3_sensor_87_hourly",
+      "target": "4_light_count"
+    },
+    {
+      "source": "4_L1",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_Bicycle_daily",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "5_%",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_VehiclesPerMinute_daily",
+      "target": "4_throughput_min"
+    },
+    {
+      "source": "4_L1",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "4_series",
+      "target": "5_motorbike"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1492"
+    },
+    {
+      "source": "4_movement_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_sensor_126_hourly",
+      "target": "4_no2"
+    },
+    {
+      "source": "4_counter_count",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_108_daily"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLastWeekWeekends_hourly"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1492_hourly"
+    },
+    {
+      "source": "3_measure_daily",
+      "target": "4_item_max"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_space"
+    },
+    {
+      "source": "3_sensor_91_daily",
+      "target": "4_light_max"
+    },
+    {
+      "source": "3_Dal_daily",
+      "target": "4_value_max"
+    },
+    {
+      "source": "3_Total_hourly",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "4_lanein",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "3_sensor_91_daily",
+      "target": "4_light_count"
+    },
+    {
+      "source": "3_sensor_126_daily",
+      "target": "4_no2_min"
+    },
+    {
+      "source": "3_RidangoValidations",
+      "target": "4_series"
+    },
+    {
+      "source": "5_motorbike",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "5_bus",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "2_gmaps_DirectionsAPI",
+      "target": "3_gmaps_SpeedMeasurement"
+    },
+    {
+      "source": "1_com_cityntel_light",
+      "target": "2_c4t_metric"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_van"
+    },
+    {
+      "source": "3_sensor_92_hourly",
+      "target": "4_sound_level_min"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_kasutajat/päevas"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_km/päevas"
+    },
+    {
+      "source": "4_throughput_max",
+      "target": "5_vpm"
+    },
+    {
+      "source": "3_vehiclesPer15Min_daily",
+      "target": "4_lane2_min"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_space"
+    },
+    {
+      "source": "3_PedestrianOut_hourly",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_sensor_1494_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLastWeekWorkDays_hourly"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1521"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_measure"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_108_hourly"
+    },
+    {
+      "source": "3_sensor_126_hourly",
+      "target": "4_no2_min"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_vehiclesPer15Min_hourly"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_107"
+    },
+    {
+      "source": "3_Light_daily",
+      "target": "4_output_count"
+    },
+    {
+      "source": "3_Bicycle_hourly",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "3_group_daily",
+      "target": "4_value_min"
+    },
+    {
+      "source": "2_RidangoLines",
+      "target": "3_RidangoValidations"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_ValidationsLastWeekWeekends_daily"
+    },
+    {
+      "source": "3_freq",
+      "target": "4_all"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1499"
+    },
+    {
+      "source": "4_series",
+      "target": "5_bus"
+    },
+    {
+      "source": "3_dal_daily",
+      "target": "4_series"
+    },
+    {
+      "source": "3_Total_daily",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "3_ValidationsLastWeekWeekends_daily",
+      "target": "4_series_min"
+    },
+    {
+      "source": "3_Bicycle_hourly",
+      "target": "4_counter"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1500_daily"
+    },
+    {
+      "source": "3_sensor_1521_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_L3",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "4_speed",
+      "target": "5_km/h"
+    },
+    {
+      "source": "1_RidangoValidationsDevice",
+      "target": "2_RidangoAgentAggregation"
+    },
+    {
+      "source": "5_bicycle",
+      "target": "T_Bicycle Docking Station Data"
+    },
+    {
+      "source": "4_output",
+      "target": "5_percent"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_126_hourly"
+    },
+    {
+      "source": "4_particles_pm2_5_ug_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_sensor_149",
+      "target": "4_relative_humidity"
+    },
+    {
+      "source": "4_series",
+      "target": "5_m3"
+    },
+    {
+      "source": "3_energy_cons",
+      "target": "4_L3"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_kWh"
+    },
+    {
+      "source": "3_sensor_88_hourly",
+      "target": "4_sound_level"
+    },
+    {
+      "source": "5_pc",
+      "target": "T_Urban Bicycle Usage Data"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_km"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_BicycleOut_daily"
+    },
+    {
+      "source": "5_C",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_sensor_88_hourly",
+      "target": "4_sound_level_max"
+    },
+    {
+      "source": "3_ValidationsLastDay_hourly",
+      "target": "4_series_max"
+    },
+    {
+      "source": "3_sensor_49",
+      "target": "4_light"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_49"
+    },
+    {
+      "source": "3_ValidationsLast4Weeks_hourly",
+      "target": "4_series_max"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_formula"
+    },
+    {
+      "source": "5_m",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "3_BicycleIn_daily",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_RidangoValidations_hourly"
+    },
+    {
+      "source": "3_vehiclesPer15Min_hourly",
+      "target": "4_lane2_max"
+    },
+    {
+      "source": "3_BicycleOut_daily",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_ppm"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_degrees"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1492_daily"
+    },
+    {
+      "source": "3_sensor_127_daily",
+      "target": "4_co2_max"
+    },
+    {
+      "source": "2_EcoCounterData",
+      "target": "3_BicycleOut"
+    },
+    {
+      "source": "4_throughput",
+      "target": "5_vpm"
+    },
+    {
+      "source": "5_mm",
+      "target": "T_Environmental Temperature Monitoring"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1497_hourly"
+    },
+    {
+      "source": "3_sensor_1523_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_vehiclesPer15Min_hourly",
+      "target": "4_lane1_min"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_trip"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_MWh"
+    },
+    {
+      "source": "3_sensor_1523_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_Dal",
+      "target": "4_value"
+    },
+    {
+      "source": "5_memberships/h",
+      "target": "T_Bicycle Sharing Dock Statistics"
+    },
+    {
+      "source": "3_Bicycle_daily",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "3_dal_monthly",
+      "target": "4_series"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_dock"
+    },
+    {
+      "source": "5_dB",
+      "target": "T_Urban Infrastructure Lighting Data"
+    },
+    {
+      "source": "5_bicycle",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "3_sensor_49_monthly",
+      "target": "4_light"
+    },
+    {
+      "source": "3_sensor_1500_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_km"
+    },
+    {
+      "source": "3_sensor_1500_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_ug/m3"
+    },
+    {
+      "source": "5_MWh",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_sensor_1524_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_91_daily"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_DAL_series_aggregation"
+    },
+    {
+      "source": "3_sensor_1492_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_sensor_1500"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_kWh"
+    },
+    {
+      "source": "3_PedestrianIn_hourly",
+      "target": "4_counter"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_ppm"
+    },
+    {
+      "source": "3_Pedestrian",
+      "target": "4_counter"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_vehicle/hour"
+    },
+    {
+      "source": "5_m",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_energy_cons",
+      "target": "4_total"
+    },
+    {
+      "source": "4_value_count",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_trip"
+    },
+    {
+      "source": "5_lx",
+      "target": "T_Environmental Air Quality Monitoring"
+    },
+    {
+      "source": "5_sõidukit/tunnis",
+      "target": "T_Vehicle Traffic Monitoring Counts"
+    },
+    {
+      "source": "3_group_monthly",
+      "target": "4_value_max"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_mm"
+    },
+    {
+      "source": "5_count",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_sensor_107_daily",
+      "target": "4_particles_pm2_5_ug_min"
+    },
+    {
+      "source": "3_mobile_network_signal",
+      "target": "4_lqi"
+    },
+    {
+      "source": "4_value",
+      "target": "5_percent"
+    },
+    {
+      "source": "3_PedestrianOut_hourly",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_dock"
+    },
+    {
+      "source": "3_sensor_49_hourly",
+      "target": "4_light_min"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_Pa"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_degrees"
+    },
+    {
+      "source": "3_sensor_1494_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_ValidationsLastWeekWeekends_hourly",
+      "target": "4_series"
+    },
+    {
+      "source": "3_ValidationsLastWeek_hourly",
+      "target": "4_series_count"
+    },
+    {
+      "source": "3_sensor_1526_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_sensor_127_daily",
+      "target": "4_co2_min"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_BicycleIn_hourly"
+    },
+    {
+      "source": "3_sensor_1496",
+      "target": "4_movement"
+    },
+    {
+      "source": "4_no2_max",
+      "target": "5_ppm"
+    },
+    {
+      "source": "3_Bicycle_hourly",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "3_sensor_49_monthly",
+      "target": "4_light_max"
+    },
+    {
+      "source": "3_sensor_88",
+      "target": "4_sound_level"
+    },
+    {
+      "source": "3_sensor_87_hourly",
+      "target": "4_light_min"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_member"
+    },
+    {
+      "source": "3_ValidationsLastWeek_daily",
+      "target": "4_series"
+    },
+    {
+      "source": "3_sensor_49_monthly",
+      "target": "4_light_count"
+    },
+    {
+      "source": "3_Total_daily",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "3_PedestrianOut_daily",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "3_ValidationsLastDay_daily",
+      "target": "4_series"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_km"
+    },
+    {
+      "source": "5_dock",
+      "target": "T_Bicycle Sharing Dock Statistics"
+    },
+    {
+      "source": "3_vehiclesPer15Min_daily",
+      "target": "4_lane1"
+    },
+    {
+      "source": "3_Pedestrian_hourly",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_Light_daily",
+      "target": "4_output_min"
+    },
+    {
+      "source": "3_sensor_1521_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_sensor_107_daily",
+      "target": "4_particles_pm2_5_ug_max"
+    },
+    {
+      "source": "3_sensor_1521_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "3_sensor_126_daily",
+      "target": "4_no2_count"
+    },
+    {
+      "source": "3_vehiclesPer15Min",
+      "target": "4_lane1"
+    },
+    {
+      "source": "2_EcoCounterData",
+      "target": "3_PedestrianIn"
+    },
+    {
+      "source": "3_VehiclesPerMinute",
+      "target": "4_throughput"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1491_daily"
+    },
+    {
+      "source": "3_sensor_91_daily",
+      "target": "4_light_min"
+    },
+    {
+      "source": "3_VehiclesPerMinute_hourly",
+      "target": "4_throughput_min"
+    },
+    {
+      "source": "3_vehiclesPer15Min_hourly",
+      "target": "4_lane2"
+    },
+    {
+      "source": "3_vehiclesPer15Min_hourly",
+      "target": "4_lane2_count"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_user"
+    },
+    {
+      "source": "3_sensor_1523_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_Parking Space Availability Management"
+    },
+    {
+      "source": "3_energy_cons",
+      "target": "4_L2"
+    },
+    {
+      "source": "5_kasutajat/päevas",
+      "target": "T_Bicycle Sharing Dock Statistics"
+    },
+    {
+      "source": "1_ee_telia_iot_meazon_device",
+      "target": "2_c4t_metric"
+    },
+    {
+      "source": "3_sensor_1500_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_ValidationsLastDay_hourly",
+      "target": "4_series_min"
+    },
+    {
+      "source": "3_sensor_1500_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_particles_pm2_5_ug",
+      "target": "5_m"
+    },
+    {
+      "source": "4_value_min",
+      "target": "5_dock"
+    },
+    {
+      "source": "4_L1",
+      "target": "5_A"
+    },
+    {
+      "source": "3_ValidationsLast4Weeks_daily",
+      "target": "4_series_min"
+    },
+    {
+      "source": "3_sensor_126_hourly",
+      "target": "4_no2_count"
+    },
+    {
+      "source": "4_no2_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_ValidationsLastWeek",
+      "target": "4_series"
+    },
+    {
+      "source": "4_ambient_temperature",
+      "target": "5_C"
+    },
+    {
+      "source": "4_lane3",
+      "target": "5_vehicles"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_degree"
+    },
+    {
+      "source": "2_c4t_metric",
+      "target": "3_mobile_network_signal"
+    },
+    {
+      "source": "3_RidangoValidations_daily",
+      "target": "4_series_max"
+    },
+    {
+      "source": "5_sõidukit/päevas",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_BicycleIn_hourly",
+      "target": "4_counter_min"
+    },
+    {
+      "source": "2_EcoCounterData",
+      "target": "3_Bicycle"
+    },
+    {
+      "source": "5_members/h",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "3_sensor_1497_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_Bicycle"
+    },
+    {
+      "source": "3_vehiclesPer15Min_daily",
+      "target": "4_lane2_max"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1522_hourly"
+    },
+    {
+      "source": "3_sensor_108_daily",
+      "target": "4_no2"
+    },
+    {
+      "source": "3_BicycleIn_hourly",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_sensor_1496_daily",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "4_series_count",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "3_PedestrianIn_hourly",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "3_sensor_1496_daily",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "4_series_count",
+      "target": "5_<missing unit>"
+    },
+    {
+      "source": "3_vehiclesPer15Min_daily",
+      "target": "4_lane1_min"
+    },
+    {
+      "source": "3_sensor_1524_daily",
+      "target": "4_movement"
+    },
+    {
+      "source": "3_mobile_network_signal",
+      "target": "4_rssi"
+    },
+    {
+      "source": "4_light",
+      "target": "5_lx"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_BicycleIn_daily"
+    },
+    {
+      "source": "2_dal_series_target_measurement",
+      "target": "3_BicycleIn"
+    },
+    {
+      "source": "5_km/päevas",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "4_value_max",
+      "target": "5_kasutajat/päevas"
+    },
+    {
+      "source": "3_ValidationsLastWeekWeekends_daily",
+      "target": "4_series"
+    },
+    {
+      "source": "3_BicycleOut",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_PedestrianOut_hourly",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_degree"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_car"
+    },
+    {
+      "source": "5_degrees",
+      "target": "T_Environmental Temperature Monitoring"
+    },
+    {
+      "source": "3_sensor_1521_hourly",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "5_trip",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1496_daily"
+    },
+    {
+      "source": "3_formula_hourly",
+      "target": "4_value_min"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1495_hourly"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_PedestrianOut_daily"
+    },
+    {
+      "source": "2_RidangoAgentAggregation",
+      "target": "3_ValidationsLast4Weeks"
+    },
+    {
+      "source": "5_escooter",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_sensor_1527_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_sensor_108_daily",
+      "target": "4_no2_min"
+    },
+    {
+      "source": "5_m3",
+      "target": "T_Water Consumption Management"
+    },
+    {
+      "source": "3_sensor_1527_hourly",
+      "target": "4_movement_count"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_bicycle"
+    },
+    {
+      "source": "3_Bicycle_hourly",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "5_kasutajat/päevas",
+      "target": "T_Vehicle Traffic Count Management"
+    },
+    {
+      "source": "3_Total_daily",
+      "target": "4_counter_max"
+    },
+    {
+      "source": "3_RidangoValidations_hourly",
+      "target": "4_series_max"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_C"
+    },
+    {
+      "source": "3_sensor_1496_hourly",
+      "target": "4_movement_min"
+    },
+    {
+      "source": "3_PedestrianOut_daily",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_car"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_%"
+    },
+    {
+      "source": "3_sensor_88_daily",
+      "target": "4_sound_level_count"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_member"
+    },
+    {
+      "source": "4_output_count",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_mb"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_dal_monthly"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_escooter"
+    },
+    {
+      "source": "3_sensor_127_hourly",
+      "target": "4_co2_min"
+    },
+    {
+      "source": "3_sensor_92_hourly",
+      "target": "4_sound_level"
+    },
+    {
+      "source": "5_m3",
+      "target": "T_Water Volume Management Metrics"
+    },
+    {
+      "source": "3_sensor_1497_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1499_hourly"
+    },
+    {
+      "source": "4_rssi",
+      "target": "5_dBm"
+    },
+    {
+      "source": "3_sensor_92_hourly",
+      "target": "4_sound_level_max"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_90_daily"
+    },
+    {
+      "source": "4_series_min",
+      "target": "5_%"
+    },
+    {
+      "source": "3_BicycleIn_daily",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_sensor_1496_daily",
+      "target": "4_movement_max"
+    },
+    {
+      "source": "4_L2",
+      "target": "5_V"
+    },
+    {
+      "source": "2_RidangoPunctuality",
+      "target": "3_LateDepartures"
+    },
+    {
+      "source": "2_dal_series_target_agg",
+      "target": "3_sensor_1521_hourly"
+    },
+    {
+      "source": "3_vehiclesPer15Min_daily",
+      "target": "4_lane2"
+    },
+    {
+      "source": "3_sensor_1523_hourly",
+      "target": "4_movement"
+    },
+    {
+      "source": "5_sõitu/päevas",
+      "target": "T_Public Bus Passenger Counting"
+    },
+    {
+      "source": "4_value",
+      "target": "5_vehicle/hour"
+    },
+    {
+      "source": "3_measure_hourly",
+      "target": "4_item_max"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_km/h"
+    },
+    {
+      "source": "4_value",
+      "target": "5_kWh"
+    },
+    {
+      "source": "5_W",
+      "target": "T_Energy Consumption and Management"
+    },
+    {
+      "source": "3_vehiclesPer15Min",
+      "target": "4_lane2"
+    },
+    {
+      "source": "5_percent",
+      "target": "T_DAL Light Output Aggregations"
+    },
+    {
+      "source": "4_series_max",
+      "target": "5_count"
+    },
+    {
+      "source": "3_RidangoValidations_daily",
+      "target": "4_series_min"
+    },
+    {
+      "source": "3_BicycleIn",
+      "target": "4_counter"
+    },
+    {
+      "source": "3_sensor_49_monthly",
+      "target": "4_light_min"
+    },
+    {
+      "source": "3_Dal_hourly",
+      "target": "4_value_max"
+    },
+    {
+      "source": "3_BicycleIn_hourly",
+      "target": "4_counter_count"
+    },
+    {
+      "source": "2_EcoCounterData",
+      "target": "3_Total"
+    },
+    {
+      "source": "3_power_factor",
+      "target": "4_L1"
+    },
+    {
+      "source": "3_sensor_1498_daily",
+      "target": "4_movement_min"
+    }
+  ]
+}

@@ -1,0 +1,1616 @@
+{
+  "nodes": [
+    {
+      "id": "4_dt_production",
+      "name": "dt_production",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_energy_total",
+      "name": "energy_total",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_fk_controller",
+      "name": "fk_controller",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_dt_changed",
+      "name": "dt_changed",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_phase_power",
+      "name": "phase_power",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_dt_created",
+      "name": "dt_created",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_phase_current",
+      "name": "phase_current",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_fk_device",
+      "name": "fk_device",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_uptime_total",
+      "name": "uptime_total",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_dt_arrival",
+      "name": "dt_arrival",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_output_level",
+      "name": "output_level",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_temperature",
+      "name": "temperature",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_id",
+      "name": "id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_phase_voltage",
+      "name": "phase_voltage",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_fk_event_type",
+      "name": "fk_event_type",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_fk_subsensor",
+      "name": "fk_subsensor",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_value",
+      "name": "value",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_trip_id",
+      "name": "trip_id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_stop_sequence",
+      "name": "stop_sequence",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_line",
+      "name": "line",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_product_id",
+      "name": "product_id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_stop_code",
+      "name": "stop_code",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_passenger_count",
+      "name": "passenger_count",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_location",
+      "name": "location",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_timestamp",
+      "name": "timestamp",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_regNo",
+      "name": "regNo",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_lng",
+      "name": "lng",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_tripId",
+      "name": "tripId",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_speed",
+      "name": "speed",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_unit",
+      "name": "unit",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_name",
+      "name": "name",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_course",
+      "name": "course",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_time",
+      "name": "time",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_updated",
+      "name": "updated",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_lat",
+      "name": "lat",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_status",
+      "name": "status",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_vehicle_class",
+      "name": "vehicle_class",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_occupancy",
+      "name": "occupancy",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_gap",
+      "name": "gap",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_length",
+      "name": "length",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_lane_id",
+      "name": "lane_id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_vehicle_id",
+      "name": "vehicle_id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_obj_id",
+      "name": "obj_id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_source_id",
+      "name": "source_id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_type",
+      "name": "type",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_alt",
+      "name": "alt",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_wind_degree",
+      "name": "wind_degree",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_precip",
+      "name": "precip",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_visibility",
+      "name": "visibility",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_uv_index",
+      "name": "uv_index",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_feelslike",
+      "name": "feelslike",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_is_day",
+      "name": "is_day",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_humidity",
+      "name": "humidity",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_wind_speed",
+      "name": "wind_speed",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_wind_dir",
+      "name": "wind_dir",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_pressure",
+      "name": "pressure",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_cloudcover",
+      "name": "cloudcover",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_localtime",
+      "name": "localtime",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_country",
+      "name": "country",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_localtime_epoch",
+      "name": "localtime_epoch",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_timezone_id",
+      "name": "timezone_id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_lon",
+      "name": "lon",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_region",
+      "name": "region",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_gtfsRealtimeVersion",
+      "name": "gtfsRealtimeVersion",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_incrementality",
+      "name": "incrementality",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_trip_short_name",
+      "name": "trip_short_name",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_direction_id",
+      "name": "direction_id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_route_id",
+      "name": "route_id",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_arrival_time",
+      "name": "arrival_time",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_turnr",
+      "name": "turnr",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "4_departure_time",
+      "name": "departure_time",
+      "group": 4,
+      "type": [
+        "type"
+      ]
+    },
+    {
+      "id": "0_Measurements",
+      "group": 0,
+      "name": "Events",
+      "dataCount": 426259196,
+      "deviceCount": 3487
+    },
+    {
+      "id": "1_com_cityntel_light",
+      "group": 1,
+      "name": "com_cityntel_light",
+      "dataCount": 49353824,
+      "deviceCount": 1460
+    },
+    {
+      "id": "2_com_cityntel_status",
+      "group": 2,
+      "name": "com_cityntel_status",
+      "dataCount": 49353824,
+      "deviceCount": 1460
+    },
+    {
+      "id": "3_com_cityntel_status_data",
+      "group": 3,
+      "name": "com_cityntel_status_data",
+      "dataCount": 49353824,
+      "deviceCount": 1460
+    },
+    {
+      "id": "1_com_cityntel_sensor",
+      "group": 1,
+      "name": "com_cityntel_sensor",
+      "dataCount": 33683215,
+      "deviceCount": 59
+    },
+    {
+      "id": "2_com_cityntel_event",
+      "group": 2,
+      "name": "com_cityntel_event",
+      "dataCount": 33683215,
+      "deviceCount": 59
+    },
+    {
+      "id": "3_com_cityntel_event_data",
+      "group": 3,
+      "name": "com_cityntel_event_data",
+      "dataCount": 33683215,
+      "deviceCount": 59
+    },
+    {
+      "id": "1_com_ridango_route",
+      "group": 1,
+      "name": "com_ridango_route",
+      "dataCount": 154284735,
+      "deviceCount": 1935
+    },
+    {
+      "id": "2_com_ridango_trip_arrival",
+      "group": 2,
+      "name": "com_ridango_trip_arrival",
+      "dataCount": 3880416,
+      "deviceCount": 1935
+    },
+    {
+      "id": "3_com_ridango_trip_data",
+      "group": 3,
+      "name": "com_ridango_trip_data",
+      "dataCount": 56602129,
+      "deviceCount": 1935
+    },
+    {
+      "id": "2_com_ridango_trip_departure",
+      "group": 2,
+      "name": "com_ridango_trip_departure",
+      "dataCount": 3880410,
+      "deviceCount": 1935
+    },
+    {
+      "id": "2_com_ridango_validation",
+      "group": 2,
+      "name": "com_ridango_validation",
+      "dataCount": 146523909,
+      "deviceCount": 826
+    },
+    {
+      "id": "3_com_ridango_product_data",
+      "group": 3,
+      "name": "com_ridango_product_data",
+      "dataCount": 48841303,
+      "deviceCount": 826
+    },
+    {
+      "id": "3_com_ridango_validation_data",
+      "group": 3,
+      "name": "com_ridango_validation_data",
+      "dataCount": 48841303,
+      "deviceCount": 826
+    },
+    {
+      "id": "1_DAL_series_target",
+      "group": 1,
+      "name": "DAL_series_target",
+      "dataCount": 188935967,
+      "deviceCount": 32
+    },
+    {
+      "id": "2_value",
+      "group": 2,
+      "name": "value",
+      "dataCount": 23533,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_value",
+      "group": 3,
+      "name": "value",
+      "dataCount": 70698,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_avc_VehicleEvent",
+      "group": 2,
+      "name": "avc_VehicleEvent",
+      "dataCount": 128899809,
+      "deviceCount": 16
+    },
+    {
+      "id": "3_avc_Vehicle",
+      "group": 3,
+      "name": "avc_Vehicle",
+      "dataCount": 128726580,
+      "deviceCount": 16
+    },
+    {
+      "id": "2_Dal",
+      "group": 2,
+      "name": "Dal",
+      "dataCount": 47165,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_avc_Sensor",
+      "group": 3,
+      "name": "avc_Sensor",
+      "dataCount": 173229,
+      "deviceCount": 4
+    },
+    {
+      "id": "2_sxg_DetectionEvent",
+      "group": 2,
+      "name": "sxg_DetectionEvent",
+      "dataCount": 2003828,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_sxg_Detection",
+      "group": 3,
+      "name": "sxg_Detection",
+      "dataCount": 2003828,
+      "deviceCount": 2
+    },
+    {
+      "id": "1_c8y_SensorPhone",
+      "group": 1,
+      "name": "c8y_SensorPhone",
+      "dataCount": 1455,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_c8y_LocationUpdate",
+      "group": 2,
+      "name": "c8y_LocationUpdate",
+      "dataCount": 1455,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_c8y_Position",
+      "group": 3,
+      "name": "c8y_Position",
+      "dataCount": 1455,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_dal",
+      "group": 2,
+      "name": "dal",
+      "dataCount": 57961632,
+      "deviceCount": 13
+    },
+    {
+      "id": "3_bottom_humidity",
+      "group": 3,
+      "name": "bottom_humidity",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_bottom_temperature",
+      "group": 3,
+      "name": "bottom_temperature",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_gyro_angle_x",
+      "group": 3,
+      "name": "gyro_angle_x",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_gyro_angle_y",
+      "group": 3,
+      "name": "gyro_angle_y",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_gyro_angle_z",
+      "group": 3,
+      "name": "gyro_angle_z",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_insert_timestamp",
+      "group": 3,
+      "name": "insert_timestamp",
+      "dataCount": 1847821,
+      "deviceCount": 6
+    },
+    {
+      "id": "3_internal_humidity",
+      "group": 3,
+      "name": "internal_humidity",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_internal_temperature",
+      "group": 3,
+      "name": "internal_temperature",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_light_level",
+      "group": 3,
+      "name": "light_level",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_road_temperature",
+      "group": 3,
+      "name": "road_temperature",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_timestamp",
+      "group": 3,
+      "name": "timestamp",
+      "dataCount": 11472347,
+      "deviceCount": 9
+    },
+    {
+      "id": "3_top_humidity",
+      "group": 3,
+      "name": "top_humidity",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_top_temperature",
+      "group": 3,
+      "name": "top_temperature",
+      "dataCount": 643592,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_avg_speed",
+      "group": 3,
+      "name": "avg_speed",
+      "dataCount": 775133,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_max_speed",
+      "group": 3,
+      "name": "max_speed",
+      "dataCount": 775133,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_min_speed",
+      "group": 3,
+      "name": "min_speed",
+      "dataCount": 775133,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_speed_log",
+      "group": 3,
+      "name": "speed_log",
+      "dataCount": 775133,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_active_energy",
+      "group": 3,
+      "name": "active_energy",
+      "dataCount": 398591,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_active_power",
+      "group": 3,
+      "name": "active_power",
+      "dataCount": 422321,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_amperage",
+      "group": 3,
+      "name": "amperage",
+      "dataCount": 429096,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_apparent_power",
+      "group": 3,
+      "name": "apparent_power",
+      "dataCount": 429096,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_frequency",
+      "group": 3,
+      "name": "frequency",
+      "dataCount": 429096,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_power_factor",
+      "group": 3,
+      "name": "power_factor",
+      "dataCount": 429096,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_reactive_energy",
+      "group": 3,
+      "name": "reactive_energy",
+      "dataCount": 429096,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_reactive_power",
+      "group": 3,
+      "name": "reactive_power",
+      "dataCount": 429096,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_total_kWh",
+      "group": 3,
+      "name": "total_kWh",
+      "dataCount": 429096,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_voltage",
+      "group": 3,
+      "name": "voltage",
+      "dataCount": 429096,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_count",
+      "group": 3,
+      "name": "count",
+      "dataCount": 775394,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_crossedPaths",
+      "group": 3,
+      "name": "crossedPaths",
+      "dataCount": 9624526,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_label",
+      "group": 3,
+      "name": "label",
+      "dataCount": 9624526,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_polygons",
+      "group": 3,
+      "name": "polygons",
+      "dataCount": 9624526,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_current",
+      "group": 3,
+      "name": "current",
+      "dataCount": 11821,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_location",
+      "group": 3,
+      "name": "location",
+      "dataCount": 11821,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_entities",
+      "group": 3,
+      "name": "entities",
+      "dataCount": 267563,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_header",
+      "group": 3,
+      "name": "header",
+      "dataCount": 267563,
+      "deviceCount": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "2_com_ridango_trip_arrival",
+      "target": "3_com_ridango_trip_data"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_active_energy"
+    },
+    {
+      "source": "3_location",
+      "target": "4_lat"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_amperage"
+    },
+    {
+      "source": "1_c8y_SensorPhone",
+      "target": "2_c8y_LocationUpdate"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_bottom_temperature"
+    },
+    {
+      "source": "3_avc_Vehicle",
+      "target": "4_gap"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_avc_VehicleEvent"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_frequency"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_id"
+    },
+    {
+      "source": "3_current",
+      "target": "4_wind_degree"
+    },
+    {
+      "source": "3_current",
+      "target": "4_uv_index"
+    },
+    {
+      "source": "3_current",
+      "target": "4_wind_speed"
+    },
+    {
+      "source": "3_location",
+      "target": "4_region"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_phase_voltage"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_gyro_angle_y"
+    },
+    {
+      "source": "3_com_ridango_validation_data",
+      "target": "4_trip_id"
+    },
+    {
+      "source": "3_current",
+      "target": "4_humidity"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_crossedPaths"
+    },
+    {
+      "source": "3_header",
+      "target": "4_timestamp"
+    },
+    {
+      "source": "3_sxg_Detection",
+      "target": "4_vehicle_class"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_internal_temperature"
+    },
+    {
+      "source": "3_header",
+      "target": "4_gtfsRealtimeVersion"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_current"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_light_level"
+    },
+    {
+      "source": "3_avc_Vehicle",
+      "target": "4_occupancy"
+    },
+    {
+      "source": "3_value",
+      "target": "4_unit"
+    },
+    {
+      "source": "3_com_ridango_validation_data",
+      "target": "4_line"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_fk_device"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_max_speed"
+    },
+    {
+      "source": "1_com_cityntel_sensor",
+      "target": "2_com_cityntel_event"
+    },
+    {
+      "source": "3_sxg_Detection",
+      "target": "4_length"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_reactive_energy"
+    },
+    {
+      "source": "3_current",
+      "target": "4_feelslike"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_dt_arrival"
+    },
+    {
+      "source": "3_com_ridango_trip_data",
+      "target": "4_turnr"
+    },
+    {
+      "source": "3_avc_Vehicle",
+      "target": "4_speed"
+    },
+    {
+      "source": "1_com_ridango_route",
+      "target": "2_com_ridango_validation"
+    },
+    {
+      "source": "3_com_ridango_trip_data",
+      "target": "4_direction_id"
+    },
+    {
+      "source": "3_current",
+      "target": "4_wind_dir"
+    },
+    {
+      "source": "3_value",
+      "target": "4_updated"
+    },
+    {
+      "source": "3_avc_Vehicle",
+      "target": "4_vehicle_class"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_com_cityntel_sensor"
+    },
+    {
+      "source": "3_com_cityntel_event_data",
+      "target": "4_id"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_com_cityntel_light"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_value"
+    },
+    {
+      "source": "2_avc_VehicleEvent",
+      "target": "3_avc_Sensor"
+    },
+    {
+      "source": "3_com_ridango_validation_data",
+      "target": "4_product_id"
+    },
+    {
+      "source": "2_com_ridango_validation",
+      "target": "3_com_ridango_trip_data"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_location"
+    },
+    {
+      "source": "1_com_ridango_route",
+      "target": "2_com_ridango_trip_arrival"
+    },
+    {
+      "source": "3_value",
+      "target": "4_name"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_internal_humidity"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_header"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_power_factor"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_polygons"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_count"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_dt_created"
+    },
+    {
+      "source": "3_com_ridango_validation_data",
+      "target": "4_stop_code"
+    },
+    {
+      "source": "3_current",
+      "target": "4_cloudcover"
+    },
+    {
+      "source": "3_com_ridango_validation_data",
+      "target": "4_timestamp"
+    },
+    {
+      "source": "2_com_ridango_trip_departure",
+      "target": "3_com_ridango_trip_data"
+    },
+    {
+      "source": "3_sxg_Detection",
+      "target": "4_type"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_timestamp"
+    },
+    {
+      "source": "3_com_cityntel_event_data",
+      "target": "4_fk_device"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_speed_log"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_fk_controller"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_dt_production"
+    },
+    {
+      "source": "3_com_cityntel_event_data",
+      "target": "4_dt_arrival"
+    },
+    {
+      "source": "3_current",
+      "target": "4_temperature"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_insert_timestamp"
+    },
+    {
+      "source": "3_location",
+      "target": "4_localtime_epoch"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_gyro_angle_x"
+    },
+    {
+      "source": "3_com_ridango_trip_data",
+      "target": "4_trip_short_name"
+    },
+    {
+      "source": "2_com_ridango_validation",
+      "target": "3_com_ridango_validation_data"
+    },
+    {
+      "source": "3_c8y_Position",
+      "target": "4_lat"
+    },
+    {
+      "source": "2_value",
+      "target": "3_value"
+    },
+    {
+      "source": "3_com_ridango_trip_data",
+      "target": "4_arrival_time"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_dt_changed"
+    },
+    {
+      "source": "3_com_ridango_validation_data",
+      "target": "4_location"
+    },
+    {
+      "source": "3_current",
+      "target": "4_pressure"
+    },
+    {
+      "source": "3_value",
+      "target": "4_course"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_avg_speed"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_energy_total"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_entities"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_min_speed"
+    },
+    {
+      "source": "3_avc_Vehicle",
+      "target": "4_length"
+    },
+    {
+      "source": "3_c8y_Position",
+      "target": "4_alt"
+    },
+    {
+      "source": "3_value",
+      "target": "4_regNo"
+    },
+    {
+      "source": "3_com_ridango_validation_data",
+      "target": "4_stop_sequence"
+    },
+    {
+      "source": "3_com_ridango_trip_data",
+      "target": "4_trip_id"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_DAL_series_target"
+    },
+    {
+      "source": "2_c8y_LocationUpdate",
+      "target": "3_c8y_Position"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_apparent_power"
+    },
+    {
+      "source": "3_c8y_Position",
+      "target": "4_lng"
+    },
+    {
+      "source": "3_com_ridango_trip_data",
+      "target": "4_route_id"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_output_level"
+    },
+    {
+      "source": "3_location",
+      "target": "4_timezone_id"
+    },
+    {
+      "source": "3_com_cityntel_event_data",
+      "target": "4_dt_production"
+    },
+    {
+      "source": "3_location",
+      "target": "4_country"
+    },
+    {
+      "source": "3_com_cityntel_event_data",
+      "target": "4_fk_event_type"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_sxg_DetectionEvent"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_total_kWh"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_top_humidity"
+    },
+    {
+      "source": "3_location",
+      "target": "4_lon"
+    },
+    {
+      "source": "2_avc_VehicleEvent",
+      "target": "3_avc_Vehicle"
+    },
+    {
+      "source": "1_com_cityntel_light",
+      "target": "2_com_cityntel_status"
+    },
+    {
+      "source": "3_value",
+      "target": "4_lat"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_phase_current"
+    },
+    {
+      "source": "3_com_ridango_trip_data",
+      "target": "4_departure_time"
+    },
+    {
+      "source": "3_current",
+      "target": "4_is_day"
+    },
+    {
+      "source": "3_current",
+      "target": "4_precip"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_Dal"
+    },
+    {
+      "source": "1_com_ridango_route",
+      "target": "2_com_ridango_trip_departure"
+    },
+    {
+      "source": "2_Dal",
+      "target": "3_value"
+    },
+    {
+      "source": "3_com_cityntel_event_data",
+      "target": "4_fk_subsensor"
+    },
+    {
+      "source": "2_com_cityntel_status",
+      "target": "3_com_cityntel_status_data"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_top_temperature"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_bottom_humidity"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_com_ridango_route"
+    },
+    {
+      "source": "2_com_ridango_validation",
+      "target": "3_com_ridango_product_data"
+    },
+    {
+      "source": "2_com_cityntel_event",
+      "target": "3_com_cityntel_event_data"
+    },
+    {
+      "source": "1_DAL_series_target",
+      "target": "2_dal"
+    },
+    {
+      "source": "3_avc_Vehicle",
+      "target": "4_vehicle_id"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_reactive_power"
+    },
+    {
+      "source": "3_sxg_Detection",
+      "target": "4_speed"
+    },
+    {
+      "source": "3_value",
+      "target": "4_speed"
+    },
+    {
+      "source": "3_value",
+      "target": "4_id"
+    },
+    {
+      "source": "3_value",
+      "target": "4_tripId"
+    },
+    {
+      "source": "3_value",
+      "target": "4_lng"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_temperature"
+    },
+    {
+      "source": "3_value",
+      "target": "4_status"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_phase_power"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "1_c8y_SensorPhone"
+    },
+    {
+      "source": "3_location",
+      "target": "4_name"
+    },
+    {
+      "source": "3_com_cityntel_status_data",
+      "target": "4_uptime_total"
+    },
+    {
+      "source": "3_com_cityntel_event_data",
+      "target": "4_value"
+    },
+    {
+      "source": "3_header",
+      "target": "4_incrementality"
+    },
+    {
+      "source": "3_avc_Vehicle",
+      "target": "4_lane_id"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_gyro_angle_z"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_road_temperature"
+    },
+    {
+      "source": "3_value",
+      "target": "4_time"
+    },
+    {
+      "source": "3_avc_Sensor",
+      "target": "4_lane_id"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_active_power"
+    },
+    {
+      "source": "3_com_ridango_validation_data",
+      "target": "4_passenger_count"
+    },
+    {
+      "source": "3_sxg_Detection",
+      "target": "4_obj_id"
+    },
+    {
+      "source": "2_sxg_DetectionEvent",
+      "target": "3_sxg_Detection"
+    },
+    {
+      "source": "3_current",
+      "target": "4_visibility"
+    },
+    {
+      "source": "3_location",
+      "target": "4_localtime"
+    },
+    {
+      "source": "3_sxg_Detection",
+      "target": "4_source_id"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_voltage"
+    },
+    {
+      "source": "2_dal",
+      "target": "3_label"
+    }
+  ]
+}

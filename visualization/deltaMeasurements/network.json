@@ -1,0 +1,3386 @@
+{
+  "nodes": [
+    {
+      "id": "0_Measurements",
+      "group": 0,
+      "name": "Measurements",
+      "frequency": "179.66/second",
+      "topics": [],
+      "dataCount": 481191373,
+      "deviceCount": 108
+    },
+    {
+      "id": "2_Lux",
+      "group": 2,
+      "name": "Lux",
+      "frequency": "29.55/minute",
+      "topics": [],
+      "dataCount": 1319313,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_Lux",
+      "group": 3,
+      "name": "Lux",
+      "frequency": "29.55/minute",
+      "topics": [],
+      "dataCount": 1319313,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_luxes",
+      "group": 5,
+      "name": "luxes",
+      "frequency": "29.55/minute",
+      "topics": [],
+      "dataCount": 1319313,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_TE00",
+      "group": 2,
+      "name": "TE00",
+      "frequency": "15.94/hour",
+      "topics": [],
+      "dataCount": 11860,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_TE00",
+      "group": 3,
+      "name": "TE00",
+      "frequency": "15.94/hour",
+      "topics": [],
+      "dataCount": 11860,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_degreesCelsius",
+      "group": 5,
+      "name": "degreesCelsius",
+      "frequency": "51.73/second",
+      "topics": [],
+      "dataCount": 138551438,
+      "deviceCount": 65
+    },
+    {
+      "id": "2_CO2",
+      "group": 2,
+      "name": "CO2",
+      "frequency": "12.92/minute",
+      "topics": [],
+      "dataCount": 576710,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_CO2",
+      "group": 3,
+      "name": "CO2",
+      "frequency": "12.92/minute",
+      "topics": [],
+      "dataCount": 576710,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_kilograms",
+      "group": 5,
+      "name": "kilograms",
+      "frequency": "12.92/minute",
+      "topics": [],
+      "dataCount": 576710,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_Efek",
+      "group": 2,
+      "name": "Efek",
+      "frequency": "23.93/minute",
+      "topics": [],
+      "dataCount": 1068381,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_Efek",
+      "group": 3,
+      "name": "Efek",
+      "frequency": "23.93/minute",
+      "topics": [],
+      "dataCount": 1068381,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_percent",
+      "group": 5,
+      "name": "percent",
+      "frequency": "23.93/minute",
+      "topics": [],
+      "dataCount": 1068381,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_Olek",
+      "group": 2,
+      "name": "Olek",
+      "frequency": "4.53/hour",
+      "topics": [],
+      "dataCount": 3367,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_Olek",
+      "group": 3,
+      "name": "Olek",
+      "frequency": "4.53/hour",
+      "topics": [],
+      "dataCount": 3367,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_noUnits",
+      "group": 5,
+      "name": "noUnits",
+      "frequency": "26.66/hour",
+      "topics": [],
+      "dataCount": 19838,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_AktEN",
+      "group": 2,
+      "name": "AktEN",
+      "frequency": "56.87/minute",
+      "topics": [],
+      "dataCount": 2538609,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_AktEN",
+      "group": 3,
+      "name": "AktEN",
+      "frequency": "56.87/minute",
+      "topics": [],
+      "dataCount": 2538609,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_kilowatts",
+      "group": 5,
+      "name": "kilowatts",
+      "frequency": "11.11/second",
+      "topics": [],
+      "dataCount": 29751446,
+      "deviceCount": 3
+    },
+    {
+      "id": "2_ReaVoi",
+      "group": 2,
+      "name": "ReaVoi",
+      "frequency": "3.26/hour",
+      "topics": [],
+      "dataCount": 2428,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_ReaVoi",
+      "group": 3,
+      "name": "ReaVoi",
+      "frequency": "3.26/hour",
+      "topics": [],
+      "dataCount": 2428,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_kilovoltAmperesReactive",
+      "group": 5,
+      "name": "kilovoltAmperesReactive",
+      "frequency": "2.45/second",
+      "topics": [],
+      "dataCount": 6552122,
+      "deviceCount": 3
+    },
+    {
+      "id": "2_KogEN",
+      "group": 2,
+      "name": "KogEN",
+      "frequency": "13.08/minute",
+      "topics": [],
+      "dataCount": 583671,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_KogEN",
+      "group": 3,
+      "name": "KogEN",
+      "frequency": "13.08/minute",
+      "topics": [],
+      "dataCount": 583671,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_kilowattHours",
+      "group": 5,
+      "name": "kilowattHours",
+      "frequency": "5.73/second",
+      "topics": [],
+      "dataCount": 15351234,
+      "deviceCount": 34
+    },
+    {
+      "id": "2_L3A",
+      "group": 2,
+      "name": "L3A",
+      "frequency": "4.22/second",
+      "topics": [],
+      "dataCount": 11314110,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_L3A",
+      "group": 3,
+      "name": "L3A",
+      "frequency": "4.22/second",
+      "topics": [],
+      "dataCount": 11314110,
+      "deviceCount": 3
+    },
+    {
+      "id": "5_amperes",
+      "group": 5,
+      "name": "amperes",
+      "frequency": "14.12/second",
+      "topics": [],
+      "dataCount": 37820928,
+      "deviceCount": 3
+    },
+    {
+      "id": "2_PF",
+      "group": 2,
+      "name": "PF",
+      "frequency": "22.12/hour",
+      "topics": [],
+      "dataCount": 16460,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_PF",
+      "group": 3,
+      "name": "PF",
+      "frequency": "22.12/hour",
+      "topics": [],
+      "dataCount": 16460,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_L1A",
+      "group": 2,
+      "name": "L1A",
+      "frequency": "4.9/second",
+      "topics": [],
+      "dataCount": 13134859,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_L1A",
+      "group": 3,
+      "name": "L1A",
+      "frequency": "4.9/second",
+      "topics": [],
+      "dataCount": 13134859,
+      "deviceCount": 3
+    },
+    {
+      "id": "2_DCall",
+      "group": 2,
+      "name": "DCall",
+      "frequency": "24/minute",
+      "topics": [],
+      "dataCount": 1071155,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_DCall",
+      "group": 3,
+      "name": "DCall",
+      "frequency": "24/minute",
+      "topics": [],
+      "dataCount": 1071155,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_PaevEN",
+      "group": 2,
+      "name": "PaevEN",
+      "frequency": "14.12/minute",
+      "topics": [],
+      "dataCount": 630326,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_PaevEN",
+      "group": 3,
+      "name": "PaevEN",
+      "frequency": "14.12/minute",
+      "topics": [],
+      "dataCount": 630326,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_L2A",
+      "group": 2,
+      "name": "L2A",
+      "frequency": "4.59/second",
+      "topics": [],
+      "dataCount": 12300804,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_L2A",
+      "group": 3,
+      "name": "L2A",
+      "frequency": "4.59/second",
+      "topics": [],
+      "dataCount": 12300804,
+      "deviceCount": 3
+    },
+    {
+      "id": "2_TOa",
+      "group": 2,
+      "name": "TOa",
+      "frequency": "35.57/hour",
+      "topics": [],
+      "dataCount": 26461,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_TOa",
+      "group": 3,
+      "name": "TOa",
+      "frequency": "35.57/hour",
+      "topics": [],
+      "dataCount": 26461,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_TSu1",
+      "group": 2,
+      "name": "TSu1",
+      "frequency": "2.19/minute",
+      "topics": [],
+      "dataCount": 97669,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_TSu1",
+      "group": 3,
+      "name": "TSu1",
+      "frequency": "2.19/minute",
+      "topics": [],
+      "dataCount": 97669,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_TSu",
+      "group": 2,
+      "name": "TSu",
+      "frequency": "5.74/second",
+      "topics": [],
+      "dataCount": 15384896,
+      "deviceCount": 5
+    },
+    {
+      "id": "3_TSu",
+      "group": 3,
+      "name": "TSu",
+      "frequency": "5.74/second",
+      "topics": [],
+      "dataCount": 15384896,
+      "deviceCount": 5
+    },
+    {
+      "id": "2_TEx",
+      "group": 2,
+      "name": "TEx",
+      "frequency": "7.4/hour",
+      "topics": [],
+      "dataCount": 5503,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_TEx",
+      "group": 3,
+      "name": "TEx",
+      "frequency": "7.4/hour",
+      "topics": [],
+      "dataCount": 5503,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_DP",
+      "group": 2,
+      "name": "DP",
+      "frequency": "79.37/second",
+      "topics": [],
+      "dataCount": 212571332,
+      "deviceCount": 28
+    },
+    {
+      "id": "3_DP",
+      "group": 3,
+      "name": "DP",
+      "frequency": "79.37/second",
+      "topics": [],
+      "dataCount": 212571332,
+      "deviceCount": 28
+    },
+    {
+      "id": "5_partsPerMillion",
+      "group": 5,
+      "name": "partsPerMillion",
+      "frequency": "89.33/second",
+      "topics": [],
+      "dataCount": 239260644,
+      "deviceCount": 25
+    },
+    {
+      "id": "2_TSu3",
+      "group": 2,
+      "name": "TSu3",
+      "frequency": "3.78/second",
+      "topics": [],
+      "dataCount": 10111908,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_TSu3",
+      "group": 3,
+      "name": "TSu3",
+      "frequency": "3.78/second",
+      "topics": [],
+      "dataCount": 10111908,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_KogEn",
+      "group": 2,
+      "name": "KogEn",
+      "frequency": "1.93/second",
+      "topics": [],
+      "dataCount": 5168411,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_KogEn",
+      "group": 3,
+      "name": "KogEn",
+      "frequency": "1.93/second",
+      "topics": [],
+      "dataCount": 5168411,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_KogVoiR",
+      "group": 2,
+      "name": "KogVoiR",
+      "frequency": "1.12/second",
+      "topics": [],
+      "dataCount": 2996905,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_KogVoiR",
+      "group": 3,
+      "name": "KogVoiR",
+      "frequency": "1.12/second",
+      "topics": [],
+      "dataCount": 2996905,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_KogVoi",
+      "group": 2,
+      "name": "KogVoi",
+      "frequency": "4.1/second",
+      "topics": [],
+      "dataCount": 10978765,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_KogVoi",
+      "group": 3,
+      "name": "KogVoi",
+      "frequency": "4.1/second",
+      "topics": [],
+      "dataCount": 10978765,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_HetkL3R",
+      "group": 2,
+      "name": "HetkL3R",
+      "frequency": "16.74/minute",
+      "topics": [],
+      "dataCount": 747104,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_HetkL3R",
+      "group": 3,
+      "name": "HetkL3R",
+      "frequency": "16.74/minute",
+      "topics": [],
+      "dataCount": 747104,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_L1L2V",
+      "group": 2,
+      "name": "L1L2V",
+      "frequency": "59.83/minute",
+      "topics": [],
+      "dataCount": 2670715,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_L1L2V",
+      "group": 3,
+      "name": "L1L2V",
+      "frequency": "59.83/minute",
+      "topics": [],
+      "dataCount": 2670715,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_volts",
+      "group": 5,
+      "name": "volts",
+      "frequency": "2.95/second",
+      "topics": [],
+      "dataCount": 7902676,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_L3L1V",
+      "group": 2,
+      "name": "L3L1V",
+      "frequency": "57.7/minute",
+      "topics": [],
+      "dataCount": 2575794,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_L3L1V",
+      "group": 3,
+      "name": "L3L1V",
+      "frequency": "57.7/minute",
+      "topics": [],
+      "dataCount": 2575794,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_HetkL2R",
+      "group": 2,
+      "name": "HetkL2R",
+      "frequency": "28.56/minute",
+      "topics": [],
+      "dataCount": 1274830,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_HetkL2R",
+      "group": 3,
+      "name": "HetkL2R",
+      "frequency": "28.56/minute",
+      "topics": [],
+      "dataCount": 1274830,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_HetkL3",
+      "group": 2,
+      "name": "HetkL3",
+      "frequency": "1.85/second",
+      "topics": [],
+      "dataCount": 4945020,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_HetkL3",
+      "group": 3,
+      "name": "HetkL3",
+      "frequency": "1.85/second",
+      "topics": [],
+      "dataCount": 4945020,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_HetkL2",
+      "group": 2,
+      "name": "HetkL2",
+      "frequency": "2.07/second",
+      "topics": [],
+      "dataCount": 5535884,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_HetkL2",
+      "group": 3,
+      "name": "HetkL2",
+      "frequency": "2.07/second",
+      "topics": [],
+      "dataCount": 5535884,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_HetkL1",
+      "group": 2,
+      "name": "HetkL1",
+      "frequency": "2.15/second",
+      "topics": [],
+      "dataCount": 5753168,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_HetkL1",
+      "group": 3,
+      "name": "HetkL1",
+      "frequency": "2.15/second",
+      "topics": [],
+      "dataCount": 5753168,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_HetkL1R",
+      "group": 2,
+      "name": "HetkL1R",
+      "frequency": "34.29/minute",
+      "topics": [],
+      "dataCount": 1530855,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_HetkL1R",
+      "group": 3,
+      "name": "HetkL1R",
+      "frequency": "34.29/minute",
+      "topics": [],
+      "dataCount": 1530855,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_L2L3V",
+      "group": 2,
+      "name": "L2L3V",
+      "frequency": "59.5/minute",
+      "topics": [],
+      "dataCount": 2656167,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_L2L3V",
+      "group": 3,
+      "name": "L2L3V",
+      "frequency": "59.5/minute",
+      "topics": [],
+      "dataCount": 2656167,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_EelKuu5",
+      "group": 2,
+      "name": "EelKuu5",
+      "frequency": "3.21/hour",
+      "topics": [],
+      "dataCount": 2386,
+      "deviceCount": 26
+    },
+    {
+      "id": "3_EelKuu5",
+      "group": 3,
+      "name": "EelKuu5",
+      "frequency": "3.21/hour",
+      "topics": [],
+      "dataCount": 2386,
+      "deviceCount": 26
+    },
+    {
+      "id": "2_TEx1",
+      "group": 2,
+      "name": "TEx1",
+      "frequency": "4.32/hour",
+      "topics": [],
+      "dataCount": 3214,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_TEx1",
+      "group": 3,
+      "name": "TEx1",
+      "frequency": "4.32/hour",
+      "topics": [],
+      "dataCount": 3214,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_TSu2",
+      "group": 2,
+      "name": "TSu2",
+      "frequency": "41.87/second",
+      "topics": [],
+      "dataCount": 112148743,
+      "deviceCount": 21
+    },
+    {
+      "id": "3_TSu2",
+      "group": 3,
+      "name": "TSu2",
+      "frequency": "41.87/second",
+      "topics": [],
+      "dataCount": 112148743,
+      "deviceCount": 21
+    },
+    {
+      "id": "5_pascals",
+      "group": 5,
+      "name": "pascals",
+      "frequency": "18.89/minute",
+      "topics": [],
+      "dataCount": 843297,
+      "deviceCount": 5
+    },
+    {
+      "id": "2_TFrPrtW",
+      "group": 2,
+      "name": "TFrPrtW",
+      "frequency": "4.39/minute",
+      "topics": [],
+      "dataCount": 196149,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_TFrPrtW",
+      "group": 3,
+      "name": "TFrPrtW",
+      "frequency": "4.39/minute",
+      "topics": [],
+      "dataCount": 196149,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_TFl",
+      "group": 2,
+      "name": "TFl",
+      "frequency": "6.33/minute",
+      "topics": [],
+      "dataCount": 282602,
+      "deviceCount": 3
+    },
+    {
+      "id": "3_TFl",
+      "group": 3,
+      "name": "TFl",
+      "frequency": "6.33/minute",
+      "topics": [],
+      "dataCount": 282602,
+      "deviceCount": 3
+    },
+    {
+      "id": "2_TFl1",
+      "group": 2,
+      "name": "TFl1",
+      "frequency": "2.4/minute",
+      "topics": [],
+      "dataCount": 107128,
+      "deviceCount": 8
+    },
+    {
+      "id": "3_TFl1",
+      "group": 3,
+      "name": "TFl1",
+      "frequency": "2.4/minute",
+      "topics": [],
+      "dataCount": 107128,
+      "deviceCount": 8
+    },
+    {
+      "id": "2_CumVlm1",
+      "group": 2,
+      "name": "CumVlm1",
+      "frequency": "12.54/minute",
+      "topics": [],
+      "dataCount": 559594,
+      "deviceCount": 16
+    },
+    {
+      "id": "3_CumVlm1",
+      "group": 3,
+      "name": "CumVlm1",
+      "frequency": "12.54/minute",
+      "topics": [],
+      "dataCount": 559594,
+      "deviceCount": 16
+    },
+    {
+      "id": "5_cubicMeters",
+      "group": 5,
+      "name": "cubicMeters",
+      "frequency": "12.93/minute",
+      "topics": [],
+      "dataCount": 577234,
+      "deviceCount": 16
+    },
+    {
+      "id": "2_EelKuu3",
+      "group": 2,
+      "name": "EelKuu3",
+      "frequency": "1.92/hour",
+      "topics": [],
+      "dataCount": 1427,
+      "deviceCount": 40
+    },
+    {
+      "id": "3_EelKuu3",
+      "group": 3,
+      "name": "EelKuu3",
+      "frequency": "1.92/hour",
+      "topics": [],
+      "dataCount": 1427,
+      "deviceCount": 40
+    },
+    {
+      "id": "2_CumVlm3",
+      "group": 2,
+      "name": "CumVlm3",
+      "frequency": "16.83/hour",
+      "topics": [],
+      "dataCount": 12519,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_CumVlm3",
+      "group": 3,
+      "name": "CumVlm3",
+      "frequency": "16.83/hour",
+      "topics": [],
+      "dataCount": 12519,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_CumVlm2",
+      "group": 2,
+      "name": "CumVlm2",
+      "frequency": "6.5/hour",
+      "topics": [],
+      "dataCount": 4836,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_CumVlm2",
+      "group": 3,
+      "name": "CumVlm2",
+      "frequency": "6.5/hour",
+      "topics": [],
+      "dataCount": 4836,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_EelKuu6",
+      "group": 2,
+      "name": "EelKuu6",
+      "frequency": "1.5/hour",
+      "topics": [],
+      "dataCount": 1113,
+      "deviceCount": 23
+    },
+    {
+      "id": "3_EelKuu6",
+      "group": 3,
+      "name": "EelKuu6",
+      "frequency": "1.5/hour",
+      "topics": [],
+      "dataCount": 1113,
+      "deviceCount": 23
+    },
+    {
+      "id": "2_NvEN",
+      "group": 2,
+      "name": "NvEN",
+      "frequency": "29.01/minute",
+      "topics": [],
+      "dataCount": 1295221,
+      "deviceCount": 21
+    },
+    {
+      "id": "3_NvEN",
+      "group": 3,
+      "name": "NvEN",
+      "frequency": "29.01/minute",
+      "topics": [],
+      "dataCount": 1295221,
+      "deviceCount": 21
+    },
+    {
+      "id": "2_OoEN",
+      "group": 2,
+      "name": "OoEN",
+      "frequency": "18.83/minute",
+      "topics": [],
+      "dataCount": 840605,
+      "deviceCount": 24
+    },
+    {
+      "id": "3_OoEN",
+      "group": 3,
+      "name": "OoEN",
+      "frequency": "18.83/minute",
+      "topics": [],
+      "dataCount": 840605,
+      "deviceCount": 24
+    },
+    {
+      "id": "2_PaeEN",
+      "group": 2,
+      "name": "PaeEN",
+      "frequency": "48.2/minute",
+      "topics": [],
+      "dataCount": 2151453,
+      "deviceCount": 24
+    },
+    {
+      "id": "3_PaeEN",
+      "group": 3,
+      "name": "PaeEN",
+      "frequency": "48.2/minute",
+      "topics": [],
+      "dataCount": 2151453,
+      "deviceCount": 24
+    },
+    {
+      "id": "2_KogEN22",
+      "group": 2,
+      "name": "KogEN22",
+      "frequency": "1.52/second",
+      "topics": [],
+      "dataCount": 4073254,
+      "deviceCount": 24
+    },
+    {
+      "id": "3_KogEN22",
+      "group": 3,
+      "name": "KogEN22",
+      "frequency": "1.52/second",
+      "topics": [],
+      "dataCount": 4073254,
+      "deviceCount": 24
+    },
+    {
+      "id": "2_EelKuu4",
+      "group": 2,
+      "name": "EelKuu4",
+      "frequency": "1.21/hour",
+      "topics": [],
+      "dataCount": 903,
+      "deviceCount": 25
+    },
+    {
+      "id": "3_EelKuu4",
+      "group": 3,
+      "name": "EelKuu4",
+      "frequency": "1.21/hour",
+      "topics": [],
+      "dataCount": 903,
+      "deviceCount": 25
+    },
+    {
+      "id": "2_KogImEn",
+      "group": 2,
+      "name": "KogImEn",
+      "frequency": "15.94/day",
+      "topics": [],
+      "dataCount": 494,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_KogImEn",
+      "group": 3,
+      "name": "KogImEn",
+      "frequency": "15.94/day",
+      "topics": [],
+      "dataCount": 494,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_EelKuu8",
+      "group": 2,
+      "name": "EelKuu8",
+      "frequency": "2.65/day",
+      "topics": [],
+      "dataCount": 82,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_EelKuu8",
+      "group": 3,
+      "name": "EelKuu8",
+      "frequency": "2.65/day",
+      "topics": [],
+      "dataCount": 82,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_EelKuu9",
+      "group": 2,
+      "name": "EelKuu9",
+      "frequency": "2.15/hour",
+      "topics": [],
+      "dataCount": 1600,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_EelKuu9",
+      "group": 3,
+      "name": "EelKuu9",
+      "frequency": "2.15/hour",
+      "topics": [],
+      "dataCount": 1600,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_KogExEn",
+      "group": 2,
+      "name": "KogExEn",
+      "frequency": "9.59/minute",
+      "topics": [],
+      "dataCount": 428090,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_KogExEn",
+      "group": 3,
+      "name": "KogExEn",
+      "frequency": "9.59/minute",
+      "topics": [],
+      "dataCount": 428090,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_EelKuu10",
+      "group": 2,
+      "name": "EelKuu10",
+      "frequency": "1.68/day",
+      "topics": [],
+      "dataCount": 52,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_EelKuu10",
+      "group": 3,
+      "name": "EelKuu10",
+      "frequency": "1.68/day",
+      "topics": [],
+      "dataCount": 52,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_TRt1",
+      "group": 2,
+      "name": "TRt1",
+      "frequency": "2.45/minute",
+      "topics": [],
+      "dataCount": 109581,
+      "deviceCount": 7
+    },
+    {
+      "id": "3_TRt1",
+      "group": 3,
+      "name": "TRt1",
+      "frequency": "2.45/minute",
+      "topics": [],
+      "dataCount": 109581,
+      "deviceCount": 7
+    },
+    {
+      "id": "2_Fl1",
+      "group": 2,
+      "name": "Fl1",
+      "frequency": "6.02/minute",
+      "topics": [],
+      "dataCount": 268826,
+      "deviceCount": 7
+    },
+    {
+      "id": "3_Fl1",
+      "group": 3,
+      "name": "Fl1",
+      "frequency": "6.02/minute",
+      "topics": [],
+      "dataCount": 268826,
+      "deviceCount": 7
+    },
+    {
+      "id": "5_cubicMetersPerHour",
+      "group": 5,
+      "name": "cubicMetersPerHour",
+      "frequency": "6.02/minute",
+      "topics": [],
+      "dataCount": 268826,
+      "deviceCount": 7
+    },
+    {
+      "id": "2_Pwr1",
+      "group": 2,
+      "name": "Pwr1",
+      "frequency": "29.73/minute",
+      "topics": [],
+      "dataCount": 1327226,
+      "deviceCount": 7
+    },
+    {
+      "id": "3_Pwr1",
+      "group": 3,
+      "name": "Pwr1",
+      "frequency": "29.73/minute",
+      "topics": [],
+      "dataCount": 1327226,
+      "deviceCount": 7
+    },
+    {
+      "id": "5_watts",
+      "group": 5,
+      "name": "watts",
+      "frequency": "29.73/minute",
+      "topics": [],
+      "dataCount": 1327226,
+      "deviceCount": 7
+    },
+    {
+      "id": "2_CumEg1",
+      "group": 2,
+      "name": "CumEg1",
+      "frequency": "3.82/minute",
+      "topics": [],
+      "dataCount": 170469,
+      "deviceCount": 7
+    },
+    {
+      "id": "3_CumEg1",
+      "group": 3,
+      "name": "CumEg1",
+      "frequency": "3.82/minute",
+      "topics": [],
+      "dataCount": 170469,
+      "deviceCount": 7
+    },
+    {
+      "id": "2_DP2",
+      "group": 2,
+      "name": "DP2",
+      "frequency": "35.25/minute",
+      "topics": [],
+      "dataCount": 1573683,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_DP2",
+      "group": 3,
+      "name": "DP2",
+      "frequency": "35.25/minute",
+      "topics": [],
+      "dataCount": 1573683,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_DP1",
+      "group": 2,
+      "name": "DP1",
+      "frequency": "9.58/minute",
+      "topics": [],
+      "dataCount": 427796,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_DP1",
+      "group": 3,
+      "name": "DP1",
+      "frequency": "9.58/minute",
+      "topics": [],
+      "dataCount": 427796,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_CO00012",
+      "group": 2,
+      "name": "CO00012",
+      "frequency": "3/second",
+      "topics": [],
+      "dataCount": 8035574,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_CO00012",
+      "group": 3,
+      "name": "CO00012",
+      "frequency": "3/second",
+      "topics": [],
+      "dataCount": 8035574,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_CO00013",
+      "group": 2,
+      "name": "CO00013",
+      "frequency": "3.6/second",
+      "topics": [],
+      "dataCount": 9639739,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_CO00013",
+      "group": 3,
+      "name": "CO00013",
+      "frequency": "3.6/second",
+      "topics": [],
+      "dataCount": 9639739,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_CO00011",
+      "group": 2,
+      "name": "CO00011",
+      "frequency": "2.93/second",
+      "topics": [],
+      "dataCount": 7855465,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_CO00011",
+      "group": 3,
+      "name": "CO00011",
+      "frequency": "2.93/second",
+      "topics": [],
+      "dataCount": 7855465,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_TAfErc",
+      "group": 2,
+      "name": "TAfErc",
+      "frequency": "1.45/minute",
+      "topics": [],
+      "dataCount": 64703,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_TAfErc",
+      "group": 3,
+      "name": "TAfErc",
+      "frequency": "1.45/minute",
+      "topics": [],
+      "dataCount": 64703,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_Tam1PKSP1",
+      "group": 2,
+      "name": "Tam1PKSP1",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_Tam1PKSP1",
+      "group": 3,
+      "name": "Tam1PKSP1",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_Tam1PKSP",
+      "group": 2,
+      "name": "Tam1PKSP",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_Tam1PKSP",
+      "group": 3,
+      "name": "Tam1PKSP",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_TE2002",
+      "group": 2,
+      "name": "TE2002",
+      "frequency": "1/day",
+      "topics": [],
+      "dataCount": 31,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_TE2002",
+      "group": 3,
+      "name": "TE2002",
+      "frequency": "1/day",
+      "topics": [],
+      "dataCount": 31,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_Alarm",
+      "group": 2,
+      "name": "Alarm",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_Alarm",
+      "group": 3,
+      "name": "Alarm",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_TE022",
+      "group": 2,
+      "name": "TE022",
+      "frequency": "0.39/day",
+      "topics": [],
+      "dataCount": 12,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_TE022",
+      "group": 3,
+      "name": "TE022",
+      "frequency": "0.39/day",
+      "topics": [],
+      "dataCount": 12,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_TE023",
+      "group": 2,
+      "name": "TE023",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_TE023",
+      "group": 3,
+      "name": "TE023",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_Clc02.TRSen",
+      "group": 2,
+      "name": "Clc02.TRSen",
+      "frequency": "8.52/day",
+      "topics": [],
+      "dataCount": 264,
+      "deviceCount": 24
+    },
+    {
+      "id": "3_Clc02.TRSen",
+      "group": 3,
+      "name": "Clc02.TRSen",
+      "frequency": "8.52/day",
+      "topics": [],
+      "dataCount": 264,
+      "deviceCount": 24
+    },
+    {
+      "id": "2_Clc02.TSen",
+      "group": 2,
+      "name": "Clc02.TSen",
+      "frequency": "8.52/day",
+      "topics": [],
+      "dataCount": 264,
+      "deviceCount": 24
+    },
+    {
+      "id": "3_Clc02.TSen",
+      "group": 3,
+      "name": "Clc02.TSen",
+      "frequency": "8.52/day",
+      "topics": [],
+      "dataCount": 264,
+      "deviceCount": 24
+    },
+    {
+      "id": "2_Clc02.TR",
+      "group": 2,
+      "name": "Clc02.TR",
+      "frequency": "8.84/day",
+      "topics": [],
+      "dataCount": 274,
+      "deviceCount": 24
+    },
+    {
+      "id": "3_Clc02.TR",
+      "group": 3,
+      "name": "Clc02.TR",
+      "frequency": "8.84/day",
+      "topics": [],
+      "dataCount": 274,
+      "deviceCount": 24
+    },
+    {
+      "id": "2_KogEn1",
+      "group": 2,
+      "name": "KogEn1",
+      "frequency": "2.53/hour",
+      "topics": [],
+      "dataCount": 1886,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_KogEn1",
+      "group": 3,
+      "name": "KogEn1",
+      "frequency": "2.53/hour",
+      "topics": [],
+      "dataCount": 1886,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_Hz",
+      "group": 2,
+      "name": "Hz",
+      "frequency": "1.23/day",
+      "topics": [],
+      "dataCount": 38,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_Hz",
+      "group": 3,
+      "name": "Hz",
+      "frequency": "1.23/day",
+      "topics": [],
+      "dataCount": 38,
+      "deviceCount": 2
+    },
+    {
+      "id": "5_hertz",
+      "group": 5,
+      "name": "hertz",
+      "frequency": "1.23/day",
+      "topics": [],
+      "dataCount": 38,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP1.Y4",
+      "group": 2,
+      "name": "RuumTESP1.Y4",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.Y4",
+      "group": 3,
+      "name": "RuumTESP1.Y4",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.X2",
+      "group": 2,
+      "name": "RuumTESP1.X2",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.X2",
+      "group": 3,
+      "name": "RuumTESP1.X2",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.Y3",
+      "group": 2,
+      "name": "RuumTESP1.Y3",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.Y3",
+      "group": 3,
+      "name": "RuumTESP1.Y3",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.X3",
+      "group": 2,
+      "name": "RuumTESP1.X3",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.X3",
+      "group": 3,
+      "name": "RuumTESP1.X3",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.X6",
+      "group": 2,
+      "name": "RuumTESP1.X6",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.X6",
+      "group": 3,
+      "name": "RuumTESP1.X6",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.X4",
+      "group": 2,
+      "name": "RuumTESP1.X4",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.X4",
+      "group": 3,
+      "name": "RuumTESP1.X4",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.Y5",
+      "group": 2,
+      "name": "RuumTESP1.Y5",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.Y5",
+      "group": 3,
+      "name": "RuumTESP1.Y5",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.X1",
+      "group": 2,
+      "name": "RuumTESP1.X1",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.X1",
+      "group": 3,
+      "name": "RuumTESP1.X1",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.Y2",
+      "group": 2,
+      "name": "RuumTESP1.Y2",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.Y2",
+      "group": 3,
+      "name": "RuumTESP1.Y2",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.Y1",
+      "group": 2,
+      "name": "RuumTESP1.Y1",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.Y1",
+      "group": 3,
+      "name": "RuumTESP1.Y1",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.Y6",
+      "group": 2,
+      "name": "RuumTESP1.Y6",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.Y6",
+      "group": 3,
+      "name": "RuumTESP1.Y6",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_RuumTESP1.X5",
+      "group": 2,
+      "name": "RuumTESP1.X5",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_RuumTESP1.X5",
+      "group": 3,
+      "name": "RuumTESP1.X5",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_KickFnct1.OpSta",
+      "group": 2,
+      "name": "KickFnct1.OpSta",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_KickFnct1.OpSta",
+      "group": 3,
+      "name": "KickFnct1.OpSta",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "5_none",
+      "group": 5,
+      "name": "none",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_KickFnct.OpSta",
+      "group": 2,
+      "name": "KickFnct.OpSta",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_KickFnct.OpSta",
+      "group": 3,
+      "name": "KickFnct.OpSta",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "2_100",
+      "group": 2,
+      "name": "100",
+      "frequency": "1.74/day",
+      "topics": [],
+      "dataCount": 54,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_100",
+      "group": 3,
+      "name": "100",
+      "frequency": "1.74/day",
+      "topics": [],
+      "dataCount": 54,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_EelKuu7",
+      "group": 2,
+      "name": "EelKuu7",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_EelKuu7",
+      "group": 3,
+      "name": "EelKuu7",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.Y2",
+      "group": 2,
+      "name": "RuumTESP2.Y2",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.Y2",
+      "group": 3,
+      "name": "RuumTESP2.Y2",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.Y5",
+      "group": 2,
+      "name": "RuumTESP2.Y5",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.Y5",
+      "group": 3,
+      "name": "RuumTESP2.Y5",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.X5",
+      "group": 2,
+      "name": "RuumTESP2.X5",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.X5",
+      "group": 3,
+      "name": "RuumTESP2.X5",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.X6",
+      "group": 2,
+      "name": "RuumTESP2.X6",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.X6",
+      "group": 3,
+      "name": "RuumTESP2.X6",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.X1",
+      "group": 2,
+      "name": "RuumTESP2.X1",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.X1",
+      "group": 3,
+      "name": "RuumTESP2.X1",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.X7",
+      "group": 2,
+      "name": "RuumTESP2.X7",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.X7",
+      "group": 3,
+      "name": "RuumTESP2.X7",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.Y8",
+      "group": 2,
+      "name": "RuumTESP2.Y8",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.Y8",
+      "group": 3,
+      "name": "RuumTESP2.Y8",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.Y4",
+      "group": 2,
+      "name": "RuumTESP2.Y4",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.Y4",
+      "group": 3,
+      "name": "RuumTESP2.Y4",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.X4",
+      "group": 2,
+      "name": "RuumTESP2.X4",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.X4",
+      "group": 3,
+      "name": "RuumTESP2.X4",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.Y6",
+      "group": 2,
+      "name": "RuumTESP2.Y6",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.Y6",
+      "group": 3,
+      "name": "RuumTESP2.Y6",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.Y3",
+      "group": 2,
+      "name": "RuumTESP2.Y3",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.Y3",
+      "group": 3,
+      "name": "RuumTESP2.Y3",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.X8",
+      "group": 2,
+      "name": "RuumTESP2.X8",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.X8",
+      "group": 3,
+      "name": "RuumTESP2.X8",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.X3",
+      "group": 2,
+      "name": "RuumTESP2.X3",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.X3",
+      "group": 3,
+      "name": "RuumTESP2.X3",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.Y7",
+      "group": 2,
+      "name": "RuumTESP2.Y7",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.Y7",
+      "group": 3,
+      "name": "RuumTESP2.Y7",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.X2",
+      "group": 2,
+      "name": "RuumTESP2.X2",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.X2",
+      "group": 3,
+      "name": "RuumTESP2.X2",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_RuumTESP2.Y1",
+      "group": 2,
+      "name": "RuumTESP2.Y1",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "3_RuumTESP2.Y1",
+      "group": 3,
+      "name": "RuumTESP2.Y1",
+      "frequency": "0.71/day",
+      "topics": [],
+      "dataCount": 22,
+      "deviceCount": 2
+    },
+    {
+      "id": "2_FroMinTE",
+      "group": 2,
+      "name": "FroMinTE",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    },
+    {
+      "id": "3_FroMinTE",
+      "group": 3,
+      "name": "FroMinTE",
+      "frequency": "0.35/day",
+      "topics": [],
+      "dataCount": 11,
+      "deviceCount": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "0_Measurements",
+      "target": "2_EelKuu4"
+    },
+    {
+      "source": "3_Efek",
+      "target": "5_percent"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_EelKuu10"
+    },
+    {
+      "source": "2_EelKuu8",
+      "target": "3_EelKuu8"
+    },
+    {
+      "source": "2_RuumTESP1.Y4",
+      "target": "3_RuumTESP1.Y4"
+    },
+    {
+      "source": "2_RuumTESP1.X1",
+      "target": "3_RuumTESP1.X1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_EelKuu3"
+    },
+    {
+      "source": "3_PF",
+      "target": "5_noUnits"
+    },
+    {
+      "source": "3_RuumTESP2.Y8",
+      "target": "5_pascals"
+    },
+    {
+      "source": "3_RuumTESP2.X8",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TE2002"
+    },
+    {
+      "source": "3_RuumTESP2.X1",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.X3"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_HetkL3R"
+    },
+    {
+      "source": "2_Hz",
+      "target": "3_Hz"
+    },
+    {
+      "source": "3_TE023",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_RuumTESP2.Y8",
+      "target": "3_RuumTESP2.Y8"
+    },
+    {
+      "source": "2_CumVlm2",
+      "target": "3_CumVlm2"
+    },
+    {
+      "source": "3_EelKuu3",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_KogEN",
+      "target": "3_KogEN"
+    },
+    {
+      "source": "3_KogImEn",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Tam1PKSP"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.Y5"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Tam1PKSP1"
+    },
+    {
+      "source": "2_TSu2",
+      "target": "3_TSu2"
+    },
+    {
+      "source": "3_DCall",
+      "target": "5_amperes"
+    },
+    {
+      "source": "3_TSu3",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_RuumTESP1.X4",
+      "target": "3_RuumTESP1.X4"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.X1"
+    },
+    {
+      "source": "2_RuumTESP1.X3",
+      "target": "3_RuumTESP1.X3"
+    },
+    {
+      "source": "3_KogVoiR",
+      "target": "5_kilovoltAmperesReactive"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_L2L3V"
+    },
+    {
+      "source": "2_RuumTESP2.Y1",
+      "target": "3_RuumTESP2.Y1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_L2A"
+    },
+    {
+      "source": "3_KogEN",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "3_CumVlm1",
+      "target": "5_cubicMeters"
+    },
+    {
+      "source": "2_DP2",
+      "target": "3_DP2"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.X5"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TAfErc"
+    },
+    {
+      "source": "3_OoEN",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "3_RuumTESP1.Y2",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_TFl",
+      "target": "3_TFl"
+    },
+    {
+      "source": "3_TRt1",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KogExEn"
+    },
+    {
+      "source": "3_PaevEN",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TFl"
+    },
+    {
+      "source": "2_Tam1PKSP",
+      "target": "3_Tam1PKSP"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_HetkL1R"
+    },
+    {
+      "source": "3_L3A",
+      "target": "5_amperes"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Efek"
+    },
+    {
+      "source": "3_Clc02.TSen",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_RuumTESP2.Y4",
+      "target": "3_RuumTESP2.Y4"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Fl1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KogEN22"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TEx1"
+    },
+    {
+      "source": "2_TEx1",
+      "target": "3_TEx1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_L1A"
+    },
+    {
+      "source": "3_RuumTESP2.X5",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "3_ReaVoi",
+      "target": "5_kilovoltAmperesReactive"
+    },
+    {
+      "source": "2_L1A",
+      "target": "3_L1A"
+    },
+    {
+      "source": "2_L3A",
+      "target": "3_L3A"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.Y6"
+    },
+    {
+      "source": "2_RuumTESP2.Y3",
+      "target": "3_RuumTESP2.Y3"
+    },
+    {
+      "source": "2_KogVoi",
+      "target": "3_KogVoi"
+    },
+    {
+      "source": "2_CumVlm1",
+      "target": "3_CumVlm1"
+    },
+    {
+      "source": "3_RuumTESP2.X2",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "2_Efek",
+      "target": "3_Efek"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.X2"
+    },
+    {
+      "source": "2_RuumTESP1.X2",
+      "target": "3_RuumTESP1.X2"
+    },
+    {
+      "source": "2_RuumTESP2.X6",
+      "target": "3_RuumTESP2.X6"
+    },
+    {
+      "source": "2_Olek",
+      "target": "3_Olek"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_ReaVoi"
+    },
+    {
+      "source": "2_AktEN",
+      "target": "3_AktEN"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TSu1"
+    },
+    {
+      "source": "3_RuumTESP1.X6",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_EelKuu8",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_Clc02.TSen",
+      "target": "3_Clc02.TSen"
+    },
+    {
+      "source": "2_Lux",
+      "target": "3_Lux"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_EelKuu8"
+    },
+    {
+      "source": "2_CO00011",
+      "target": "3_CO00011"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_DCall"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_OoEN"
+    },
+    {
+      "source": "2_KogEN22",
+      "target": "3_KogEN22"
+    },
+    {
+      "source": "3_RuumTESP2.Y6",
+      "target": "5_pascals"
+    },
+    {
+      "source": "3_HetkL2R",
+      "target": "5_kilovoltAmperesReactive"
+    },
+    {
+      "source": "3_RuumTESP2.Y3",
+      "target": "5_pascals"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KogVoi"
+    },
+    {
+      "source": "3_RuumTESP2.Y1",
+      "target": "5_pascals"
+    },
+    {
+      "source": "2_TE023",
+      "target": "3_TE023"
+    },
+    {
+      "source": "3_CumVlm2",
+      "target": "5_cubicMeters"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_CumVlm2"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TOa"
+    },
+    {
+      "source": "3_RuumTESP1.Y1",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_RuumTESP1.X2",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.X6"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.Y2"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_HetkL3"
+    },
+    {
+      "source": "2_RuumTESP2.X4",
+      "target": "3_RuumTESP2.X4"
+    },
+    {
+      "source": "2_RuumTESP2.Y2",
+      "target": "3_RuumTESP2.Y2"
+    },
+    {
+      "source": "3_Tam1PKSP",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_RuumTESP1.Y5",
+      "target": "3_RuumTESP1.Y5"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TE023"
+    },
+    {
+      "source": "3_RuumTESP2.Y7",
+      "target": "5_pascals"
+    },
+    {
+      "source": "3_KogEn",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_PaevEN"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_HetkL2"
+    },
+    {
+      "source": "3_AktEN",
+      "target": "5_kilowatts"
+    },
+    {
+      "source": "2_Alarm",
+      "target": "3_Alarm"
+    },
+    {
+      "source": "3_FroMinTE",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_EelKuu6",
+      "target": "3_EelKuu6"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.X3"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Pwr1"
+    },
+    {
+      "source": "2_TSu3",
+      "target": "3_TSu3"
+    },
+    {
+      "source": "2_TSu1",
+      "target": "3_TSu1"
+    },
+    {
+      "source": "3_NvEN",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_EelKuu7",
+      "target": "3_EelKuu7"
+    },
+    {
+      "source": "3_Clc02.TRSen",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_TFrPrtW",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_HetkL3",
+      "target": "3_HetkL3"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_L3A"
+    },
+    {
+      "source": "2_RuumTESP1.Y6",
+      "target": "3_RuumTESP1.Y6"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.X2"
+    },
+    {
+      "source": "3_TOa",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_L3L1V",
+      "target": "3_L3L1V"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_NvEN"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.Y1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KogImEn"
+    },
+    {
+      "source": "3_KogVoi",
+      "target": "5_kilowatts"
+    },
+    {
+      "source": "3_RuumTESP2.X3",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "2_L2L3V",
+      "target": "3_L2L3V"
+    },
+    {
+      "source": "3_DP1",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "3_RuumTESP1.Y5",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.X7"
+    },
+    {
+      "source": "3_PaeEN",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "3_TSu2",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_L2A",
+      "target": "3_L2A"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KogEn"
+    },
+    {
+      "source": "3_EelKuu10",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_RuumTESP2.X1",
+      "target": "3_RuumTESP2.X1"
+    },
+    {
+      "source": "3_KickFnct1.OpSta",
+      "target": "5_none"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_EelKuu5"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_100"
+    },
+    {
+      "source": "3_DP",
+      "target": "5_pascals"
+    },
+    {
+      "source": "3_RuumTESP1.X3",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_KickFnct1.OpSta",
+      "target": "3_KickFnct1.OpSta"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Clc02.TR"
+    },
+    {
+      "source": "3_L2A",
+      "target": "5_amperes"
+    },
+    {
+      "source": "3_CO00012",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "2_TSu",
+      "target": "3_TSu"
+    },
+    {
+      "source": "2_RuumTESP2.X5",
+      "target": "3_RuumTESP2.X5"
+    },
+    {
+      "source": "2_CumVlm3",
+      "target": "3_CumVlm3"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TFrPrtW"
+    },
+    {
+      "source": "3_EelKuu6",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_PaeEN",
+      "target": "3_PaeEN"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TEx"
+    },
+    {
+      "source": "3_TSu1",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TSu"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_DP2"
+    },
+    {
+      "source": "2_HetkL2R",
+      "target": "3_HetkL2R"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_EelKuu9"
+    },
+    {
+      "source": "3_HetkL3",
+      "target": "5_kilowatts"
+    },
+    {
+      "source": "2_RuumTESP1.X6",
+      "target": "3_RuumTESP1.X6"
+    },
+    {
+      "source": "3_TFl",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_CumEg1"
+    },
+    {
+      "source": "3_L1L2V",
+      "target": "5_volts"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_DP1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Alarm"
+    },
+    {
+      "source": "2_Clc02.TRSen",
+      "target": "3_Clc02.TRSen"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KogEN"
+    },
+    {
+      "source": "3_RuumTESP1.Y4",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_EelKuu7",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_RuumTESP1.Y3",
+      "target": "3_RuumTESP1.Y3"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.Y3"
+    },
+    {
+      "source": "3_RuumTESP2.X4",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Olek"
+    },
+    {
+      "source": "2_TE022",
+      "target": "3_TE022"
+    },
+    {
+      "source": "3_L3L1V",
+      "target": "5_volts"
+    },
+    {
+      "source": "2_RuumTESP1.Y2",
+      "target": "3_RuumTESP1.Y2"
+    },
+    {
+      "source": "2_NvEN",
+      "target": "3_NvEN"
+    },
+    {
+      "source": "3_RuumTESP1.Y6",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_TEx",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_CumVlm1"
+    },
+    {
+      "source": "3_EelKuu3",
+      "target": "5_cubicMeters"
+    },
+    {
+      "source": "3_CO2",
+      "target": "5_kilograms"
+    },
+    {
+      "source": "3_Tam1PKSP1",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_TAfErc",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_Clc02.TR",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_RuumTESP2.Y5",
+      "target": "3_RuumTESP2.Y5"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Hz"
+    },
+    {
+      "source": "2_RuumTESP1.X5",
+      "target": "3_RuumTESP1.X5"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.Y3"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_PF"
+    },
+    {
+      "source": "2_KogImEn",
+      "target": "3_KogImEn"
+    },
+    {
+      "source": "3_L2L3V",
+      "target": "5_volts"
+    },
+    {
+      "source": "2_CO00013",
+      "target": "3_CO00013"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_EelKuu6"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TE00"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_EelKuu7"
+    },
+    {
+      "source": "2_TFl1",
+      "target": "3_TFl1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.X1"
+    },
+    {
+      "source": "3_CumVlm3",
+      "target": "5_cubicMeters"
+    },
+    {
+      "source": "3_TE2002",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_RuumTESP2.Y4",
+      "target": "5_pascals"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TRt1"
+    },
+    {
+      "source": "2_EelKuu10",
+      "target": "3_EelKuu10"
+    },
+    {
+      "source": "2_PF",
+      "target": "3_PF"
+    },
+    {
+      "source": "2_HetkL2",
+      "target": "3_HetkL2"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.X6"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.Y1"
+    },
+    {
+      "source": "2_EelKuu5",
+      "target": "3_EelKuu5"
+    },
+    {
+      "source": "2_TAfErc",
+      "target": "3_TAfErc"
+    },
+    {
+      "source": "3_RuumTESP2.X6",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "2_EelKuu9",
+      "target": "3_EelKuu9"
+    },
+    {
+      "source": "2_KogExEn",
+      "target": "3_KogExEn"
+    },
+    {
+      "source": "2_TOa",
+      "target": "3_TOa"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.X5"
+    },
+    {
+      "source": "3_EelKuu9",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "3_RuumTESP1.Y3",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.X4"
+    },
+    {
+      "source": "3_DP2",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KogEn1"
+    },
+    {
+      "source": "2_RuumTESP2.Y6",
+      "target": "3_RuumTESP2.Y6"
+    },
+    {
+      "source": "2_EelKuu3",
+      "target": "3_EelKuu3"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_L3L1V"
+    },
+    {
+      "source": "2_HetkL3R",
+      "target": "3_HetkL3R"
+    },
+    {
+      "source": "2_TEx",
+      "target": "3_TEx"
+    },
+    {
+      "source": "2_KogEn1",
+      "target": "3_KogEn1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_CO00012"
+    },
+    {
+      "source": "3_RuumTESP2.Y2",
+      "target": "5_pascals"
+    },
+    {
+      "source": "2_CO00012",
+      "target": "3_CO00012"
+    },
+    {
+      "source": "3_Olek",
+      "target": "5_noUnits"
+    },
+    {
+      "source": "3_CO00011",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "2_EelKuu4",
+      "target": "3_EelKuu4"
+    },
+    {
+      "source": "3_CumEg1",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_HetkL1R",
+      "target": "3_HetkL1R"
+    },
+    {
+      "source": "2_RuumTESP2.Y7",
+      "target": "3_RuumTESP2.Y7"
+    },
+    {
+      "source": "2_RuumTESP2.X7",
+      "target": "3_RuumTESP2.X7"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TSu2"
+    },
+    {
+      "source": "3_KogExEn",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_KogEn",
+      "target": "3_KogEn"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_CO00013"
+    },
+    {
+      "source": "2_L1L2V",
+      "target": "3_L1L2V"
+    },
+    {
+      "source": "2_CO2",
+      "target": "3_CO2"
+    },
+    {
+      "source": "3_Pwr1",
+      "target": "5_watts"
+    },
+    {
+      "source": "2_TFrPrtW",
+      "target": "3_TFrPrtW"
+    },
+    {
+      "source": "3_TEx1",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_HetkL1",
+      "target": "5_kilowatts"
+    },
+    {
+      "source": "2_ReaVoi",
+      "target": "3_ReaVoi"
+    },
+    {
+      "source": "3_Alarm",
+      "target": "5_noUnits"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_CO2"
+    },
+    {
+      "source": "2_DP",
+      "target": "3_DP"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_FroMinTE"
+    },
+    {
+      "source": "3_RuumTESP1.X4",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_HetkL2R"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KickFnct.OpSta"
+    },
+    {
+      "source": "3_Lux",
+      "target": "5_luxes"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_DP"
+    },
+    {
+      "source": "3_CO00013",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "3_L1A",
+      "target": "5_amperes"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Clc02.TRSen"
+    },
+    {
+      "source": "3_Fl1",
+      "target": "5_cubicMetersPerHour"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TE022"
+    },
+    {
+      "source": "3_HetkL3R",
+      "target": "5_kilovoltAmperesReactive"
+    },
+    {
+      "source": "2_KogVoiR",
+      "target": "3_KogVoiR"
+    },
+    {
+      "source": "3_EelKuu5",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_100",
+      "target": "3_100"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.Y8"
+    },
+    {
+      "source": "3_EelKuu4",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.X8"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KogVoiR"
+    },
+    {
+      "source": "2_Clc02.TR",
+      "target": "3_Clc02.TR"
+    },
+    {
+      "source": "2_PaevEN",
+      "target": "3_PaevEN"
+    },
+    {
+      "source": "3_TE00",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_Tam1PKSP1",
+      "target": "3_Tam1PKSP1"
+    },
+    {
+      "source": "3_KickFnct.OpSta",
+      "target": "5_none"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_CO00011"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_CumVlm3"
+    },
+    {
+      "source": "2_DCall",
+      "target": "3_DCall"
+    },
+    {
+      "source": "3_RuumTESP1.X1",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_100",
+      "target": "5_cubicMeters"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_KickFnct1.OpSta"
+    },
+    {
+      "source": "3_Hz",
+      "target": "5_hertz"
+    },
+    {
+      "source": "3_RuumTESP2.Y5",
+      "target": "5_pascals"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.Y4"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Clc02.TSen"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_PaeEN"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_HetkL1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.Y2"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.Y6"
+    },
+    {
+      "source": "3_TFl1",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_RuumTESP2.X8",
+      "target": "3_RuumTESP2.X8"
+    },
+    {
+      "source": "2_TRt1",
+      "target": "3_TRt1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TSu3"
+    },
+    {
+      "source": "3_TE022",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "3_TSu",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "2_TE2002",
+      "target": "3_TE2002"
+    },
+    {
+      "source": "2_OoEN",
+      "target": "3_OoEN"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_AktEN"
+    },
+    {
+      "source": "2_Pwr1",
+      "target": "3_Pwr1"
+    },
+    {
+      "source": "2_DP1",
+      "target": "3_DP1"
+    },
+    {
+      "source": "2_RuumTESP1.Y1",
+      "target": "3_RuumTESP1.Y1"
+    },
+    {
+      "source": "2_FroMinTE",
+      "target": "3_FroMinTE"
+    },
+    {
+      "source": "3_DP",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "3_HetkL2",
+      "target": "5_kilowatts"
+    },
+    {
+      "source": "2_CumEg1",
+      "target": "3_CumEg1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_L1L2V"
+    },
+    {
+      "source": "3_RuumTESP1.X5",
+      "target": "5_degreesCelsius"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.Y7"
+    },
+    {
+      "source": "3_KogEN22",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP2.X4"
+    },
+    {
+      "source": "3_KogEn1",
+      "target": "5_kilowattHours"
+    },
+    {
+      "source": "2_RuumTESP2.X3",
+      "target": "3_RuumTESP2.X3"
+    },
+    {
+      "source": "2_Fl1",
+      "target": "3_Fl1"
+    },
+    {
+      "source": "3_HetkL1R",
+      "target": "5_kilovoltAmperesReactive"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.Y4"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_TFl1"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_Lux"
+    },
+    {
+      "source": "2_HetkL1",
+      "target": "3_HetkL1"
+    },
+    {
+      "source": "3_RuumTESP2.X7",
+      "target": "5_partsPerMillion"
+    },
+    {
+      "source": "2_RuumTESP2.X2",
+      "target": "3_RuumTESP2.X2"
+    },
+    {
+      "source": "0_Measurements",
+      "target": "2_RuumTESP1.Y5"
+    },
+    {
+      "source": "2_TE00",
+      "target": "3_TE00"
+    },
+    {
+      "source": "2_KickFnct.OpSta",
+      "target": "3_KickFnct.OpSta"
+    }
+  ]
+}

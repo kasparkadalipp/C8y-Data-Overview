@@ -19,3 +19,6 @@ data/
 
 # sample environment setup
 !.env.sample
+
+# Include visualization data
+!/visualization/**/*.json
