@@ -7,14 +7,14 @@
   <h3 align="center">Knowledge Graphs for Cataloging and Making Sense of Smart City Data</h3>
 
   <p>
-    <a href="https://kodu.ut.ee/~kadalipp/Measurements/Month/network.html">Monthly Measurements Visualization</a>
+    <a href="https://kasparkadalipp.github.io/C8y-Data-Overview/visualization/measurementsMonthly/">Monthly Measurements Visualization</a>
     ·
-    <a href="https://kodu.ut.ee/~kadalipp/Delta/network.html">Delta Measurements Visualization</a>
+    <a href="https://kasparkadalipp.github.io/C8y-Data-Overview/visualization/deltaMeasurements/">Delta Measurements Visualization</a>
   </p>
   <p>
-    <a href="https://kodu.ut.ee/~kadalipp/Measurements/Total/network.html">Total Measurements Visualization</a>
+    <a href="https://kasparkadalipp.github.io/C8y-Data-Overview/visualization/measurementsTotal/">Total Measurements Visualization</a>
     ·
-    <a href="https://kodu.ut.ee/~kadalipp/Events/Total/network.html">Total Events Visualization </a>
+    <a href="https://kasparkadalipp.github.io/C8y-Data-Overview/visualization/eventsTotal/">Total Events Visualization </a>
   </p>
 </div>
 
