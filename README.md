@@ -14,6 +14,8 @@
   <p>
     <a href="https://kasparkadalipp.github.io/C8y-Data-Overview/visualization/measurementsTotal/">Total Measurements Visualization</a>
     ·
+    <a href="https://kasparkadalipp.github.io/C8y-Data-Overview/visualization/measurementsTotalFiltered/">(Filtered)</a>
+    ·
     <a href="https://kasparkadalipp.github.io/C8y-Data-Overview/visualization/eventsTotal/">Total Events Visualization </a>
   </p>
 </div>
